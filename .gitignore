@@ -1,0 +1,9 @@
+*.o
+*.a
+
+42sh
+executable
+objs/
+
+.DS_Store
+._.DS_Store
