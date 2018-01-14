@@ -1,8 +1,8 @@
 #include "shell_redirs_.h"
+#include "taskmaster42.h"
 #include <sys/wait.h>
 #include <sys/types.h>
-       #include <sys/wait.h>
-
+#include <sys/wait.h>
 
 /*
 ** It's ok if it didn't wait for anything.
@@ -10,14 +10,16 @@
 
 void	wait_for_all_children_to_die_muhaha()
 {
-	pid_t	pid;
+	pid_t		*pid;
+	t_lst_int	*started_procs;
 
-	// ft_printf("\tstarted waiting\n");
-	while ((pid = waitpid(-1, NULL, 0)) > 0 && !g_shinput->signaled_sigint)
+	started_procs = g_shdata.started_procs;
+	for (; started_procs; LTONEXT(started_procs))
 	{
-		// ft_printf("{red}waited for %d\n", pid);
+		pid = LCONT(started_procs, pid_t*);
+		waitpid(*pid, NULL, 0);
 	}
-	// ft_printf("\tended waiting\n");
+	ft_lstdel(&g_shdata.started_procs, &std_mem_del);
 
 	if (errno)
 	{

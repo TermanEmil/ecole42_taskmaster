@@ -107,6 +107,7 @@ int				ft_lstrm_at(t_list **head, size_t index, t_ldel_func *del);
 */
 
 void			ft_lstiter(t_list *lst, void (*f)(t_list *elem));
+void			ft_lstiter_mem(t_list *lst, void (*f)(void *content));
 void			ft_lst_rev_iter(t_list *lst, void (*f)(t_list *elem));
 t_list			*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 void			ft_lstiter_arg(t_list *lst, t_liter_arg *f, int argc, ...);

@@ -46,6 +46,7 @@ struct				s_shdata
 	t_bool			running_a_process;
 	t_bool			is_term;
 	t_sub_sh		*sub_sh;
+	t_lst_int		*started_procs;
 };
 
 void				read_process_non_term_input();

@@ -23,4 +23,5 @@ void	current_in_handle_sigint(t_shinput * const shinput)
 	}
 	else
 		event_exit(0);
+	ft_lstdel(&g_shdata.started_procs, &std_mem_del);
 }

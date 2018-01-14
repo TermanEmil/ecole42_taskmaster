@@ -14,17 +14,12 @@ static inline int			add_processed_value_(
 	t_str				dollar_key;
 	int					dollar_key_len;
 	t_rostr				htab_val;
-	t_hashmem			hashmem_key;
 
 	dollar_key = extract_var_name_from_keys(key->next);
 	if (dollar_key == NULL)
 		ft_err_mem(1);
 
-	hashmem_key = new_hashmem_str(dollar_key);	
-	htab_val = htab_get_strval(shvars->local, hashmem_key);
-	if (htab_val == NULL)
-		htab_val = htab_get_strval(shvars->env, hashmem_key);
-
+	htab_val = get_shvar(dollar_key, shvars);
 	dollar_key_len = ft_strlen(dollar_key);
 	free(dollar_key);
 

@@ -1,4 +1,6 @@
 -I./includes
+-I./includes/shell42
+-I./includes/taskmaster42
 -I./includes/utils
 
 -I./lib/eventlib/includes
@@ -7,3 +9,4 @@
 -I./lib/listlib/includes
 
 -I./lib/libft/includes
+-I./lib/libft/includes/ft_printf

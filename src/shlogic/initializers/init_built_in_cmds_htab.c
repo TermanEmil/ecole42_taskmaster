@@ -1,4 +1,5 @@
 #include "shell42.h"
+#include "taskmaster42.h"
 
 static void		add_cmd_(t_hashtab *htab, t_rostr cmd_name, const void *f)
 {
@@ -20,5 +21,7 @@ t_hashtab		*init_built_in_cmds_htab()
 	add_cmd_(htab, "export", &execute_cmd_setenv);
 	add_cmd_(htab, "unsetenv", &execute_cmd_unsetenv);
 	add_cmd_(htab, "unset", &execute_cmd_unsetenv);
+
+	add_cmd_(htab, "status", &execute_tskmast_cmd_status);
 	return htab;
 }

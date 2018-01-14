@@ -41,21 +41,21 @@ LIB_DIRS	=								\
 				$(LIBROOT)/hashtablib		\
 				$(LIBROOT)/termlib			\
 
-LIBS		=	$(foreach d, $(LIB_DIRS), $d/*.a) -ltermcap
+LIBS		=	$(foreach d, $(LIB_DIRS), $d/*.a) -ltermcap -lpthread
 
 INC_DIRS	=	$(shell find includes -type d)
 INC_PROJ	=	$(foreach d, $(INC_DIRS), -I $d)
 INC_FILES	=	$(shell find src -name '*.h')
 
-LIB_INCS	=	$(foreach d, $(LIB_DIRS), -I $d/includes)
+LIB_INCS	=	$(foreach d, $(LIB_DIRS), -I $d/includes -I $d/includes/*/)
 
 INCLUDES	=	$(INC_PROJ) $(LIB_INCS)
 
 # Compile can include flags or other stuff, so it can be useful when I
 # want to compile without flags
 
-COMPILE		=	$(CC) $(FLAGS) $(INCLUDES)
-# COMPILE		=	$(CC) $(INCLUDES) 
+# COMPILE		=	$(CC) $(FLAGS) $(INCLUDES)
+COMPILE		=	$(CC) $(INCLUDES) 
 
 # Finds all '.c' files in 'src'
 

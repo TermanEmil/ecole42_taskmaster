@@ -118,7 +118,8 @@ typedef struct	s_str_pair
 int				get_next_line(int const fd, char **line);
 int				ft_printf(const char *format, ...);
 int				ft_fprintf(int fd, const char *format, ...);
-int				ft_sprintf(char **buff, const char *format, ...);
+int				ft_sprintf(char *buff, const char *format, ...);
+int				ft_sprintf_mlc(char **buff, const char *format, ...);
 
 /*
 **	Memory function
@@ -194,6 +195,8 @@ void			ft_strrm_n(char *str, size_t index, size_t n);
 int				ft_str_stack_cat(char *dest, char const *str, size_t dest_len);
 void			ft_strncpy_terminate(char *dest, char const *str, size_t len);
 t_str			ft_strnew_raw(size_t const len);
+t_bool			ft_str_starts_with(t_rostr haystack, t_rostr needle);
+void			ft_str_mlc_sub(t_str *str, t_rostr needle, int start, int end);
 
 /*
 ** utf8
@@ -250,6 +253,7 @@ void			ft_putnewl();
 */
 
 int				ft_atoi(const char *str);
+int				ft_atoi_base(t_rostr str, int base);
 char			*ft_itoa(int n);
 char			*ft_bufitoa(long long n, char *buf);
 void			print_n_times(char *str, int n, int fd);

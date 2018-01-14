@@ -23,5 +23,6 @@ struct			s_shvars
 t_shvars		shvars_construct(const char **envp);
 void			shvars_destroy(t_shvars *shvars);
 t_str			*shvars_form_key_val_tab(const t_hashtab *htab);
+t_rostr			get_shvar(t_rostr key, const t_shvars *shvars);
 
 #endif

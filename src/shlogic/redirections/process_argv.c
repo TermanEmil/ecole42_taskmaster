@@ -57,10 +57,7 @@ pid_t	process_argv(t_pipe_env *pipe_env, t_cmd_env *cmd_env)
 		}
 		else
 		{
-			// ft_printf("{green}started %s %d\n", cmd_env->argv[0], pid);
-			// event_exit(0);
-			// waitpid(pid, NULL, 0);
-			// errno = 0;
+			ft_lstadd(&g_shdata.started_procs, ft_lstnew(&ret, sizeof(ret)));
 			return 0;
 		}
 	}
