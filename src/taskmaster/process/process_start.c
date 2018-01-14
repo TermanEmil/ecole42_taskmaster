@@ -61,7 +61,7 @@ int		process_start(t_process *process)
 		close_if_open(&process->stdin_fd[1]);
 		close_if_open(&process->stdout_fd[0]);
 		close_if_open(&process->stderr_fd[0]);
-		dup2_close(process->stdout_fd[0], STDIN_FILENO);
+		dup2_close(process->stdin_fd[0], STDIN_FILENO);
 		dup2_close(process->stdout_fd[1], STDOUT_FILENO);
 		dup2_close(process->stderr_fd[1], STDERR_FILENO);
 		process_std_redir_to_file(config->stdout, STDOUT_FILENO);
@@ -71,17 +71,20 @@ int		process_start(t_process *process)
 			env_tab = config->environment;
 		else
 			env_tab = shvars_form_key_val_tab(g_shdata.shvars.env);
+
 		run_command(config->launch_cmd, env_tab);
 	}
 	else
 	{
 		close_if_open(&process->stdin_fd[0]);
-		close_if_open(&process->stdin_fd[1]);
+		// close_if_open(&process->stdin_fd[1]);
+
+		// close_if_open(&process->stdout_fd[0]);
 		close_if_open(&process->stdout_fd[1]);
+		
+		// close_if_open(&process->stderr_fd[0]);
 		close_if_open(&process->stderr_fd[1]);
 
-		close_if_open(&process->stdout_fd[0]);
-		close_if_open(&process->stderr_fd[0]);
 
 		process->status.started = TRUE;
 		process->proc_time.start_time = time(NULL);

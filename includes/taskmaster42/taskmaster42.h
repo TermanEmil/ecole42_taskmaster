@@ -9,17 +9,15 @@
 # include "shell42.h"
 # include "termlib.h"
 
+#include <pthread.h>
+
 # define TASKMAST_ERROR(EXIT_BOOL, FORMAT, ...)					\
-			ft_prerror(EXIT_BOOL, FORMAT, __VA_ARGS__);			\
-			taskmast_log(FORMAT, __VA_ARGS__);					\
+			{													\
+				ft_prerror(EXIT_BOOL, FORMAT, __VA_ARGS__);		\
+				taskmast_log(FORMAT, __VA_ARGS__);				\
+			}													\
 
 # define TASKMAST_LOG(FORMAT, ...)								\
-			if (g_taskmast.logger.log_to_term)					\
-			{													\
-				ft_printf(FORMAT, __VA_ARGS__);					\
-				if (term_get_data()->is_raw && g_shdata.is_term)\
-					term_move_cursor_to_left_most();			\
-			}													\
 			taskmast_log(FORMAT, __VA_ARGS__);					\
 
 
@@ -38,11 +36,14 @@ typedef struct		s_tskmst_logger
 struct				s_taskmast
 {
 	t_tskmst_logger	logger;
+	pthread_t		waiter_thread;
+	t_bool			thread_should_die;
 	t_lst_proccfg	*proc_cfgs;
 	t_lst_proc		*procs;
 };
 
 void		taskmast_log(const char *format, ...);
+void		*continous_update_processes_stats();
 
 /*
 ** Cmds

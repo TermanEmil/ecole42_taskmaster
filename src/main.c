@@ -16,24 +16,76 @@ t_shinput		*g_shinput;
 t_current_input	*g_current_in;
 t_taskmast		g_taskmast;
 
-int		g_i = 0;
-
-void		*myThreadFun(void *argv)
+void		process_normal_exit(t_process *proc, int status)
 {
-	g_i = 10;
+	TASKMAST_LOG("Process %s, pid: %d exited with the code %d\n",
+		proc->name, proc->pid, WEXITSTATUS(status));
+}
+
+void		process_signal_exit(t_process *proc, int status)
+{
+	TASKMAST_LOG("Process %s, pid: %d signal exited with the signal %d\n",
+		proc->name, proc->pid, WTERMSIG(status));
+}
+
+void		process_stopped(t_process *proc, int status)
+{
+	TASKMAST_LOG("Process %s, pid: %d stopped with the signal %d\n",
+		proc->name, proc->pid, WSTOPSIG(status));
+}
+
+void		process_continue(t_process *proc, int status)
+{
+	TASKMAST_LOG("Process %s, pid: %d continued\n", proc->name, proc->pid);
+}
+
+void		wait_nohang_process(t_process *process)
+{
+	pid_t	pid;
+	int		status; 
+	pid_t	ret;
+
+	ret = TMP_FAIL_RETRY(waitpid(process->pid, &status, WNOHANG));
+	errno = 0;
+	if (ret == -1)
+	{
+		if (errno != ECHILD && errno != 0)
+		{
+			TASKMAST_ERROR(TRUE, "Failed to waitpid(): %s %d\n",
+				strerror(errno));
+		}
+		errno = 0;
+	}
+	else if (ret != 0)
+	{
+		if (WIFEXITED(status))
+			process_normal_exit(process, status);
+		else if (WIFSIGNALED(status))
+			process_signal_exit(process, status);
+		else if (WIFSTOPPED(status))
+			process_stopped(process, status);
+		else if (WIFCONTINUED(status))
+			process_continue(process, status);
+		else
+			TASKMAST_ERROR(FALSE, "Invalid waitpid() status: %d\n", status);
+	}
+}
+
+void		*continous_update_processes_stats()
+{
+	pid_t	pid;
+	int		status;
+
+	while (!g_taskmast.thread_should_die)
+	{
+		ft_lstiter_mem(g_taskmast.procs, (void (*)(void*))&wait_nohang_process);
+		usleep(150);
+	} 
 	return NULL;
 }
 
 int		main(int argc, const char **argv, const char **envp)
-{
-	pthread_t tid; 
-	printf("Before Thread\n");
-	pthread_create(&tid, NULL, &myThreadFun, NULL);
-	pthread_join(tid, NULL);
-	printf("After Thread %d\n", g_i);
-	
-	return 0;
-	
+{	
 	init_shell(envp);
 
 	// if (argc <= 1)
@@ -42,7 +94,7 @@ int		main(int argc, const char **argv, const char **envp)
 	term_restore_to_old_term_data();
 	init_taskmaster("./aux/taskmaster.cngf");
 	taskmast_start(&g_taskmast);
-	term_enable_raw_mode(term_get_data());
+	term_enable_raw_mode(term_get_data());  
 
 	if (g_shdata.is_term)
 	{

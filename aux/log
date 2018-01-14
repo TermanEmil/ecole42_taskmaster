@@ -1,4 +1,5 @@
 Started Taskmaster
-Process ls0 created
-Started ls0 PID: 11272
+Process cat0 created
+Started cat0 PID: 30590
+Process cat0, pid: 30590 signal exited with the signal 2
 Quit

@@ -1,4 +1,6 @@
 #include "taskmaster42.h"
+#include <sys/types.h>
+#include <signal.h>
 
 #define STATE_LEN_ 26
 #define DESCRIPT_LEN_ 64

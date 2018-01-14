@@ -1,6 +1,10 @@
 [taskmaster]
 logfile=./aux/log ; (main log file)
 
-[program:ls]
-command=/bin/ls
+;[program:ls]
+;command=/bin/ls
+;autostart=true
+
+[program:cat]
+command=/bin/cat
 autostart=true
