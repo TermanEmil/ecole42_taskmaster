@@ -27,6 +27,7 @@ void		process_signal_exit(t_process *proc, int status)
 	proc->proc_time.running_time = proc_uptime(proc);
 	proc->proc_time.finish_time = time(NULL);
 	proc->status.waitpid_status = status;
+	proc->status.sig_on_kill = WTERMSIG(status);
 	proc->status.completed = TRUE;
 
 	if (proc_has_to_be_restarted(proc, status, TRUE))
@@ -50,7 +51,7 @@ void		parse_process_waitpid(pid_t waited_pid, int wait_status)
 
 	if ((proc = lst_process_pidof(g_taskmast.procs, waited_pid)) == NULL)
 		return;
-	
+
 	if (WIFEXITED(wait_status))
 		process_normal_exit(proc, wait_status);
 	else if (WIFSIGNALED(wait_status))

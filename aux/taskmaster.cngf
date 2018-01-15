@@ -1,9 +1,8 @@
 [taskmaster]
-logfile=./aux/log ; (main log file)
+logfile=./aux/log
 
 [program:my_wait_prog]
 command=./debugging_procs/wait_time 1
-restart_mode=always
 
 [program:ls]
 command=/bin/ls
@@ -14,6 +13,11 @@ expected_exit_codes=[1]
 restart_attempts=2
 restart_mode=always
 
+[program:ls_to_file]
+command=/bin/ls
+autostart=true
+stdout=./aux/ls_result
+
 [program:cat]
 command=/bin/cat
 autostart=true
@@ -21,10 +25,14 @@ nprocs=10
 restart_attempts=2
 restart_mode=always
 
-;[program:cat]
-;command=/bin/cat
-;autostart=true
-;
-;[program:cat]
-;command=/bin/cat
-;autostart=true
+[program:unexpected_cat]
+command=/bin/cat
+autostart=true
+nprocs=2
+restart_attempts=5
+restart_mode=unexpected_exit
+expected_exit_codes=[0, 2]
+
+[program:not_started_prog]
+command=/bin/ls
+autostart=false

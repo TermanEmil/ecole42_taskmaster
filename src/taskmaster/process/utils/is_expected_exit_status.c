@@ -4,7 +4,7 @@
 ** The tab is a -1 ended array.
 */
 
-t_bool		is_expected_exit_cde(int code, const int *expected_exit_codes)
+t_bool		is_expected_exit_status(int code, const int *expected_exit_codes)
 {
 	if (expected_exit_codes == NULL || *expected_exit_codes == -1)
 		return code == EXIT_SUCCESS;

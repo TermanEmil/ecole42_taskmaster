@@ -5,6 +5,8 @@
 #include <fcntl.h>
 #include <time.h>
 #include <wait.h>
+#include <sys/types.h>
+#include <sys/stat.h>
 
 static int		process_piping_(t_rostr std_fd_val, int *pipe_fd)
 {
@@ -70,6 +72,7 @@ int		process_start(t_process *process)
 		else
 			env_tab = shvars_form_key_val_tab(g_shdata.shvars.env);
 
+		umask(process->config->umask);
 		run_command(config->launch_cmd, env_tab);
 	}
 	else

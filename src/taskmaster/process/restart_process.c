@@ -10,6 +10,8 @@ int			restart_process(t_process *proc)
 	proc->status.started = FALSE;
 	proc->status.completed = FALSE;
 	proc->status.stopped = FALSE;
+	proc->status.waitpid_status = 0;
+	proc->status.sig_on_kill = 0;
 	ft_bzero(&proc->proc_time, sizeof(proc->proc_time));
 	process_start(proc);
 	return 0;

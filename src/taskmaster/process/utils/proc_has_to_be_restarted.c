@@ -12,14 +12,15 @@ t_bool		proc_has_to_be_restarted(
 		return FALSE;
 	if (proc->config->restart_mode == e_never)
 		return FALSE;
-	if (proc->config->restart_mode == e_always)
+	if (proc->config->restart_mode == e_unexpected_exit)
 	{
-		if (consider_restart_attempts)
-			return proc->status.attempt < proc->config->restart_attempts;
-		else
-			return TRUE;
+		exit_codes = proc->config->expected_exit_codes;	
+		if (is_expected_exit_status(waitpid_status, exit_codes))
+			return FALSE;
 	}
 	
-	exit_codes = proc->config->expected_exit_codes;
-	return is_expected_exit_cde(WEXITSTATUS(waitpid_status), exit_codes);
+	if (consider_restart_attempts)
+		return proc->status.attempt < proc->config->restart_attempts;
+	else
+		return TRUE;
 }
