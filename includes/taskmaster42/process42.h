@@ -23,6 +23,19 @@ typedef enum		e_restart_mode
 	e_unexpected_exit
 }					t_restart_mode;
 
+/*
+** nprocs
+** autostart
+** restart_mode
+** success_time
+** restart_attempts
+** sig_stop
+** time_before_kill
+** umask
+** expected_exit_codes
+** environment
+** dir
+*/
 
 typedef struct		s_proc_config
 {
@@ -48,7 +61,7 @@ typedef struct		s_proc_status
 	t_bool			started;
 	t_bool			completed;
 	t_bool			stopped;
-	int				status;
+	int				waitpid_status;
 	int				attempt;
 }					t_proc_status;
 
@@ -56,6 +69,7 @@ typedef struct		s_proc_time
 {
 	int				running_time;
 	int				start_time;
+	int				finish_time;
 }					t_proc_time;
 
 typedef struct		s_process
@@ -72,6 +86,9 @@ typedef struct		s_process
 }					t_process;
 
 int			process_start(t_process *process);
+int			restart_process(t_process *proc);
+void		parse_process_waitpid(pid_t waited_pid, int wait_status);
+void		kill_processes(int signum, const t_lst_proc *procs);
 
 /*
 ** Constr & destr
@@ -92,6 +109,10 @@ t_str		new_process_name(const t_process *proc);
 void		close_process_open_fds(t_process *process);
 int			process_std_redir_to_file(t_rostr std_fd_val, int default_fd);
 t_rostr		get_proc_state_str(const t_process *proc);
+t_bool		is_expected_exit_cde(int code, const int *expected_exit_codes);
+t_bool		proc_has_to_be_restarted(const t_process *proc, int waitpid_status,
+				t_bool consider_restart_attempts);
+t_process	*lst_process_pidof(const t_lst_proc *procs, pid_t pid);
 
 /*
 ** Time

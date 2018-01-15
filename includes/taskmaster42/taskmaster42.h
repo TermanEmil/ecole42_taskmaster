@@ -36,10 +36,9 @@ typedef struct		s_tskmst_logger
 struct				s_taskmast
 {
 	t_tskmst_logger	logger;
-	pthread_t		waiter_thread;
-	t_bool			thread_should_die;
 	t_lst_proccfg	*proc_cfgs;
 	t_lst_proc		*procs;
+	t_bool			is_exiting;
 };
 
 void		taskmast_log(const char *format, ...);

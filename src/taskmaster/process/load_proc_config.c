@@ -21,6 +21,8 @@ static void			set_defaults_(t_proc_config *proc_config)
 	proc_config->restart_attempts = 0;
 	proc_config->sig_stop = SIGSTOP;
 	proc_config->umask = DEFAULT_UMASK;
+	proc_config->restart_attempts = 1;
+	proc_config->restart_mode = e_never;
 }
 
 static t_bool		parse_std_out_err_(t_str line, t_proc_config *proc_config)

@@ -26,6 +26,7 @@ int				ft_sprintf(char *buff, const char *format, ...)
 	if (data->str)
 	{
 		ft_memcpy(buff, data->str, data->printed_chars);
+		buff[data->printed_chars + 1] = '\0';
 		free(data->str);
 	}
 	else

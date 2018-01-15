@@ -2,10 +2,9 @@
 #include "taskmaster42_utils_.h"
 #include "shell42.h"
 
-#include <wait.h>
 #include <fcntl.h>
-#include <unistd.h>
 #include <time.h>
+#include <wait.h>
 
 static int		process_piping_(t_rostr std_fd_val, int *pipe_fd)
 {
@@ -33,13 +32,6 @@ int		process_start(t_process *process)
 	config = process->config;
 	if (config->launch_cmd == NULL || config->prog_name == NULL)
 		return -1;
-	
-	if (access(config->launch_cmd, X_OK) != 0)
-	{
-		TASKMAST_ERROR(FALSE, "%s: %s\n", config->launch_cmd, strerror(errno));
-		errno = 0;
-		return -1;
-	}
 
 	process_piping_(NULL, process->stdin_fd);
 	process_piping_(config->stdout, process->stdout_fd);
@@ -53,6 +45,12 @@ int		process_start(t_process *process)
 		close_process_open_fds(process);
 		return -1;
 	}
+	
+	setsid();
+	errno = 0;
+	// TASKMAST_ERROR(FALSE, "setsid(): %s\n", strerror(errno));
+
+	errno = 0;
 
 	if (process->pid == 0)
 	{
@@ -85,9 +83,9 @@ int		process_start(t_process *process)
 		// close_if_open(&process->stderr_fd[0]);
 		close_if_open(&process->stderr_fd[1]);
 
-
 		process->status.started = TRUE;
 		process->proc_time.start_time = time(NULL);
+		process->status.attempt++;
 		TASKMAST_LOG("Started %s PID: %d\n", process->name, process->pid);
 	}
 	return 0;

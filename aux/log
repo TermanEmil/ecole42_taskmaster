@@ -1,5 +1,47 @@
-Started Taskmaster
+Started Taskmaster, PID: 30650
+Process my_wait_prog0 created
+Process ls0 created
+Process ls1 created
 Process cat0 created
-Started cat0 PID: 30590
-Process cat0, pid: 30590 signal exited with the signal 2
+Process cat1 created
+Process cat2 created
+Process cat3 created
+Process cat4 created
+Process cat5 created
+Process cat6 created
+Process cat7 created
+Process cat8 created
+Process cat9 created
+Started my_wait_prog0 PID: 30651
+Started ls0 PID: 30652
+Started ls1 PID: 30653
+Started cat0 PID: 30654
+Started cat1 PID: 30655
+Started cat2 PID: 30656
+Started cat3 PID: 30657
+ls0, pid: 30652 exited. Exitcode: `0', uptime: 00:00:00
+Started ls0 PID: 30659
+ls1, pid: 30653 exited. Exitcode: `0', uptime: 00:00:00
+Started ls1 PID: 30660
+Started cat4 PID: 30658
+Started cat5 PID: 30661
+Started cat6 PID: 30662
+Started cat7 PID: 30663
+Started cat8 PID: 30664
+Started cat9 PID: 30665
+ls0, pid: 30659 exited. Exitcode: `0', uptime: 00:00:00
+ls1, pid: 30660 exited. Exitcode: `0', uptime: 00:00:00
+my_wait_prog0, pid: 30651 exited. Exitcode: `0', uptime: 00:00:01
+Freeing Taskmaster resources
+Killing all childprocesses
+Killed cat0, PID: 30654, uptime: 00:00:15
+Killed cat1, PID: 30655, uptime: 00:00:15
+Killed cat2, PID: 30656, uptime: 00:00:15
+Killed cat3, PID: 30657, uptime: 00:00:15
+Killed cat4, PID: 30658, uptime: 00:00:15
+Killed cat5, PID: 30661, uptime: 00:00:15
+Killed cat6, PID: 30662, uptime: 00:00:15
+Killed cat7, PID: 30663, uptime: 00:00:15
+Killed cat8, PID: 30664, uptime: 00:00:15
+Killed cat9, PID: 30665, uptime: 00:00:15
 Quit

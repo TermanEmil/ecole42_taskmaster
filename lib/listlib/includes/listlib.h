@@ -70,9 +70,10 @@ void			ft_lst_push_front(t_list **first, t_list *new_el);
 t_list			*ft_lstget(const t_list *head, int index);
 t_list			*ft_lst_get_last(t_list *head);
 int				ft_lstlen(t_list const *head);
-int				ft_lst_indexof(const t_list *lst,
-					const void *target, size_t target_size,
-					t_lst_cont_cmp *cmp);
+int				ft_lst_indexof(const t_list *lst, const void *target,
+					size_t target_size, t_lst_cont_cmp *cmp);
+t_list			*ft_lst_first(const t_list *lst, const void *target,
+					size_t target_size, t_lst_cont_cmp *cmp);
 
 /*
 ** Copy

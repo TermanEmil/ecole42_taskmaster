@@ -46,7 +46,7 @@ void	taskmast_start(t_taskmast *taskmast)
 		else
 			taskmast->logger.log_file_fd = fd;
 	}
-	TASKMAST_LOG("Started Taskmaster\n", "");
+	TASKMAST_LOG("Started Taskmaster, PID: %d\n", getpid());
 	create_processes_(taskmast);
 	ft_lstiter_mem(taskmast->procs, (void (*)(void*))&config_process_);
 }

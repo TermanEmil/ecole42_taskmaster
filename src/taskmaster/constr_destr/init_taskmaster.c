@@ -16,8 +16,12 @@ void		init_taskmaster(t_rostr config_file)
 	g_taskmast.logger.log_is_on = TRUE;	
 	g_taskmast.logger.log_to_term = TRUE;
 
-	ret = pthread_create(&g_taskmast.waiter_thread,
-		NULL, (void* (*)(void*))&continous_update_processes_stats, NULL);
-	if (ret != 0)
-		TASKMAST_ERROR(TRUE, "pthread_create(): %s\n", strerror(errno));
+	// ret = pthread_create(&g_taskmast.thread.waiter_thread, NULL,
+	// 	continous_update_processes_stats, NULL);
+	// if (ret != 0)
+	// 	TASKMAST_ERROR(TRUE, "pthread_create(): %s\n", strerror(errno));
+	// if (pthread_cond_init(&g_taskmast.thread.cv, NULL) != 0)
+	// 	TASKMAST_ERROR(TRUE, "pthread_cond_init(): %s\n", strerror(errno));
+	// if (pthread_mutex_init(&g_taskmast.thread.lock, NULL) != 0)
+	// 	TASKMAST_ERROR(TRUE, "pthread_mutex_init(): %s\n", strerror(errno));
 }

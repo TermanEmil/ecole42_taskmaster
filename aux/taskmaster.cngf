@@ -1,10 +1,30 @@
 [taskmaster]
 logfile=./aux/log ; (main log file)
 
-;[program:ls]
-;command=/bin/ls
-;autostart=true
+[program:my_wait_prog]
+command=./debugging_procs/wait_time 1
+restart_mode=always
+
+[program:ls]
+command=/bin/ls
+autostart=true
+nprocs=2
+success_time=10
+expected_exit_codes=[1]
+restart_attempts=2
+restart_mode=always
 
 [program:cat]
 command=/bin/cat
 autostart=true
+nprocs=10
+restart_attempts=2
+restart_mode=always
+
+;[program:cat]
+;command=/bin/cat
+;autostart=true
+;
+;[program:cat]
+;command=/bin/cat
+;autostart=true
