@@ -23,5 +23,6 @@ t_hashtab		*init_built_in_cmds_htab()
 	add_cmd_(htab, "unset", &execute_cmd_unsetenv);
 
 	add_cmd_(htab, "status", &execute_tskmast_cmd_status);
+	add_cmd_(htab, "start", &execute_tskmast_cmd_start);
 	return htab;
 }

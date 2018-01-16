@@ -4,7 +4,7 @@
 int			restart_process(t_process *proc)
 {
 	if (proc->status.state == e_stopped)
-		kill(proc->pid, SIGKILL);
+		kill_proc(SIGKILL, proc);
 
 	close_process_open_fds(proc);
 	proc->status.state = e_not_started;

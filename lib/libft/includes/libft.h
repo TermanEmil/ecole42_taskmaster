@@ -233,6 +233,7 @@ int				ft_toupper (int c);
 int				ft_tolower (int c);
 int				ft_isupper(int c);
 int				ft_islower(int c);
+t_bool			ft_str_is_numb(t_rostr str);
 
 /*
 ** Print functions

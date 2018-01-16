@@ -50,6 +50,7 @@ void		taskmast_log(const char *format, ...);
 */
 
 int			execute_tskmast_cmd_status();
+int			execute_tskmast_cmd_start(t_cmd_env *cmd_env);
 
 /*
 ** Constr & Destrs
@@ -67,11 +68,5 @@ int			taskmast_load_all_config(const t_shvars *shvars,
 
 void		taskmast_start(t_taskmast *taskmast);
 void		update_alarm();
-
-/*
-** Log utils
-*/
-
-void		taskmast_log_kill_exceed_time(const t_process *proc);
 
 #endif

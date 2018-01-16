@@ -40,7 +40,7 @@ autostart=false
 [program:time_before_kill]
 command=/bin/cat
 autostart=true
-time_before_kill=1
-nprocs=20
+time_before_kill=10
+nprocs=1
 restart_attempts=10
 restart_mode=always

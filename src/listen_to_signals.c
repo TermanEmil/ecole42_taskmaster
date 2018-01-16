@@ -44,19 +44,16 @@ static void	handle_sigchld_(int signum)
 
 static void	handle_sigalarm(int signum)
 {
+	t_process	*proc;
+
 	(void)signum;
-	if (g_taskmast.next_alarm == NULL)
+	proc = g_taskmast.next_alarm;
+	if (proc == NULL)
 		return;
-	if (kill(g_taskmast.next_alarm->pid, SIGKILL) == -1)
-	{
-		TASKMAST_ERROR(FALSE, "handle_alarm(): kill(): %s\n", strerror(errno));
-		errno = 0;
-	}
-	else
-	{
-		taskmast_log_kill_exceed_time(g_taskmast.next_alarm);
+	proc->proc_time.running_time = proc_uptime(proc);
+	proc->status.state = e_completed;
+	if (kill_proc(SIGKILL, proc) == 0)
 		g_taskmast.next_alarm = NULL;
-	}
 	update_alarm();
 }
 

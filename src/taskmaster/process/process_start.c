@@ -52,7 +52,7 @@ int		process_start(t_process *process)
 	{
 		t_str	*env_tab;
 
-		// Ignore CTRL-C in child procs.
+		// Ignore CTRL-C
 		if (setsid() == -1)
 			TASKMAST_ERROR(FALSE, "setsid(): %s\n", strerror(errno));
 		errno = 0;

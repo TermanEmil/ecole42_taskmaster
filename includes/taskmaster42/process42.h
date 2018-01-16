@@ -31,8 +31,7 @@ enum				e_proc_state
 	e_running,
 	e_stopped,
 	e_completed,
-	e_critic,
-	e_success
+	e_critic
 };
 
 /*
@@ -100,6 +99,7 @@ int			process_start(t_process *process);
 int			restart_process(t_process *proc);
 void		update_proc_state(t_process *proc);
 void		parse_process_waitpid(pid_t waited_pid, int wait_status);
+int			kill_proc(int signum, t_process *proc);
 void		kill_processes(int signum, const t_lst_proc *procs);
 t_rostr		get_proc_description(const t_process *proc);
 
@@ -125,7 +125,14 @@ t_rostr		get_proc_state_str(const t_process *proc);
 t_bool		is_expected_exit_status(int code, const int *expected_exit_codes);
 t_bool		proc_has_to_be_restarted(const t_process *proc, int waitpid_status,
 				t_bool consider_restart_attempts);
+
+/*
+** Getters
+*/
+
 t_process	*lst_process_pidof(const t_lst_proc *procs, pid_t pid);
+t_process	*lst_get_proc_with_name(const t_lst_proc* procs, t_rostr name);
+t_process	*lst_get_proc_with_pidname(const t_lst_proc* prcs, t_rostr pidname);
 
 /*
 ** Time
