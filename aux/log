@@ -1,4 +1,4 @@
-Started Taskmaster, PID: 20752
+Started Taskmaster, PID: 3768
 Process my_wait_prog_0 created
 Process ls_0 created
 Process ls_1 created
@@ -17,111 +17,91 @@ Process unexpected_cat_0 created
 Process unexpected_cat_1 created
 Process not_started_prog_0 created
 Process time_before_kill_0 created
-Started my_wait_prog_0 PID: 20753
-Started ls_0 PID: 20754
-Started ls_1 PID: 20755
-Started ls_to_file_0 PID: 20756
-Started cat_0 PID: 20757
-Started cat_1 PID: 20758
-Started cat_2 PID: 20759
-ls_0, pid: 20754 exited. Exitcode: `0', uptime: 00:00:01
-Started ls_0 PID: 20761
-ls_1, pid: 20755 exited. Exitcode: `0', uptime: 00:00:00
-Started ls_1 PID: 20762
-ls_to_file_0, pid: 20756 exited. Exitcode: `0', uptime: 00:00:00
-Started cat_3 PID: 20760
-Started cat_4 PID: 20763
-Started cat_5 PID: 20764
-Started cat_6 PID: 20765
-Started cat_7 PID: 20766
-Started cat_8 PID: 20767
-ls_0, pid: 20761 exited. Exitcode: `0', uptime: 00:00:00
-ls_1, pid: 20762 exited. Exitcode: `0', uptime: 00:00:00
-Started cat_9 PID: 20768
-Started unexpected_cat_0 PID: 20769
-Started unexpected_cat_1 PID: 20770
+Started my_wait_prog_0 PID: 3769
+Started ls_0 PID: 3770
+Started ls_1 PID: 3771
+Started ls_to_file_0 PID: 3772
+Started cat_0 PID: 3773
+Started cat_1 PID: 3774
+Started cat_2 PID: 3775
+ls_0, pid: 3770 exited. Exitcode: `0', uptime: 00:00:00
+ls_0 PID: 3770 restarting
+Started ls_0 PID: 3777
+ls_1, pid: 3771 exited. Exitcode: `0', uptime: 00:00:00
+ls_1 PID: 3771 restarting
+Started ls_1 PID: 3778
+ls_to_file_0, pid: 3772 exited. Exitcode: `0', uptime: 00:00:00
+Started cat_3 PID: 3776
+Started cat_4 PID: 3779
+Started cat_5 PID: 3780
+Started cat_6 PID: 3781
+Started cat_7 PID: 3782
+Started cat_8 PID: 3783
+ls_0, pid: 3777 exited. Exitcode: `0', uptime: 00:00:00
+ls_1, pid: 3778 exited. Exitcode: `0', uptime: 00:00:00
+Started cat_9 PID: 3784
+Started unexpected_cat_0 PID: 3785
+Started unexpected_cat_1 PID: 3786
 Setting alaram for time_before_kill_0
 
-Started time_before_kill_0 PID: 20771
-my_wait_prog_0, pid: 20753 exited. Exitcode: `0', uptime: 00:00:02
-Started cat_3 PID: 20773
-time_before_kill_0, pid: 20771 signal exited. Signal `Killed', uptime: 00:00:10
-Started time_before_kill_0 PID: 20774
-Killed time_before_kill_0, PID: 20771, uptime: 00:00:10
-
-Setting alaram for time_before_kill_0
-
-Started cat_3 PID: 20777
-time_before_kill_0, pid: 20774 signal exited. Signal `Killed', uptime: 00:00:10
-Started time_before_kill_0 PID: 20779
-Killed time_before_kill_0, PID: 20774, uptime: 00:00:10
+Started time_before_kill_0 PID: 3787
+my_wait_prog_0, pid: 3769 exited. Exitcode: `0', uptime: 00:00:01
+time_before_kill_0, pid: 3787 signal exited. Signal `Killed', uptime: 00:00:10
+time_before_kill_0 PID: 3787 restarting
+Started time_before_kill_0 PID: 3791
+Killed time_before_kill_0, PID: 3787, uptime: 00:00:10
 
 Setting alaram for time_before_kill_0
 
-Killed time_before_kill_0, PID: 20779, uptime: 00:00:10
+Killed time_before_kill_0, PID: 3791, uptime: 00:00:10
 
-time_before_kill_0, pid: 20779 signal exited. Signal `Killed', uptime: 00:00:10
-Started time_before_kill_0 PID: 20783
+time_before_kill_0, pid: 3791 signal exited. Signal `Killed', uptime: 00:00:10
+time_before_kill_0 PID: 3791 restarting
 Setting alaram for time_before_kill_0
 
-Killed time_before_kill_0, PID: 20783, uptime: 00:00:10
-
-time_before_kill_0, pid: 20783 signal exited. Signal `Killed', uptime: 00:00:10
-Setting alaram for time_before_kill_0
-
-Started time_before_kill_0 PID: 20790
-Killed time_before_kill_0, PID: 20790, uptime: 00:00:10
-
-time_before_kill_0, pid: 20790 signal exited. Signal `Killed', uptime: 00:00:10
-Setting alaram for time_before_kill_0
-
-Started time_before_kill_0 PID: 20794
-Started not_started_prog_0 PID: 20796
-not_started_prog_0, pid: 20796 exited. Exitcode: `0', uptime: 00:00:00
-Killed time_before_kill_0, PID: 20794, uptime: 00:00:10
-
-time_before_kill_0, pid: 20794 signal exited. Signal `Killed', uptime: 00:00:10
-Setting alaram for time_before_kill_0
-
-Started time_before_kill_0 PID: 20799
-time_before_kill_0, pid: 20799 signal exited. Signal `Killed', uptime: 00:00:10
-Started time_before_kill_0 PID: 20803
-Killed time_before_kill_0, PID: 20799, uptime: 00:00:10
+Started time_before_kill_0 PID: 3794
+Started not_started_prog_0 PID: 3795
+not_started_prog_0, pid: 3795 exited. Exitcode: `0', uptime: 00:00:01
+time_before_kill_0, pid: 3794 signal exited. Signal `Killed', uptime: 00:00:10
+time_before_kill_0 PID: 3794 restarting
+Started time_before_kill_0 PID: 3796
+Killed time_before_kill_0, PID: 3794, uptime: 00:00:10
 
 Setting alaram for time_before_kill_0
 
-Killed time_before_kill_0, PID: 20803, uptime: 00:00:10
+Killed time_before_kill_0, PID: 3796, uptime: 00:00:10
 
-time_before_kill_0, pid: 20803 signal exited. Signal `Killed', uptime: 00:00:10
-Started time_before_kill_0 PID: 20806
+time_before_kill_0, pid: 3796 signal exited. Signal `Killed', uptime: 00:00:10
+time_before_kill_0 PID: 3796 restarting
+Started time_before_kill_0 PID: 3800
 Setting alaram for time_before_kill_0
 
 Freeing Taskmaster resources
 Killing all childprocesses
-Killed cat_0, PID: 20757, uptime: 00:01:28
+Killed cat_0, PID: 3773, uptime: 00:00:41
 
-Killed cat_1, PID: 20758, uptime: 00:01:28
+Killed cat_1, PID: 3774, uptime: 00:00:41
 
-Killed cat_2, PID: 20759, uptime: 00:01:28
+Killed cat_2, PID: 3775, uptime: 00:00:41
 
-Killed cat_3, PID: 20777, uptime: 00:01:10
+Killed cat_3, PID: 3776, uptime: 00:00:41
 
-Killed cat_4, PID: 20763, uptime: 00:01:28
+Killed cat_4, PID: 3779, uptime: 00:00:41
 
-Killed cat_5, PID: 20764, uptime: 00:01:28
+Killed cat_5, PID: 3780, uptime: 00:00:41
 
-Killed cat_6, PID: 20765, uptime: 00:01:28
+Killed cat_6, PID: 3781, uptime: 00:00:41
 
-Killed cat_7, PID: 20766, uptime: 00:01:28
+Killed cat_7, PID: 3782, uptime: 00:00:41
 
-Killed cat_8, PID: 20767, uptime: 00:01:28
+Killed cat_8, PID: 3783, uptime: 00:00:41
 
-Killed cat_9, PID: 20768, uptime: 00:01:28
+Killed cat_9, PID: 3784, uptime: 00:00:41
 
-Killed unexpected_cat_0, PID: 20769, uptime: 00:01:28
+Killed unexpected_cat_0, PID: 3785, uptime: 00:00:41
 
-Killed unexpected_cat_1, PID: 20770, uptime: 00:01:28
+Killed unexpected_cat_1, PID: 3786, uptime: 00:00:41
 
-Killed time_before_kill_0, PID: 20806, uptime: 00:00:08
+Killed time_before_kill_0, PID: 3800, uptime: 00:00:01
 
 Quit

@@ -49,7 +49,7 @@ void		taskmast_log(const char *format, ...);
 ** Cmds
 */
 
-int			execute_tskmast_cmd_status();
+int			execute_tskmast_cmd_status(t_cmd_env *cmd_env);
 int			execute_tskmast_cmd_start(t_cmd_env *cmd_env);
 
 /*

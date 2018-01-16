@@ -1,38 +1,39 @@
 #include "taskmaster42.h"
 
-int		execute_tskmast_cmd_start(t_cmd_env *cmd_env)
+static int	basic_case_(const t_str *argv)
+{
+	if (ft_tab_len((const void**)argv) == 1 || ft_strequ(argv[1], "-h"))
+	{
+		ft_putstr("start -h PID131213 my_program_1\n"
+			"The not started programs are started, the others are forcefully "
+			"restarted\n");
+		return 0;
+	}
+	return 1;
+}
+
+int			execute_tskmast_cmd_start(t_cmd_env *cmd_env)
 {
 	const t_str		*argv;
 	t_process		*proc;
+	int				ret;
 
 	argv = cmd_env->argv;
-	if (ft_tab_len((const void**)argv) == 1)
-	{
-		ft_prerror(FALSE, "start: At least one argument is expected\n");
-		return -1;
-	}
+	if ((ret = basic_case_(argv)) != 1)
+		return ret;
 
 	argv++;
 	for (; *argv; argv++)
 	{
-		proc = lst_get_proc_with_pidname(g_taskmast.procs, *argv);
-		if (proc == NULL)
-			proc = lst_get_proc_with_name(g_taskmast.procs, *argv);
-		if (proc == NULL)
+		if ((proc = get_process_from_strcmd(g_taskmast.procs, *argv)) == NULL)
 			ft_prerror(FALSE, "start: %s Invalid pid or process name\n", *argv);
 		else
-			switch (proc->status.state)
-			{
-				case e_not_started:
-					process_start(proc);
-					break;
-				case e_completed:
-				case e_stopped:
-				case e_critic:
-				case e_running:
-					restart_process(proc);
-					break;
-			}
+		{
+			if (ISSTATE(proc, e_not_started))
+				process_start(proc);
+			else
+				restart_process(proc);
+		}
 	}
 	return 0;
 }

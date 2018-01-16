@@ -46,11 +46,53 @@ static void		print_general_status_(const t_lst_proc *procs)
 		running, finished, failed, stopped, total);
 }
 
-int				execute_tskmast_cmd_status()
+static void		print_status_of_the_argv_(const t_str *argv)
 {
-	size_t				color_len;
+	t_process			*proc;
+	enum e_proc_state	state;
+	t_lst_proc			*procs_buf;
 
-	print_general_status_(g_taskmast.procs);
+	argv++;
+	for (; *argv; argv++)
+	{
+		proc = get_process_from_strcmd(g_taskmast.procs, *argv);
+		state = 0;
+		if (proc == NULL)
+			state = get_state_from_str(*argv);
+		if (state == 0 && proc == NULL)
+		{
+			ft_prerror(FALSE, "status: %s Invalid pid, process name or state\n",
+				*argv);
+		}
+		if (proc)
+			print_proc_status_(proc);
+		else if (state != 0)
+		{
+			procs_buf = ft_lst_filter(g_taskmast.procs, &state,
+				sizeof(state), (t_lst_cont_cmp*)&proc_is_state);
+			ft_lstiter_mem(procs_buf, (void (*)(void*))&print_proc_status_);
+			ft_lstdel(&procs_buf, NULL);
+		}
+	}
+}
+
+static int		print_help_()
+{
+	ft_putstr(
+		"status [<process_name> | PID<process pid> | <process_state>]\n");
+	return 0;
+}
+
+int				execute_tskmast_cmd_status(t_cmd_env *cmd_env)
+{
+	size_t		color_len;
+
+	if (cmd_env->argv[1] != NULL)
+	{
+		if (ft_strequ(cmd_env->argv[1], "-h"))
+			return print_help_();
+		print_general_status_(g_taskmast.procs);
+	}
 	color_len = ft_strlen(C_RED) + ft_strlen(C_EOC);
 	ft_printf("%*s %*s %*s %-*s\n",
 		STATE_LEN_ - ft_strlen(C_EOC), C_LMAGENTA "State",
@@ -58,6 +100,9 @@ int				execute_tskmast_cmd_status()
 		PROC_NAME_LEN_, "Name",
 		PID_LEN_ + ft_strlen(C_LMAGENTA), "PID" C_EOC);
 
-	ft_lstiter_mem(g_taskmast.procs, (void (*)(void*))&print_proc_status_);
+	if (cmd_env->argv[1] != NULL)
+		print_status_of_the_argv_(cmd_env->argv);
+	else
+		ft_lstiter_mem(g_taskmast.procs, (void (*)(void*))&print_proc_status_);
 	return 0;
 }

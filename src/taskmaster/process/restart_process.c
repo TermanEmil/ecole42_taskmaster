@@ -3,6 +3,7 @@
 
 int			restart_process(t_process *proc)
 {
+	TASKMAST_LOG("%s PID: %d restarting\n", proc->name, proc->pid);
 	if (proc->status.state == e_stopped)
 		kill_proc(SIGKILL, proc);
 

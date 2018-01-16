@@ -74,7 +74,8 @@ int				ft_lst_indexof(const t_list *lst, const void *target,
 					size_t target_size, t_lst_cont_cmp *cmp);
 t_list			*ft_lst_first(const t_list *lst, const void *target,
 					size_t target_size, t_lst_cont_cmp *cmp);
-
+t_list			*ft_lst_filter(t_list *lst, void *cmp_data, size_t data_size,
+					t_lst_cont_cmp *cmp);
 /*
 ** Copy
 */

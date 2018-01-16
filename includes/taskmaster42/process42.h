@@ -27,7 +27,7 @@ typedef enum		e_restart_mode
 
 enum				e_proc_state
 {
-	e_not_started,
+	e_not_started = 1,
 	e_running,
 	e_stopped,
 	e_completed,
@@ -125,6 +125,7 @@ t_rostr		get_proc_state_str(const t_process *proc);
 t_bool		is_expected_exit_status(int code, const int *expected_exit_codes);
 t_bool		proc_has_to_be_restarted(const t_process *proc, int waitpid_status,
 				t_bool consider_restart_attempts);
+t_bool		proc_is_state(enum e_proc_state *state, const t_process *proc);
 
 /*
 ** Getters
@@ -133,6 +134,8 @@ t_bool		proc_has_to_be_restarted(const t_process *proc, int waitpid_status,
 t_process	*lst_process_pidof(const t_lst_proc *procs, pid_t pid);
 t_process	*lst_get_proc_with_name(const t_lst_proc* procs, t_rostr name);
 t_process	*lst_get_proc_with_pidname(const t_lst_proc* prcs, t_rostr pidname);
+t_process	*get_process_from_strcmd(const t_lst_proc *procs, t_rostr cmd);
+enum e_proc_state	get_state_from_str(t_rostr str);
 
 /*
 ** Time
