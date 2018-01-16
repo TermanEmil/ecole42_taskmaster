@@ -69,4 +69,11 @@ int			taskmast_load_all_config(const t_shvars *shvars,
 void		taskmast_start(t_taskmast *taskmast);
 void		update_alarm();
 
+/*
+** Utils
+*/
+
+void			execute_function_from_strcmd(t_rostr cmd, t_lst_proc *procs,
+					t_rostr err_msg, void (*f)(t_process*));
+
 #endif

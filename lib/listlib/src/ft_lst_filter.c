@@ -7,7 +7,7 @@
 
 t_list			*ft_lst_filter(
 					t_list *lst,
-					void *cmp_data,
+					const void *cmp_data,
 					size_t data_size,
 					t_lst_cont_cmp *cmp)
 {

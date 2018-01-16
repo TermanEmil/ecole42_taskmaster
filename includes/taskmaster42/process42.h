@@ -133,8 +133,9 @@ t_bool		proc_is_state(enum e_proc_state *state, const t_process *proc);
 
 t_process	*lst_process_pidof(const t_lst_proc *procs, pid_t pid);
 t_process	*lst_get_proc_with_name(const t_lst_proc* procs, t_rostr name);
+t_lst_proc	*lst_get_procs_matching_name(const t_lst_proc* procs, t_rostr name);
 t_process	*lst_get_proc_with_pidname(const t_lst_proc* prcs, t_rostr pidname);
-t_process	*get_process_from_strcmd(const t_lst_proc *procs, t_rostr cmd);
+t_lst_proc	*get_processes_from_strcmd(const t_lst_proc *procs, t_rostr cmd);
 enum e_proc_state	get_state_from_str(t_rostr str);
 
 /*

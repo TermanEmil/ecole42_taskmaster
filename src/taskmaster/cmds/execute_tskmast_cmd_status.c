@@ -48,38 +48,19 @@ static void		print_general_status_(const t_lst_proc *procs)
 
 static void		print_status_of_the_argv_(const t_str *argv)
 {
-	t_process			*proc;
-	enum e_proc_state	state;
-	t_lst_proc			*procs_buf;
-
 	argv++;
 	for (; *argv; argv++)
 	{
-		proc = get_process_from_strcmd(g_taskmast.procs, *argv);
-		state = 0;
-		if (proc == NULL)
-			state = get_state_from_str(*argv);
-		if (state == 0 && proc == NULL)
-		{
-			ft_prerror(FALSE, "status: %s Invalid pid, process name or state\n",
-				*argv);
-		}
-		if (proc)
-			print_proc_status_(proc);
-		else if (state != 0)
-		{
-			procs_buf = ft_lst_filter(g_taskmast.procs, &state,
-				sizeof(state), (t_lst_cont_cmp*)&proc_is_state);
-			ft_lstiter_mem(procs_buf, (void (*)(void*))&print_proc_status_);
-			ft_lstdel(&procs_buf, NULL);
-		}
+		execute_function_from_strcmd(*argv, g_taskmast.procs, "status:",
+			(void (*)(t_process*))&print_proc_status_);
 	}
 }
 
 static int		print_help_()
 {
 	ft_putstr(
-		"status [<process_name> | PID<process pid> | <process_state>]\n");
+		"status [<process_name> | PID<process pid> | <process_state>]\n"
+		"Wildcards included.\n");
 	return 0;
 }
 
