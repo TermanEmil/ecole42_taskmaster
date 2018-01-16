@@ -13,6 +13,7 @@
 #include <sys/ioctl.h>
 #include <signal.h>
 #include <wait.h>
+#include <string.h>
 #include "shell42.h"
 #include "eventlib.h"
 #include "ft_signals.h"
@@ -25,12 +26,11 @@ static void	handle_sigint(int signum)
 	g_shinput->signaled_sigint = TRUE;
 }
 
-static void	handle_sigchld(int signum)
+static void	handle_sigchld_(int signum)
 {
 	pid_t	pid;
 	int		status;
 
-	(void)signum;
 	while ((pid = waitpid(-1, &status, WNOHANG)) > 0)
 	{
 		if (!g_taskmast.is_exiting)
@@ -39,10 +39,30 @@ static void	handle_sigchld(int signum)
 	if (pid == -1 && errno != ECHILD)
 		TASKMAST_ERROR(FALSE, "waitpid(): %s\n", strerror(errno));
 	errno = 0;
+	update_alarm();
+}
+
+static void	handle_sigalarm(int signum)
+{
+	(void)signum;
+	if (g_taskmast.next_alarm == NULL)
+		return;
+	if (kill(g_taskmast.next_alarm->pid, SIGKILL) == -1)
+	{
+		TASKMAST_ERROR(FALSE, "handle_alarm(): kill(): %s\n", strerror(errno));
+		errno = 0;
+	}
+	else
+	{
+		taskmast_log_kill_exceed_time(g_taskmast.next_alarm);
+		g_taskmast.next_alarm = NULL;
+	}
+	update_alarm();
 }
 
 void		listen_to_signals(void)
 {
 	ft_sigaction(SIGINT, &handle_sigint);
-	signal(SIGCHLD, &handle_sigchld);
+	signal(SIGCHLD, &handle_sigchld_);
+	signal(SIGALRM, &handle_sigalarm);
 }

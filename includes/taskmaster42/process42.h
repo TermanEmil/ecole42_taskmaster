@@ -13,6 +13,8 @@
 # define STATE_COMPLETED	C_CYAN		"completed"		C_EOC
 # define STATE_CRITIC		C_RED		"critic"		C_EOC
 
+#define ISSTATE(PROC, STATE) ((PROC)->status.state == STATE)
+
 typedef t_list	t_lst_proc;
 typedef t_list	t_lst_proccfg;
 
@@ -22,6 +24,16 @@ typedef enum		e_restart_mode
 	e_never,
 	e_unexpected_exit
 }					t_restart_mode;
+
+enum				e_proc_state
+{
+	e_not_started,
+	e_running,
+	e_stopped,
+	e_completed,
+	e_critic,
+	e_success
+};
 
 /*
 ** nprocs
@@ -58,12 +70,10 @@ typedef struct		s_proc_config
 
 typedef struct		s_proc_status
 {
-	t_bool			started;
-	t_bool			completed;
-	t_bool			stopped;
-	int				waitpid_status;
-	int				attempt;
-	int				sig_on_kill;
+	enum e_proc_state	state;
+	int					waitpid_status;
+	int					attempt;
+	int					sig_on_kill;
 }					t_proc_status;
 
 typedef struct		s_proc_time
@@ -88,9 +98,10 @@ typedef struct		s_process
 
 int			process_start(t_process *process);
 int			restart_process(t_process *proc);
+void		update_proc_state(t_process *proc);
 void		parse_process_waitpid(pid_t waited_pid, int wait_status);
 void		kill_processes(int signum, const t_lst_proc *procs);
-t_rostr		get_proc_description(const t_process *proc, t_rostr state_str);
+t_rostr		get_proc_description(const t_process *proc);
 
 /*
 ** Constr & destr

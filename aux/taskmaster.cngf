@@ -36,3 +36,11 @@ expected_exit_codes=[0, 2]
 [program:not_started_prog]
 command=/bin/ls
 autostart=false
+
+[program:time_before_kill]
+command=/bin/cat
+autostart=true
+time_before_kill=1
+nprocs=20
+restart_attempts=10
+restart_mode=always

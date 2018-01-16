@@ -31,6 +31,7 @@ typedef struct		s_tskmst_logger
 	int				log_file_fd;
 	t_bool			log_is_on;
 	t_bool			log_to_term;
+
 }					t_tskmst_logger;
 
 struct				s_taskmast
@@ -39,10 +40,10 @@ struct				s_taskmast
 	t_lst_proccfg	*proc_cfgs;
 	t_lst_proc		*procs;
 	t_bool			is_exiting;
+	t_process		*next_alarm;
 };
 
 void		taskmast_log(const char *format, ...);
-void		*continous_update_processes_stats();
 
 /*
 ** Cmds
@@ -65,5 +66,12 @@ int			taskmast_load_all_config(const t_shvars *shvars,
 */
 
 void		taskmast_start(t_taskmast *taskmast);
+void		update_alarm();
+
+/*
+** Log utils
+*/
+
+void		taskmast_log_kill_exceed_time(const t_process *proc);
 
 #endif

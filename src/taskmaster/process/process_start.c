@@ -30,8 +30,8 @@ int		process_start(t_process *process)
 {
 	t_proc_config	*config;
 
-
 	config = process->config;
+
 	if (config->launch_cmd == NULL || config->prog_name == NULL)
 		return -1;
 
@@ -47,17 +47,16 @@ int		process_start(t_process *process)
 		close_process_open_fds(process);
 		return -1;
 	}
-	
-	setsid();
-	errno = 0;
-	// TASKMAST_ERROR(FALSE, "setsid(): %s\n", strerror(errno));
-
-	errno = 0;
 
 	if (process->pid == 0)
 	{
 		t_str	*env_tab;
 
+		// Ignore CTRL-C in child procs.
+		if (setsid() == -1)
+			TASKMAST_ERROR(FALSE, "setsid(): %s\n", strerror(errno));
+		errno = 0;
+		
 		close_if_open(&process->stdin_fd[1]);
 		close_if_open(&process->stdout_fd[0]);
 		close_if_open(&process->stderr_fd[0]);
@@ -86,9 +85,12 @@ int		process_start(t_process *process)
 		// close_if_open(&process->stderr_fd[0]);
 		close_if_open(&process->stderr_fd[1]);
 
-		process->status.started = TRUE;
+		process->status.state = e_running;
 		process->proc_time.start_time = time(NULL);
+		process->proc_time.finish_time = -1;
+		process->proc_time.running_time = 0;
 		process->status.attempt++;
+		update_alarm();
 		TASKMAST_LOG("Started %s PID: %d\n", process->name, process->pid);
 	}
 	return 0;

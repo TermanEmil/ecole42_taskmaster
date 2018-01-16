@@ -23,6 +23,22 @@ static void			set_defaults_(t_proc_config *proc_config)
 	proc_config->umask = DEFAULT_UMASK;
 	proc_config->restart_attempts = 1;
 	proc_config->restart_mode = e_never;
+	proc_config->time_before_kill = -1;
+}
+
+static void			get_time_before_kill(t_str line, t_proc_config *proc_config)
+{
+	int		value;
+
+	value = ft_atoi(ft_strchr(line, '=') + 1);
+	if (value < 0)
+	{
+		TASKMAST_ERROR(FALSE, "time_before_kill = %d: can't be negative. "
+			"It will be ignored\n", value);
+		proc_config->time_before_kill = -1;
+	}
+	else
+		proc_config->time_before_kill = value;
 }
 
 static t_bool		parse_std_out_err_(t_str line, t_proc_config *proc_config)
@@ -114,7 +130,7 @@ t_proc_config		load_proc_config(t_lst_str *lines, int *lines_count)
 		else if (ft_str_starts_with(line, "sig_stop="))
 			proc_config.sig_stop = ft_atoi(ft_strchr(line, '=') + 1);
 		else if (ft_str_starts_with(line, "time_before_kill="))
-			proc_config.time_before_kill = ft_atoi(ft_strchr(line, '=') + 1);
+			get_time_before_kill(line, &proc_config);
 		else if (ft_str_starts_with(line, "umask="))
 			proc_config.umask = read_umask(ft_strchr(line, '=') + 1);
 		else

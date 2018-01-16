@@ -14,7 +14,7 @@ static void		print_proc_status_(const t_process *proc)
 	strstate = get_proc_state_str(proc);
 	ft_printf("%*s %*s %*s %-*d\n",
 		STATE_LEN_, strstate,
-		DESCRIPT_LEN_, get_proc_description(proc, strstate),
+		DESCRIPT_LEN_, get_proc_description(proc),
 		PROC_NAME_LEN_, proc->name,
 		PID_LEN_, proc->pid);
 }
@@ -26,7 +26,7 @@ static void		print_general_status_(const t_lst_proc *procs)
 	int				stopped;
 	int				failed;
 	int				total;
-	t_rostr			proc_state;
+	const t_process	*proc;
 
 	running = 0;
 	finished = 0;
@@ -35,11 +35,11 @@ static void		print_general_status_(const t_lst_proc *procs)
 	total = ft_lstlen(procs);
 	for (; procs; LTONEXT(procs))
 	{
-		proc_state = get_proc_state_str(LCONT(procs, t_process*));
-		running += (ft_strequ(proc_state, STATE_RUNNING));
-		finished += (ft_strequ(proc_state, STATE_COMPLETED));
-		failed += (ft_strequ(proc_state, STATE_CRITIC));
-		stopped += (ft_strequ(proc_state, STATE_STOPPED));
+		proc = LCONT(procs, t_process*);
+		running += ISSTATE(proc, e_running);
+		finished += ISSTATE(proc, e_completed);
+		failed += ISSTATE(proc, e_critic);
+		stopped += ISSTATE(proc, e_stopped);
 	}
 	ft_printf(
 		"Running: %d, Completed: %d, Critic: %d, Stopped: %d, Total: %d\n",

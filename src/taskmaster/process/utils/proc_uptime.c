@@ -5,10 +5,16 @@ int		proc_uptime(const t_process *proc)
 {
 	int		elapsed_time;
 
-	if (!proc->status.started)
+	if (proc->status.state == e_not_started)
 		return 0;
-	else if (proc->status.stopped || proc->status.completed)
+	else if (
+			ISSTATE(proc, e_stopped) ||
+			ISSTATE(proc, e_completed) ||
+			ISSTATE(proc, e_critic)
+		)
+	{
 		return proc->proc_time.running_time;
+	}
 	else
 	{
 		return time(NULL) - proc->proc_time.start_time +
