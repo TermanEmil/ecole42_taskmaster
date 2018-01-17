@@ -86,59 +86,82 @@ void		destroy_proc_intance(t_taskmast *taskmast, t_process *proc)
 
 	ft_bzero(buf, sizeof(buf));
 	ft_sprintf(buf, "Destroyed %s.", proc->name);
-	// if (matching)
-	// 	ft_lstrm(&taskmast->procs, matching, (t_ldel_func*)&del_proc);
 	if (matching)
-		ft_lstrm(&taskmast->procs, matching, NULL);
+		ft_lstrm(&taskmast->procs, matching, (t_ldel_func*)&del_proc);
+	// if (matching)
+	// 	ft_lstrm(&taskmast->procs, matching, NULL);
 	TASKMAST_LOG(buf, "");
 }
 
 void		destroy_procs_with_config(
 				t_taskmast *taskmast,
-				const t_proc_config *cfg)
+				t_proc_config *cfg)
 {
-	t_lst_proc	*next;
-	t_lst_proc	*iter;
+	t_lst_proc		*next;
+	t_lst_proc		*iter;
+	t_proc_config	*proc_cfg;
 
 	for (iter = taskmast->procs; iter;)
 	{
 		next = LNEXT(iter);
-		if (LCONT(iter, t_process*)->config->hash == cfg->hash)
+		proc_cfg = LCONT(iter, t_process*)->config;
+		if (cfg->nb_of_procs > 0 && proc_cfg->hash == cfg->hash)
+		{
 			destroy_proc_intance(taskmast, LCONT(iter, t_process*));
+			cfg->nb_of_procs--;
+		}
 		iter = next;
 	}
 }
 
-// void		reload_proc_config(
-// 				t_taskmast *taskmast,
-// 				t_process *proc,
-// 				t_proc_config *new_proc_cfg)
-// {
+static void	update_procs_with_configs_(
+				t_lst_proc *procs,
+				t_lst_proccfg *cfgs)
+{
+	t_lst_proccfg	*lcfg;
 
-// }
+	for (; procs; LTONEXT(procs))
+	{
+		lcfg = ft_lst_first(cfgs, &(LCONT(procs, t_process*))->config->hash, 0,
+			(t_lst_cont_cmp*)&proc_cfg_hash_equ_);
+		if (lcfg == NULL) 
+			continue;
+		LCONT(procs, t_process*)->config = LCONT(lcfg, t_proc_config*);
+	}
+}
+
+static void	remove_dead_add_new_procs_(
+				t_taskmast *taskmast,
+				t_lst_proccfg *old_cfgs,
+				t_lst_proccfg *new_cfgs)
+{
+	t_lst_proccfg	*cpy_old_cfgs;
+	t_lst_proccfg	*cpy_new_cfgs;
+	t_lst_proc		*new_procs_index;
+
+	cpy_old_cfgs = ft_lstcpy(old_cfgs);
+	cpy_new_cfgs = ft_lstcpy(new_cfgs);
+	remove_the_same_cfgs_(&cpy_old_cfgs, &cpy_new_cfgs);
+
+	ft_lstiter_mem2(cpy_old_cfgs, taskmast,
+		(void (*)(void*, void*))&destroy_procs_with_config);
+
+	new_procs_index = ft_lst_get_last(taskmast->procs);
+	create_processes(taskmast, cpy_new_cfgs);
+	update_procs_with_configs_(taskmast->procs, new_cfgs);
+	ft_lstiter_mem(new_procs_index->next, (void (*)(void*))&process_start);
+
+	ft_lstdel(&cpy_old_cfgs, NULL);
+	ft_lstdel(&cpy_new_cfgs, NULL);
+}
 
 void		reload_taskmast_config(
 				t_taskmast *taskmast,
 				t_lst_proccfg *new_cfgs)
 {
-	t_lst_proccfg	*proc_cfgs_buf;
-	t_lst_proccfg	*new_cfgs_save;
-	t_lst_proc		*new_procs_index;
-
-	new_cfgs_save = ft_lstcpy(new_cfgs);
-	proc_cfgs_buf = ft_lstcpy(taskmast->proc_cfgs);
-	remove_the_same_cfgs_(&proc_cfgs_buf, &new_cfgs);
-
-	ft_printf("%d %d\n", ft_lstlen(proc_cfgs_buf), ft_lstlen(new_cfgs));
-
-	ft_lstiter_mem2(proc_cfgs_buf, taskmast,
-		(void (*)(void*, void*))&destroy_procs_with_config);
-	
-	new_procs_index = ft_lst_get_last(taskmast->procs);
-	create_processes(taskmast, new_cfgs);
-	ft_lstiter_mem(new_procs_index->next, (void (*)(void*))&process_start);
-	ft_lstdel(&taskmast->proc_cfgs, NULL);
-	taskmast->proc_cfgs = new_cfgs_save;
+	remove_dead_add_new_procs_(taskmast, taskmast->proc_cfgs, new_cfgs);
+	ft_lstdel(&taskmast->proc_cfgs, (t_ldel_func*)&del_proc_config);
+	taskmast->proc_cfgs = new_cfgs;
 }
 
 void		reload_configfile(
@@ -162,7 +185,6 @@ void		reload_configfile(
 	}
 
 	reload_taskmast_config(taskmast, dummy_taskmast.proc_cfgs);
-	// ft_lstdel(&dummy_taskmast.proc_cfgs, NULL);
 	dummy_taskmast.proc_cfgs = NULL;
 	del_taskmast(&dummy_taskmast);
 }
