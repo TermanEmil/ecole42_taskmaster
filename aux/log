@@ -1,4 +1,4 @@
-Started Taskmaster, PID: 7623
+Started Taskmaster, PID: 8188
 Process my_wait_prog_0 created
 Process ls_0 created
 Process ls_1 created
@@ -17,61 +17,233 @@ Process unexpected_cat_0 created
 Process unexpected_cat_1 created
 Process not_started_prog_0 created
 Process time_before_kill_0 created
-Started my_wait_prog_0 PID: 7624
-Started ls_0 PID: 7625
-Started ls_1 PID: 7626
-Started ls_to_file_0 PID: 7627
-Started cat_0 PID: 7628
-Started cat_1 PID: 7629
-Started cat_2 PID: 7630
-Started cat_3 PID: 7631
-Started cat_4 PID: 7632
-ls_0, pid: 7625 exited. Exitcode: `0', uptime: 00:00:00
-ls_0 PID: 7625 restarting
-Started ls_0 PID: 7634
-ls_1, pid: 7626 exited. Exitcode: `0', uptime: 00:00:00
-ls_1 PID: 7626 restarting
-Started ls_1 PID: 7635
-ls_to_file_0, pid: 7627 exited. Exitcode: `0', uptime: 00:00:00
-Started cat_5 PID: 7633
-Started cat_6 PID: 7636
-Started cat_7 PID: 7637
-Started cat_8 PID: 7638
-Started cat_9 PID: 7639
-Started unexpected_cat_0 PID: 7640
-ls_0, pid: 7634 exited. Exitcode: `0', uptime: 00:00:00
-Started unexpected_cat_1 PID: 7641
-ls_1, pid: 7635 exited. Exitcode: `0', uptime: 00:00:00
+Started my_wait_prog_0 PID: 8189
+Started ls_0 PID: 8190
+Started ls_1 PID: 8191
+Started ls_to_file_0 PID: 8192
+Started cat_0 PID: 8193
+Started cat_1 PID: 8194
+Started cat_2 PID: 8195
+Started cat_3 PID: 8196
+Started cat_4 PID: 8197
+Started cat_5 PID: 8198
+Started cat_6 PID: 8199
+Started cat_7 PID: 8200
+Started cat_8 PID: 8201
+ls_0, pid: 8190 exited. Exitcode: `0', uptime: 00:00:00.
+ls_0 PID: 8190 restarting
+Started ls_0 PID: 8203
+ls_1, pid: 8191 exited. Exitcode: `0', uptime: 00:00:00.
+ls_1 PID: 8191 restarting
+Started ls_1 PID: 8204
+ls_to_file_0, pid: 8192 exited. Exitcode: `0', uptime: 00:00:00.
+Started cat_9 PID: 8202
+Started unexpected_cat_0 PID: 8205
+Started unexpected_cat_1 PID: 8206
 Setting alaram for time_before_kill_0
 
-Started time_before_kill_0 PID: 7642
-my_wait_prog_0, pid: 7624 exited. Exitcode: `0', uptime: 00:00:01
+Started time_before_kill_0 PID: 8207
+ls_0, pid: 8203 exited. Exitcode: `0', uptime: 00:00:00.
+ls_1, pid: 8204 exited. Exitcode: `0', uptime: 00:00:00.
+my_wait_prog_0, pid: 8189 exited. Exitcode: `0', uptime: 00:00:01.
+time_before_kill_0, pid: 8207 signal exited. Signal `Killed', uptime: 00:00:10.
+time_before_kill_0 PID: 8207 restarting
+Started time_before_kill_0 PID: 8232
+Killed time_before_kill_0, PID: 8207, uptime: 00:00:10
+
+Setting alaram for time_before_kill_0
+
+Reloading Config File
+Destroyed ls_0.Destroyed ls_1.Process ls_0 created
+Process ls_1 created
+Started ls_0 PID: 8234
+Started ls_1 PID: 8235
 Freeing Taskmaster resources
 Killing all childprocesses
-Killed cat_0, PID: 7628, uptime: 00:00:09
+Quit
+ls_1, pid: 8235 exited. Exitcode: `0', uptime: 00:00:00.
+ls_1 PID: 8235 restarting
+Started ls_1 PID: 8236
+ls_0, pid: 8234 exited. Exitcode: `0', uptime: 00:00:00.
+ls_0 PID: 8234 restarting
+Started ls_0 PID: 8237
+ls_1, pid: 8236 exited. Exitcode: `0', uptime: 00:00:00.
+ls_1 PID: 8236 restarting
+Started ls_1 PID: 8238
+ls_0, pid: 8237 exited. Exitcode: `0', uptime: 00:00:00.
+ls_0 PID: 8237 restarting
+Started ls_0 PID: 8239
+ls_0, pid: 8239 exited. Exitcode: `0', uptime: 00:00:00.
+ls_1, pid: 8238 exited. Exitcode: `0', uptime: 00:00:00.
+Killed time_before_kill_0, PID: 8232, uptime: 00:00:10
 
-Killed cat_1, PID: 7629, uptime: 00:00:09
+time_before_kill_0, pid: 8232 signal exited. Signal `Killed', uptime: 00:00:10.
+time_before_kill_0 PID: 8232 restarting
+Setting alaram for time_before_kill_0
 
-Killed cat_2, PID: 7630, uptime: 00:00:09
+Started time_before_kill_0 PID: 8247
+Killed time_before_kill_0, PID: 8247, uptime: 00:00:10
 
-Killed cat_3, PID: 7631, uptime: 00:00:09
+time_before_kill_0, pid: 8247 signal exited. Signal `Killed', uptime: 00:00:10.
+time_before_kill_0 PID: 8247 restarting
+Setting alaram for time_before_kill_0
 
-Killed cat_4, PID: 7632, uptime: 00:00:09
+Started time_before_kill_0 PID: 8252
+Killed time_before_kill_0, PID: 8252, uptime: 00:00:10
 
-Killed cat_5, PID: 7633, uptime: 00:00:09
+time_before_kill_0, pid: 8252 signal exited. Signal `Killed', uptime: 00:00:10.
+time_before_kill_0 PID: 8252 restarting
+Setting alaram for time_before_kill_0
 
-Killed cat_6, PID: 7636, uptime: 00:00:09
+Started time_before_kill_0 PID: 8257
+Killed time_before_kill_0, PID: 8257, uptime: 00:00:10
 
-Killed cat_7, PID: 7637, uptime: 00:00:09
+time_before_kill_0, pid: 8257 signal exited. Signal `Killed', uptime: 00:00:10.
+time_before_kill_0 PID: 8257 restarting
+Setting alaram for time_before_kill_0
 
-Killed cat_8, PID: 7638, uptime: 00:00:09
+Started time_before_kill_0 PID: 8269
+Killed time_before_kill_0, PID: 8269, uptime: 00:00:10
 
-Killed cat_9, PID: 7639, uptime: 00:00:09
+time_before_kill_0, pid: 8269 signal exited. Signal `Killed', uptime: 00:00:10.
+time_before_kill_0 PID: 8269 restarting
+Setting alaram for time_before_kill_0
 
-Killed unexpected_cat_0, PID: 7640, uptime: 00:00:09
+Started time_before_kill_0 PID: 8279
+Killed time_before_kill_0, PID: 8279, uptime: 00:00:10
 
-Killed unexpected_cat_1, PID: 7641, uptime: 00:00:09
+time_before_kill_0, pid: 8279 signal exited. Signal `Killed', uptime: 00:00:10.
+time_before_kill_0 PID: 8279 restarting
+Setting alaram for time_before_kill_0
 
-Killed time_before_kill_0, PID: 7642, uptime: 00:00:09
+Started time_before_kill_0 PID: 8286
+Killed time_before_kill_0, PID: 8286, uptime: 00:00:10
+
+time_before_kill_0, pid: 8286 signal exited. Signal `Killed', uptime: 00:00:10.
+time_before_kill_0 PID: 8286 restarting
+Setting alaram for time_before_kill_0
+
+Started time_before_kill_0 PID: 8294
+Reloading Config File
+Killed cat_0, PID: 8193, uptime: 00:01:21
+
+Destroyed cat_0.Killed cat_1, PID: 8194, uptime: 00:01:21
+
+Destroyed cat_1.Killed cat_2, PID: 8195, uptime: 00:01:21
+
+Destroyed cat_2.Killed cat_3, PID: 8196, uptime: 00:01:21
+
+Destroyed cat_3.Killed cat_4, PID: 8197, uptime: 00:01:21
+
+Destroyed cat_4.Killed cat_5, PID: 8198, uptime: 00:01:21
+
+Destroyed cat_5.Killed cat_6, PID: 8199, uptime: 00:01:21
+
+Destroyed cat_6.Killed cat_7, PID: 8200, uptime: 00:01:21
+
+Destroyed cat_7.Killed cat_8, PID: 8201, uptime: 00:01:21
+
+Destroyed cat_8.Killed cat_9, PID: 8202, uptime: 00:01:21
+
+Destroyed cat_9.Process cat_0 created
+Process cat_1 created
+Process cat_2 created
+Process cat_3 created
+Process cat_4 created
+Process cat_5 created
+Process cat_6 created
+Process cat_7 created
+Process cat_8 created
+Process cat_9 created
+Process cat_10 created
+Process cat_11 created
+Process cat_12 created
+Process cat_13 created
+Process cat_14 created
+Started cat_0 PID: 8295
+Started cat_1 PID: 8296
+Started cat_2 PID: 8297
+Started cat_3 PID: 8298
+Started cat_4 PID: 8299
+Started cat_5 PID: 8300
+Started cat_6 PID: 8301
+Started cat_7 PID: 8302
+Started cat_8 PID: 8303
+Started cat_9 PID: 8304
+Started cat_10 PID: 8305
+Started cat_11 PID: 8306
+Started cat_12 PID: 8307
+Started cat_13 PID: 8308
+Started cat_14 PID: 8309
+Freeing Taskmaster resources
+Killing all childprocesses
+Quit
+Killed time_before_kill_0, PID: 8294, uptime: 00:00:10
+
+time_before_kill_0, pid: 8294 signal exited. Signal `Killed', uptime: 00:00:10.
+time_before_kill_0 PID: 8294 restarting
+Setting alaram for time_before_kill_0
+
+Started time_before_kill_0 PID: 8311
+Killed time_before_kill_0, PID: 8311, uptime: 00:00:10
+
+time_before_kill_0, pid: 8311 signal exited. Signal `Killed', uptime: 00:00:10.
+Reloading Config File
+Killed cat_0, PID: 8295, uptime: 00:00:50
+
+Destroyed cat_0.Killed cat_1, PID: 8296, uptime: 00:00:50
+
+Destroyed cat_1.Killed cat_2, PID: 8297, uptime: 00:00:50
+
+cat_2, pid: 8297 signal exited. Signal `Killed', uptime: 00:00:50.
+Destroyed cat_2.Killed cat_3, PID: 8298, uptime: 00:00:50
+
+Destroyed cat_3.Killed cat_4, PID: 8299, uptime: 00:00:50
+
+Destroyed cat_4.Killed cat_5, PID: 8300, uptime: 00:00:50
+
+Destroyed cat_5.Killed cat_6, PID: 8301, uptime: 00:00:50
+
+Destroyed cat_6.Killed cat_7, PID: 8302, uptime: 00:00:50
+
+Destroyed cat_7.Killed cat_8, PID: 8303, uptime: 00:00:50
+
+Destroyed cat_8.Killed cat_9, PID: 8304, uptime: 00:00:50
+
+cat_9, pid: 8304 signal exited. Signal `Killed', uptime: 00:00:50.
+Destroyed cat_9.Killed cat_10, PID: 8305, uptime: 00:00:50
+
+Destroyed cat_10.Killed cat_11, PID: 8306, uptime: 00:00:50
+
+Destroyed cat_11.Killed cat_12, PID: 8307, uptime: 00:00:50
+
+Destroyed cat_12.Killed cat_13, PID: 8308, uptime: 00:00:50
+
+Destroyed cat_13.Killed cat_14, PID: 8309, uptime: 00:00:50
+
+Destroyed cat_14.Killed unexpected_cat_0, PID: 8205, uptime: 00:02:11
+
+Destroyed unexpected_cat_0.Killed unexpected_cat_1, PID: 8206, uptime: 00:02:11
+
+Destroyed unexpected_cat_1.Process cat_0 created
+Process cat_1 created
+Process unexpected_cat_0 created
+Process unexpected_cat_1 created
+Started cat_0 PID: 8364
+Started cat_1 PID: 8365
+Started unexpected_cat_0 PID: 8366
+Started unexpected_cat_1 PID: 8367
+Freeing Taskmaster resources
+Killing all childprocesses
+Quit
+Freeing Taskmaster resources
+Killing all childprocesses
+Killed cat_0, PID: 8364, uptime: 00:00:11
+
+Killed cat_1, PID: 8365, uptime: 00:00:11
+
+Killed unexpected_cat_0, PID: 8366, uptime: 00:00:11
+
+Killed unexpected_cat_1, PID: 8367, uptime: 00:00:11
 
 Quit

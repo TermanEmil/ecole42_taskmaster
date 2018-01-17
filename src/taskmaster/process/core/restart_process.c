@@ -4,8 +4,11 @@
 int			restart_process(t_process *proc)
 {
 	TASKMAST_LOG("%s PID: %d restarting\n", proc->name, proc->pid);
-	if (proc->status.state == e_stopped)
+	if (ISSTATE(proc, e_stopped) || ISSTATE(proc, e_running))
+	{
 		kill_proc(SIGKILL, proc);
+		proc->status.state = e_completed;
+	}
 
 	close_process_open_fds(proc);
 	proc->status.state = e_not_started;

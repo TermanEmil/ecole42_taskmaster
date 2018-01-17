@@ -34,7 +34,12 @@ void				update_alarm()
 	int			dif;
 
 	next_to_alarm = get_closest_proc_to_kill_(g_taskmast.procs);
-	if (next_to_alarm == NULL || next_to_alarm == g_taskmast.next_alarm)
+	if (next_to_alarm == NULL)
+	{
+		g_taskmast.next_alarm = NULL;
+		return;
+	}
+	if (next_to_alarm == g_taskmast.next_alarm)
 		return;
 
 	dif = next_to_alarm->config->time_before_kill - proc_uptime(next_to_alarm);

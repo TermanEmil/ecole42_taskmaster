@@ -23,5 +23,6 @@ void			execute_function_from_strcmd(
 		ft_lstdel(&procs_buf, NULL);
 	}
 	else
-		ft_prerror(FALSE, "%s Invalid pid, process name or state\n", err_msg);
+		ft_prerror(FALSE, "%s %s: Invalid pid, process name or state\n",
+			err_msg, cmd);
 }

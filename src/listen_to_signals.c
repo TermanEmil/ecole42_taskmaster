@@ -31,7 +31,7 @@ static void	handle_sigchld_(int signum)
 	pid_t	pid;
 	int		status;
 
-	while ((pid = waitpid(-1, &status, WNOHANG)) > 0)
+	while ((pid = waitpid(-1, &status, WNOHANG | WUNTRACED | WCONTINUED)) > 0)
 	{
 		if (!g_taskmast.is_exiting)
 			parse_process_waitpid(pid, status);
@@ -57,9 +57,19 @@ static void	handle_sigalarm(int signum)
 	update_alarm();
 }
 
+static void	handle_sighub_(int signum)
+{
+	(void)signum;
+	term_restore_to_old_term_data();
+	TASKMAST_LOG("Reloading Config File\n", "");
+	reload_configfile(&g_taskmast, &g_shdata.shvars, g_taskmast.cfg_path);
+	term_enable_raw_mode(term_get_data());
+}
+
 void		listen_to_signals(void)
 {
 	ft_sigaction(SIGINT, &handle_sigint);
 	signal(SIGCHLD, &handle_sigchld_);
 	signal(SIGALRM, &handle_sigalarm);
+	signal(SIGHUP, &handle_sighub_);
 }

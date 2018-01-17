@@ -6,7 +6,7 @@
 
 void		process_normal_exit(t_process *proc, int status)
 {
-	TASKMAST_LOG("%s, pid: %d exited. Exitcode: `%d', uptime: %s\n",
+	TASKMAST_LOG("%s, pid: %d exited. Exitcode: `%d', uptime: %s.\n",
 		proc->name, proc->pid, WEXITSTATUS(status), proc_struptime(proc));
 
 	proc->proc_time.running_time = proc_uptime(proc);
@@ -21,7 +21,7 @@ void		process_normal_exit(t_process *proc, int status)
 
 void		process_signal_exit(t_process *proc, int status)
 {
-	TASKMAST_LOG("%s, pid: %d signal exited. Signal `%s', uptime: %s\n",
+	TASKMAST_LOG("%s, pid: %d signal exited. Signal `%s', uptime: %s.\n",
 		proc->name, proc->pid, strsignal(WTERMSIG(status)),
 		proc_struptime(proc));
 
@@ -38,13 +38,20 @@ void		process_signal_exit(t_process *proc, int status)
 
 void		process_stopped(t_process *proc, int status)
 {
-	TASKMAST_LOG("Process %s, pid: %d stopped with the signal %d\n",
+	TASKMAST_LOG("Process %s, pid: %d stopped with the signal %d.\n",
 		proc->name, proc->pid, WSTOPSIG(status));
+
+	proc->proc_time.running_time = proc_uptime(proc);
+	proc->proc_time.finish_time = time(NULL);
+	proc->status.waitpid_status = status;
+	proc->status.state = e_stopped;
 }
 
 void		process_continue(t_process *proc, int status)
 {
-	TASKMAST_LOG("Process %s, pid: %d continued\n", proc->name, proc->pid);
+	TASKMAST_LOG("Process %s, pid: %d continued.\n", proc->name, proc->pid);
+	proc->status.waitpid_status = status;
+	proc->status.state = e_running;
 }
 
 void		parse_process_waitpid(pid_t waited_pid, int wait_status)

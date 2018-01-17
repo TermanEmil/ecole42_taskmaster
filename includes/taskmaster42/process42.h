@@ -65,6 +65,7 @@ typedef struct		s_proc_config
 	t_str			*environment;
 	t_str			dir;
 	mode_t			umask;
+	size_t			hash;
 }					t_proc_config;
 
 typedef struct		s_proc_status
@@ -95,8 +96,15 @@ typedef struct		s_process
 	t_proc_time		proc_time;
 }					t_process;
 
+/*
+** Core
+*/
+
 int			process_start(t_process *process);
+int			stop_process(t_process *proc);
 int			restart_process(t_process *proc);
+int			continue_process(t_process *proc);
+
 void		update_proc_state(t_process *proc);
 void		parse_process_waitpid(pid_t waited_pid, int wait_status);
 int			kill_proc(int signum, t_process *proc);

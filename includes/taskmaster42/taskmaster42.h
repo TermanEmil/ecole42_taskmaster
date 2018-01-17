@@ -41,6 +41,7 @@ struct				s_taskmast
 	t_lst_proc		*procs;
 	t_bool			is_exiting;
 	t_process		*next_alarm;
+	t_rostr			cfg_path;
 };
 
 void		taskmast_log(const char *format, ...);
@@ -51,6 +52,8 @@ void		taskmast_log(const char *format, ...);
 
 int			execute_tskmast_cmd_status(t_cmd_env *cmd_env);
 int			execute_tskmast_cmd_start(t_cmd_env *cmd_env);
+int			execute_tskmast_cmd_stop(t_cmd_env *cmd_env);
+int			execute_tskmast_cmd_restart(t_cmd_env *cmd_env);
 
 /*
 ** Constr & Destrs
@@ -68,12 +71,15 @@ int			taskmast_load_all_config(const t_shvars *shvars,
 
 void		taskmast_start(t_taskmast *taskmast);
 void		update_alarm();
-
+void		reload_configfile(t_taskmast *taskmast, const t_shvars *shvars,
+				t_rostr file_path);
 /*
 ** Utils
 */
 
-void			execute_function_from_strcmd(t_rostr cmd, t_lst_proc *procs,
-					t_rostr err_msg, void (*f)(t_process*));
+void		taskmast_setup_logger(t_taskmast *taskmast);
+void		execute_function_from_strcmd(t_rostr cmd, t_lst_proc *procs,
+				t_rostr err_msg, void (*f)(t_process*));
+void		create_processes(t_taskmast *taskmast, t_lst_proccfg *proc_cfgs);
 
 #endif

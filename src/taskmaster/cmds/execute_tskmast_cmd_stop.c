@@ -3,14 +3,28 @@
 
 static int	print_help_()
 {
-	ft_putstr("stop [<program name> | PID<program pid>]\n");
+	ft_putstr("stop [<program name> | PID<program pid> | <state>]\n"
+		"Wildcards included.\n");
 	return 0;
 }
 
-int		execute_tskmast_cmd_stop(t_cmd_env *cmd_env)
+static void	stop_process_(t_process *proc)
 {
+	ft_printf("Stopping %s.\n", proc->name);
+	stop_process(proc);
+}
+
+int			execute_tskmast_cmd_stop(t_cmd_env *cmd_env)
+{
+	int		i;
+
 	if (cmd_env->argv[1] == NULL || ft_strequ(cmd_env->argv[1], "-h"))
 		return print_help_();
 	
+	for (i = 1; cmd_env->argv[i]; i++)
+	{
+		execute_function_from_strcmd(cmd_env->argv[i], g_taskmast.procs,
+			"stop:", (void (*)(t_process*))&stop_process_);
+	}
 	return 0;
 }

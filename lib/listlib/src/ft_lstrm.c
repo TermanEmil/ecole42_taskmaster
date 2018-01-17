@@ -28,7 +28,8 @@ static void		rec_rm(
 		if (prev == NULL)
 		{
 			LTONEXT(*head);
-			LPREV(*head) = NULL;
+			if (*head)
+				LPREV(*head) = NULL;
 		}
 		else
 		{

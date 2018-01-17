@@ -4,8 +4,7 @@ static int		print_help_()
 {
 	ft_putstr("start [<program_name> | PID<program pid> | state]\n"
 		"Wildcards includes. "
-		"The not started programs are started, the others are forcefully "
-		"restarted\n");
+		"The not started programs are started, the stopped are continued.");
 	return 0;
 }
 
@@ -26,10 +25,10 @@ static void	actual_proc_parsing_(t_process *proc)
 		ft_printf("Starting %s\n", proc->name);
 		process_start(proc);
 	}
-	else
+	else if (ISSTATE(proc, e_stopped))
 	{
-		ft_printf("Restarting %s PID: %d\n", proc->name, proc->pid);
-		restart_process(proc);
+		ft_printf("Continuing %s\n", proc->name);
+		continue_process(proc);
 	}
 }
 

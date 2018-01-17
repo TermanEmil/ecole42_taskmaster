@@ -24,5 +24,7 @@ t_hashtab		*init_built_in_cmds_htab()
 
 	add_cmd_(htab, "status", &execute_tskmast_cmd_status);
 	add_cmd_(htab, "start", &execute_tskmast_cmd_start);
+	add_cmd_(htab, "stop", &execute_tskmast_cmd_stop);
+	add_cmd_(htab, "restart", &execute_tskmast_cmd_restart);
 	return htab;
 }

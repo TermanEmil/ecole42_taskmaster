@@ -10,7 +10,7 @@ autostart=true
 nprocs=2
 success_time=10
 expected_exit_codes=[1]
-restart_attempts=2
+restart_attempts=3
 restart_mode=always
 
 [program:ls_to_file]
@@ -21,17 +21,17 @@ stdout=./aux/ls_result
 [program:cat]
 command=/bin/cat
 autostart=true
-nprocs=10
-restart_attempts=2
+nprocs=2
+restart_attempts=13
 restart_mode=always
 
 [program:unexpected_cat]
 command=/bin/cat
 autostart=true
 nprocs=2
-restart_attempts=5
+restart_attempts=10
 restart_mode=unexpected_exit
-expected_exit_codes=[0, 2]
+expected_exit_codes=[0, 9]
 
 [program:not_started_prog]
 command=/bin/ls
