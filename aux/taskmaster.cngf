@@ -1,23 +1,16 @@
 [taskmaster]
 logfile=./aux/log
 
-[program:cat]
-command=/bin/cat
+[program:ls]
+command=/bin/ls
 autostart=true
 nprocs=2
-restart_attempts=13
+restart_attempts=3
 restart_mode=always
 
 [program:cat]
 command=/bin/cat
 autostart=true
 nprocs=2
-restart_attempts=13
-restart_mode=always
-
-[program:cat]
-command=/bin/cat
-autostart=true
-nprocs=2
-restart_attempts=13
+restart_attempts=10
 restart_mode=always

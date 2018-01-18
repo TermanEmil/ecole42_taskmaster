@@ -1,0 +1,265 @@
+Freeing Taskmaster resources
+Killing all childprocesses
+Quit
+Stopping cat_0 PID: 11375.
+Process cat_0, pid: 11375 stopped with the signal 19.
+Stopped (signal) cat_0, PID: 11375, uptime: 00:00:37
+
+Stopping cat_1 PID: 11376.
+Process cat_1, pid: 11376 stopped with the signal 19.
+Stopped (signal) cat_1, PID: 11376, uptime: 00:00:37
+
+Stopping cat_2 PID: 11377.
+Process cat_2, pid: 11377 stopped with the signal 19.
+Stopped (signal) cat_2, PID: 11377, uptime: 00:00:37
+
+Stopping cat_3 PID: 11378.
+Process cat_3, pid: 11378 stopped with the signal 19.
+Stopped (signal) cat_3, PID: 11378, uptime: 00:00:37
+
+Stopping cat_4 PID: 11379.
+Process cat_4, pid: 11379 stopped with the signal 19.
+Stopped (signal) cat_4, PID: 11379, uptime: 00:00:37
+
+Stopping cat_5 PID: 11380.
+Process cat_5, pid: 11380 stopped with the signal 19.
+Stopped (signal) cat_5, PID: 11380, uptime: 00:00:37
+
+Stopping cat_6 PID: 11381.
+Process cat_6, pid: 11381 stopped with the signal 19.
+Stopped (signal) cat_6, PID: 11381, uptime: 00:00:37
+
+Stopping cat_7 PID: 11382.
+Process cat_7, pid: 11382 stopped with the signal 19.
+Stopped (signal) cat_7, PID: 11382, uptime: 00:00:37
+
+Stopping cat_8 PID: 11383.
+Process cat_8, pid: 11383 stopped with the signal 19.
+Stopped (signal) cat_8, PID: 11383, uptime: 00:00:37
+
+Stopping cat_9 PID: 11384.
+Process cat_9, pid: 11384 stopped with the signal 19.
+Stopped (signal) cat_9, PID: 11384, uptime: 00:00:37
+
+Stopping cat_10 PID: 11385.
+Process cat_10, pid: 11385 stopped with the signal 19.
+Stopped (signal) cat_10, PID: 11385, uptime: 00:00:37
+
+Stopping cat_11 PID: 11386.
+Process cat_11, pid: 11386 stopped with the signal 19.
+Stopped (signal) cat_11, PID: 11386, uptime: 00:00:37
+
+Stopping cat_12 PID: 11387.
+Process cat_12, pid: 11387 stopped with the signal 19.
+Stopped (signal) cat_12, PID: 11387, uptime: 00:00:37
+
+Stopping cat_13 PID: 11388.
+Process cat_13, pid: 11388 stopped with the signal 19.
+Stopped (signal) cat_13, PID: 11388, uptime: 00:00:37
+
+Stopping cat_14 PID: 11389.
+Process cat_14, pid: 11389 stopped with the signal 19.
+Stopped (signal) cat_14, PID: 11389, uptime: 00:00:37
+
+Stopping cat_15 PID: 11390.
+Process cat_15, pid: 11390 stopped with the signal 19.
+Stopped (signal) cat_15, PID: 11390, uptime: 00:00:37
+
+Stopping cat_16 PID: 11391.
+Process cat_16, pid: 11391 stopped with the signal 19.
+Stopped (signal) cat_16, PID: 11391, uptime: 00:00:37
+
+Stopping cat_17 PID: 11392.
+Process cat_17, pid: 11392 stopped with the signal 19.
+Stopped (signal) cat_17, PID: 11392, uptime: 00:00:37
+
+Stopping cat_18 PID: 11393.
+Process cat_18, pid: 11393 stopped with the signal 19.
+Stopped (signal) cat_18, PID: 11393, uptime: 00:00:37
+
+Stopping cat_19 PID: 11394.
+Process cat_19, pid: 11394 stopped with the signal 19.
+Stopped (signal) cat_19, PID: 11394, uptime: 00:00:37
+
+Killed cat_0, PID: 11375, uptime: 00:00:37
+
+cat_0, pid: 11375 signal exited. Signal `Killed', uptime: 00:00:37.
+cat_0 PID: 11375 restarting
+Started cat_0 PID: 11464
+Killed cat_1, PID: 11376, uptime: 00:00:37
+
+cat_1, pid: 11376 signal exited. Signal `Killed', uptime: 00:00:37.
+cat_1 PID: 11376 restarting
+Started cat_1 PID: 11465
+Killed cat_2, PID: 11377, uptime: 00:00:37
+
+cat_2, pid: 11377 signal exited. Signal `Killed', uptime: 00:00:37.
+cat_2 PID: 11377 restarting
+Started cat_2 PID: 11466
+cat_3, pid: 11378 signal exited. Signal `Killed', uptime: 00:00:37.
+cat_3 PID: 11378 restarting
+Started cat_3 PID: 11467
+Killed cat_3, PID: 11378, uptime: 00:00:37
+
+cat_4, pid: 11379 signal exited. Signal `Killed', uptime: 00:00:37.
+cat_4 PID: 11379 restarting
+Started cat_4 PID: 11468
+Killed cat_4, PID: 11379, uptime: 00:00:37
+
+cat_5, pid: 11380 signal exited. Signal `Killed', uptime: 00:00:37.
+cat_5 PID: 11380 restarting
+Started cat_5 PID: 11469
+Killed cat_5, PID: 11380, uptime: 00:00:37
+
+cat_6, pid: 11381 signal exited. Signal `Killed', uptime: 00:00:37.
+cat_6 PID: 11381 restarting
+Started cat_6 PID: 11470
+Killed cat_6, PID: 11381, uptime: 00:00:37
+
+cat_7, pid: 11382 signal exited. Signal `Killed', uptime: 00:00:37.
+cat_7 PID: 11382 restarting
+Started cat_7 PID: 11471
+Killed cat_7, PID: 11382, uptime: 00:00:37
+
+cat_8, pid: 11383 signal exited. Signal `Killed', uptime: 00:00:37.
+cat_8 PID: 11383 restarting
+Started cat_8 PID: 11472
+Killed cat_8, PID: 11383, uptime: 00:00:37
+
+cat_9, pid: 11384 signal exited. Signal `Killed', uptime: 00:00:37.
+cat_9 PID: 11384 restarting
+Started cat_9 PID: 11473
+Killed cat_9, PID: 11384, uptime: 00:00:37
+
+cat_10, pid: 11385 signal exited. Signal `Killed', uptime: 00:00:37.
+cat_10 PID: 11385 restarting
+Started cat_10 PID: 11474
+Killed cat_10, PID: 11385, uptime: 00:00:37
+
+cat_11, pid: 11386 signal exited. Signal `Killed', uptime: 00:00:37.
+cat_11 PID: 11386 restarting
+Started cat_11 PID: 11475
+Killed cat_11, PID: 11386, uptime: 00:00:37
+
+Killed cat_12, PID: 11387, uptime: 00:00:37
+
+cat_12, pid: 11387 signal exited. Signal `Killed', uptime: 00:00:37.
+cat_12 PID: 11387 restarting
+Started cat_12 PID: 11476
+cat_13, pid: 11388 signal exited. Signal `Killed', uptime: 00:00:37.
+cat_13 PID: 11388 restarting
+Started cat_13 PID: 11477
+Killed cat_13, PID: 11388, uptime: 00:00:37
+
+cat_14, pid: 11389 signal exited. Signal `Killed', uptime: 00:00:37.
+cat_14 PID: 11389 restarting
+Started cat_14 PID: 11478
+Killed cat_14, PID: 11389, uptime: 00:00:37
+
+Killed cat_15, PID: 11390, uptime: 00:00:37
+
+cat_15, pid: 11390 signal exited. Signal `Killed', uptime: 00:00:37.
+cat_15 PID: 11390 restarting
+Started cat_15 PID: 11479
+cat_16, pid: 11391 signal exited. Signal `Killed', uptime: 00:00:37.
+cat_16 PID: 11391 restarting
+Started cat_16 PID: 11480
+Killed cat_16, PID: 11391, uptime: 00:00:37
+
+cat_17, pid: 11392 signal exited. Signal `Killed', uptime: 00:00:37.
+cat_17 PID: 11392 restarting
+Started cat_17 PID: 11481
+Killed cat_17, PID: 11392, uptime: 00:00:37
+
+Killed cat_18, PID: 11393, uptime: 00:00:37
+
+cat_18, pid: 11393 signal exited. Signal `Killed', uptime: 00:00:37.
+cat_18 PID: 11393 restarting
+Started cat_18 PID: 11482
+cat_19, pid: 11394 signal exited. Signal `Killed', uptime: 00:00:37.
+cat_19 PID: 11394 restarting
+Started cat_19 PID: 11483
+Killed cat_19, PID: 11394, uptime: 00:00:37
+
+Stopping cat_0 PID: 11464.
+Process cat_0, pid: 11464 stopped with the signal 19.
+Stopped (signal) cat_0, PID: 11464, uptime: 00:00:09
+
+Stopping cat_1 PID: 11465.
+Process cat_1, pid: 11465 stopped with the signal 19.
+Stopped (signal) cat_1, PID: 11465, uptime: 00:00:09
+
+Stopping cat_2 PID: 11466.
+Process cat_2, pid: 11466 stopped with the signal 19.
+Stopped (signal) cat_2, PID: 11466, uptime: 00:00:09
+
+Stopping cat_3 PID: 11467.
+Process cat_3, pid: 11467 stopped with the signal 19.
+Stopped (signal) cat_3, PID: 11467, uptime: 00:00:09
+
+Stopping cat_4 PID: 11468.
+Process cat_4, pid: 11468 stopped with the signal 19.
+Stopped (signal) cat_4, PID: 11468, uptime: 00:00:09
+
+Stopping cat_5 PID: 11469.
+Process cat_5, pid: 11469 stopped with the signal 19.
+Stopped (signal) cat_5, PID: 11469, uptime: 00:00:09
+
+Stopping cat_6 PID: 11470.
+Process cat_6, pid: 11470 stopped with the signal 19.
+Stopped (signal) cat_6, PID: 11470, uptime: 00:00:09
+
+Stopping cat_7 PID: 11471.
+Process cat_7, pid: 11471 stopped with the signal 19.
+Stopped (signal) cat_7, PID: 11471, uptime: 00:00:09
+
+Stopping cat_8 PID: 11472.
+Process cat_8, pid: 11472 stopped with the signal 19.
+Stopped (signal) cat_8, PID: 11472, uptime: 00:00:09
+
+Stopping cat_9 PID: 11473.
+Process cat_9, pid: 11473 stopped with the signal 19.
+Stopped (signal) cat_9, PID: 11473, uptime: 00:00:09
+
+Stopping cat_10 PID: 11474.
+Process cat_10, pid: 11474 stopped with the signal 19.
+Stopped (signal) cat_10, PID: 11474, uptime: 00:00:09
+
+Stopping cat_11 PID: 11475.
+Process cat_11, pid: 11475 stopped with the signal 19.
+Stopped (signal) cat_11, PID: 11475, uptime: 00:00:09
+
+Stopping cat_12 PID: 11476.
+Process cat_12, pid: 11476 stopped with the signal 19.
+Stopped (signal) cat_12, PID: 11476, uptime: 00:00:09
+
+Stopping cat_13 PID: 11477.
+Process cat_13, pid: 11477 stopped with the signal 19.
+Stopped (signal) cat_13, PID: 11477, uptime: 00:00:09
+
+Stopping cat_14 PID: 11478.
+Process cat_14, pid: 11478 stopped with the signal 19.
+Stopped (signal) cat_14, PID: 11478, uptime: 00:00:09
+
+Stopping cat_15 PID: 11479.
+Process cat_15, pid: 11479 stopped with the signal 19.
+Stopped (signal) cat_15, PID: 11479, uptime: 00:00:09
+
+Stopping cat_16 PID: 11480.
+Process cat_16, pid: 11480 stopped with the signal 19.
+Stopped (signal) cat_16, PID: 11480, uptime: 00:00:09
+
+Stopping cat_17 PID: 11481.
+Process cat_17, pid: 11481 stopped with the signal 19.
+Stopped (signal) cat_17, PID: 11481, uptime: 00:00:09
+
+Stopping cat_18 PID: 11482.
+Process cat_18, pid: 11482 stopped with the signal 19.
+Stopped (signal) cat_18, PID: 11482, uptime: 00:00:09
+
+Stopping cat_19 PID: 11483.
+Process cat_19, pid: 11483 stopped with the signal 19.
+Stopped (signal) cat_19, PID: 11483, uptime: 00:00:09
+
+Reloading Config File
+process cat: No command specified

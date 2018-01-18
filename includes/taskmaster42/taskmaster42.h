@@ -71,8 +71,18 @@ int			taskmast_load_all_config(const t_shvars *shvars,
 
 void		taskmast_start(t_taskmast *taskmast);
 void		update_alarm();
-void		reload_configfile(t_taskmast *taskmast, const t_shvars *shvars,
-				t_rostr file_path);
+void		destroy_proc_intance(t_taskmast *taskmast, t_process *proc);
+
+/*
+** Reloading.
+*/
+
+void		reload_taskmast_config(t_taskmast *taskmast,
+				const t_shvars *shvars, t_rostr file_path);
+void		reload_procs_config(t_taskmast *taskmast, t_lst_proccfg *new_cfgs);
+void		destroy_procs_with_config(t_taskmast *taskmast,
+				const t_proc_config *cfg);
+
 /*
 ** Utils
 */

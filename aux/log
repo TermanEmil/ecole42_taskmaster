@@ -1,57 +1,36 @@
-Started Taskmaster, PID: 5676
+Process ls_0 created
+Process ls_1 created
 Process cat_0 created
 Process cat_1 created
-Process cat_2 created
-Process cat_3 created
-Process cat_4 created
-Process cat_5 created
-Started cat_0 PID: 5677
-Started cat_1 PID: 5678
-Started cat_2 PID: 5679
-Started cat_3 PID: 5680
-Started cat_4 PID: 5681
-Started cat_5 PID: 5682
-Reloading Config File
+Started ls_0 PID: 17626
+Started ls_1 PID: 17627
+Started cat_0 PID: 17628
+Started cat_1 PID: 17629
 Freeing Taskmaster resources
 Killing all childprocesses
 Quit
+ls_0, pid: 17626 exited. Exitcode: `0', uptime: 00:00:00.
+ls_0 PID: 17626 restarting
+Started ls_0 PID: 17630
+ls_1, pid: 17627 exited. Exitcode: `0', uptime: 00:00:00.
+ls_1 PID: 17627 restarting
+Started ls_1 PID: 17631
+ls_1, pid: 17631 exited. Exitcode: `0', uptime: 00:00:00.
+ls_1 PID: 17631 restarting
+Started ls_1 PID: 17632
+ls_0, pid: 17630 exited. Exitcode: `0', uptime: 00:00:00.
+ls_0 PID: 17630 restarting
+Started ls_0 PID: 17633
+ls_1, pid: 17632 exited. Exitcode: `0', uptime: 00:00:00.
+ls_0, pid: 17633 exited. Exitcode: `0', uptime: 00:00:00.
 Reloading Config File
-cat_0, pid: 5677 signal exited. Signal `Killed', uptime: 00:00:20.
-Killed cat_0, PID: 5677, uptime: 00:00:20
-
-Destroyed cat_0.Killed cat_1, PID: 5678, uptime: 00:00:20
-
-Destroyed cat_1.Killed cat_2, PID: 5679, uptime: 00:00:20
-
-Destroyed cat_2.Killed cat_3, PID: 5680, uptime: 00:00:20
-
-Destroyed cat_3.Freeing Taskmaster resources
-Killing all childprocesses
-Quit
-Reloading Config File
-Process cat_6 created
-Process cat_7 created
-Process cat_8 created
-Process cat_9 created
-Started cat_6 PID: 5729
-Started cat_7 PID: 5730
-Started cat_8 PID: 5731
-Started cat_9 PID: 5732
 Freeing Taskmaster resources
 Killing all childprocesses
 Quit
 Freeing Taskmaster resources
 Killing all childprocesses
-Killed cat_4, PID: 5681, uptime: 00:00:38
+Killed cat_0, PID: 17628, uptime: 00:00:09
 
-Killed cat_5, PID: 5682, uptime: 00:00:38
-
-Killed cat_6, PID: 5729, uptime: 00:00:05
-
-Killed cat_7, PID: 5730, uptime: 00:00:05
-
-Killed cat_8, PID: 5731, uptime: 00:00:05
-
-Killed cat_9, PID: 5732, uptime: 00:00:05
+Killed cat_1, PID: 17629, uptime: 00:00:09
 
 Quit

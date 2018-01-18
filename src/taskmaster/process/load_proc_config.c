@@ -115,7 +115,9 @@ t_proc_config		load_proc_config(t_lst_str *lines, int *lines_count)
 	char			*semicolon;
 	t_proc_config	proc_config;
 	regex_t			preg;
+	t_lst_str		*first_line;
 
+	first_line = lines;
 	set_defaults_(&proc_config);
 	proc_config.prog_name = ft_strdup(ft_strchr(LCONT(lines, t_str), ':') + 1);
 	*ft_strchr(proc_config.prog_name, ']') = '\0';
@@ -154,6 +156,9 @@ t_proc_config		load_proc_config(t_lst_str *lines, int *lines_count)
 		}
 	}
 	process_default_vals_(&proc_config);
+
+	if (lines == NULL)
+		lines = ft_lst_get_last(first_line);
 	proc_config.hash = get_proc_cfg_hash(lines, *lines_count);
 	return proc_config;
 }

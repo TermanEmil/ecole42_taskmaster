@@ -62,7 +62,7 @@ static void	handle_sighub_(int signum)
 	(void)signum;
 	term_restore_to_old_term_data();
 	TASKMAST_LOG("Reloading Config File\n", "");
-	reload_configfile(&g_taskmast, &g_shdata.shvars, g_taskmast.cfg_path);
+	reload_taskmast_config(&g_taskmast, &g_shdata.shvars, g_taskmast.cfg_path);
 	term_enable_raw_mode(term_get_data());
 }
 
