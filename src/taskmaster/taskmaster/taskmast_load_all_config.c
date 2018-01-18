@@ -42,25 +42,30 @@ int					load_taskmaster_config(
 						t_lst_str *lines)
 {
 	t_str		line;
+	t_str		val;
 	char		*semicolon;
 	int			i;
 
 	for (i = 0; lines; LTONEXT(lines), i++)
 	{
 		line = LCONT(lines, t_str);
+
 		if (ft_strequ(line, ""))
 			break;
 		if ((semicolon = ft_strchr(line, ';')) != NULL)
 			*semicolon = '\0';
 
+		val = ft_strchr(line, '=') + 1;
 		if (ft_str_starts_with(line, "logfile="))
 		{
 			if (taskmast->logger.log_file_path)
 				free(taskmast->logger.log_file_path);
 
 			taskmast->logger.log_file_path = regex_get_match("[a-zA-Z0-9_./]*",
-				ft_strchr(line, '=') + 1);
+				val);
 		}
+		else if (ft_str_starts_with(line, "log_to_term="))
+			taskmast->logger.log_to_term = ft_strequ(val, "true");
 		else
 			TASKMAST_ERROR(FALSE, "%s: Invalid field\n", line);
 	}

@@ -1,36 +1,141 @@
+Started Taskmaster, PID: 17651
 Process ls_0 created
 Process ls_1 created
 Process cat_0 created
 Process cat_1 created
-Started ls_0 PID: 17626
-Started ls_1 PID: 17627
-Started cat_0 PID: 17628
-Started cat_1 PID: 17629
-Freeing Taskmaster resources
-Killing all childprocesses
-Quit
-ls_0, pid: 17626 exited. Exitcode: `0', uptime: 00:00:00.
-ls_0 PID: 17626 restarting
-Started ls_0 PID: 17630
-ls_1, pid: 17627 exited. Exitcode: `0', uptime: 00:00:00.
-ls_1 PID: 17627 restarting
-Started ls_1 PID: 17631
-ls_1, pid: 17631 exited. Exitcode: `0', uptime: 00:00:00.
-ls_1 PID: 17631 restarting
-Started ls_1 PID: 17632
-ls_0, pid: 17630 exited. Exitcode: `0', uptime: 00:00:00.
-ls_0 PID: 17630 restarting
-Started ls_0 PID: 17633
-ls_1, pid: 17632 exited. Exitcode: `0', uptime: 00:00:00.
-ls_0, pid: 17633 exited. Exitcode: `0', uptime: 00:00:00.
-Reloading Config File
-Freeing Taskmaster resources
-Killing all childprocesses
-Quit
-Freeing Taskmaster resources
-Killing all childprocesses
-Killed cat_0, PID: 17628, uptime: 00:00:09
+Process killer_cat_0 created
+Started ls_0 PID: 17652
+Started ls_1 PID: 17653
+Started cat_0 PID: 17654
+Started cat_1 PID: 17655
+Setting alaram for killer_cat_0
 
-Killed cat_1, PID: 17629, uptime: 00:00:09
+Started killer_cat_0 PID: 17656
+ls_0, pid: 17652 exited. Exitcode: `0', uptime: 00:00:00.
+ls_0 PID: 17652 restarting
+Started ls_0 PID: 17657
+ls_1, pid: 17653 exited. Exitcode: `0', uptime: 00:00:00.
+ls_1 PID: 17653 restarting
+Started ls_1 PID: 17658
+ls_0, pid: 17657 exited. Exitcode: `0', uptime: 00:00:00.
+ls_0 PID: 17657 restarting
+Started ls_0 PID: 17659
+ls_1, pid: 17658 exited. Exitcode: `0', uptime: 00:00:00.
+ls_1 PID: 17658 restarting
+Started ls_1 PID: 17660
+ls_0, pid: 17659 exited. Exitcode: `0', uptime: 00:00:00.
+ls_1, pid: 17660 exited. Exitcode: `0', uptime: 00:00:00.
+killer_cat_0, pid: 17656 signal exited. Signal `Killed', uptime: 00:00:10.
+killer_cat_0 PID: 17656 restarting
+Started killer_cat_0 PID: 17663
+Killed killer_cat_0, PID: 17656, uptime: 00:00:10
+
+Setting alaram for killer_cat_0
+
+Stopping killer_cat_0 PID: 17663.
+Process killer_cat_0, pid: 17663 stopped with the signal 19.
+Stopped (signal) killer_cat_0, PID: 17663, uptime: 00:00:04
+
+Continuing killer_cat_0 PID: 17663.
+Process killer_cat_0, pid: 17663 continued.
+Setting alaram for killer_cat_0
+
+Continued killer_cat_0, PID: 17663, uptime: 00:00:04
+
+Stopping killer_cat_0 PID: 17663.
+Process killer_cat_0, pid: 17663 stopped with the signal 19.
+Stopped (signal) killer_cat_0, PID: 17663, uptime: 00:00:04
+
+Continuing killer_cat_0 PID: 17663.
+Process killer_cat_0, pid: 17663 continued.
+Setting alaram for killer_cat_0
+
+Continued killer_cat_0, PID: 17663, uptime: 00:00:04
+
+Stopping killer_cat_0 PID: 17663.
+Process killer_cat_0, pid: 17663 stopped with the signal 19.
+Stopped (signal) killer_cat_0, PID: 17663, uptime: 00:00:08
+
+Continuing killer_cat_0 PID: 17663.
+Process killer_cat_0, pid: 17663 continued.
+Setting alaram for killer_cat_0
+
+Continued killer_cat_0, PID: 17663, uptime: 00:00:08
+
+Killed killer_cat_0, PID: 17663, uptime: 00:00:10
+
+killer_cat_0, pid: 17663 signal exited. Signal `Killed', uptime: 00:00:10.
+killer_cat_0 PID: 17663 restarting
+Started killer_cat_0 PID: 17719
+Setting alaram for killer_cat_0
+
+Stopping cat_0 PID: 17654.
+Process cat_0, pid: 17654 stopped with the signal 19.
+Stopped (signal) cat_0, PID: 17654, uptime: 00:01:37
+
+Stopping cat_1 PID: 17655.
+Process cat_1, pid: 17655 stopped with the signal 19.
+Stopped (signal) cat_1, PID: 17655, uptime: 00:01:37
+
+Stopping killer_cat_0 PID: 17719.
+Process killer_cat_0, pid: 17719 stopped with the signal 19.
+Stopped (signal) killer_cat_0, PID: 17719, uptime: 00:00:03
+
+ls_0 PID: 17659 restarting
+Started ls_0 PID: 17722
+ls_1 PID: 17660 restarting
+Started ls_1 PID: 17723
+cat_0, pid: 17654 signal exited. Signal `Killed', uptime: 00:01:37.
+cat_0 PID: 17654 restarting
+Started cat_0 PID: 17724
+Killed cat_0, PID: 17654, uptime: 00:01:37
+
+cat_1, pid: 17655 signal exited. Signal `Killed', uptime: 00:01:37.
+cat_1 PID: 17655 restarting
+Started cat_1 PID: 17725
+ls_0, pid: 17722 exited. Exitcode: `0', uptime: 00:00:00.
+ls_1, pid: 17723 exited. Exitcode: `0', uptime: 00:00:00.
+Killed cat_1, PID: 17655, uptime: 00:01:37
+
+Killed killer_cat_0, PID: 17719, uptime: 00:00:03
+
+killer_cat_0, pid: 17719 signal exited. Signal `Killed', uptime: 00:00:03.
+killer_cat_0 PID: 17719 restarting
+Setting alaram for killer_cat_0
+
+Started killer_cat_0 PID: 17726
+ls_0 PID: 17722 restarting
+Started ls_0 PID: 17728
+ls_1 PID: 17723 restarting
+Started ls_1 PID: 17729
+Killed cat_0, PID: 17724, uptime: 00:00:07
+
+cat_0, pid: 17724 signal exited. Signal `Killed', uptime: 00:00:07.
+cat_0 PID: 17724 restarting
+Started cat_0 PID: 17730
+cat_1, pid: 17725 signal exited. Signal `Killed', uptime: 00:00:07.
+cat_1 PID: 17725 restarting
+Started cat_1 PID: 17731
+ls_0, pid: 17728 exited. Exitcode: `0', uptime: 00:00:00.
+Killed cat_1, PID: 17725, uptime: 00:00:07
+
+killer_cat_0, pid: 17726 signal exited. Signal `Killed', uptime: 00:00:07.
+killer_cat_0 PID: 17726 restarting
+Started killer_cat_0 PID: 17732
+ls_1, pid: 17729 exited. Exitcode: `0', uptime: 00:00:00.
+Killed killer_cat_0, PID: 17726, uptime: 00:00:07
+
+Killed killer_cat_0, PID: 17732, uptime: 00:00:04
+
+killer_cat_0, pid: 17732 signal exited. Signal `Killed', uptime: 00:00:04.
+killer_cat_0 PID: 17732 restarting
+Started killer_cat_0 PID: 17735
+Setting alaram for killer_cat_0
+
+Killed cat_0, PID: 17730, uptime: 00:00:05
+
+Killed cat_1, PID: 17731, uptime: 00:00:05
+
+Killed killer_cat_0, PID: 17735, uptime: 00:00:01
 
 Quit

@@ -11,15 +11,38 @@
 
 #include <pthread.h>
 
-# define TASKMAST_ERROR(EXIT_BOOL, FORMAT, ...)					\
-			{													\
-				ft_prerror(EXIT_BOOL, FORMAT, __VA_ARGS__);		\
-				taskmast_log(FORMAT, __VA_ARGS__);				\
-			}													\
+# define TASKMAST_ERROR(EXIT_BOOL, FORMAT, ...)		\
+{													\
+	taskmast_log(FORMAT, __VA_ARGS__);				\
+	if (term_get_data()->is_raw)					\
+	{												\
+		term_move_cursor_to_left_most();			\
+		term_clear_from_cursor_to_bot();			\
+		ft_prerror(EXIT_BOOL, FORMAT, __VA_ARGS__);	\
+		term_putnewl();			\
+		input_reprint(g_current_in);				\
+	}												\
+	else											\
+		ft_prerror(EXIT_BOOL, FORMAT, __VA_ARGS__);	\
+}													\
 
-# define TASKMAST_LOG(FORMAT, ...)								\
-			taskmast_log(FORMAT, __VA_ARGS__);					\
-
+# define TASKMAST_LOG(FORMAT, ...)					\
+{													\
+	taskmast_log(FORMAT, __VA_ARGS__);				\
+	if (g_taskmast.logger.log_to_term)				\
+	{												\
+		if (term_get_data()->is_raw)				\
+		{											\
+			term_move_cursor_to_left_most();		\
+			term_clear_from_cursor_to_bot();		\
+			ft_printf(FORMAT, __VA_ARGS__);			\
+			term_putnewl();							\
+			input_reprint(g_current_in);			\
+		}											\
+		else										\
+			ft_printf(FORMAT, __VA_ARGS__);			\
+	}												\
+}													\
 
 typedef struct s_taskmast	t_taskmast;
 

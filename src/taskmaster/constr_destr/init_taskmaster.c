@@ -14,7 +14,6 @@ void		init_taskmaster(t_rostr config_file)
 	taskmast_load_all_config(&g_shdata.shvars, &g_taskmast, config_file);
 	init_taskmast_events_();
 	g_taskmast.logger.log_is_on = TRUE;	
-	g_taskmast.logger.log_to_term = TRUE;
 	g_taskmast.cfg_path = config_file;
 	
 	// ret = pthread_create(&g_taskmast.thread.waiter_thread, NULL,

@@ -1,5 +1,6 @@
 [taskmaster]
 logfile=./aux/log
+log_to_term=true
 
 [program:ls]
 command=/bin/ls
@@ -14,3 +15,11 @@ autostart=true
 nprocs=2
 restart_attempts=10
 restart_mode=always
+
+[program:killer_cat]
+command=/bin/cat
+autostart=true
+nprocs=1
+restart_attempts=12
+restart_mode=always
+time_before_kill=10

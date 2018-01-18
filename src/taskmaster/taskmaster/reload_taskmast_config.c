@@ -9,7 +9,8 @@ static void	reload_logger_(t_taskmast *taskmast, t_tskmst_logger *logger)
 		taskmast->logger.log_file_path = logger->log_file_path;
 		logger->log_file_path = NULL;
 		taskmast_setup_logger(taskmast);
-	}	
+	}
+	taskmast->logger.log_to_term = logger->log_to_term;
 }
 
 void		reload_taskmast_config(
@@ -26,5 +27,6 @@ void		reload_taskmast_config(
 
 	reload_procs_config(taskmast, dummy_taskmast.proc_cfgs);
 	dummy_taskmast.proc_cfgs = NULL;
+	dummy_taskmast.is_exiting = FALSE;
 	del_taskmast(&dummy_taskmast);
 }
