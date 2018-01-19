@@ -14,6 +14,8 @@ t_rostr	get_proc_state_str(const t_process *proc)
 			return STATE_STOPPED;
 		case (e_critic):
 			return STATE_CRITIC;
+		case (e_grace_stopping):
+			return STATE_GRACE_STOP;
 	}
 	// if (proc->status.state == e_not_started)
 	// 	return STATE_NOT_STARTED;

@@ -1,49 +1,98 @@
 #include "taskmaster42.h"
+#include <sys/types.h>
 #include <signal.h>
 
-static t_process	*get_closest_proc_to_kill_(const t_lst_proc *procs)
+static int		schedule_get_time_(const t_alrm_schedl *schedule)
 {
-	int				min_dif;
-	int				dif;
-	t_process		*target_proc;
-	t_process		*proc;
-
-	min_dif = INT_MAX;
-	target_proc = NULL;
-	for (; procs; LTONEXT(procs))
-	{
-		proc = LCONT(procs, t_process*);
-		if (proc->config->time_before_kill < 0 || !ISSTATE(proc, e_running))
-			continue;
-
-		dif = proc->config->time_before_kill - proc_uptime(proc);
-		if (dif <= 0)
-			kill_proc(SIGKILL, proc);
-		else if (dif < min_dif)
-		{
-			min_dif = dif;
-			target_proc = proc;
-		}
-	}
-	return target_proc;
+	return schedule->tm;
 }
 
-void				update_alarm()
+static void		remove_dead_pid_schedules_(
+					t_lst_schedl **schedules)
 {
-	t_process	*next_to_alarm;
-	int			dif;
+	t_lst_schedl	*next;
+	t_lst_schedl	*iter;
+	t_alrm_schedl	*schedule;
+	t_process		*proc;
 
-	next_to_alarm = get_closest_proc_to_kill_(g_taskmast.procs);
-	if (next_to_alarm == NULL)
+	for (iter = *schedules; iter; iter = next)
 	{
-		g_taskmast.next_alarm = NULL;
+		next = LNEXT(iter);
+		schedule = LCONT(iter, t_alrm_schedl*);
+		if (kill(schedule->pid, 0) == -1)
+		{
+			errno = 0;
+			proc = lst_proc_pidof_grac_stop(g_taskmast.procs, schedule->pid);
+			if (proc)
+				destroy_proc_intance(&g_taskmast, proc);
+
+			ft_lstrm(schedules, iter, &std_mem_del);
+		}
+	}
+}
+
+static void		get_proc_and_next_schedl_(
+					const t_lst_proc *procs,
+					t_lst_schedl **schedules,
+					t_process **proc,
+					t_lst_schedl **next_schedule_lst)
+{
+	t_alrm_schedl *next_schedule;
+
+	do
+	{
+		remove_dead_pid_schedules_(&g_taskmast.schedules);
+		*next_schedule_lst = ft_lst_min(g_taskmast.schedules,
+			(int (*)(void*))&schedule_get_time_);
+		if (*next_schedule_lst == NULL)
+			break;
+		next_schedule = LCONT(*next_schedule_lst, t_alrm_schedl*);
+		*proc = lst_process_pidof(g_taskmast.procs, next_schedule->pid);
+	} while (proc == NULL);
+}
+
+static int		actual_alarm_set_(
+					t_lst_schedl *match_schedule,
+					t_alrm_schedl *next_schedule,
+					t_process *proc)
+{
+	int	dif;
+
+	dif = next_schedule->tm - time(NULL);
+	if (dif <= 0)
+	{
+		next_schedule->f(&g_taskmast, proc);
+		ft_lstrm(&g_taskmast.schedules, match_schedule, &std_mem_del);
+		g_taskmast.next_schedl = NULL;
+		return -1;		
+	}
+	else
+	{
+		g_taskmast.next_schedl = next_schedule;
+		alarm((unsigned int)dif);
+		return 0;
+	}
+}
+
+void			update_alarm()
+{
+	t_alrm_schedl	*next_schedule;
+	t_lst_schedl	*match;
+	t_process		*proc;
+	int				dif;
+
+	get_proc_and_next_schedl_(
+		g_taskmast.procs, &g_taskmast.schedules, &proc, &match);
+	next_schedule = (match == NULL) ? NULL : LCONT(match, t_alrm_schedl*);
+
+	if (next_schedule == NULL)
+	{
+		g_taskmast.next_schedl = NULL;
 		return;
 	}
-	if (next_to_alarm == g_taskmast.next_alarm)
+	if (g_taskmast.next_schedl == next_schedule)
 		return;
 
-	dif = next_to_alarm->config->time_before_kill - proc_uptime(next_to_alarm);
-	g_taskmast.next_alarm = next_to_alarm;
-	TASKMAST_LOG("Setting alaram for %s\n\n", next_to_alarm->name);
-	alarm((unsigned int)dif);
+	if (actual_alarm_set_(match, next_schedule, proc) == -1)
+		update_alarm();
 }

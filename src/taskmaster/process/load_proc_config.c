@@ -19,41 +19,44 @@ static void			set_defaults_(t_proc_config *proc_config)
 	proc_config->autostart = TRUE;
 	proc_config->autostart = e_never;
 	proc_config->restart_attempts = 0;
-	proc_config->sig_stop = SIGSTOP;
+	proc_config->sig_graceful_stop = SIGINT;
 	proc_config->umask = DEFAULT_UMASK;
 	proc_config->restart_attempts = 1;
 	proc_config->restart_mode = e_never;
-	proc_config->time_before_kill = -1;
+	proc_config->time_before_forced_kill = 0;
 }
 
-static void			get_time_before_kill(t_str line, t_proc_config *proc_config)
+static void			get_time_before_kill(t_str val, t_proc_config *proc_config)
 {
 	int		value;
 
-	value = ft_atoi(ft_strchr(line, '=') + 1);
+	value = ft_atoi(val);
 	if (value < 0)
 	{
 		TASKMAST_ERROR(FALSE, "time_before_kill = %d: can't be negative. "
 			"It will be ignored\n", value);
-		proc_config->time_before_kill = -1;
+		proc_config->time_before_forced_kill = -1;
 	}
 	else
-		proc_config->time_before_kill = value;
+		proc_config->time_before_forced_kill = value;
 }
 
 static t_bool		parse_std_out_err_(t_str line, t_proc_config *proc_config)
 {
+	t_str	val;
+
+	val = ft_strchr(line, '=') + 1;
 	if (ft_str_starts_with(line, "stdout="))
 	{
 		if (proc_config->stdout)
 			free(proc_config->stdout);
-		proc_config->stdout = ft_strdup(ft_strchr(line, '=') + 1);
+		proc_config->stdout = ft_strdup(val);
 	}
 	else if (ft_str_starts_with(line, "stderr="))
 	{
 		if (proc_config->stderr)
 			free(proc_config->stderr);
-		proc_config->stderr = ft_strdup(ft_strchr(line, '=') + 1);
+		proc_config->stderr = ft_strdup(val);
 	}
 	else
 		return FALSE;
@@ -64,11 +67,14 @@ static t_bool		parse_mallocable_fields_(
 						t_str line,
 						t_proc_config *proc_config)
 {
+	t_str	val;
+
+	val = ft_strchr(line, '=') + 1;
 	if (ft_str_starts_with(line, "command="))
 	{
 		if (proc_config->launch_cmd)
 			free(proc_config->launch_cmd);
-		proc_config->launch_cmd = ft_strdup(ft_strchr(line, '=') + 1);
+		proc_config->launch_cmd = ft_strdup(val);
 	}
 	else if (ft_str_starts_with(line, "expected_exit_codes="))
 	{
@@ -88,7 +94,7 @@ static t_bool		parse_mallocable_fields_(
 	{
 		if (proc_config->dir)
 			free(proc_config->dir);
-		proc_config->dir = ft_strdup(ft_strchr(line, '=') + 1);
+		proc_config->dir = ft_strdup(val);
 	}
 	else
 		return FALSE;
@@ -116,6 +122,7 @@ t_proc_config		load_proc_config(t_lst_str *lines, int *lines_count)
 	t_proc_config	proc_config;
 	regex_t			preg;
 	t_lst_str		*first_line;
+	t_str			val;
 
 	first_line = lines;
 	set_defaults_(&proc_config);
@@ -131,24 +138,25 @@ t_proc_config		load_proc_config(t_lst_str *lines, int *lines_count)
 		if ((semicolon = ft_strchr(line, ';')) != NULL)
 			*semicolon = '\0';
 
+		val = ft_strchr(line, '=') + 1;
 		if (parse_mallocable_fields_(line, &proc_config))
 			ft_pass();
 		else if (ft_str_starts_with(line, "nprocs="))
-			proc_config.nb_of_procs = ft_atoi(ft_strchr(line, '=') + 1);
+			proc_config.nb_of_procs = ft_atoi(val);
 		else if (ft_str_starts_with(line, "autostart="))
-			proc_config.autostart = ft_strequ(ft_strchr(line, '=') + 1, "true");
+			proc_config.autostart = ft_strequ(val, "true");
 		else if (ft_str_starts_with(line, "restart_mode="))
-			proc_config.restart_mode = get_restart_mode(line);
+			proc_config.restart_mode = get_restart_mode(val);
 		else if (ft_str_starts_with(line, "success_time="))
-			proc_config.success_time = ft_atoi(ft_strchr(line, '=') + 1);
+			proc_config.success_time = ft_atoi(val);
 		else if (ft_str_starts_with(line, "restart_attempts="))
-			proc_config.restart_attempts = ft_atoi(ft_strchr(line, '=') + 1);
-		else if (ft_str_starts_with(line, "sig_stop="))
-			proc_config.sig_stop = ft_atoi(ft_strchr(line, '=') + 1);
+			proc_config.restart_attempts = ft_atoi(val);
+		else if (ft_str_starts_with(line, "sig_graceful_stop="))
+			proc_config.sig_graceful_stop = ft_atoi(val);
 		else if (ft_str_starts_with(line, "time_before_kill="))
-			get_time_before_kill(line, &proc_config);
+			get_time_before_kill(val, &proc_config);
 		else if (ft_str_starts_with(line, "umask="))
-			proc_config.umask = read_umask(ft_strchr(line, '=') + 1);
+			proc_config.umask = read_umask(val);
 		else
 		{
 			TASKMAST_ERROR(FALSE, "%s: %s: Invalid field\n",

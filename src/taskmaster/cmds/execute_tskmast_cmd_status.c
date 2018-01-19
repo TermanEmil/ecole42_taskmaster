@@ -4,7 +4,7 @@
 
 #define STATE_LEN_ 24
 #define DESCRIPT_LEN_ 64
-#define PROC_NAME_LEN_ 32
+#define PROC_NAME_LEN_ 64
 #define PID_LEN_ 9
 
 static void		print_proc_status_(const t_process *proc)

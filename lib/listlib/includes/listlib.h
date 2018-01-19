@@ -76,6 +76,11 @@ t_list			*ft_lst_first(const t_list *lst, const void *target,
 					size_t target_size, t_lst_cont_cmp *cmp);
 t_list			*ft_lst_filter(t_list *lst, const void *cmp_data,
 					size_t data_size, t_lst_cont_cmp *cmp);
+t_list			*ft_lst_max(const t_list *head, int (*cmp_get)(void*));
+void			*ft_lst_max_mem(const t_list *head, int (*cmp_get)(void*));
+t_list			*ft_lst_min(const t_list *head, int (*cmp_get)(void*));
+void			*ft_lst_min_mem(const t_list *head, int (*cmp_get)(void*));
+
 /*
 ** Copy
 */
@@ -103,6 +108,8 @@ void			ft_lstpop_front(t_list ** head, t_ldel_func * del);
 void			ft_lstpop_back(t_list ** head, t_ldel_func * del);
 void			ft_lstrm(t_list **h, t_list *trget, t_ldel_func *del);
 int				ft_lstrm_at(t_list **head, size_t index, t_ldel_func *del);
+t_bool			ft_lstrm_cmp(t_list **h, const void *cont, t_lst_cont_cmp *cmp,
+					t_ldel_func *del);
 
 /*
 ** Iterating functions

@@ -1,6 +1,8 @@
 #include "taskmaster42.h"
 
-int		get_process_name_id(const t_process *proc, const t_lst_proc *proccesses)
+int		get_process_name_id(
+			t_rostr proc_prog_name,
+			const t_lst_proc *proccesses)
 {
 	int				max;
 	const t_process *aux;
@@ -9,7 +11,7 @@ int		get_process_name_id(const t_process *proc, const t_lst_proc *proccesses)
 	for (; proccesses; LTONEXT(proccesses))
 	{
 		aux = LCONT(proccesses, const t_process*);
-		if (ft_strequ(aux->config->prog_name, proc->config->prog_name))
+		if (ft_strequ(aux->config->prog_name, proc_prog_name))
 			if (max <= aux->name_id)
 				max = aux->name_id + 1;
 	}

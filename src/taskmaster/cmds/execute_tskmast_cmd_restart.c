@@ -1,3 +1,4 @@
+
 #include "taskmaster42.h"
 #include <signal.h>
 
@@ -19,17 +20,19 @@ static void	restart_process_(t_process *proc)
 		return;
 	}
 	
+	if (ISSTATE(proc, e_grace_stopping))
+	{
+		ft_prerror(FALSE, "restart: %s: can't restart processes that are "
+			"being gracefully stopped.\n", proc->name);
+		return;
+	}
+
 	ft_printf("Restarting %s.\n", proc->name);
 	if (ISSTATE(proc, e_running) || ISSTATE(proc, e_stopped))
 	{
-		will_be_auto_restarted = proc_has_to_be_restarted(proc, SIGKILL, TRUE);
-
-		ft_printf("\tKilling %s.\n", proc->name);
-		if (kill_proc(SIGKILL, proc) != 0)
-			return;
-
-		if (!will_be_auto_restarted)
-			restart_process(proc);
+		ft_printf("\tGracefully stopping %s.\n", proc->name);
+		proc_graceful_stop(proc);
+		restart_process(proc);
 	}
 	else
 		restart_process(proc);

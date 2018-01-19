@@ -59,11 +59,8 @@ static int	*read_array_(t_str array_str)
 	return result;
 }
 
-int			*get_expected_exit_codes(t_str line)
+int			*get_expected_exit_codes(t_str val)
 {
-	t_str	val;
-
-	val = ft_strchr(line, '=') + 1;
 	if (!regex_mini_match("(\\[([0-9]+, )*[0-9]\\]|\\[\\])", val))
 	{
 		ft_error(FALSE, "%s: Invalid array format: %s\n",

@@ -12,5 +12,7 @@ enum e_proc_state	get_state_from_str(t_rostr str)
 		return e_completed;
 	if (ft_strstr(STATE_CRITIC, str))
 		return e_critic;
+	if (ft_strstr(STATE_GRACE_STOP, str))
+		return e_grace_stopping;
 	return 0;
 }

@@ -17,7 +17,6 @@
 	if (term_get_data()->is_raw)					\
 	{												\
 		term_move_cursor_to_left_most();			\
-		term_clear_from_cursor_to_bot();			\
 		ft_prerror(EXIT_BOOL, FORMAT, __VA_ARGS__);	\
 		term_putnewl();			\
 		input_reprint(g_current_in);				\
@@ -34,7 +33,6 @@
 		if (term_get_data()->is_raw)				\
 		{											\
 			term_move_cursor_to_left_most();		\
-			term_clear_from_cursor_to_bot();		\
 			ft_printf(FORMAT, __VA_ARGS__);			\
 			term_putnewl();							\
 			input_reprint(g_current_in);			\
@@ -44,9 +42,19 @@
 	}												\
 }													\
 
-typedef struct s_taskmast	t_taskmast;
+typedef struct s_taskmast		t_taskmast;
+typedef struct s_alrm_schedl	t_alrm_schedl;
+
+typedef t_list					t_lst_schedl;
 
 extern t_taskmast			g_taskmast;
+
+struct				s_alrm_schedl
+{
+	pid_t			pid;
+	int				tm;
+	void			(*f)(t_taskmast*, t_process*);
+};
 
 typedef struct		s_tskmst_logger
 {
@@ -64,6 +72,8 @@ struct				s_taskmast
 	t_lst_proc		*procs;
 	t_bool			is_exiting;
 	t_process		*next_alarm;
+	t_lst_schedl	*schedules;
+	t_alrm_schedl	*next_schedl;
 	t_rostr			cfg_path;
 };
 
@@ -82,17 +92,20 @@ int			execute_tskmast_cmd_restart(t_cmd_env *cmd_env);
 ** Constr & Destrs
 */
 
-void		init_taskmaster(t_rostr config_file);
-void		del_taskmast(t_taskmast *taskmast);
+void			init_taskmaster(t_rostr config_file);
+void			del_taskmast(t_taskmast *taskmast);
+t_alrm_schedl	new_alarm_schedule(pid_t pid, int schedule_time,
+					void (*f)(t_taskmast*, t_process*));
 
-int			taskmast_load_all_config(const t_shvars *shvars,
-				t_taskmast *taskmast, t_rostr file_path);
+int				taskmast_load_all_config(const t_shvars *shvars,
+					t_taskmast *taskmast, t_rostr file_path);
 
 /*
 ** Taskmaster in general
 */
 
 void		taskmast_start(t_taskmast *taskmast);
+void		setup_alarm(t_taskmast *taskmast, t_alrm_schedl schedl);
 void		update_alarm();
 void		destroy_proc_intance(t_taskmast *taskmast, t_process *proc);
 

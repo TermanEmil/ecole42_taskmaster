@@ -16,9 +16,9 @@ void			set_env_vars_to_cfg_file(const t_shvars *shvars,
 					t_lst_str *config_file_lines);
 
 t_proc_config	load_proc_config(t_lst_str *lines, int *lines_count);
-t_restart_mode	get_restart_mode(t_str line);
-int				*get_expected_exit_codes(t_str line);
-t_str			*read_config_environ(t_str line);
+t_restart_mode	get_restart_mode(t_str val);
+int				*get_expected_exit_codes(t_str val);
+t_str			*read_config_environ(t_str val);
 mode_t			read_umask(t_str umask_strval);
 
 #endif

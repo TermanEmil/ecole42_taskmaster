@@ -44,16 +44,6 @@ static void	handle_sigchld_(int signum)
 
 static void	handle_sigalarm(int signum)
 {
-	t_process	*proc;
-
-	(void)signum;
-	proc = g_taskmast.next_alarm;
-	if (proc == NULL)
-		return;
-	proc->proc_time.running_time = proc_uptime(proc);
-	proc->status.state = e_completed;
-	if (kill_proc(SIGKILL, proc) == 0)
-		g_taskmast.next_alarm = NULL;
 	update_alarm();
 }
 

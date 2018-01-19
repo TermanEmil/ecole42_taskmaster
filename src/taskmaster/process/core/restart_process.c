@@ -3,10 +3,13 @@
 
 int			restart_process(t_process *proc)
 {
+	if (ISSTATE(proc, e_grace_stopping))
+		return -1;
+
 	TASKMAST_LOG("%s PID: %d restarting\n", proc->name, proc->pid);
 	if (ISSTATE(proc, e_stopped) || ISSTATE(proc, e_running))
 	{
-		kill_proc(SIGKILL, proc);
+		proc_graceful_stop(proc);
 		proc->status.state = e_completed;
 	}
 

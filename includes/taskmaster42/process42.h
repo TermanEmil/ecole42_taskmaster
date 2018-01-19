@@ -12,6 +12,7 @@
 # define STATE_STOPPED		C_YELLOW	"stopped"		C_EOC
 # define STATE_COMPLETED	C_CYAN		"completed"		C_EOC
 # define STATE_CRITIC		C_RED		"critic"		C_EOC
+# define STATE_GRACE_STOP	C_LCYAN		"grace stop"	C_EOC
 
 #define ISSTATE(PROC, STATE) ((PROC)->status.state == STATE)
 
@@ -31,7 +32,8 @@ enum				e_proc_state
 	e_running,
 	e_stopped,
 	e_completed,
-	e_critic
+	e_critic,
+	e_grace_stopping
 };
 
 /*
@@ -58,8 +60,8 @@ typedef struct		s_proc_config
 	int				*expected_exit_codes;
 	int				success_time;
 	int				restart_attempts;
-	int				sig_stop;
-	int				time_before_kill;
+	int				sig_graceful_stop;
+	int				time_before_forced_kill;
 	t_str			stdout;
 	t_str			stderr;
 	t_str			*environment;
@@ -108,6 +110,7 @@ int			continue_process(t_process *proc);
 void		update_proc_state(t_process *proc);
 void		parse_process_waitpid(pid_t waited_pid, int wait_status);
 int			kill_proc(int signum, t_process *proc);
+void		proc_graceful_stop(t_process *proc);
 void		kill_processes(int signum, const t_lst_proc *procs);
 t_rostr		get_proc_description(const t_process *proc);
 
@@ -115,7 +118,7 @@ t_rostr		get_proc_description(const t_process *proc);
 ** Constr & destr
 */
 
-t_process	new_process(t_proc_config *config, const t_lst_proc *processes);
+t_process	new_process(t_proc_config *config, int name_id);
 void		del_proc_config(t_proc_config *proc_config);
 void		del_proc(t_process *proc);
 
@@ -124,9 +127,9 @@ void		del_proc(t_process *proc);
 */
 
 void		run_command(t_rostr cmd, const t_str *env);
-int			get_process_name_id(const t_process *proc,
+int			get_process_name_id(t_rostr proc_prog_name,
 				const t_lst_proc *proccesses);
-t_str		new_process_name(const t_process *proc);
+t_str		new_process_name(t_rostr default_name, int name_id);
 void		close_process_open_fds(t_process *process);
 int			process_std_redir_to_file(t_rostr std_fd_val, int default_fd);
 t_rostr		get_proc_state_str(const t_process *proc);
@@ -147,6 +150,8 @@ t_bool		proc_ref_equ(const t_process *proc1, const t_process *proc2);
 */
 
 t_process	*lst_process_pidof(const t_lst_proc *procs, pid_t pid);
+t_process	*lst_proc_pidof_grac_stop(const t_lst_proc *procs, pid_t pid);
+t_process	*lst_proc_pidof_no_grac_stop(const t_lst_proc *procs, pid_t pid);
 t_process	*lst_get_proc_with_name(const t_lst_proc* procs, t_rostr name);
 t_lst_proc	*lst_get_procs_matching_name(const t_lst_proc* procs, t_rostr name);
 t_process	*lst_get_proc_with_pidname(const t_lst_proc* prcs, t_rostr pidname);

@@ -21,6 +21,9 @@ void	destroy_procs_with_config(
 		proc_cfg = LCONT(iter, t_process*)->config;
 		if (nb_of_procs > 0 && proc_cfg->hash == cfg->hash)
 		{
+			if (ISSTATE(LCONT(iter, t_process*), e_grace_stopping))
+				continue;
+
 			destroy_proc_intance(taskmast, LCONT(iter, t_process*));
 			nb_of_procs--;
 		}
