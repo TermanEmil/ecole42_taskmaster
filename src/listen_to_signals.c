@@ -40,11 +40,13 @@ static void	handle_sigchld_(int signum)
 		TASKMAST_ERROR(FALSE, "waitpid(): %s\n", strerror(errno));
 	errno = 0;
 	update_alarm();
+	signaled_flags_set_signaled(&g_taskmast);
 }
 
 static void	handle_sigalarm(int signum)
 {
 	update_alarm();
+	signaled_flags_set_signaled(&g_taskmast);
 }
 
 static void	handle_sighub_(int signum)
@@ -54,6 +56,7 @@ static void	handle_sighub_(int signum)
 	TASKMAST_LOG("Reloading Config File\n", "");
 	reload_taskmast_config(&g_taskmast, &g_shdata.shvars, g_taskmast.cfg_path);
 	term_enable_raw_mode(term_get_data());
+	signaled_flags_set_signaled(&g_taskmast);
 }
 
 void		listen_to_signals(void)

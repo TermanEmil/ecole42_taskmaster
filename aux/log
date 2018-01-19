@@ -1,20 +1,21 @@
-Started Taskmaster, PID: 2693
+Started Taskmaster, PID: 6980
 Process wait_time_at_interrupt_0 created
-Started wait_time_at_interrupt_0 PID: 2696
-Graceful stop process: wait_time_at_interrupt_0_grace_stop_0 PID 2696 has been set for wait_time_at_interrupt_0, which will get sigkilled in 6 seconds
-Interrupt wait_time_at_interrupt_0, PID: 2696, uptime: 00:00:01
+Started wait_time_at_interrupt_0 PID: 6981
+Graceful stop process: wait_time_at_interrupt_0_grace_stop_0 PID 6981 has been set for wait_time_at_interrupt_0, which will get sigkilled in 6 seconds
+Interrupt wait_time_at_interrupt_0, PID: 6981, uptime: 00:00:02
 
-wait_time_at_interrupt_0 PID: 2696 restarting
-Started wait_time_at_interrupt_0 PID: 2698
-Graceful stop process: wait_time_at_interrupt_0_grace_stop_0 PID 2698 has been set for wait_time_at_interrupt_0, which will get sigkilled in 6 seconds
-Interrupt wait_time_at_interrupt_0, PID: 2698, uptime: 00:00:00
+wait_time_at_interrupt_0 PID: 6981 restarting
+Started wait_time_at_interrupt_0 PID: 6982
+Graceful stop process: wait_time_at_interrupt_0_grace_stop_0 PID 6982 has been set for wait_time_at_interrupt_0, which will get sigkilled in 6 seconds
+Interrupt wait_time_at_interrupt_0, PID: 6982, uptime: 00:00:00
 
-wait_time_at_interrupt_0 PID: 2698 restarting
-wait_time_at_interrupt_0_grace_stop_0, pid: 2698 signal exited. Signal `Interrupt', uptime: 00:00:00.
+wait_time_at_interrupt_0 PID: 6982 restarting
+wait_time_at_interrupt_0_grace_stop_0, pid: 6982 signaled. Signal `Interrupt', uptime: 00:00:00.
 Destroyed wait_time_at_interrupt_0_grace_stop_0.
-Started wait_time_at_interrupt_0 PID: 2699
-wait_time_at_interrupt_0_grace_stop_0, pid: 2696 exited. Exitcode: `0', uptime: 00:00:05.
+Interrupt in loop
+Started wait_time_at_interrupt_0 PID: 6983
+wait_time_at_interrupt_0_grace_stop_0, pid: 6981 exited. Exitcode: `0', uptime: 00:00:05.
 Destroyed wait_time_at_interrupt_0_grace_stop_0.
-Killed wait_time_at_interrupt_0, PID: 2699, uptime: 00:00:22
+Killed wait_time_at_interrupt_0, PID: 6983, uptime: 00:00:09
 
 Quit

@@ -14,9 +14,18 @@ static void		remove_dead_pid_schedules_(
 	t_lst_schedl	*iter;
 	t_alrm_schedl	*schedule;
 	t_process		*proc;
+	t_signaled_flg	*signaled_flg;
 
+	signaled_flg = get_free_signaled_flg_entry(&g_taskmast);
+	signaled_flg->is_occupied = TRUE;
+	signaled_flg->signaled = FALSE;
 	for (iter = *schedules; iter; iter = next)
 	{
+		if (signaled_flg->signaled)
+		{
+			TASKMAST_LOG("Interrupt in loop\n", "");
+			break;
+		}
 		next = LNEXT(iter);
 		schedule = LCONT(iter, t_alrm_schedl*);
 		if (kill(schedule->pid, 0) == -1)
@@ -29,6 +38,7 @@ static void		remove_dead_pid_schedules_(
 			ft_lstrm(schedules, iter, &std_mem_del);
 		}
 	}
+	signaled_flg->is_occupied = FALSE;
 }
 
 static void		get_proc_and_next_schedl_(

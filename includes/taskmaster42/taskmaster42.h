@@ -11,6 +11,8 @@
 
 #include <pthread.h>
 
+# define SIGNALED_FLAGS_COUNT 124
+
 # define TASKMAST_ERROR(EXIT_BOOL, FORMAT, ...)		\
 {													\
 	taskmast_log(FORMAT, __VA_ARGS__);				\
@@ -65,6 +67,17 @@ typedef struct		s_tskmst_logger
 
 }					t_tskmst_logger;
 
+/*
+** This is used to prevent bugs when a signal is recived in a loop.
+** First use in update_alarm.
+*/
+
+typedef	struct		s_signaled_flg
+{
+	t_bool			is_occupied;
+	t_bool			signaled;
+}					t_signaled_flg;
+
 struct				s_taskmast
 {
 	t_tskmst_logger	logger;
@@ -75,6 +88,7 @@ struct				s_taskmast
 	t_lst_schedl	*schedules;
 	t_alrm_schedl	*next_schedl;
 	t_rostr			cfg_path;
+	t_signaled_flg	signaled_flags[SIGNALED_FLAGS_COUNT];
 };
 
 void		taskmast_log(const char *format, ...);
@@ -118,6 +132,13 @@ void		reload_taskmast_config(t_taskmast *taskmast,
 void		reload_procs_config(t_taskmast *taskmast, t_lst_proccfg *new_cfgs);
 void		destroy_procs_with_config(t_taskmast *taskmast,
 				const t_proc_config *cfg);
+
+/*
+** signaled_flags
+*/
+
+t_signaled_flg	*get_free_signaled_flg_entry(const t_taskmast *taskmast);
+void			signaled_flags_set_signaled(t_taskmast *taskmaster);
 
 /*
 ** Utils
