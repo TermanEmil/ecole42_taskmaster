@@ -25,10 +25,11 @@ log_to_term=true
 ;time_before_kill=10
 
 [program:wait_time_at_interrupt]
-command=./debugging_procs/wait_time_at_interrupt 5
+command=./debugging_procs/wait_time_at_interrupt 1
 autostart=true
 nprocs=1
 restart_attempts=1
 restart_mode=always
-time_before_kill=6
+time_before_kill=30
+sig_graceful_stop=2
 

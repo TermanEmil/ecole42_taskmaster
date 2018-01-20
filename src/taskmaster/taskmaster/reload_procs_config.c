@@ -68,7 +68,7 @@ static void	remove_dead_add_new_procs_(
 	remove_the_same_cfgs_(&cpy_old_cfgs, &cpy_new_cfgs);
 
 	ft_lstiter_mem2(cpy_old_cfgs, taskmast,
-		(void (*)(void*, void*))&destroy_procs_with_config);
+		(void (*)(void*, void*))&deactivate_procs_with_config);
 	if (cpy_new_cfgs != NULL)
 	{
 		new_procs_index = ft_lst_get_last(taskmast->procs);

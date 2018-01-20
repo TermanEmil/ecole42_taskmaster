@@ -9,7 +9,10 @@ void		process_normal_exit(t_process *proc, int status)
 	TASKMAST_LOG("%s, pid: %d exited. Exitcode: `%d', uptime: %s.\n",
 		proc->name, proc->pid, WEXITSTATUS(status), proc_struptime(proc));
 	if (ISSTATE(proc, e_grace_stopping))
+	{
+		deactivate_process(proc);
 		return;
+	}
 	
 	proc->proc_time.running_time = proc_uptime(proc);
 	proc->proc_time.finish_time = time(NULL);
@@ -26,8 +29,12 @@ void		process_signal_exit(t_process *proc, int status)
 	TASKMAST_LOG("%s, pid: %d signaled. Signal `%s', uptime: %s.\n",
 		proc->name, proc->pid, strsignal(WTERMSIG(status)),
 		proc_struptime(proc));
+
 	if (ISSTATE(proc, e_grace_stopping))
+	{
+		deactivate_process(proc);
 		return;
+	}
 
 	proc->proc_time.running_time = proc_uptime(proc);
 	proc->proc_time.finish_time = time(NULL);

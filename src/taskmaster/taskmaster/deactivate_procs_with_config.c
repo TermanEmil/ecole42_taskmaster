@@ -5,7 +5,7 @@
 ** can be destroyed from a config.
 */
 
-void	destroy_procs_with_config(
+void	deactivate_procs_with_config(
 			t_taskmast *taskmast,
 			const t_proc_config *cfg)
 {
@@ -24,7 +24,7 @@ void	destroy_procs_with_config(
 			if (ISSTATE(LCONT(iter, t_process*), e_grace_stopping))
 				continue;
 
-			destroy_proc_intance(taskmast, LCONT(iter, t_process*));
+			deactivate_process(LCONT(iter, t_process*));
 			nb_of_procs--;
 		}
 		iter = next;

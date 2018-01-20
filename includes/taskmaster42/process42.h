@@ -88,6 +88,7 @@ typedef struct		s_proc_time
 typedef struct		s_process
 {
 	t_proc_config	*config;
+	t_bool			active;
 	t_str			name;
 	int				name_id;
 	pid_t			pid;
@@ -136,7 +137,7 @@ t_rostr		get_proc_state_str(const t_process *proc);
 t_bool		is_expected_exit_status(int code, const int *expected_exit_codes);
 t_bool		proc_has_to_be_restarted(const t_process *proc, int waitpid_status,
 				t_bool consider_restart_attempts);
-t_bool		proc_is_state(enum e_proc_state *state, const t_process *proc);
+void		deactivate_process(t_process *proc);
 
 /*
 ** List utils
@@ -144,6 +145,7 @@ t_bool		proc_is_state(enum e_proc_state *state, const t_process *proc);
 
 t_bool		proc_cfg_hash_equ(const size_t *hash, const t_proc_config *config);
 t_bool		proc_ref_equ(const t_process *proc1, const t_process *proc2);
+t_bool		proc_is_state(enum e_proc_state *state, const t_process *proc);
 
 /*
 ** Getters

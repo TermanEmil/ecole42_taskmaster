@@ -11,7 +11,7 @@ int		get_process_name_id(
 	for (; proccesses; LTONEXT(proccesses))
 	{
 		aux = LCONT(proccesses, const t_process*);
-		if (ft_strequ(aux->config->prog_name, proc_prog_name))
+		if (aux->active && ft_strequ(aux->config->prog_name, proc_prog_name))
 			if (max <= aux->name_id)
 				max = aux->name_id + 1;
 	}

@@ -2,19 +2,20 @@
 
 static t_bool	lst_procs_cmp_pid_(pid_t *pid, const t_process *proc)
 {
-	return proc->pid == *pid;
+	return proc->active && proc->pid == *pid;
 }
 
 static t_bool	lst_procs_cmp_pid_gace_stop_(pid_t *pid, const t_process *proc)
 {
-	return ISSTATE(proc, e_grace_stopping) && proc->pid == *pid;
+	return proc->active && ISSTATE(proc, e_grace_stopping) && proc->pid == *pid;
 }
 
 static t_bool	lst_procs_cmp_pid_no_gace_stop_(
 					pid_t *pid,
 					const t_process *proc)
 {
-	return !ISSTATE(proc, e_grace_stopping) && proc->pid == *pid;
+	return proc->active && !ISSTATE(proc, e_grace_stopping)
+		&& proc->pid == *pid;
 }
 
 /*

@@ -8,16 +8,6 @@ static int		print_help_()
 	return 0;
 }
 
-static int	basic_case_(const t_str *argv)
-{
-	if (ft_tab_len((const void**)argv) == 1 || ft_strequ(argv[1], "-h"))
-	{
-		
-		return 0;
-	}
-	return 1;
-}
-
 static void	actual_proc_parsing_(t_process *proc)
 {
 	if (ISSTATE(proc, e_not_started))

@@ -106,6 +106,7 @@ int				ft_lst_insert_range(t_list **head, size_t i, t_list *elements);
 
 void			ft_lstpop_front(t_list ** head, t_ldel_func * del);
 void			ft_lstpop_back(t_list ** head, t_ldel_func * del);
+t_list			*ft_lst_detach(t_list **head, t_list *target);
 void			ft_lstrm(t_list **h, t_list *trget, t_ldel_func *del);
 int				ft_lstrm_at(t_list **head, size_t index, t_ldel_func *del);
 t_bool			ft_lstrm_cmp(t_list **h, const void *cont, t_lst_cont_cmp *cmp,

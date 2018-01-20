@@ -18,6 +18,7 @@ t_process	new_process(t_proc_config *config, int name_id)
 	ft_bzero(&process, sizeof(process));
 	init_redir_fds_(&process);
 	process.pid = -1;
+	process.active = TRUE;
 	process.status.state = e_not_started;
 	process.config = config;
 	process.name_id = name_id;

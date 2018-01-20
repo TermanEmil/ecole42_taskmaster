@@ -8,6 +8,7 @@ t_alrm_schedl	new_alarm_schedule(
 	t_alrm_schedl	result;
 
 	result.pid = pid;
+	result.active = TRUE;
 	result.tm = schedule_time;
 	result.f = f;
 	return result;

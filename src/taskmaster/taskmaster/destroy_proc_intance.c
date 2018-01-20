@@ -1,14 +1,20 @@
 #include "taskmaster42.h"
 #include <signal.h>
 
+t_bool		proc_instance_exists(const t_process *proc)
+{
+	return ft_lst_first(g_taskmast.procs, proc, 0,
+		(t_lst_cont_cmp*)&proc_ref_equ) != NULL;
+}
+
 /*
 ** Kill and remove any trace of the given process from taskmaster.
 */
 
 void		destroy_proc_intance(t_taskmast *taskmast, t_process *proc)
 {
-	t_lst_proc	*matching;
-	char		buf[124];
+	t_lst_proc		*matching;
+	char			buf[124];
 
 	if (ISSTATE(proc, e_running) || ISSTATE(proc, e_stopped) ||
 		ISSTATE(proc, e_grace_stopping))
