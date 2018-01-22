@@ -16,9 +16,6 @@ void		del_taskmast(t_taskmast *taskmast)
 		TASKMAST_LOG("Freeing Taskmaster resources\n", "");
 	force_kill_no_restart_all_procs_(taskmast);	
 
-	if (taskmast->is_exiting)
-		TASKMAST_LOG("Quit\n", "");
-
 	ft_lstdel(&taskmast->procs, (t_ldel_func*)&del_proc);
 	ft_lstdel(&taskmast->proc_cfgs, (t_ldel_func*)&del_proc_config);
 	ft_memdel((void**)&taskmast->logger.log_file_path);

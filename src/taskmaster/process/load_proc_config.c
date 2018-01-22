@@ -24,6 +24,7 @@ static void			set_defaults_(t_proc_config *proc_config)
 	proc_config->restart_attempts = 1;
 	proc_config->restart_mode = e_never;
 	proc_config->time_before_forced_kill = 0;
+	proc_config->success_time = -1;
 }
 
 static void			get_time_before_kill(t_str val, t_proc_config *proc_config)
@@ -115,6 +116,20 @@ static size_t		get_proc_cfg_hash(t_lst_str *lines, int lines_count)
 	return hash;
 }
 
+static int			get_success_time_(t_rostr val)
+{
+	int		intval;
+
+	intval = ft_atoi(val);
+	if (intval < 0)
+	{
+		TASKMAST_ERROR(FALSE, "Success time = %d can't be negative.\n", intval);
+		return -1;
+	}
+	else
+		return intval;
+}
+
 t_proc_config		load_proc_config(t_lst_str *lines, int *lines_count)
 {
 	t_str			line;
@@ -148,7 +163,7 @@ t_proc_config		load_proc_config(t_lst_str *lines, int *lines_count)
 		else if (ft_str_starts_with(line, "restart_mode="))
 			proc_config.restart_mode = get_restart_mode(val);
 		else if (ft_str_starts_with(line, "success_time="))
-			proc_config.success_time = ft_atoi(val);
+			proc_config.success_time = get_success_time_(val);
 		else if (ft_str_starts_with(line, "restart_attempts="))
 			proc_config.restart_attempts = ft_atoi(val);
 		else if (ft_str_starts_with(line, "sig_graceful_stop="))

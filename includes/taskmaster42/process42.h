@@ -70,13 +70,13 @@ typedef struct		s_proc_config
 	size_t			hash;
 }					t_proc_config;
 
-typedef struct		s_proc_status
+typedef struct			s_proc_status
 {
 	enum e_proc_state	state;
 	int					waitpid_status;
 	int					attempt;
 	int					sig_on_kill;
-}					t_proc_status;
+}						t_proc_status;
 
 typedef struct		s_proc_time
 {
@@ -104,14 +104,26 @@ typedef struct		s_process
 */
 
 int			process_start(t_process *process);
+void		child_process_start(t_process *proc);
+void		father_process_start(t_process *proc);
+
 int			stop_process(t_process *proc);
 int			restart_process(t_process *proc);
 int			continue_process(t_process *proc);
+void		proc_graceful_stop(t_process *proc);
+
+/*
+** Waitpid parsers
+*/
+
+void		parse_process_waitpid(pid_t waited_pid, int wait_status);
+void		process_normal_exit(t_process *proc, int status);
+void		process_signal_exit(t_process *proc, int status);
+void		process_stopped(t_process *proc, int status);
+void		process_continue(t_process *proc, int status);
 
 void		update_proc_state(t_process *proc);
-void		parse_process_waitpid(pid_t waited_pid, int wait_status);
 int			kill_proc(int signum, t_process *proc);
-void		proc_graceful_stop(t_process *proc);
 void		kill_processes(int signum, const t_lst_proc *procs);
 t_rostr		get_proc_description(const t_process *proc);
 
@@ -127,9 +139,11 @@ void		del_proc(t_process *proc);
 ** Utils
 */
 
-void		run_command(t_rostr cmd, const t_str *env);
+int			run_command(t_rostr cmd, const t_str *env);
 int			get_process_name_id(t_rostr proc_prog_name,
 				const t_lst_proc *proccesses);
+int			new_unique_name_id(t_rostr default_name,
+				const t_lst_proc *procs);
 t_str		new_process_name(t_rostr default_name, int name_id);
 void		close_process_open_fds(t_process *process);
 int			process_std_redir_to_file(t_rostr std_fd_val, int default_fd);
@@ -138,6 +152,8 @@ t_bool		is_expected_exit_status(int code, const int *expected_exit_codes);
 t_bool		proc_has_to_be_restarted(const t_process *proc, int waitpid_status,
 				t_bool consider_restart_attempts);
 void		deactivate_process(t_process *proc);
+void		discard_proc_redirs(t_process *proc);
+int			pipe_process(t_process *proc);
 
 /*
 ** List utils

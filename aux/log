@@ -1,119 +1,87 @@
-Started Taskmaster, PID: 9134
+Started Taskmaster, PID: 20962
 Process wait_time_at_interrupt_0 created
-Started wait_time_at_interrupt_0 PID: 9135
-Graceful stop process: wait_time_at_interrupt_0_grace_stop_0 PID 9135 has been set for wait_time_at_interrupt_0, which will get sigkilled in 30 s
-Sending signal to wait_time_at_interrupt_0 PID 9135
-Interrupt wait_time_at_interrupt_0, PID: 9135, uptime: 00:00:07
+Process wait_time_at_interrupt_1 created
+Process wait_time_at_interrupt_2 created
+Process wait_time_at_interrupt_3 created
+Process wait_time_at_interrupt_4 created
+Started wait_time_at_interrupt_0 PID: 20964
+Started wait_time_at_interrupt_1 PID: 20965
+Started wait_time_at_interrupt_2 PID: 20966
+Started wait_time_at_interrupt_3 PID: 20967
+Started wait_time_at_interrupt_4 PID: 20968
+Reloading Config File
+Graceful stop process: wait_time_at_interrupt_0_grace_stop_0 PID 20964 has been set for wait_time_at_interrupt_0, which will get sigkilled in 3 s
+Sending signal to wait_time_at_interrupt_0 PID 20964
+Interrupt wait_time_at_interrupt_0, PID: 20964, uptime: 00:00:11
 
-wait_time_at_interrupt_0 PID: 9135 restarting
-Started wait_time_at_interrupt_0 PID: 9137
-wait_time_at_interrupt_0_grace_stop_0, pid: 9135 exited. Exitcode: `0', uptime: 00:00:01.
-Graceful stop process: wait_time_at_interrupt_0_grace_stop_0 PID 9137 has been set for wait_time_at_interrupt_0, which will get sigkilled in 30 s
-Sending signal to wait_time_at_interrupt_0 PID 9137
-Interrupt wait_time_at_interrupt_0, PID: 9137, uptime: 00:00:14
+Graceful stop process: wait_time_at_interrupt_1_grace_stop_0 PID 20965 has been set for wait_time_at_interrupt_1, which will get sigkilled in 3 s
+Sending signal to wait_time_at_interrupt_1 PID 20965
+Interrupt wait_time_at_interrupt_1, PID: 20965, uptime: 00:00:11
 
-wait_time_at_interrupt_0 PID: 9137 restarting
-Started wait_time_at_interrupt_0 PID: 9145
-wait_time_at_interrupt_0_grace_stop_0, pid: 9137 exited. Exitcode: `0', uptime: 00:00:01.
-Graceful stop process: wait_time_at_interrupt_0_grace_stop_0 PID 9145 has been set for wait_time_at_interrupt_0, which will get sigkilled in 30 s
-Sending signal to wait_time_at_interrupt_0 PID 9145
-Interrupt wait_time_at_interrupt_0, PID: 9145, uptime: 00:00:06
+Graceful stop process: wait_time_at_interrupt_2_grace_stop_0 PID 20966 has been set for wait_time_at_interrupt_2, which will get sigkilled in 3 s
+Sending signal to wait_time_at_interrupt_2 PID 20966
+Interrupt wait_time_at_interrupt_2, PID: 20966, uptime: 00:00:11
 
-wait_time_at_interrupt_0 PID: 9145 restarting
-Started wait_time_at_interrupt_0 PID: 9147
-wait_time_at_interrupt_0_grace_stop_0, pid: 9145 exited. Exitcode: `0', uptime: 00:00:01.
-Graceful stop process: wait_time_at_interrupt_0_grace_stop_0 PID 9147 has been set for wait_time_at_interrupt_0, which will get sigkilled in 30 s
-Sending signal to wait_time_at_interrupt_0 PID 9147
-Interrupt wait_time_at_interrupt_0, PID: 9147, uptime: 00:00:03
+Graceful stop process: wait_time_at_interrupt_3_grace_stop_0 PID 20967 has been set for wait_time_at_interrupt_3, which will get sigkilled in 3 s
+Sending signal to wait_time_at_interrupt_3 PID 20967
+Interrupt wait_time_at_interrupt_3, PID: 20967, uptime: 00:00:11
 
-wait_time_at_interrupt_0 PID: 9147 restarting
-Started wait_time_at_interrupt_0 PID: 9148
-Graceful stop process: wait_time_at_interrupt_0_grace_stop_1 PID 9148 has been set for wait_time_at_interrupt_0, which will get sigkilled in 30 s
-Sending signal to wait_time_at_interrupt_0 PID 9148
-Interrupt wait_time_at_interrupt_0, PID: 9148, uptime: 00:00:00
+Graceful stop process: wait_time_at_interrupt_4_grace_stop_0 PID 20968 has been set for wait_time_at_interrupt_4, which will get sigkilled in 3 s
+Sending signal to wait_time_at_interrupt_4 PID 20968
+Interrupt wait_time_at_interrupt_4, PID: 20968, uptime: 00:00:11
 
-wait_time_at_interrupt_0 PID: 9148 restarting
-Started wait_time_at_interrupt_0 PID: 9149
-wait_time_at_interrupt_0_grace_stop_0, pid: 9147 exited. Exitcode: `0', uptime: 00:00:01.
-wait_time_at_interrupt_0_grace_stop_1, pid: 9148 exited. Exitcode: `0', uptime: 00:00:01.
-Graceful stop process: wait_time_at_interrupt_0_grace_stop_0 PID 9149 has been set for wait_time_at_interrupt_0, which will get sigkilled in 30 s
-Sending signal to wait_time_at_interrupt_0 PID 9149
-Interrupt wait_time_at_interrupt_0, PID: 9149, uptime: 00:00:05
+Process wait_time_at_interrupt_5 created
+Process wait_time_at_interrupt_6 created
+Process wait_time_at_interrupt_7 created
+Process wait_time_at_interrupt_8 created
+Process wait_time_at_interrupt_9 created
+Started wait_time_at_interrupt_5 PID: 20985
+Started wait_time_at_interrupt_6 PID: 20986
+Started wait_time_at_interrupt_7 PID: 20987
+Started wait_time_at_interrupt_8 PID: 20988
+Started wait_time_at_interrupt_9 PID: 20989
+Sending signal to wait_time_at_interrupt_0 PID 20964
+wait_time_at_interrupt_0, pid: 20964 signaled. Signal `Killed', uptime: 00:00:14.
+Sending signal to wait_time_at_interrupt_1 PID 20965
+Killed wait_time_at_interrupt_1, PID: 20965, uptime: 00:00:14
 
-wait_time_at_interrupt_0 PID: 9149 restarting
-Started wait_time_at_interrupt_0 PID: 9151
-Graceful stop process: wait_time_at_interrupt_0_grace_stop_1 PID 9151 has been set for wait_time_at_interrupt_0, which will get sigkilled in 30 s
-Sending signal to wait_time_at_interrupt_0 PID 9151
-Interrupt wait_time_at_interrupt_0, PID: 9151, uptime: 00:00:01
+Sending signal to wait_time_at_interrupt_2 PID 20966
+Killed wait_time_at_interrupt_2, PID: 20966, uptime: 00:00:14
 
-wait_time_at_interrupt_0 PID: 9151 restarting
-Started wait_time_at_interrupt_0 PID: 9152
-wait_time_at_interrupt_0_grace_stop_0, pid: 9149 exited. Exitcode: `0', uptime: 00:00:01.
-Graceful stop process: wait_time_at_interrupt_0_grace_stop_2 PID 9152 has been set for wait_time_at_interrupt_0, which will get sigkilled in 30 s
-Sending signal to wait_time_at_interrupt_0 PID 9152
-Interrupt wait_time_at_interrupt_0, PID: 9152, uptime: 00:00:01
+Sending signal to wait_time_at_interrupt_3 PID 20967
+Killed wait_time_at_interrupt_3, PID: 20967, uptime: 00:00:14
 
-wait_time_at_interrupt_0 PID: 9152 restarting
-Started wait_time_at_interrupt_0 PID: 9153
-wait_time_at_interrupt_0_grace_stop_1, pid: 9151 exited. Exitcode: `0', uptime: 00:00:01.
-Graceful stop process: wait_time_at_interrupt_0_grace_stop_3 PID 9153 has been set for wait_time_at_interrupt_0, which will get sigkilled in 30 s
-Sending signal to wait_time_at_interrupt_0 PID 9153
-Interrupt wait_time_at_interrupt_0, PID: 9153, uptime: 00:00:01
+Sending signal to wait_time_at_interrupt_4 PID 20968
+Killed wait_time_at_interrupt_4, PID: 20968, uptime: 00:00:14
 
-wait_time_at_interrupt_0 PID: 9153 restarting
-Started wait_time_at_interrupt_0 PID: 9154
-wait_time_at_interrupt_0_grace_stop_2, pid: 9152 exited. Exitcode: `0', uptime: 00:00:01.
-wait_time_at_interrupt_0_grace_stop_3, pid: 9153 exited. Exitcode: `0', uptime: 00:00:01.
-Graceful stop process: wait_time_at_interrupt_0_grace_stop_0 PID 9154 has been set for wait_time_at_interrupt_0, which will get sigkilled in 30 s
-Sending signal to wait_time_at_interrupt_0 PID 9154
-Interrupt wait_time_at_interrupt_0, PID: 9154, uptime: 00:00:02
+wait_time_at_interrupt_1_grace_stop_0, pid: 20965 signaled. Signal `Killed', uptime: 00:00:04.
+wait_time_at_interrupt_2_grace_stop_0, pid: 20966 signaled. Signal `Killed', uptime: 00:00:04.
+wait_time_at_interrupt_3_grace_stop_0, pid: 20967 signaled. Signal `Killed', uptime: 00:00:04.
+wait_time_at_interrupt_4_grace_stop_0, pid: 20968 signaled. Signal `Killed', uptime: 00:00:04.
+Killed wait_time_at_interrupt_0, PID: 20964, uptime: 00:00:14
 
-wait_time_at_interrupt_0 PID: 9154 restarting
-Started wait_time_at_interrupt_0 PID: 9155
-wait_time_at_interrupt_0_grace_stop_0, pid: 9154 exited. Exitcode: `0', uptime: 00:00:01.
-Graceful stop process: wait_time_at_interrupt_0_grace_stop_0 PID 9155 has been set for wait_time_at_interrupt_0, which will get sigkilled in 30 s
-Sending signal to wait_time_at_interrupt_0 PID 9155
-Interrupt wait_time_at_interrupt_0, PID: 9155, uptime: 00:00:03
+Sending signal to wait_time_at_interrupt_0 PID 20964
+Sending signal to wait_time_at_interrupt_1 PID 20965
+Sending signal to wait_time_at_interrupt_2 PID 20966
+Sending signal to wait_time_at_interrupt_3 PID 20967
+Sending signal to wait_time_at_interrupt_4 PID 20968
+Sending signal to wait_time_at_interrupt_0_grace_stop_0 PID 20964
+Sending signal to wait_time_at_interrupt_1_grace_stop_0 PID 20965
+Sending signal to wait_time_at_interrupt_2_grace_stop_0 PID 20966
+Sending signal to wait_time_at_interrupt_3_grace_stop_0 PID 20967
+Sending signal to wait_time_at_interrupt_4_grace_stop_0 PID 20968
+Sending signal to wait_time_at_interrupt_5 PID 20985
+Killed wait_time_at_interrupt_5, PID: 20985, uptime: 00:00:54
 
-wait_time_at_interrupt_0 PID: 9155 restarting
-Started wait_time_at_interrupt_0 PID: 9156
-wait_time_at_interrupt_0_grace_stop_0, pid: 9155 exited. Exitcode: `0', uptime: 00:00:01.
-Graceful stop process: wait_time_at_interrupt_0_grace_stop_0 PID 9156 has been set for wait_time_at_interrupt_0, which will get sigkilled in 30 s
-Sending signal to wait_time_at_interrupt_0 PID 9156
-Interrupt wait_time_at_interrupt_0, PID: 9156, uptime: 00:00:01
+Sending signal to wait_time_at_interrupt_6 PID 20986
+Killed wait_time_at_interrupt_6, PID: 20986, uptime: 00:00:54
 
-wait_time_at_interrupt_0 PID: 9156 restarting
-Started wait_time_at_interrupt_0 PID: 9157
-Graceful stop process: wait_time_at_interrupt_0_grace_stop_1 PID 9157 has been set for wait_time_at_interrupt_0, which will get sigkilled in 30 s
-Sending signal to wait_time_at_interrupt_0 PID 9157
-Interrupt wait_time_at_interrupt_0, PID: 9157, uptime: 00:00:00
+Sending signal to wait_time_at_interrupt_7 PID 20987
+Killed wait_time_at_interrupt_7, PID: 20987, uptime: 00:00:54
 
-wait_time_at_interrupt_0 PID: 9157 restarting
-Started wait_time_at_interrupt_0 PID: 9158
-wait_time_at_interrupt_0_grace_stop_0, pid: 9156 exited. Exitcode: `0', uptime: 00:00:01.
-Graceful stop process: wait_time_at_interrupt_0_grace_stop_2 PID 9158 has been set for wait_time_at_interrupt_0, which will get sigkilled in 30 s
-Sending signal to wait_time_at_interrupt_0 PID 9158
-Interrupt wait_time_at_interrupt_0, PID: 9158, uptime: 00:00:00
+Sending signal to wait_time_at_interrupt_8 PID 20988
+Killed wait_time_at_interrupt_8, PID: 20988, uptime: 00:00:54
 
-wait_time_at_interrupt_0 PID: 9158 restarting
-Started wait_time_at_interrupt_0 PID: 9159
-wait_time_at_interrupt_0_grace_stop_1, pid: 9157 exited. Exitcode: `0', uptime: 00:00:01.
-wait_time_at_interrupt_0_grace_stop_2, pid: 9158 exited. Exitcode: `0', uptime: 00:00:01.
-Sending signal to wait_time_at_interrupt_0 PID 9159
-Killed wait_time_at_interrupt_0, PID: 9159, uptime: 00:00:05
+Sending signal to wait_time_at_interrupt_9 PID 20989
+Killed wait_time_at_interrupt_9, PID: 20989, uptime: 00:00:54
 
-Sending signal to wait_time_at_interrupt_0_grace_stop_0 PID 9135
-Sending signal to wait_time_at_interrupt_0_grace_stop_0 PID 9137
-Sending signal to wait_time_at_interrupt_0_grace_stop_0 PID 9145
-Sending signal to wait_time_at_interrupt_0_grace_stop_0 PID 9147
-Sending signal to wait_time_at_interrupt_0_grace_stop_1 PID 9148
-Sending signal to wait_time_at_interrupt_0_grace_stop_0 PID 9149
-Sending signal to wait_time_at_interrupt_0_grace_stop_1 PID 9151
-Sending signal to wait_time_at_interrupt_0_grace_stop_2 PID 9152
-Sending signal to wait_time_at_interrupt_0_grace_stop_3 PID 9153
-Sending signal to wait_time_at_interrupt_0_grace_stop_0 PID 9154
-Sending signal to wait_time_at_interrupt_0_grace_stop_0 PID 9155
-Sending signal to wait_time_at_interrupt_0_grace_stop_0 PID 9156
-Sending signal to wait_time_at_interrupt_0_grace_stop_1 PID 9157
-Sending signal to wait_time_at_interrupt_0_grace_stop_2 PID 9158
-Quit

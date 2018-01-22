@@ -46,7 +46,13 @@ t_rostr		get_proc_description(const t_process *proc)
 	}
 	else
 	{
-		ft_sprintf(buf, "%s, %s",
+		if (proc->config->success_time >= 0 &&
+			proc_uptime(proc) >= proc->config->success_time)
+		{
+			ft_sprintf(buf, "Success start, ");
+		}
+
+		ft_sprintf(buf + ft_strlen(buf), "%s, %s",
 			proc_struptime(proc),
 			get_atempts_str_(proc));
 	}

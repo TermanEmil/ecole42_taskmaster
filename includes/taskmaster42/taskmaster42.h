@@ -69,7 +69,6 @@ typedef struct		s_tskmst_logger
 ** This is used to prevent bugs when a signal is recived in a loop.
 ** First use in update_alarm.
 */
-//status; restart wait_time_at_interrupt_0; status; restart wait_time_at_interrupt_0; status; restart wait_time_at_interrupt_0; status
 
 struct				s_taskmast
 {
@@ -122,7 +121,7 @@ void		destroy_proc_intance(t_taskmast *taskmast, t_process *proc);
 void		reload_taskmast_config(t_taskmast *taskmast,
 				const t_shvars *shvars, t_rostr file_path);
 void		reload_procs_config(t_taskmast *taskmast, t_lst_proccfg *new_cfgs);
-void		deactivate_procs_with_config(t_taskmast *taskmast,
+void		grace_stp_procs_with_config(t_taskmast *taskmast,
 				const t_proc_config *cfg);
 
 /*
@@ -134,5 +133,6 @@ void		execute_function_from_strcmd(t_rostr cmd, t_lst_proc *procs,
 				t_rostr err_msg, void (*f)(t_process*));
 void		create_processes(t_taskmast *taskmast, t_lst_proccfg *proc_cfgs);
 void		deactivate_schedule(t_alrm_schedl *schedule);
+void		sigkill_process(t_taskmast *taskmaster, t_process *proc);
 
 #endif
