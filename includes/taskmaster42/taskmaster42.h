@@ -53,7 +53,7 @@ struct				s_alrm_schedl
 {
 	pid_t			pid;
 	int				tm;
-	void			(*f)(t_taskmast*, t_process*);
+	void			(*f)(t_taskmast*, pid_t);
 };
 
 typedef struct		s_tskmst_logger
@@ -101,7 +101,7 @@ int			execute_tskmast_cmd_restart(t_cmd_env *cmd_env);
 void			init_taskmaster(t_rostr config_file);
 void			del_taskmast(t_taskmast *taskmast);
 t_alrm_schedl	new_alarm_schedule(pid_t pid, int schedule_time,
-					void (*f)(t_taskmast*, t_process*));
+					void (*f)(t_taskmast*, pid_t));
 
 int				taskmast_load_all_config(const t_shvars *shvars,
 					t_taskmast *taskmast, t_rostr file_path);
@@ -141,6 +141,6 @@ void		execute_function_from_strcmd(t_rostr cmd, t_lst_proc *procs,
 				t_rostr err_msg, void (*f)(t_process*));
 void		create_processes(t_taskmast *taskmast, t_lst_proccfg *proc_cfgs);
 void		remove_schedule(t_alrm_schedl *schedule);
-void		sigkill_process(t_taskmast *taskmaster, t_process *proc);
+void		sigkill_pid(t_taskmast *taskmaster, pid_t pid);
 
 #endif

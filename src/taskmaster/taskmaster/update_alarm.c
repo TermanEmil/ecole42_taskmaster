@@ -61,7 +61,7 @@ static int		actual_alarm_set_(t_alrm_schedl *next_schedule, t_process *proc)
 	dif = next_schedule->tm - time(NULL);
 	if (dif <= 0)
 	{
-		next_schedule->f(&g_taskmast, proc);
+		next_schedule->f(&g_taskmast, proc->pid);
 		remove_schedule(next_schedule);
 		g_taskmast.next_schedl = NULL;
 		return -1;		

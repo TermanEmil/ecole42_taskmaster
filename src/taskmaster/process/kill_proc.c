@@ -5,28 +5,47 @@
 #include <fcntl.h>
 #include <string.h>
 
-/*
-** To recieve true log, I must save the log before calling kill.
-*/
+static void	save_log_str_(
+				t_str buf,
+				int signum,
+				pid_t pid,
+				t_rostr proc_name,
+				t_rostr struptime)
+{
+	ft_sprintf(buf, "%s %s, PID: %d",
+		strsignal(signum), proc_name, pid);
+
+	if (struptime)
+		ft_sprintf(buf + ft_strlen(buf), ", uptime: %s", struptime);
+
+	ft_strcat(buf, "\n\n");
+}
 
 int		kill_proc(int signum, t_process *proc)
 {
+	return raw_proc_kill(signum, proc->pid, proc->name, proc_struptime(proc));
+}
+
+int		raw_proc_kill(
+			int signum,
+			pid_t pid,
+			t_rostr proc_name,
+			t_rostr struptime)
+{
 	char		buf[124];
 
-	if (proc->pid <= 1)
+	if (pid <= 1)
 		return -1;
 
 	ft_bzero(buf, sizeof(buf));
-	ft_sprintf(buf, "%s %s, PID: %d, uptime: %s\n\n",
-		strsignal(signum), proc->name, proc->pid, proc_struptime(proc));
+	save_log_str_(buf, signum, pid, proc_name, struptime);
 
-	TASKMAST_LOG("Sending signal to %s PID %d\n", proc->name, proc->pid);
-	if (kill(proc->pid, signum) == -1)
+	if (kill(pid, signum) == -1)
 	{
 		if (errno != ESRCH)
 		{
 			TASKMAST_ERROR(FALSE, "kill(): pid = %d, signum = %d: %s",
-				proc->pid, signum, strerror(errno));
+				pid, signum, strerror(errno));
 			errno = 0;
 			return -1;
 		}

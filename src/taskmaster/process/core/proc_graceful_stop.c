@@ -24,6 +24,7 @@ static t_process	new_grace_stop_proc_(const t_process *proc)
 void				proc_graceful_stop(t_process *proc)
 {
 	t_process	stop_proc;
+	pid_t		pid_save;
 
 	if (lst_proc_pidof_grac_stop(g_taskmast.procs, proc->pid))
 		return;
@@ -38,13 +39,20 @@ void				proc_graceful_stop(t_process *proc)
 
 	ft_lstadd(&g_taskmast.procs, ft_lstnew(&stop_proc, sizeof(stop_proc)));
 	TASKMAST_LOG("Graceful stop process: %s PID %d has been set for %s, "
-		"which will get sigkilled in %d s\n", stop_proc.name,
+		"which will get sigkilled in %ds\n", stop_proc.name,
 		stop_proc.pid, proc->name, stop_proc.config->time_before_forced_kill);	
-	
-	kill_proc(proc->config->sig_graceful_stop, proc);
+
+	pid_save = proc->pid;
+	proc->pid = -1;
+
 	setup_alarm(&g_taskmast,
 		new_alarm_schedule(
 			stop_proc.pid,
 			time(NULL) + stop_proc.config->time_before_forced_kill,
-			&sigkill_process));
+			&sigkill_pid));
+	when I restart shit happens
+	raw_proc_kill(proc->config->sig_graceful_stop,
+		pid_save, proc->name, proc_struptime(proc));
+
+	update_alarm();
 }

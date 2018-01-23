@@ -3,7 +3,7 @@
 t_alrm_schedl	new_alarm_schedule(
 					pid_t pid,
 					int schedule_time,
-					void (*f)(t_taskmast*, t_process*))
+					void (*f)(t_taskmast*, pid_t))
 {
 	t_alrm_schedl	result;
 

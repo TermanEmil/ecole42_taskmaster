@@ -2,9 +2,11 @@
 
 void			ft_lstiter_mem(t_list *lst, void (*f)(void *content))
 {
-	while (lst)
+	t_list	*next;
+
+	for (; lst; lst = next)
 	{
+		next = LNEXT(lst);
 		f(lst->content);
-		lst = lst->next;
 	}
 }

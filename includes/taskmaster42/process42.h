@@ -14,6 +14,8 @@
 # define STATE_CRITIC		C_RED		"critic"		C_EOC
 # define STATE_GRACE_STOP	C_LCYAN		"grace stop"	C_EOC
 
+# define PROC_SCHEDL_USR_RESTART (1 << 0)
+
 #define ISSTATE(PROC, STATE) ((PROC)->status.state == STATE)
 
 typedef t_list	t_lst_proc;
@@ -96,6 +98,7 @@ typedef struct		s_process
 	int				stdout_fd[2];
 	int				stderr_fd[2];
 	t_proc_time		proc_time;
+	int				schedule_actions;
 }					t_process;
 
 /*
@@ -122,6 +125,8 @@ void		process_stopped(t_process *proc, int status);
 void		process_continue(t_process *proc, int status);
 
 void		update_proc_state(t_process *proc);
+int			raw_proc_kill(int signum, pid_t pid, t_rostr proc_name,
+				t_rostr struptime);
 int			kill_proc(int signum, t_process *proc);
 void		kill_processes(int signum, const t_lst_proc *procs);
 t_rostr		get_proc_description(const t_process *proc);

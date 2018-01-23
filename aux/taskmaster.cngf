@@ -2,43 +2,46 @@
 logfile=./aux/log
 log_to_term=true
 
-[program:ls]
-command=/bin/ls
-autostart=true
-nprocs=2
-restart_attempts=3
-restart_mode=always
-
+;[program:ls]
+;command=/bin/ls
+;autostart=true
+;nprocs=2
+;restart_attempts=3
+;restart_mode=always
+;
 [program:cat]
 command=/bin/cat
 autostart=true
-nprocs=50
-restart_attempts=10
-restart_mode=always
-
-[program:killer_cat]
-command=/bin/cat
-autostart=true
 nprocs=1
-restart_attempts=12
+restart_attempts=5
 restart_mode=always
-time_before_kill=10
+;sig_graceful_stop=19
+;time_before_kill=6
 
-[program:wait_time_at_interrupt]
-command=./debugging_procs/wait_time_at_interrupt 2
-autostart=true
-nprocs=10
-restart_attempts=1
-restart_mode=always
-time_before_kill=20
-sig_graceful_stop=2
+;
+;[program:killer_cat]
+;command=/bin/cat
+;autostart=true
+;nprocs=1
+;restart_attempts=12
+;restart_mode=always
+;time_before_kill=10
+;
+;[program:w8_intr]
+;command=./debugging_procs/wait_time_at_interrupt 2
+;autostart=true
+;nprocs=10
+;restart_attempts=1
+;restart_mode=always
+;time_before_kill=5
+;sig_graceful_stop=2
 
-[program:wait_time_at_interrupt]
-command=./debugging_procs/wait_time_at_interrupt 6
-autostart=true
-nprocs=2
-restart_attempts=1
-restart_mode=always
-time_before_kill=3
-sig_graceful_stop=2
-success_time=15
+;[program:wait_time_at_interrupt]
+;command=./debugging_procs/wait_time_at_interrupt 6
+;autostart=true
+;nprocs=2
+;restart_attempts=1
+;restart_mode=always
+;time_before_kill=3
+;sig_graceful_stop=2
+;success_time=15

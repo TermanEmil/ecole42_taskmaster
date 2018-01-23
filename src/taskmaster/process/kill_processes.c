@@ -3,7 +3,7 @@
 
 void	kill_processes(int signum, const t_lst_proc *procs)
 {
-	t_lst_proc	*next;
+	t_lst_proc		*next;
 
 	for (; procs; procs = next)
 	{

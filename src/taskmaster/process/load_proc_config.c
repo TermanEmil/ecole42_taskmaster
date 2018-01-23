@@ -23,7 +23,7 @@ static void			set_defaults_(t_proc_config *proc_config)
 	proc_config->umask = DEFAULT_UMASK;
 	proc_config->restart_attempts = 1;
 	proc_config->restart_mode = e_never;
-	proc_config->time_before_forced_kill = 0;
+	proc_config->time_before_forced_kill = 1;
 	proc_config->success_time = -1;
 }
 
