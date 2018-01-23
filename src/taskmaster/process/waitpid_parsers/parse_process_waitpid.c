@@ -8,7 +8,8 @@ void		parse_process_waitpid(pid_t waited_pid, int wait_status)
 	proc = lst_process_pidof(g_taskmast.procs, waited_pid);
 	if (proc == NULL)
 	{
-		TASKMAST_LOG("PID: %d: no such process\n", waited_pid);
+		TASKMAST_ERROR(FALSE, "parse waitpid: PID: %d: no such process\n",
+			waited_pid);
 		return;
 	}
 

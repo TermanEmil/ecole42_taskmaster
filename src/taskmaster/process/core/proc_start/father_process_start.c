@@ -1,5 +1,6 @@
 #include "taskmaster42.h"
 #include "taskmaster42_utils_.h"
+#include <time.h>
 
 static void	set_proc_stats_(t_process *proc)
 {

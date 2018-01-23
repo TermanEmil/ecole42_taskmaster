@@ -1,4 +1,5 @@
 #include "taskmaster42.h"
+#include <time.h>
 
 void		process_continue(t_process *proc, int status)
 {

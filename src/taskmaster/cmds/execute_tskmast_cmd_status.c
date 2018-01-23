@@ -1,6 +1,7 @@
 #include "taskmaster42.h"
 #include <sys/types.h>
 #include <signal.h>
+#include <time.h>
 
 #define STATE_LEN_ 24
 #define DESCRIPT_LEN_ 64
@@ -11,9 +12,6 @@ static void		print_proc_status_(const t_process *proc)
 {
 	t_rostr		strstate;
 
-	if (!proc->active)
-		return;
-	
 	strstate = get_proc_state_str(proc);
 	ft_printf("%*s %*s %*s %-*d\n",
 		STATE_LEN_, strstate,
@@ -44,8 +42,6 @@ static void		print_general_status_(const t_lst_proc *procs)
 	for (; procs; LTONEXT(procs))
 	{
 		proc = LCONT(procs, t_process*);
-		if (!proc->active)
-			continue;
 		running += ISSTATE(proc, e_running);
 		finished += ISSTATE(proc, e_completed);
 		failed += ISSTATE(proc, e_critic);

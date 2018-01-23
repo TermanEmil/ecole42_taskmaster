@@ -36,14 +36,23 @@ static void	update_procs_with_new_configs_(
 				const t_lst_proccfg *new_cfgs)
 {
 	t_lst_proccfg	*lcfg;
+	t_process		*proc;
 
 	for (; procs; LTONEXT(procs))
 	{
-		lcfg = ft_lst_first(new_cfgs, &(LCONT(procs, t_process*))->config->hash,
+		proc = LCONT(procs, t_process*);
+		lcfg = ft_lst_first(new_cfgs, &proc->config->hash,
 			0, (t_lst_cont_cmp*)&proc_cfg_hash_equ);
-		if (lcfg == NULL) 
+		if (lcfg == NULL && !ISSTATE(proc, e_grace_stopping)) 
+		{
+			TASKMAST_ERROR(TRUE, "reload_procs_config: %s: no config found.\n",
+				proc->name);
+		}
+		else
 			continue;
-		LCONT(procs, t_process*)->config = LCONT(lcfg, t_proc_config*);
+		
+		del_proc_config(proc->config);
+		proc->config = proc_config_dup(LCONT(lcfg, t_proc_config*));
 	}
 }
 

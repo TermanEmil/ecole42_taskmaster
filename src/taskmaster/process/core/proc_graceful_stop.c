@@ -1,4 +1,5 @@
 #include "taskmaster42.h"
+#include <time.h>
 
 static t_process	new_grace_stop_proc_(const t_process *proc)
 {
@@ -30,6 +31,7 @@ void				proc_graceful_stop(t_process *proc)
 	discard_proc_redirs(proc);
 
 	stop_proc.status.state = e_grace_stopping;
+	stop_proc.config = proc_config_dup(proc->config);
 	stop_proc.proc_time.start_time = time(NULL);
 	stop_proc.proc_time.running_time = 0;
 	stop_proc.proc_time.finish_time = 0;

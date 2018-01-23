@@ -1,22 +1,15 @@
 #include "taskmaster42.h"
 #include <sys/types.h>
 #include <signal.h>
+#include <time.h>
 
 static int		schedule_get_time_(const t_alrm_schedl *schedule)
 {
 	return schedule->tm;
 }
 
-static t_bool	schedule_is_active_(
-					t_bool *active_bool,
-					const t_alrm_schedl *schedule)
+static t_alrm_schedl	*get_min_time_schedule(const t_lst_schedl *schedules)
 {
-	return schedule->active == *active_bool;
-}
-
-t_alrm_schedl	*get_min_time_schedule(const t_lst_schedl *schedules)
-{
-	t_lst_schedl	*filtered_active;
 	t_lst_schedl	*lmin;
 	t_alrm_schedl	*result;
 	t_bool			true_bool;
@@ -25,17 +18,12 @@ t_alrm_schedl	*get_min_time_schedule(const t_lst_schedl *schedules)
 		return NULL;
 
 	true_bool = TRUE;
-	filtered_active = ft_lst_filter((t_list*)schedules, &true_bool,
-		0, (t_lst_cont_cmp*)&schedule_is_active_);
-	
-	lmin = ft_lst_min(filtered_active, (int (*)(void*))&schedule_get_time_);
+	lmin = ft_lst_min(schedules, (int (*)(void*))&schedule_get_time_);
 	result = (lmin == NULL) ? NULL : LCONT(lmin, t_alrm_schedl*);
-
-	ft_lstdel(&filtered_active, NULL);
 	return result;
 }
 
-void			deactivate_dead_pid_schedule_(t_alrm_schedl *schedule)
+void			remove_dead_pid_schedule_(t_alrm_schedl *schedule)
 {
 	t_process	*proc;
 
@@ -43,9 +31,9 @@ void			deactivate_dead_pid_schedule_(t_alrm_schedl *schedule)
 	{
 		errno = 0;
 		proc = lst_proc_pidof_grac_stop(g_taskmast.procs, schedule->pid);
-		deactivate_schedule(schedule);
+		remove_schedule(schedule);
 		if (proc)
-			deactivate_process(proc);
+			destroy_proc_intance(&g_taskmast, proc);
 	}
 }
 
@@ -58,7 +46,7 @@ static void		get_proc_and_next_schedl_(
 	do
 	{
 		ft_lstiter_mem(g_taskmast.schedules,
-			(void (*)(void*))&deactivate_dead_pid_schedule_);
+			(void (*)(void*))&remove_dead_pid_schedule_);
 		*schedl_result = get_min_time_schedule(*schedules);
 		if (*schedl_result == NULL)
 			break;
@@ -74,7 +62,7 @@ static int		actual_alarm_set_(t_alrm_schedl *next_schedule, t_process *proc)
 	if (dif <= 0)
 	{
 		next_schedule->f(&g_taskmast, proc);
-		deactivate_schedule(next_schedule);
+		remove_schedule(next_schedule);
 		g_taskmast.next_schedl = NULL;
 		return -1;		
 	}

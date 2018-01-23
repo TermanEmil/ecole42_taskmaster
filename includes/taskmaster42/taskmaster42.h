@@ -9,7 +9,7 @@
 # include "shell42.h"
 # include "termlib.h"
 
-#include <pthread.h>
+#include <signal.h>
 
 # define TASKMAST_ERROR(EXIT_BOOL, FORMAT, ...)		\
 {													\
@@ -18,7 +18,7 @@
 	{												\
 		term_move_cursor_to_left_most();			\
 		ft_prerror(EXIT_BOOL, FORMAT, __VA_ARGS__);	\
-		term_putnewl();			\
+		term_putnewl();								\
 		input_reprint(g_current_in);				\
 	}												\
 	else											\
@@ -53,7 +53,6 @@ struct				s_alrm_schedl
 {
 	pid_t			pid;
 	int				tm;
-	t_bool			active;
 	void			(*f)(t_taskmast*, t_process*);
 };
 
@@ -65,10 +64,11 @@ typedef struct		s_tskmst_logger
 	t_bool			log_to_term;
 }					t_tskmst_logger;
 
-/*
-** This is used to prevent bugs when a signal is recived in a loop.
-** First use in update_alarm.
-*/
+typedef struct		s_tskmst_sgnls
+{
+	t_bool			signals[NSIG];
+	t_bool			its_safe;
+}					t_tskmst_sgnls;
 
 struct				s_taskmast
 {
@@ -80,6 +80,7 @@ struct				s_taskmast
 	t_lst_schedl	*schedules;
 	t_alrm_schedl	*next_schedl;
 	t_rostr			cfg_path;
+	t_tskmst_sgnls	signal_flags;
 };
 
 void		taskmast_log(const char *format, ...);
@@ -115,6 +116,13 @@ void		update_alarm();
 void		destroy_proc_intance(t_taskmast *taskmast, t_process *proc);
 
 /*
+** Signals
+*/
+
+void		taskmast_reset_signals();
+void		taskmast_parse_signals();
+
+/*
 ** Reloading.
 */
 
@@ -132,7 +140,7 @@ void		taskmast_setup_logger(t_taskmast *taskmast);
 void		execute_function_from_strcmd(t_rostr cmd, t_lst_proc *procs,
 				t_rostr err_msg, void (*f)(t_process*));
 void		create_processes(t_taskmast *taskmast, t_lst_proccfg *proc_cfgs);
-void		deactivate_schedule(t_alrm_schedl *schedule);
+void		remove_schedule(t_alrm_schedl *schedule);
 void		sigkill_process(t_taskmast *taskmaster, t_process *proc);
 
 #endif

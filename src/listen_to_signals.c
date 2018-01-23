@@ -25,45 +25,17 @@ static void	handle_sigint(int signum)
 	g_shinput->signaled_sigint = TRUE;
 }
 
-static void	handle_sigchld_(int signum)
+static void	set_tskmast_signal(int signum)
 {
-	pid_t	pid;
-	int		status;
-
-	while ((pid = waitpid(-1, &status, WNOHANG | WUNTRACED | WCONTINUED)) > 0)
-	{
-		if (!g_taskmast.is_exiting)
-			parse_process_waitpid(pid, status);
-	}
-	if (pid == -1 && errno != ECHILD)
-		TASKMAST_ERROR(FALSE, "waitpid(): %s\n", strerror(errno));
-	errno = 0;
-	update_alarm();
-	signal(SIGCHLD, &handle_sigchld_);
-}
-
-static void	handle_sigalarm(int signum)
-{
-	g_taskmast.next_schedl = NULL;
-	update_alarm();
-	signal(SIGALRM, &handle_sigalarm);
-}
-
-static void	handle_sighub_(int signum)
-{
-	(void)signum;
-	term_restore_to_old_term_data();
-	TASKMAST_LOG("Reloading Config File\n", "");
-	reload_taskmast_config(&g_taskmast, &g_shdata.shvars, g_taskmast.cfg_path);
-	term_enable_raw_mode(term_get_data());
-	update_alarm();
-	signal(SIGHUP, &handle_sighub_);
+	g_taskmast.signal_flags.signals[signum] = TRUE;
+	if (g_taskmast.signal_flags.its_safe)
+		taskmast_parse_signals();	
 }
 
 void		listen_to_signals(void)
 {
 	ft_sigaction(SIGINT, &handle_sigint);
-	signal(SIGCHLD, &handle_sigchld_);
-	signal(SIGALRM, &handle_sigalarm);
-	signal(SIGHUP, &handle_sighub_);
+	signal(SIGCHLD, &set_tskmast_signal);
+	signal(SIGALRM, &set_tskmast_signal);
+	signal(SIGHUP, &set_tskmast_signal);
 }

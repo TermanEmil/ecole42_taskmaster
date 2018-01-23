@@ -1,5 +1,6 @@
 #include "taskmaster42.h"
 #include <wait.h>
+#include <time.h>
 
 static void	update_proc_stats_(t_process *proc, int waitpid_status)
 {

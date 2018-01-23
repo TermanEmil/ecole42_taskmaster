@@ -14,7 +14,7 @@ int			new_unique_name_id(
 	{
 		next = LNEXT(procs);
 		aux = LCONT(procs, t_process*);
-		if (aux->active && ft_str_starts_with(aux->name, default_name))
+		if (ft_str_starts_with(aux->name, default_name))
 		{
 			numb_ref = aux->name + ft_strlen(default_name) + 1;
 			if (ft_str_is_numb(numb_ref))

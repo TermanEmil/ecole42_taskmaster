@@ -1,5 +1,6 @@
 #include "taskmaster42.h"
 #include <wait.h>
+#include <time.h>
 
 static void	update_proc_stats_(t_process *proc, int waitpid_status)
 {
@@ -16,7 +17,7 @@ void		process_normal_exit(t_process *proc, int status)
 	
 	if (ISSTATE(proc, e_grace_stopping))
 	{
-		deactivate_process(proc);
+		destroy_proc_intance(&g_taskmast, proc);
 		return;
 	}
 	

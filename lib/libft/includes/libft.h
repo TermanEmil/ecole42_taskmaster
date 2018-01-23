@@ -180,6 +180,7 @@ char			*ft_str_toupper(char *str);
 */
 
 void			ft_free_bidimens(char **table);
+t_str			*ft_bidimens_dup(const t_str *tab);
 char			*ft_strrealoc(char **str);
 int				ft_wstrlen(wchar_t *str);
 int				ft_indexof(char **table, char *str);
