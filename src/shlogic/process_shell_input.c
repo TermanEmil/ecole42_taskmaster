@@ -1,6 +1,7 @@
 #include "shlogic.h"
 #include "shell_redirs_.h"
 #include "shell42.h"
+#include "taskmaster42.h"
 #include <signal.h>
 #include <sys/types.h>
 
@@ -47,10 +48,15 @@ void	process_shell_input(
 	IF_TERM(term_restore(&term_get_data()->old_term));
 	IF_TERM(ft_putnewl());
 
+	g_taskmast.signal_flags.its_safe = FALSE;
 	cmd_queue = group_words_by_delim(words, ";");
-	process_cmds(cmd_queue, shvars, built_in_cmds);
 	
+	process_cmds(cmd_queue, shvars, built_in_cmds);
+
 	IF_TERM(term_enable_raw_mode(term_get_data()));
+
+	g_taskmast.signal_flags.its_safe = TRUE;
+	taskmast_parse_signals();
 
 	del_groups_of_words(cmd_queue);
 	del_lst_of_words(words);

@@ -1,13 +1,244 @@
-Started Taskmaster, PID: 15794
-Process cat_0 created
-Started cat_0 PID: 15795
-Graceful stop process: cat_0_grace_stop_0 PID 15795 has been set for cat_0, which will get sigkilled in 1s
-cat_0_grace_stop_0, pid: 15795 signaled. Signal `Interrupt', uptime: 00:00:00.
-Destroyed cat_0_grace_stop_0.
-Interrupt cat_0, PID: 15795, uptime: 00:00:04
+Started Taskmaster, PID: 23685
+Process ls_0 created
+Process ls_1 created
+Process cat_puppy_grace_sig_0 created
+Process cat_puppy_grace_sig_1 created
+Process cat_puppy_grace_sig_2 created
+Process cat_puppy_grace_sig_3 created
+Process cat_puppy_grace_sig_4 created
+Process killer_cat_0 created
+Process w8_intr_0 created
+Process w8_intr_1 created
+Process w8_intr_2 created
+Process w8_intr_3 created
+Process w8_intr_4 created
+Process w8_intr_5 created
+Process w8_intr_6 created
+Process w8_intr_7 created
+Process w8_intr_8 created
+Process w8_intr_9 created
+Process wait_time_at_interrupt_0 created
+Process wait_time_at_interrupt_1 created
+Started ls_0 PID: 23686
+Started ls_1 PID: 23687
+Started cat_puppy_grace_sig_0 PID: 23688
+Started cat_puppy_grace_sig_1 PID: 23689
+Started cat_puppy_grace_sig_2 PID: 23690
+Started cat_puppy_grace_sig_3 PID: 23691
+Started cat_puppy_grace_sig_4 PID: 23692
+ls_0, pid: 23686 exited. Exitcode: `0', uptime: 00:00:00.
+ls_0 PID: 23686 restarting
+Started ls_0 PID: 23694
+ls_1, pid: 23687 exited. Exitcode: `0', uptime: 00:00:00.
+ls_1 PID: 23687 restarting
+Started ls_1 PID: 23695
+Started killer_cat_0 PID: 23693
+Started w8_intr_0 PID: 23696
+Started w8_intr_1 PID: 23697
+Started w8_intr_2 PID: 23698
+Started w8_intr_3 PID: 23699
+ls_0, pid: 23694 exited. Exitcode: `0', uptime: 00:00:00.
+ls_0 PID: 23694 restarting
+Started ls_0 PID: 23701
+ls_1, pid: 23695 exited. Exitcode: `0', uptime: 00:00:00.
+ls_1 PID: 23695 restarting
+Started ls_1 PID: 23702
+Started w8_intr_4 PID: 23700
+Started w8_intr_5 PID: 23703
+Started w8_intr_6 PID: 23704
+Started w8_intr_7 PID: 23705
+ls_0, pid: 23701 exited. Exitcode: `0', uptime: 00:00:00.
+ls_1, pid: 23702 exited. Exitcode: `0', uptime: 00:00:00.
+Started w8_intr_8 PID: 23706
+Started w8_intr_9 PID: 23707
+Started wait_time_at_interrupt_0 PID: 23708
+Started wait_time_at_interrupt_1 PID: 23709
+cat_puppy_grace_sig_0, pid: 23688 signaled. Signal `Interrupt', uptime: 00:00:15.
+cat_puppy_grace_sig_0 PID: 23688 restarting
+Started cat_puppy_grace_sig_0 PID: 23712
+Reloading Config File
+ls_0 PID: 23701 restarting
+Started ls_0 PID: 23930
+ls_1 PID: 23702 restarting
+Started ls_1 PID: 23931
+Graceful stop process: cat_puppy_grace_sig_0_grace_stop_0 PID 23712 has been set for cat_puppy_grace_sig_0, which will get sigkilled in 6s
+Stopped (signal) cat_puppy_grace_sig_0, PID: 23712, uptime: 00:00:00
 
-cat_0 PID: -1 restarting
-Graceful stop process: cat_0_grace_stop_0 PID -1 has been set for cat_0, which will get sigkilled in 1s
-Started cat_0 PID: 15796
-Killed cat_0, PID: 15796, uptime: 00:00:59
+cat_puppy_grace_sig_0 PID: -1 restarting
+Started cat_puppy_grace_sig_0 PID: 23932
+Graceful stop process: cat_puppy_grace_sig_1_grace_stop_0 PID 23689 has been set for cat_puppy_grace_sig_1, which will get sigkilled in 6s
+Stopped (signal) cat_puppy_grace_sig_1, PID: 23689, uptime: 00:00:00
+
+cat_puppy_grace_sig_1 PID: -1 restarting
+Started cat_puppy_grace_sig_1 PID: 23933
+Graceful stop process: cat_puppy_grace_sig_2_grace_stop_0 PID 23690 has been set for cat_puppy_grace_sig_2, which will get sigkilled in 6s
+Stopped (signal) cat_puppy_grace_sig_2, PID: 23690, uptime: 00:00:00
+
+cat_puppy_grace_sig_2 PID: -1 restarting
+Started cat_puppy_grace_sig_2 PID: 23934
+Graceful stop process: cat_puppy_grace_sig_3_grace_stop_0 PID 23691 has been set for cat_puppy_grace_sig_3, which will get sigkilled in 6s
+Stopped (signal) cat_puppy_grace_sig_3, PID: 23691, uptime: 00:00:00
+
+cat_puppy_grace_sig_3 PID: -1 restarting
+Started cat_puppy_grace_sig_3 PID: 23935
+Graceful stop process: cat_puppy_grace_sig_4_grace_stop_0 PID 23692 has been set for cat_puppy_grace_sig_4, which will get sigkilled in 6s
+Stopped (signal) cat_puppy_grace_sig_4, PID: 23692, uptime: 00:00:00
+
+cat_puppy_grace_sig_4 PID: -1 restarting
+Started cat_puppy_grace_sig_4 PID: 23936
+Graceful stop process: killer_cat_0_grace_stop_0 PID 23693 has been set for killer_cat_0, which will get sigkilled in 10s
+Interrupt killer_cat_0, PID: 23693, uptime: 00:00:00
+
+killer_cat_0 PID: -1 restarting
+Started killer_cat_0 PID: 23937
+Graceful stop process: w8_intr_0_grace_stop_0 PID 23696 has been set for w8_intr_0, which will get sigkilled in 5s
+Interrupt w8_intr_0, PID: 23696, uptime: 00:00:00
+
+w8_intr_0 PID: -1 restarting
+Started w8_intr_0 PID: 23938
+Graceful stop process: w8_intr_1_grace_stop_0 PID 23697 has been set for w8_intr_1, which will get sigkilled in 5s
+Interrupt w8_intr_1, PID: 23697, uptime: 00:00:00
+
+w8_intr_1 PID: -1 restarting
+Started w8_intr_1 PID: 23939
+Graceful stop process: w8_intr_2_grace_stop_0 PID 23698 has been set for w8_intr_2, which will get sigkilled in 5s
+Interrupt w8_intr_2, PID: 23698, uptime: 00:00:00
+
+w8_intr_2 PID: -1 restarting
+Started w8_intr_2 PID: 23940
+Graceful stop process: w8_intr_3_grace_stop_0 PID 23699 has been set for w8_intr_3, which will get sigkilled in 5s
+Interrupt w8_intr_3, PID: 23699, uptime: 00:00:00
+
+w8_intr_3 PID: -1 restarting
+Started w8_intr_3 PID: 23941
+Graceful stop process: w8_intr_4_grace_stop_0 PID 23700 has been set for w8_intr_4, which will get sigkilled in 5s
+Interrupt w8_intr_4, PID: 23700, uptime: 00:00:00
+
+w8_intr_4 PID: -1 restarting
+Started w8_intr_4 PID: 23942
+Graceful stop process: w8_intr_5_grace_stop_0 PID 23703 has been set for w8_intr_5, which will get sigkilled in 5s
+Interrupt w8_intr_5, PID: 23703, uptime: 00:00:00
+
+w8_intr_5 PID: -1 restarting
+Started w8_intr_5 PID: 23943
+Graceful stop process: w8_intr_6_grace_stop_0 PID 23704 has been set for w8_intr_6, which will get sigkilled in 5s
+Interrupt w8_intr_6, PID: 23704, uptime: 00:00:00
+
+w8_intr_6 PID: -1 restarting
+Started w8_intr_6 PID: 23944
+Graceful stop process: w8_intr_7_grace_stop_0 PID 23705 has been set for w8_intr_7, which will get sigkilled in 5s
+Interrupt w8_intr_7, PID: 23705, uptime: 00:00:00
+
+w8_intr_7 PID: -1 restarting
+Started w8_intr_7 PID: 23945
+Graceful stop process: w8_intr_8_grace_stop_0 PID 23706 has been set for w8_intr_8, which will get sigkilled in 5s
+Interrupt w8_intr_8, PID: 23706, uptime: 00:00:00
+
+w8_intr_8 PID: -1 restarting
+Started w8_intr_8 PID: 23946
+Graceful stop process: w8_intr_9_grace_stop_0 PID 23707 has been set for w8_intr_9, which will get sigkilled in 5s
+Interrupt w8_intr_9, PID: 23707, uptime: 00:00:00
+
+w8_intr_9 PID: -1 restarting
+Started w8_intr_9 PID: 23947
+Graceful stop process: wait_time_at_interrupt_0_grace_stop_0 PID 23708 has been set for wait_time_at_interrupt_0, which will get sigkilled in 3s
+Interrupt wait_time_at_interrupt_0, PID: 23708, uptime: 00:00:00
+
+wait_time_at_interrupt_0 PID: -1 restarting
+Started wait_time_at_interrupt_0 PID: 23948
+Graceful stop process: wait_time_at_interrupt_1_grace_stop_0 PID 23709 has been set for wait_time_at_interrupt_1, which will get sigkilled in 3s
+Interrupt wait_time_at_interrupt_1, PID: 23709, uptime: 00:00:00
+
+wait_time_at_interrupt_1 PID: -1 restarting
+Started wait_time_at_interrupt_1 PID: 23949
+Process cat_puppy_grace_sig_1_grace_stop_0, pid: 23689 stopped with the signal 19.
+Process cat_puppy_grace_sig_2_grace_stop_0, pid: 23690 stopped with the signal 19.
+Process cat_puppy_grace_sig_3_grace_stop_0, pid: 23691 stopped with the signal 19.
+Process cat_puppy_grace_sig_4_grace_stop_0, pid: 23692 stopped with the signal 19.
+killer_cat_0_grace_stop_0, pid: 23693 signaled. Signal `Interrupt', uptime: 00:00:01.
+Destroyed killer_cat_0_grace_stop_0.
+Process cat_puppy_grace_sig_0_grace_stop_0, pid: 23712 stopped with the signal 19.
+ls_0, pid: 23930 exited. Exitcode: `0', uptime: 00:00:01.
+ls_1, pid: 23931 exited. Exitcode: `0', uptime: 00:00:01.
+w8_intr_0_grace_stop_0, pid: 23696 exited. Exitcode: `0', uptime: 00:00:02.
+Destroyed w8_intr_0_grace_stop_0.
+w8_intr_1_grace_stop_0, pid: 23697 exited. Exitcode: `0', uptime: 00:00:02.
+Destroyed w8_intr_1_grace_stop_0.
+w8_intr_2_grace_stop_0, pid: 23698 exited. Exitcode: `0', uptime: 00:00:03.
+Destroyed w8_intr_2_grace_stop_0.
+w8_intr_3_grace_stop_0, pid: 23699 exited. Exitcode: `0', uptime: 00:00:03.
+Destroyed w8_intr_3_grace_stop_0.
+w8_intr_4_grace_stop_0, pid: 23700 exited. Exitcode: `0', uptime: 00:00:03.
+Destroyed w8_intr_4_grace_stop_0.
+w8_intr_5_grace_stop_0, pid: 23703 exited. Exitcode: `0', uptime: 00:00:02.
+Destroyed w8_intr_5_grace_stop_0.
+w8_intr_6_grace_stop_0, pid: 23704 exited. Exitcode: `0', uptime: 00:00:02.
+Destroyed w8_intr_6_grace_stop_0.
+w8_intr_7_grace_stop_0, pid: 23705 exited. Exitcode: `0', uptime: 00:00:02.
+Destroyed w8_intr_7_grace_stop_0.
+w8_intr_8_grace_stop_0, pid: 23706 exited. Exitcode: `0', uptime: 00:00:02.
+Destroyed w8_intr_8_grace_stop_0.
+w8_intr_9_grace_stop_0, pid: 23707 exited. Exitcode: `0', uptime: 00:00:02.
+Destroyed w8_intr_9_grace_stop_0.
+wait_time_at_interrupt_0_grace_stop_0, pid: 23708 exited. Exitcode: `0', uptime: 00:00:02.
+Destroyed wait_time_at_interrupt_0_grace_stop_0.
+wait_time_at_interrupt_1_grace_stop_0, pid: 23709 exited. Exitcode: `0', uptime: 00:00:02.
+Destroyed wait_time_at_interrupt_1_grace_stop_0.
+Killed cat_puppy_grace_sig_0_grace_stop_0, PID: 23712, uptime: 00:00:06
+
+Killed cat_puppy_grace_sig_1_grace_stop_0, PID: 23689, uptime: 00:00:06
+
+Killed cat_puppy_grace_sig_2_grace_stop_0, PID: 23690, uptime: 00:00:06
+
+Killed cat_puppy_grace_sig_3_grace_stop_0, PID: 23691, uptime: 00:00:06
+
+Killed cat_puppy_grace_sig_4_grace_stop_0, PID: 23692, uptime: 00:00:06
+
+cat_puppy_grace_sig_1_grace_stop_0, pid: 23689 signaled. Signal `Killed', uptime: 00:00:06.
+Destroyed cat_puppy_grace_sig_1_grace_stop_0.
+cat_puppy_grace_sig_2_grace_stop_0, pid: 23690 signaled. Signal `Killed', uptime: 00:00:06.
+Destroyed cat_puppy_grace_sig_2_grace_stop_0.
+cat_puppy_grace_sig_3_grace_stop_0, pid: 23691 signaled. Signal `Killed', uptime: 00:00:07.
+Destroyed cat_puppy_grace_sig_3_grace_stop_0.
+cat_puppy_grace_sig_4_grace_stop_0, pid: 23692 signaled. Signal `Killed', uptime: 00:00:07.
+Destroyed cat_puppy_grace_sig_4_grace_stop_0.
+cat_puppy_grace_sig_0_grace_stop_0, pid: 23712 signaled. Signal `Killed', uptime: 00:00:07.
+Destroyed cat_puppy_grace_sig_0_grace_stop_0.
+w8_intr_4, pid: 23942 exited. Exitcode: `0', uptime: 00:00:11.
+cat_puppy_grace_sig_0, pid: 23932 signaled. Signal `Killed', uptime: 00:00:41.
+cat_puppy_grace_sig_0 PID: 23932 restarting
+Started cat_puppy_grace_sig_0 PID: 23956
+Killed cat_puppy_grace_sig_0, PID: 23956, uptime: 00:00:22
+
+Killed cat_puppy_grace_sig_1, PID: 23933, uptime: 00:01:03
+
+Killed cat_puppy_grace_sig_2, PID: 23934, uptime: 00:01:03
+
+Killed cat_puppy_grace_sig_3, PID: 23935, uptime: 00:01:03
+
+Killed cat_puppy_grace_sig_4, PID: 23936, uptime: 00:01:03
+
+Killed killer_cat_0, PID: 23937, uptime: 00:01:03
+
+Killed w8_intr_0, PID: 23938, uptime: 00:01:03
+
+Killed w8_intr_1, PID: 23939, uptime: 00:01:03
+
+Killed w8_intr_2, PID: 23940, uptime: 00:01:03
+
+Killed w8_intr_3, PID: 23941, uptime: 00:01:03
+
+Killed w8_intr_5, PID: 23943, uptime: 00:01:02
+
+Killed w8_intr_6, PID: 23944, uptime: 00:01:02
+
+Killed w8_intr_7, PID: 23945, uptime: 00:01:02
+
+Killed w8_intr_8, PID: 23946, uptime: 00:01:02
+
+Killed w8_intr_9, PID: 23947, uptime: 00:01:02
+
+Killed wait_time_at_interrupt_0, PID: 23948, uptime: 00:01:02
+
+Killed wait_time_at_interrupt_1, PID: 23949, uptime: 00:01:02
 

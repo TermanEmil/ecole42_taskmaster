@@ -12,6 +12,9 @@ static void		print_proc_status_(const t_process *proc)
 {
 	t_rostr		strstate;
 
+	if (proc == NULL)
+		return;
+	
 	strstate = get_proc_state_str(proc);
 	ft_printf("%*s %*s %*s %-*d\n",
 		STATE_LEN_, strstate,
@@ -53,7 +56,8 @@ static void		print_general_status_(const t_lst_proc *procs)
 
 
 	ft_printf("Schedules len: %d\n", ft_lstlen(g_taskmast.schedules));
-	ft_lstiter_mem(g_taskmast.schedules, (void (*)(void*))&print_schedule_delta_time);
+	ft_lstiter_mem(g_taskmast.schedules,
+		(void (*)(void*))&print_schedule_delta_time);
 }
 
 static void		print_status_of_the_argv_(const t_str *argv)
@@ -78,6 +82,8 @@ int				execute_tskmast_cmd_status(t_cmd_env *cmd_env)
 {
 	size_t		color_len;
 
+	taskmast_parse_signals();
+	g_taskmast.signal_flags.its_safe = FALSE;
 	if (cmd_env->argv[1] != NULL)
 	{
 		if (ft_strequ(cmd_env->argv[1], "-h"))
@@ -97,5 +103,7 @@ int				execute_tskmast_cmd_status(t_cmd_env *cmd_env)
 		print_status_of_the_argv_(cmd_env->argv);
 	else
 		ft_lstiter_mem(g_taskmast.procs, (void (*)(void*))&print_proc_status_);
+	g_taskmast.signal_flags.its_safe = TRUE;
+	taskmast_parse_signals();
 	return 0;
 }

@@ -17,11 +17,6 @@ static int	parse_execeptions_(t_process *proc)
 			ft_prerror(FALSE, "restart: %s: can't restart not started "
 				"program.\n", proc->name);
 			return 1;
-		
-		case e_stopped:
-			ft_prerror(FALSE, "restart: %s: can't restart stopped processes.\n",
-				proc->name);
-			return 1;
 
 		case e_grace_stopping:
 			ft_prerror(FALSE, "restart: %s: can't restart processes that are "
@@ -37,6 +32,9 @@ static void	restart_process_(t_process *proc)
 {
 	t_bool	will_be_auto_restarted;
 
+	if (proc == NULL)
+		return;
+
 	if (parse_execeptions_(proc) != 0)
 		return;
 
@@ -47,7 +45,6 @@ static void	restart_process_(t_process *proc)
 	if (ISSTATE(proc, e_running) || ISSTATE(proc, e_stopped))
 		proc_graceful_stop(proc);
 
-	// if (!will_be_auto_restarted)
 	restart_process(proc);
 }
 
@@ -55,6 +52,8 @@ int			execute_tskmast_cmd_restart(t_cmd_env *cmd_env)
 {
 	int		i;
 
+	taskmast_parse_signals();
+	g_taskmast.signal_flags.its_safe = FALSE;
 	if (cmd_env->argv[1] == NULL || ft_strequ(cmd_env->argv[1], "-h"))
 		return print_help_();
 
@@ -64,5 +63,7 @@ int			execute_tskmast_cmd_restart(t_cmd_env *cmd_env)
 			"restart:", (void (*)(t_process*))&restart_process_);
 	}
 	update_alarm();
+	g_taskmast.signal_flags.its_safe = TRUE;
+	taskmast_parse_signals();
 	return 0;
 }

@@ -10,6 +10,9 @@ static int		print_help_()
 
 static void	actual_proc_parsing_(t_process *proc)
 {
+	if (proc == NULL)
+		return;
+	
 	if (ISSTATE(proc, e_not_started))
 	{
 		ft_printf("Starting %s\n", proc->name);
@@ -26,6 +29,8 @@ int			execute_tskmast_cmd_start(t_cmd_env *cmd_env)
 {
 	const t_str		*argv;
 
+	taskmast_parse_signals();
+	g_taskmast.signal_flags.its_safe = FALSE;
 	argv = cmd_env->argv;
 	if (argv[1] == NULL || ft_strequ(argv[1], "-h"))
 		return print_help_();
@@ -36,5 +41,7 @@ int			execute_tskmast_cmd_start(t_cmd_env *cmd_env)
 		execute_function_from_strcmd(
 			*argv, g_taskmast.procs, "start:", &actual_proc_parsing_);
 	}
+	g_taskmast.signal_flags.its_safe = TRUE;
+	taskmast_parse_signals();
 	return 0;
 }

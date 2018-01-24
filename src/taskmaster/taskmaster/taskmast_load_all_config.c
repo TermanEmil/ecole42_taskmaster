@@ -37,39 +37,16 @@ static t_lst_str	*read_config_(t_rostr file_path)
 	return file_lines;
 }
 
-int					load_taskmaster_config(
+static void			load_program_cfg_(
 						t_taskmast *taskmast,
-						t_lst_str *lines)
+						t_lst_str *file_lines,
+						int *lines_count)
 {
-	t_str		line;
-	t_str		val;
-	char		*semicolon;
-	int			i;
+	t_proc_config	proc_cfg;
 
-	for (i = 0; lines; LTONEXT(lines), i++)
-	{
-		line = LCONT(lines, t_str);
-
-		if (ft_strequ(line, ""))
-			break;
-		if ((semicolon = ft_strchr(line, ';')) != NULL)
-			*semicolon = '\0';
-
-		val = ft_strchr(line, '=') + 1;
-		if (ft_str_starts_with(line, "logfile="))
-		{
-			if (taskmast->logger.log_file_path)
-				free(taskmast->logger.log_file_path);
-
-			taskmast->logger.log_file_path = regex_get_match("[a-zA-Z0-9_./]*",
-				val);
-		}
-		else if (ft_str_starts_with(line, "log_to_term="))
-			taskmast->logger.log_to_term = ft_strequ(val, "true");
-		else
-			TASKMAST_ERROR(FALSE, "%s: Invalid field\n", line);
-	}
-	return i;
+	proc_cfg = load_proc_config(file_lines, lines_count);
+	ft_lstadd(&taskmast->proc_cfgs,
+		ft_lstnew(&proc_cfg, sizeof(proc_cfg)));
 }
 
 static void			load_from_lines_(
@@ -88,11 +65,7 @@ static void			load_from_lines_(
 		if (ft_strequ(line, "[taskmaster]"))
 			lines_count = load_taskmaster_config(taskmast, file_lines->next);
 		else if (regex_mini_match("^\\[program:.*\\]$", line))
-		{
-			proc_cfg = load_proc_config(file_lines, &lines_count);
-			ft_lstadd(&taskmast->proc_cfgs,
-				ft_lstnew(&proc_cfg, sizeof(proc_cfg)));
-		}
+			load_program_cfg_(taskmast, file_lines, &lines_count);
 		else if (ft_strequ(line, ""))
 			ft_pass();
 		else

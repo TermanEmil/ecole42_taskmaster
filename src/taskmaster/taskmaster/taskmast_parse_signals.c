@@ -1,7 +1,7 @@
 #include "taskmaster42.h"
 #include <wait.h>
 
-#define SIG_FLGS_ (g_taskmast.signal_flags)
+#define SIG_FLGS_ g_taskmast.signal_flags
 
 static void		parse_sigchld_()
 {
@@ -72,5 +72,4 @@ void			taskmast_parse_signals()
 		parse_sigalarm_();
 	if (SIG_FLGS_.signals[SIGHUP])
 		parse_sighup_();
-	taskmast_reset_signals();
 }

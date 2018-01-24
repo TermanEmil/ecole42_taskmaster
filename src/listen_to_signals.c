@@ -29,7 +29,7 @@ static void	set_tskmast_signal(int signum)
 {
 	g_taskmast.signal_flags.signals[signum] = TRUE;
 	if (g_taskmast.signal_flags.its_safe)
-		taskmast_parse_signals();	
+		taskmast_parse_signals();
 }
 
 void		listen_to_signals(void)

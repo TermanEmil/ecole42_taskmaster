@@ -105,6 +105,8 @@ t_alrm_schedl	new_alarm_schedule(pid_t pid, int schedule_time,
 
 int				taskmast_load_all_config(const t_shvars *shvars,
 					t_taskmast *taskmast, t_rostr file_path);
+int				load_taskmaster_config(t_taskmast *taskmast,
+					t_lst_str *lines);
 
 /*
 ** Taskmaster in general
