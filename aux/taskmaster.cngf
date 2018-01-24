@@ -33,4 +33,4 @@ autostart=true
 restart_attempts=10
 restart_mode=never
 stdout=./aux/env_test.out
-environment=PATH=emilqwqweq,EMIL=the best student ever
+environment=PATH=emilqwqweq,EMIL=the best student ever,SumShit==fuuuu
