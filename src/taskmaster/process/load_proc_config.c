@@ -89,7 +89,7 @@ static t_bool		parse_mallocable_fields_(
 	{
 		if (proc_config->environment)
 			ft_free_bidimens(proc_config->environment);
-		proc_config->environment = read_config_environ(ft_strchr(line, '='));
+		proc_config->environment = read_config_environ(val);
 	}
 	else if (ft_str_starts_with(line, "dir="))
 	{

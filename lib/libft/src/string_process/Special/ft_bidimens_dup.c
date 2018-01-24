@@ -5,7 +5,7 @@ t_str		*ft_bidimens_dup(const t_str *tab)
 	t_str	*result;
 	int		i;
 
-	result = malloc(sizeof(*result) * (ft_tab_len((const void**)tab) + 1));
+	result = ft_memalloc(sizeof(t_str) * (ft_tab_len((const void**)tab) + 1));
 	if (result == NULL)
 		return NULL;
 	for (i = 0; tab[i]; i++)

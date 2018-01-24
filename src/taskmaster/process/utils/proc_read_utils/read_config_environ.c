@@ -1,4 +1,5 @@
 #include "config_reader_.h"
+#include "regex_tools.h"
 
 t_str	*read_config_environ(t_str val)
 {

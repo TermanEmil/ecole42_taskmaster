@@ -1,11 +1,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int		main()
+int		main(int argc, const char **argv, const char **envp)
 {
-	const char	*val;
+	int		i;
 
-	val = getenv("PATH");
-	printf("PATH = %s\n", val);
+	for (i = 0; envp[i]; i++)
+		printf("%s\n", envp[i]);
 	return 0;
 }

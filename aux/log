@@ -1,55 +1,70 @@
+Started Taskmaster, PID: 8533
 Process ls_0 created
-Process ls_1 created
-Process cat_puppy_grace_sig_0 created
-Process cat_puppy_grace_sig_1 created
-Process cat_puppy_grace_sig_2 created
-Process cat_puppy_grace_sig_3 created
-Process cat_puppy_grace_sig_4 created
-Process killer_cat_0 created
-Process w8_intr_0 created
-Process w8_intr_1 created
-Process w8_intr_2 created
-Process w8_intr_3 created
-Process w8_intr_4 created
-Process w8_intr_5 created
-Process w8_intr_6 created
-Process w8_intr_7 created
-Process w8_intr_8 created
-Process w8_intr_9 created
 Process wait_time_at_interrupt_0 created
 Process wait_time_at_interrupt_1 created
-Started ls_0 PID: 29033
-Started ls_1 PID: 29034
-Started cat_puppy_grace_sig_0 PID: 29035
-Started cat_puppy_grace_sig_1 PID: 29036
-Started cat_puppy_grace_sig_2 PID: 29037
-Started cat_puppy_grace_sig_3 PID: 29038
-Started cat_puppy_grace_sig_4 PID: 29039
-Started killer_cat_0 PID: 29040
-Started w8_intr_0 PID: 29041
-Started w8_intr_1 PID: 29042
-Started w8_intr_2 PID: 29043
-Started w8_intr_3 PID: 29044
-Started w8_intr_4 PID: 29045
-Started w8_intr_5 PID: 29046
-Started w8_intr_6 PID: 29047
-Started w8_intr_7 PID: 29048
-Started w8_intr_8 PID: 29049
-Started w8_intr_9 PID: 29050
-Started wait_time_at_interrupt_0 PID: 29051
-Started wait_time_at_interrupt_1 PID: 29052
-ls_0, pid: 29033 exited. Exitcode: `0', uptime: 00:00:00.
-ls_0 PID: 29033 restarting
-Started ls_0 PID: 29053
-ls_1, pid: 29034 exited. Exitcode: `0', uptime: 00:00:01.
-ls_1 PID: 29034 restarting
-Started ls_1 PID: 29054
-ls_0, pid: 29053 exited. Exitcode: `0', uptime: 00:00:00.
-ls_0 PID: 29053 restarting
-Started ls_0 PID: 29055
-ls_1, pid: 29054 exited. Exitcode: `0', uptime: 00:00:00.
-ls_1 PID: 29054 restarting
-Started ls_1 PID: 29056
-ls_0, pid: 29055 exited. Exitcode: `0', uptime: 00:00:00.
-ls_1, pid: 29056 exited. Exitcode: `0', uptime: 00:00:00.
+Process dir_test_0 created
+Process env_test_0 created
+Started ls_0 PID: 8534
+Started wait_time_at_interrupt_0 PID: 8535
+Started wait_time_at_interrupt_1 PID: 8536
+Started dir_test_0 PID: 8537
+Started env_test_0 PID: 8538
+ls_0, pid: 8534 exited. Exitcode: `0', uptime: 00:00:00.
+ls_0 PID: 8534 restarting
+Started ls_0 PID: 8539
+dir_test_0, pid: 8537 exited. Exitcode: `0', uptime: 00:00:00.
+env_test_0, pid: 8538 exited. Exitcode: `0', uptime: 00:00:00.
+ls_0, pid: 8539 exited. Exitcode: `0', uptime: 00:00:00.
+ls_0 PID: 8539 restarting
+Started ls_0 PID: 8540
+ls_0, pid: 8540 exited. Exitcode: `0', uptime: 00:00:00.
+ls_0 PID: 8540 restarting
+Started ls_0 PID: 8541
+ls_0, pid: 8541 exited. Exitcode: `0', uptime: 00:00:00.
+ls_0 PID: 8541 restarting
+Started ls_0 PID: 8542
+ls_0, pid: 8542 exited. Exitcode: `0', uptime: 00:00:00.
 Reloading Config File
+Destroyed env_test_0.
+Process env_test_0 created
+Started env_test_0 PID: 8619
+env_test_0, pid: 8619 exited. Exitcode: `0', uptime: 00:00:00.
+Reloading Config File
+env_test_0 PID: 8619 restarting
+Started env_test_0 PID: 8779
+env_test_0, pid: 8779 exited. Exitcode: `0', uptime: 00:00:00.
+env_test_0 PID: 8779 restarting
+Started env_test_0 PID: 8846
+env_test_0, pid: 8846 exited. Exitcode: `0', uptime: 00:00:00.
+Reloading Config File
+Destroyed env_test_0.
+Process env_test_0 created
+Started env_test_0 PID: 8868
+env_test_0, pid: 8868 exited. Exitcode: `0', uptime: 00:00:00.
+ls_0 PID: 8542 restarting
+Started ls_0 PID: 8876
+Graceful stop process: wait_time_at_interrupt_0_grace_stop_0 PID 8535 has been set for wait_time_at_interrupt_0, which will get sigkilled in 3s
+Interrupt wait_time_at_interrupt_0, PID: 8535, uptime: 00:04:31
+
+wait_time_at_interrupt_0 PID: -1 restarting
+Started wait_time_at_interrupt_0 PID: 8877
+Graceful stop process: wait_time_at_interrupt_1_grace_stop_0 PID 8536 has been set for wait_time_at_interrupt_1, which will get sigkilled in 3s
+Interrupt wait_time_at_interrupt_1, PID: 8536, uptime: 00:04:31
+
+wait_time_at_interrupt_1 PID: -1 restarting
+Started wait_time_at_interrupt_1 PID: 8878
+dir_test_0 PID: 8537 restarting
+Started dir_test_0 PID: 8879
+env_test_0 PID: 8868 restarting
+Started env_test_0 PID: 8880
+ls_0, pid: 8876 exited. Exitcode: `0', uptime: 00:00:00.
+dir_test_0, pid: 8879 exited. Exitcode: `0', uptime: 00:00:00.
+env_test_0, pid: 8880 exited. Exitcode: `0', uptime: 00:00:00.
+wait_time_at_interrupt_0_grace_stop_0, pid: 8535 exited. Exitcode: `0', uptime: 00:00:02.
+Destroyed wait_time_at_interrupt_0_grace_stop_0.
+wait_time_at_interrupt_1_grace_stop_0, pid: 8536 exited. Exitcode: `0', uptime: 00:00:02.
+Destroyed wait_time_at_interrupt_1_grace_stop_0.
+Killed wait_time_at_interrupt_0, PID: 8877, uptime: 00:00:06
+
+Killed wait_time_at_interrupt_1, PID: 8878, uptime: 00:00:06
+

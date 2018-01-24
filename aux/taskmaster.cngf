@@ -1,0 +1,36 @@
+[taskmaster]
+logfile=./aux/log
+log_to_term=true
+
+[program:ls]
+command=/bin/ls
+autostart=true
+nprocs=1
+restart_attempts=5
+restart_mode=always
+
+[program:wait_time_at_interrupt]
+command=./debugging_procs/wait_time_at_interrupt 2
+autostart=true
+nprocs=2
+restart_attempts=10
+restart_mode=always
+time_before_kill=3
+sig_graceful_stop=2
+success_time=5
+
+[program:dir_test]
+command=./debugging_procs/dir_test
+autostart=true
+restart_attempts=10
+restart_mode=never
+stdout=./aux/dir_test.out
+dir=.
+
+[program:env_test]
+command=./debugging_procs/env_test
+autostart=true
+restart_attempts=10
+restart_mode=never
+stdout=./aux/env_test.out
+environment=PATH=emilqwqweq,EMIL=the best student ever
