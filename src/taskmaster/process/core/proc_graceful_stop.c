@@ -70,6 +70,7 @@ void				proc_graceful_stop(t_process *proc)
 
 	pid_save = proc->pid;
 	proc->pid = -1;
+	proc->proc_time.running_time = proc_uptime(proc);
 	proc->status.state = e_completed;
 
 	set_alarm_(&stop_proc);

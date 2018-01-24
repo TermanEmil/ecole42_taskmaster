@@ -15,7 +15,6 @@ int			load_taskmaster_config(t_taskmast *taskmast, t_lst_str *lines)
 	t_str		val;
 	int			i;
 
-	taskmast->logger.log_to_term = TRUE;
 	for (i = 0; lines; LTONEXT(lines), i++)
 	{
 		line = LCONT(lines, t_str);

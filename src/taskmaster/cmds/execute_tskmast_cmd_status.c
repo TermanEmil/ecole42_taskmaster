@@ -58,6 +58,9 @@ static void		print_general_status_(const t_lst_proc *procs)
 	ft_printf("Schedules len: %d\n", ft_lstlen(g_taskmast.schedules));
 	ft_lstiter_mem(g_taskmast.schedules,
 		(void (*)(void*))&print_schedule_delta_time);
+
+	ft_printf("log is on: %d\n", g_taskmast.logger.log_is_on);
+	ft_printf("log to term: %d\n", g_taskmast.logger.log_to_term);
 }
 
 static void		print_status_of_the_argv_(const t_str *argv)

@@ -7,6 +7,12 @@
 #include <sys/stat.h>
 #include <fcntl.h>
 
+static void	load_defaults_(t_taskmast *taskmast)
+{
+	taskmast->logger.log_to_term = TRUE;
+	taskmast->logger.log_is_on = TRUE;
+}
+
 static t_lst_str	*read_config_(t_rostr file_path)
 {
 	int			fd;
@@ -58,6 +64,7 @@ static void			load_from_lines_(
 	t_proc_config	proc_cfg;
 
 	ft_bzero(taskmast, sizeof(*taskmast));
+	load_defaults_(taskmast);
 	for (; file_lines; LTONEXT(file_lines))
 	{
 		line = LCONT(file_lines, t_rostr);
@@ -83,8 +90,6 @@ int		taskmast_load_all_config(
 	t_lst_str	*file_lines;
 
 	file_lines = read_config_(file_path);
-	if (file_lines == NULL)
-		return -1;
 	set_env_vars_to_cfg_file(shvars, file_lines);
 	load_from_lines_(taskmast, file_lines);
 	ft_lstdel(&file_lines, &std_mem_del);

@@ -25,7 +25,6 @@ void	grace_stp_procs_with_config(
 			if (ISSTATE(proc, e_grace_stopping))
 				continue;
 
-			proc_graceful_stop(proc);
 			destroy_proc_intance(taskmast, proc);
 			nb_of_procs--;
 		}
