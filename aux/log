@@ -1,4 +1,4 @@
-Started Taskmaster, PID: 10187
+Started Taskmaster, PID: 13975
 Process ls_0 created
 Process ls_not_started_0 created
 Process ls_5_procs_0 created
@@ -6,104 +6,77 @@ Process ls_5_procs_1 created
 Process ls_5_procs_2 created
 Process ls_5_procs_3 created
 Process ls_5_procs_4 created
-Process wait_time_at_interrupt_0 created
-Process wait_time_at_interrupt_1 created
+Process wait_2/3_at_SIGINT_0 created
+Process wait_5/3_at_SIGINT_0 created
+Process wait_10/11_at_SIGINT_0 created
+Process cat: grace_sig=SIGSTOP_0 created
+Process cat unexp, expect: [0, 2]_0 created
+Process ls redir test_0 created
+Process ls fail redir test_0 created
 Process dir_test_0 created
+Process dir_test_fail_0 created
 Process env_test_0 created
-Process umask_test_0 created
-Started ls_0 PID: 10188
-Started ls_5_procs_0 PID: 10189
-Started ls_5_procs_1 PID: 10190
-Started ls_5_procs_2 PID: 10191
-ls_0, pid: 10188 exited. Exitcode: `0', uptime: 00:00:00.
-ls_0 PID: 10188 restarting
-Started ls_0 PID: 10193
-ls_5_procs_0, pid: 10189 exited. Exitcode: `0', uptime: 00:00:00.
-ls_5_procs_1, pid: 10190 exited. Exitcode: `0', uptime: 00:00:00.
-Started ls_5_procs_3 PID: 10192
-ls_5_procs_2, pid: 10191 exited. Exitcode: `0', uptime: 00:00:00.
-Started ls_5_procs_4 PID: 10194
-Started wait_time_at_interrupt_0 PID: 10195
-Started wait_time_at_interrupt_1 PID: 10196
-Started dir_test_0 PID: 10197
-ls_5_procs_3, pid: 10192 exited. Exitcode: `0', uptime: 00:00:00.
-ls_5_procs_4, pid: 10194 exited. Exitcode: `0', uptime: 00:00:00.
-Started env_test_0 PID: 10198
-Started umask_test_0 PID: 10199
-dir_test_0, pid: 10197 exited. Exitcode: `0', uptime: 00:00:00.
-ls_0, pid: 10193 exited. Exitcode: `0', uptime: 00:00:00.
-ls_0 PID: 10193 restarting
-Started ls_0 PID: 10200
-env_test_0, pid: 10198 exited. Exitcode: `0', uptime: 00:00:00.
-umask_test_0, pid: 10199 exited. Exitcode: `0', uptime: 00:00:00.
-ls_0, pid: 10200 exited. Exitcode: `0', uptime: 00:00:00.
-ls_0 PID: 10200 restarting
-Started ls_0 PID: 10201
-ls_0, pid: 10201 exited. Exitcode: `0', uptime: 00:00:00.
-ls_0 PID: 10201 restarting
-Started ls_0 PID: 10202
-ls_0, pid: 10202 exited. Exitcode: `0', uptime: 00:00:00.
-Started ls_not_started_0 PID: 10209
-ls_not_started_0, pid: 10209 exited. Exitcode: `0', uptime: 00:00:00.
-ls_not_started_0 PID: 10209 restarting
-Started ls_not_started_0 PID: 10210
-ls_not_started_0, pid: 10210 exited. Exitcode: `0', uptime: 00:00:00.
-ls_not_started_0 PID: 10210 restarting
-Started ls_not_started_0 PID: 10211
-ls_not_started_0, pid: 10211 exited. Exitcode: `0', uptime: 00:00:00.
-ls_not_started_0 PID: 10211 restarting
-Started ls_not_started_0 PID: 10212
-ls_not_started_0, pid: 10212 exited. Exitcode: `0', uptime: 00:00:00.
-ls_not_started_0 PID: 10212 restarting
-Started ls_not_started_0 PID: 10213
-ls_not_started_0, pid: 10213 exited. Exitcode: `0', uptime: 00:00:00.
-ls_0 PID: 10185 restarting
-Started ls_0 PID: 10216
-ls_not_started_0 PID: 10213 restarting
-Started ls_not_started_0 PID: 10217
-ls_0, pid: 10216 exited. Exitcode: `0', uptime: 00:00:01.
-ls_not_started_0, pid: 10217 exited. Exitcode: `0', uptime: 00:00:01.
-ls_5_procs_0 PID: 10172 restarting
-Started ls_5_procs_0 PID: 10219
-ls_5_procs_1 PID: 10173 restarting
-Started ls_5_procs_1 PID: 10220
-ls_5_procs_2 PID: 10174 restarting
-Started ls_5_procs_2 PID: 10221
-ls_5_procs_3 PID: 10175 restarting
-Started ls_5_procs_3 PID: 10222
-ls_5_procs_4 PID: 10176 restarting
-Started ls_5_procs_4 PID: 10223
-dir_test_0 PID: 10180 restarting
-Started dir_test_0 PID: 10224
-env_test_0 PID: 10181 restarting
-Started env_test_0 PID: 10225
-umask_test_0 PID: 10182 restarting
-Started umask_test_0 PID: 10226
-ls_5_procs_0, pid: 10219 exited. Exitcode: `0', uptime: 00:00:00.
-ls_5_procs_1, pid: 10220 exited. Exitcode: `0', uptime: 00:00:00.
-ls_5_procs_2, pid: 10221 exited. Exitcode: `0', uptime: 00:00:00.
-ls_5_procs_3, pid: 10222 exited. Exitcode: `0', uptime: 00:00:00.
-ls_5_procs_4, pid: 10223 exited. Exitcode: `0', uptime: 00:00:00.
-dir_test_0, pid: 10224 exited. Exitcode: `0', uptime: 00:00:00.
-umask_test_0, pid: 10226 exited. Exitcode: `0', uptime: 00:00:00.
-env_test_0, pid: 10225 exited. Exitcode: `0', uptime: 00:00:00.
-ls_0 PID: 10216 restarting
-Started ls_0 PID: 10232
-ls_not_started_0 PID: 10217 restarting
-Started ls_not_started_0 PID: 10233
-ls_5_procs_0 PID: 10219 restarting
-Started ls_5_procs_0 PID: 10234
-ls_0, pid: 10232 exited. Exitcode: `0', uptime: 00:00:00.
-ls_not_started_0, pid: 10233 exited. Exitcode: `0', uptime: 00:00:00.
-ls_5_procs_0, pid: 10234 exited. Exitcode: `0', uptime: 00:00:00.
-Graceful stop process: wait_time_at_interrupt_0_grace_stop_0 PID 10177 has been set for wait_time_at_interrupt_0, which will get sigkilled in 3s
-Interrupt wait_time_at_interrupt_0, PID: 10177, uptime: 00:01:08
+Process env_test_fail_0 created
+Process umask_test_default_0 created
+Process umask_test_003_0 created
+Process cat_success_time_0 created
+Started ls_0 PID: 13976
+Started ls_5_procs_0 PID: 13977
+Started ls_5_procs_1 PID: 13978
+Started ls_5_procs_2 PID: 13979
+Started ls_5_procs_3 PID: 13980
+Started ls_5_procs_4 PID: 13981
+Started wait_2/3_at_SIGINT_0 PID: 13982
+Started wait_5/3_at_SIGINT_0 PID: 13983
+Started wait_10/11_at_SIGINT_0 PID: 13984
+Started cat: grace_sig=SIGSTOP_0 PID: 13985
+ls_0, pid: 13976 exited. Exitcode: `0', uptime: 00:00:00.
+ls_0 PID: 13976 restarting
+Started ls_0 PID: 13987
+ls_5_procs_0, pid: 13977 exited. Exitcode: `0', uptime: 00:00:00.
+ls_5_procs_1, pid: 13978 exited. Exitcode: `0', uptime: 00:00:00.
+ls_5_procs_2, pid: 13979 exited. Exitcode: `0', uptime: 00:00:00.
+ls_5_procs_3, pid: 13980 exited. Exitcode: `0', uptime: 00:00:00.
+ls_5_procs_4, pid: 13981 exited. Exitcode: `0', uptime: 00:00:00.
+Started cat unexp, expect: [0, 2]_0 PID: 13986
+Started ls redir test_0 PID: 13988
+Started ls fail redir test_0 PID: 13989
+Started dir_test_0 PID: 13990
+Started dir_test_fail_0 PID: 13991
+Started env_test_0 PID: 13992
+Started env_test_fail_0 PID: 13993
+Started umask_test_default_0 PID: 13994
+./<unexisting dir>aux/ls_redir_test1.out: No such file or directory
+./<unexisting dir>aux/ls_redir_test1.err: Bad file descriptor
+ls_0, pid: 13987 exited. Exitcode: `0', uptime: 00:00:00.
+ls_0 PID: 13987 restarting
+Started ls_0 PID: 13996
+ls redir test_0, pid: 13988 exited. Exitcode: `2', uptime: 00:00:00.
+ls fail redir test_0, pid: 13989 exited. Exitcode: `2', uptime: 00:00:00.
+dir_test_0, pid: 13990 exited. Exitcode: `0', uptime: 00:00:00.
+env_test_0, pid: 13992 exited. Exitcode: `0', uptime: 00:00:00.
+ls_0, pid: 13996 exited. Exitcode: `0', uptime: 00:00:00.
+ls_0 PID: 13996 restarting
+Started ls_0 PID: 13997
+Started umask_test_003_0 PID: 13995
+Started cat_success_time_0 PID: 13998
+umask_test_default_0, pid: 13994 exited. Exitcode: `0', uptime: 00:00:00.
+dir_test_fail_0, pid: 13991 exited. Exitcode: `1', uptime: 00:00:00.
+env_test_fail_0, pid: 13993 exited. Exitcode: `0', uptime: 00:00:00.
+umask_test_003_0, pid: 13995 exited. Exitcode: `0', uptime: 00:00:00.
+ls_0, pid: 13997 exited. Exitcode: `0', uptime: 00:00:00.
+ls_0 PID: 13997 restarting
+Started ls_0 PID: 13999
+ls_0, pid: 13999 exited. Exitcode: `0', uptime: 00:00:00.
+Killed wait_2/3_at_SIGINT_0, PID: 13982, uptime: 00:00:21
 
-wait_time_at_interrupt_0 PID: -1 restarting
-Started wait_time_at_interrupt_0 PID: 10235
-wait_time_at_interrupt_0_grace_stop_0, pid: 10177 exited. Exitcode: `0', uptime: 00:00:02.
-Destroyed wait_time_at_interrupt_0_grace_stop_0.
-Killed wait_time_at_interrupt_0, PID: 10235, uptime: 00:00:13
+Killed wait_5/3_at_SIGINT_0, PID: 13983, uptime: 00:00:21
 
-Killed wait_time_at_interrupt_1, PID: 10178, uptime: 00:01:21
+Killed wait_10/11_at_SIGINT_0, PID: 13984, uptime: 00:00:21
+
+Killed cat: grace_sig=SIGSTOP_0, PID: 13985, uptime: 00:00:21
+
+Killed cat unexp, expect: [0, 2]_0, PID: 13986, uptime: 00:00:21
+
+Killed cat_success_time_0, PID: 13998, uptime: 00:00:21
 

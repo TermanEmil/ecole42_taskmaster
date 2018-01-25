@@ -20,10 +20,10 @@ Note: $MyPid is the taskmaster's current pid. Use it for example:
 At exit, all programs are killed with SIGKILL.
 
 Config Example:
-
+							; defaults
 [taskmaster]
-logfile=./aux/log
-log_to_term=true
+logfile=./aux/log			; none
+log_to_term=true			; false
 
 [program:ls]				; [0 ] program name is required
 command=/bin/ls ..			; [1 ] required
@@ -39,6 +39,7 @@ environment=Var1=val,Var2=a	; [10] taskmaster's environment
 dir=..						; [11] current dir
 stdout=ls_out				; [12] discarded
 stderr=../ls_err			; [13] discarded
+success_time=2				; [14] undefined
 
 [program:cat]
 command=/bin/cat
@@ -102,10 +103,14 @@ command=/bin/cat
 	Def: .
 	The directory in which the process will start.
 
-[12]: stdout=<file name>
+[12]: stdout=[<file name>|discard]
 	Def: discarded
 	The file to which the stdout will be redirected.
 
 [13]: stderr=<file name>
 	Def: discarded
 	The file to which the stderr will be redirected.
+
+[14]: success_time=<number of seconds>
+	Def: undefined
+	How much time it should run to be considered successfully started.

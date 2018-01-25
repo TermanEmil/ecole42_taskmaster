@@ -141,7 +141,7 @@ t_proc_config		load_proc_config(t_lst_str *lines, int *lines_count)
 	first_line = lines;
 	set_defaults_(&proc_config);
 	proc_config.prog_name = ft_strdup(ft_strchr(LCONT(lines, t_str), ':') + 1);
-	*ft_strchr(proc_config.prog_name, ']') = '\0';
+	*ft_strrchr(proc_config.prog_name, ']') = '\0';
 	LTONEXT(lines);
 
 	for (*lines_count = 0; lines; LTONEXT(lines), (*lines_count)++)

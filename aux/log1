@@ -1,40 +1,36 @@
-==7242== Syscall param execve(envp) points to uninitialised byte(s)
-==7242==    at 0x534C777: execve (syscall-template.S:84)
-==7242==    by 0x40AC40: child_process_start (child_process_start.c:107)
-==7242==    by 0x40A77F: process_start (process_start.c:39)
-==7242==    by 0x412478: ft_lstiter_mem (ft_lstiter_mem.c:10)
-==7242==    by 0x40C5A0: remove_dead_add_new_procs_ (reload_procs_config.c:90)
-==7242==    by 0x40C61B: reload_procs_config (reload_procs_config.c:100)
-==7242==    by 0x40BF9B: reload_taskmast_config (reload_taskmast_config.c:29)
-==7242==    by 0x40B043: parse_sighup_ (taskmast_parse_signals.c:56)
-==7242==    by 0x40B0BD: taskmast_parse_signals (taskmast_parse_signals.c:74)
-==7242==    by 0x40AF11: parse_sigchld_ (taskmast_parse_signals.c:28)
-==7242==    by 0x40B095: taskmast_parse_signals (taskmast_parse_signals.c:70)
-==7242==    by 0x404C83: process_shell_input (process_shell_input.c:59)
-==7242==  Address 0x5b827b8 is 8 bytes inside a block of size 16 alloc'd
-==7242==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==7242==    by 0x4178B7: ft_bidimens_dup (ft_bidimens_dup.c:8)
-==7242==    by 0x407E40: cpy_tab_fields_ (proc_config_dup.c:50)
-==7242==    by 0x407F29: proc_config_dup (proc_config_dup.c:67)
-==7242==    by 0x408AC1: new_process (new_process.c:20)
-==7242==    by 0x40BB29: create_processes (create_processes.c:14)
-==7242==    by 0x40C56E: remove_dead_add_new_procs_ (reload_procs_config.c:84)
-==7242==    by 0x40C61B: reload_procs_config (reload_procs_config.c:100)
-==7242==    by 0x40BF9B: reload_taskmast_config (reload_taskmast_config.c:29)
-==7242==    by 0x40B043: parse_sighup_ (taskmast_parse_signals.c:56)
-==7242==    by 0x40B0BD: taskmast_parse_signals (taskmast_parse_signals.c:74)
-==7242==    by 0x40AF11: parse_sigchld_ (taskmast_parse_signals.c:28)
-==7242==  Uninitialised value was created by a heap allocation
-==7242==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==7242==    by 0x4178B7: ft_bidimens_dup (ft_bidimens_dup.c:8)
-==7242==    by 0x407E40: cpy_tab_fields_ (proc_config_dup.c:50)
-==7242==    by 0x407F29: proc_config_dup (proc_config_dup.c:67)
-==7242==    by 0x408AC1: new_process (new_process.c:20)
-==7242==    by 0x40BB29: create_processes (create_processes.c:14)
-==7242==    by 0x40C56E: remove_dead_add_new_procs_ (reload_procs_config.c:84)
-==7242==    by 0x40C61B: reload_procs_config (reload_procs_config.c:100)
-==7242==    by 0x40BF9B: reload_taskmast_config (reload_taskmast_config.c:29)
-==7242==    by 0x40B043: parse_sighup_ (taskmast_parse_signals.c:56)
-==7242==    by 0x40B0BD: taskmast_parse_signals (taskmast_parse_signals.c:74)
-==7242==    by 0x40AF11: parse_sigchld_ (taskmast_parse_signals.c:28)
-==7242==
+==13975== Memcheck, a memory error detector
+==13975== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
+==13975== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
+==13975== Command: ./taskmaster
+==13975== Parent PID: 13243
+==13975== 
+==13991== 
+==13991== HEAP SUMMARY:
+==13991==     in use at exit: 34,978 bytes in 538 blocks
+==13991==   total heap usage: 6,110 allocs, 5,572 frees, 775,339 bytes allocated
+==13991== 
+==13991== LEAK SUMMARY:
+==13991==    definitely lost: 0 bytes in 0 blocks
+==13991==    indirectly lost: 0 bytes in 0 blocks
+==13991==      possibly lost: 0 bytes in 0 blocks
+==13991==    still reachable: 34,978 bytes in 538 blocks
+==13991==         suppressed: 0 bytes in 0 blocks
+==13991== Rerun with --leak-check=full to see details of leaked memory
+==13991== 
+==13991== For counts of detected and suppressed errors, rerun with: -v
+==13991== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+==13975== 
+==13975== HEAP SUMMARY:
+==13975==     in use at exit: 15,174 bytes in 17 blocks
+==13975==   total heap usage: 13,511 allocs, 13,494 frees, 1,009,915 bytes allocated
+==13975== 
+==13975== LEAK SUMMARY:
+==13975==    definitely lost: 0 bytes in 0 blocks
+==13975==    indirectly lost: 0 bytes in 0 blocks
+==13975==      possibly lost: 0 bytes in 0 blocks
+==13975==    still reachable: 15,174 bytes in 17 blocks
+==13975==         suppressed: 0 bytes in 0 blocks
+==13975== Rerun with --leak-check=full to see details of leaked memory
+==13975== 
+==13975== For counts of detected and suppressed errors, rerun with: -v
+==13975== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
