@@ -56,6 +56,12 @@ static void	update_procs_with_new_configs_(
 	}
 }
 
+static void	process_start_(t_process *proc)
+{
+	if (proc->config->autostart)
+		process_start(proc);
+}
+
 /*
 ** First, a copy of old and new connfigs are made. Then, the configs with the
 ** same hash is removed from both lists. After that, destroy the processes that
@@ -87,7 +93,7 @@ static void	remove_dead_add_new_procs_(
 			new_procs_index = taskmast->procs;
 		else
 			LTONEXT(new_procs_index);
-		ft_lstiter_mem(new_procs_index, (void (*)(void*))&process_start);
+		ft_lstiter_mem(new_procs_index, (void (*)(void*))&process_start_);
 	}
 	update_procs_with_new_configs_(taskmast->procs, new_cfgs);
 
