@@ -1,3 +1,4 @@
+Started Taskmaster, PID: 20916
 Process ls_0 created
 Process ls_not_started_0 created
 Process ls_5_procs_0 created
@@ -19,617 +20,143 @@ Process env_test_fail_0 created
 Process umask_test_default_0 created
 Process umask_test_003_0 created
 Process cat_success_time_0 created
-Started ls_0 PID: 14549
-Started ls_not_started_0 PID: 14550
-Started ls_5_procs_0 PID: 14551
-Started ls_5_procs_1 PID: 14552
-Started ls_5_procs_2 PID: 14553
-Started ls_5_procs_3 PID: 14554
-Started ls_5_procs_4 PID: 14555
-Started wait_2/3_at_SIGINT_0 PID: 14556
-Started wait_5/3_at_SIGINT_0 PID: 14557
-Started wait_10/11_at_SIGINT_0 PID: 14558
-Started cat: grace_sig=SIGSTOP_0 PID: 14559
-Started cat unexp, expect: [0, 2]_0 PID: 14560
-Started ls redir test_0 PID: 14561
-Started ls fail redir test_0 PID: 14562
-Started dir_test_0 PID: 14563
-Started dir_test_fail_0 PID: 14564
+Started ls_0 PID: 20917
+Started ls_5_procs_0 PID: 20918
+Started ls_5_procs_1 PID: 20919
+Started ls_5_procs_2 PID: 20920
+Started ls_5_procs_3 PID: 20921
+Started ls_5_procs_4 PID: 20922
+Started wait_2/3_at_SIGINT_0 PID: 20923
+Started wait_5/3_at_SIGINT_0 PID: 20924
+Started wait_10/11_at_SIGINT_0 PID: 20925
+Started cat: grace_sig=SIGSTOP_0 PID: 20926
+Started cat unexp, expect: [0, 2]_0 PID: 20927
+Started ls redir test_0 PID: 20928
 ./<unexisting dir>aux/ls_redir_test1.out: No such file or directory
 ./<unexisting dir>aux/ls_redir_test1.err: Bad file descriptor
-Started env_test_0 PID: 14565
-Started env_test_fail_0 PID: 14566
-Started umask_test_default_0 PID: 14567
-Started umask_test_003_0 PID: 14568
-Started cat_success_time_0 PID: 14569
-ls_0, pid: 14549 exited. Exitcode: `0', uptime: 00:00:00.
-ls_0 PID: 14549 restarting
-Started ls_0 PID: 14570
-ls_not_started_0, pid: 14550 exited. Exitcode: `0', uptime: 00:00:00.
-ls_not_started_0 PID: 14550 restarting
-Started ls_not_started_0 PID: 14571
-ls_5_procs_0, pid: 14551 exited. Exitcode: `0', uptime: 00:00:00.
-ls_5_procs_1, pid: 14552 exited. Exitcode: `0', uptime: 00:00:00.
-ls_5_procs_2, pid: 14553 exited. Exitcode: `0', uptime: 00:00:00.
-ls_5_procs_3, pid: 14554 exited. Exitcode: `0', uptime: 00:00:00.
-ls_5_procs_4, pid: 14555 exited. Exitcode: `0', uptime: 00:00:00.
-ls redir test_0, pid: 14561 exited. Exitcode: `2', uptime: 00:00:00.
-ls fail redir test_0, pid: 14562 exited. Exitcode: `2', uptime: 00:00:00.
-dir_test_0, pid: 14563 exited. Exitcode: `0', uptime: 00:00:00.
-dir_test_fail_0, pid: 14564 exited. Exitcode: `1', uptime: 00:00:00.
-env_test_0, pid: 14565 exited. Exitcode: `0', uptime: 00:00:00.
-env_test_fail_0, pid: 14566 exited. Exitcode: `0', uptime: 00:00:00.
-umask_test_default_0, pid: 14567 exited. Exitcode: `0', uptime: 00:00:00.
-umask_test_003_0, pid: 14568 exited. Exitcode: `0', uptime: 00:00:00.
-ls_0, pid: 14570 exited. Exitcode: `0', uptime: 00:00:00.
-ls_0 PID: 14570 restarting
-Started ls_0 PID: 14572
-ls_not_started_0, pid: 14571 exited. Exitcode: `0', uptime: 00:00:01.
-ls_not_started_0 PID: 14571 restarting
-Started ls_not_started_0 PID: 14573
-ls_0, pid: 14572 exited. Exitcode: `0', uptime: 00:00:00.
-ls_0 PID: 14572 restarting
-Started ls_0 PID: 14574
-ls_not_started_0, pid: 14573 exited. Exitcode: `0', uptime: 00:00:00.
-ls_not_started_0 PID: 14573 restarting
-Started ls_not_started_0 PID: 14575
-ls_0, pid: 14574 exited. Exitcode: `0', uptime: 00:00:00.
-ls_0 PID: 14574 restarting
-Started ls_0 PID: 14576
-ls_not_started_0, pid: 14575 exited. Exitcode: `0', uptime: 00:00:00.
-ls_not_started_0 PID: 14575 restarting
-Started ls_not_started_0 PID: 14577
-ls_0, pid: 14576 exited. Exitcode: `0', uptime: 00:00:00.
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-ls_not_started_0, pid: 14577 exited. Exitcode: `0', uptime: 00:00:00.
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Reloading Config File
-environment: Invalid format: P<invalid char>ATH=emilqwqweq
-Graceful stop process: wait_10/11_at_SIGINT_0_grace_stop_0 PID 14558 has been set for wait_10/11_at_SIGINT_0, which will get sigkilled in 11s
-Interrupt wait_10/11_at_SIGINT_0, PID: 14558, uptime: 00:01:05
+ls_0, pid: 20917 exited. Exitcode: `0', uptime: 00:00:00.
+ls_0 PID: 20917 restarting
+Started ls_0 PID: 20930
+ls_5_procs_0, pid: 20918 exited. Exitcode: `0', uptime: 00:00:00.
+ls_5_procs_1, pid: 20919 exited. Exitcode: `0', uptime: 00:00:00.
+ls_5_procs_2, pid: 20920 exited. Exitcode: `0', uptime: 00:00:00.
+ls_5_procs_3, pid: 20921 exited. Exitcode: `0', uptime: 00:00:00.
+ls_5_procs_4, pid: 20922 exited. Exitcode: `0', uptime: 00:00:00.
+ls redir test_0, pid: 20928 exited. Exitcode: `2', uptime: 00:00:00.
+ls fail redir test_0, pid: 20929 exited. Exitcode: `2', uptime: 00:00:00.
+Started ls fail redir test_0 PID: 20929
+Started dir_test_0 PID: 20931
+Started dir_test_fail_0 PID: 20932
+Started env_test_0 PID: 20933
+Started env_test_fail_0 PID: 20934
+Started umask_test_default_0 PID: 20935
+Started umask_test_003_0 PID: 20936
+Started cat_success_time_0 PID: 20937
+ls_0, pid: 20930 exited. Exitcode: `0', uptime: 00:00:00.
+ls_0 PID: 20930 restarting
+Started ls_0 PID: 20938
+dir_test_0, pid: 20931 exited. Exitcode: `0', uptime: 00:00:00.
+dir_test_fail_0, pid: 20932 exited. Exitcode: `1', uptime: 00:00:00.
+env_test_0, pid: 20933 exited. Exitcode: `0', uptime: 00:00:00.
+env_test_fail_0, pid: 20934 exited. Exitcode: `0', uptime: 00:00:00.
+umask_test_default_0, pid: 20935 exited. Exitcode: `0', uptime: 00:00:00.
+umask_test_003_0, pid: 20936 exited. Exitcode: `0', uptime: 00:00:00.
+ls_0, pid: 20938 exited. Exitcode: `0', uptime: 00:00:00.
+ls_0 PID: 20938 restarting
+Started ls_0 PID: 20939
+ls_0, pid: 20939 exited. Exitcode: `0', uptime: 00:00:00.
+ls_0 PID: 20939 restarting
+Started ls_0 PID: 20940
+ls_0, pid: 20940 exited. Exitcode: `0', uptime: 00:00:00.
+Started ls_not_started_0 PID: 20998
+ls_not_started_0, pid: 20998 exited. Exitcode: `0', uptime: 00:00:00.
+ls_not_started_0 PID: 20998 restarting
+Started ls_not_started_0 PID: 20999
+ls_not_started_0, pid: 20999 exited. Exitcode: `0', uptime: 00:00:00.
+ls_not_started_0 PID: 20999 restarting
+Started ls_not_started_0 PID: 21000
+ls_not_started_0, pid: 21000 exited. Exitcode: `0', uptime: 00:00:00.
+ls_not_started_0 PID: 21000 restarting
+Started ls_not_started_0 PID: 21001
+ls_not_started_0, pid: 21001 exited. Exitcode: `0', uptime: 00:00:00.
+ls_not_started_0 PID: 21001 restarting
+Started ls_not_started_0 PID: 21002
+ls_not_started_0, pid: 21002 exited. Exitcode: `0', uptime: 00:00:00.
+ls_0 must be running to stop it.
+ls_not_started_0 must be running to stop it.
+ls_5_procs_0 must be running to stop it.
+ls_5_procs_1 must be running to stop it.
+ls_5_procs_2 must be running to stop it.
+ls_5_procs_3 must be running to stop it.
+ls_5_procs_4 must be running to stop it.
+Stopping wait_2/3_at_SIGINT_0 PID: 20923.
+Stopped (signal) wait_2/3_at_SIGINT_0, PID: 20923, uptime: 00:00:23
 
-Destroyed wait_10/11_at_SIGINT_0.
-Process wait_10/11_at_SIGINT_1 created
-Started wait_10/11_at_SIGINT_1 PID: 14680
-wait_10/11_at_SIGINT_0_grace_stop_0, pid: 14558 exited. Exitcode: `0', uptime: 00:00:10.
-Destroyed wait_10/11_at_SIGINT_0_grace_stop_0.
-Graceful stop process: wait_10/11_at_SIGINT_1_grace_stop_0 PID 14680 has been set for wait_10/11_at_SIGINT_1, which will get sigkilled in 11s
-Interrupt wait_10/11_at_SIGINT_1, PID: 14680, uptime: 00:00:55
+Stopping wait_5/3_at_SIGINT_0 PID: 20924.
+Stopped (signal) wait_5/3_at_SIGINT_0, PID: 20924, uptime: 00:00:23
 
-wait_10/11_at_SIGINT_1 PID: -1 restarting
-Started wait_10/11_at_SIGINT_1 PID: 14703
-wait_10/11_at_SIGINT_1_grace_stop_0, pid: 14680 exited. Exitcode: `0', uptime: 00:00:10.
-Destroyed wait_10/11_at_SIGINT_1_grace_stop_0.
-Graceful stop process: wait_10/11_at_SIGINT_1_grace_stop_0 PID 14703 has been set for wait_10/11_at_SIGINT_1, which will get sigkilled in 11s
-Interrupt wait_10/11_at_SIGINT_1, PID: 14703, uptime: 00:00:25
+Stopping wait_10/11_at_SIGINT_0 PID: 20925.
+Stopped (signal) wait_10/11_at_SIGINT_0, PID: 20925, uptime: 00:00:23
 
-wait_10/11_at_SIGINT_1 PID: -1 restarting
-Started wait_10/11_at_SIGINT_1 PID: 14710
-wait_10/11_at_SIGINT_1_grace_stop_0, pid: 14703 signaled. Signal `Killed', uptime: 00:00:06.
-Destroyed wait_10/11_at_SIGINT_1_grace_stop_0.
-Graceful stop process: wait_10/11_at_SIGINT_1_grace_stop_0 PID 14710 has been set for wait_10/11_at_SIGINT_1, which will get sigkilled in 11s
-Interrupt wait_10/11_at_SIGINT_1, PID: 14710, uptime: 00:00:20
+Stopping cat: grace_sig=SIGSTOP_0 PID: 20926.
+Stopped (signal) cat: grace_sig=SIGSTOP_0, PID: 20926, uptime: 00:00:23
 
-wait_10/11_at_SIGINT_1 PID: -1 restarting
-Started wait_10/11_at_SIGINT_1 PID: 14718
-Process wait_10/11_at_SIGINT_1_grace_stop_0, pid: 14710 stopped with the signal 19.
-Killed wait_10/11_at_SIGINT_1_grace_stop_0, PID: 14710, uptime: 00:00:11
+Stopping cat unexp, expect: [0, 2]_0 PID: 20927.
+Stopped (signal) cat unexp, expect: [0, 2]_0, PID: 20927, uptime: 00:00:23
 
-wait_10/11_at_SIGINT_1_grace_stop_0, pid: 14710 signaled. Signal `Killed', uptime: 00:00:11.
-Destroyed wait_10/11_at_SIGINT_1_grace_stop_0.
-Killed wait_2/3_at_SIGINT_0, PID: 14556, uptime: 00:03:05
+ls redir test_0 must be running to stop it.
+ls fail redir test_0 must be running to stop it.
+dir_test_0 must be running to stop it.
+dir_test_fail_0 must be running to stop it.
+env_test_0 must be running to stop it.
+env_test_fail_0 must be running to stop it.
+umask_test_default_0 must be running to stop it.
+umask_test_003_0 must be running to stop it.
+Stopping cat_success_time_0 PID: 20937.
+Stopped (signal) cat_success_time_0, PID: 20937, uptime: 00:00:23
 
-Killed wait_5/3_at_SIGINT_0, PID: 14557, uptime: 00:03:05
+Process wait_2/3_at_SIGINT_0, pid: 20923 stopped with the signal 19.
+Process wait_5/3_at_SIGINT_0, pid: 20924 stopped with the signal 19.
+Process wait_10/11_at_SIGINT_0, pid: 20925 stopped with the signal 19.
+Process cat: grace_sig=SIGSTOP_0, pid: 20926 stopped with the signal 19.
+Process cat unexp, expect: [0, 2]_0, pid: 20927 stopped with the signal 19.
+Process cat_success_time_0, pid: 20937 stopped with the signal 19.
+Continuing wait_2/3_at_SIGINT_0 PID: 20923.
+Continued wait_2/3_at_SIGINT_0, PID: 20923, uptime: 00:00:23
 
-Killed cat: grace_sig=SIGSTOP_0, PID: 14559, uptime: 00:03:05
+Continuing wait_5/3_at_SIGINT_0 PID: 20924.
+Continued wait_5/3_at_SIGINT_0, PID: 20924, uptime: 00:00:23
 
-Killed cat unexp, expect: [0, 2]_0, PID: 14560, uptime: 00:03:05
+Continuing wait_10/11_at_SIGINT_0 PID: 20925.
+Continued wait_10/11_at_SIGINT_0, PID: 20925, uptime: 00:00:23
 
-Killed cat_success_time_0, PID: 14569, uptime: 00:03:05
+Continuing cat: grace_sig=SIGSTOP_0 PID: 20926.
+Continued cat: grace_sig=SIGSTOP_0, PID: 20926, uptime: 00:00:23
 
-Killed wait_10/11_at_SIGINT_1, PID: 14718, uptime: 00:00:20
+Continuing cat unexp, expect: [0, 2]_0 PID: 20927.
+Continued cat unexp, expect: [0, 2]_0, PID: 20927, uptime: 00:00:23
+
+Continuing cat_success_time_0 PID: 20937.
+Continued cat_success_time_0, PID: 20937, uptime: 00:00:23
+
+Process wait_2/3_at_SIGINT_0, pid: 20923 continued.
+Process wait_5/3_at_SIGINT_0, pid: 20924 continued.
+Process wait_10/11_at_SIGINT_0, pid: 20925 continued.
+Process cat: grace_sig=SIGSTOP_0, pid: 20926 continued.
+Process cat unexp, expect: [0, 2]_0, pid: 20927 continued.
+Process cat_success_time_0, pid: 20937 continued.
+wait_2/3_at_SIGINT_0, pid: 20923 exited. Exitcode: `0', uptime: 00:00:52.
+wait_2/3_at_SIGINT_0 PID: 20923 restarting
+Started wait_2/3_at_SIGINT_0 PID: 21031
+Killed wait_2/3_at_SIGINT_0, PID: 21031, uptime: 00:00:12
+
+Killed wait_5/3_at_SIGINT_0, PID: 20924, uptime: 00:01:04
+
+Killed wait_10/11_at_SIGINT_0, PID: 20925, uptime: 00:01:04
+
+Killed cat: grace_sig=SIGSTOP_0, PID: 20926, uptime: 00:01:04
+
+Killed cat unexp, expect: [0, 2]_0, PID: 20927, uptime: 00:01:04
+
+Killed cat_success_time_0, PID: 20937, uptime: 00:01:04
 

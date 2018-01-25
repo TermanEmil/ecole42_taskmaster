@@ -14,7 +14,7 @@ t_bool		proc_has_to_be_restarted(
 		return FALSE;
 	if (proc->config->restart_mode == e_unexpected_exit)
 	{
-		exit_codes = proc->config->expected_exit_codes;	
+		exit_codes = proc->config->expected_exit_statuss;	
 		if (is_expected_exit_status(waitpid_status, exit_codes))
 			return FALSE;
 	}

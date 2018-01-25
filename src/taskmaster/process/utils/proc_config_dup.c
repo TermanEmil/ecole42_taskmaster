@@ -39,10 +39,10 @@ static int		*cpy_expected_exit_codes_(const int *codes)
 
 static void		cpy_tab_fields_(t_proc_config *dest, const t_proc_config *src)
 {
-	if (src->expected_exit_codes)
+	if (src->expected_exit_statuss)
 	{
-		dest->expected_exit_codes =
-			cpy_expected_exit_codes_(src->expected_exit_codes);
+		dest->expected_exit_statuss =
+			cpy_expected_exit_codes_(src->expected_exit_statuss);
 	}
 
 	if (src->environment)

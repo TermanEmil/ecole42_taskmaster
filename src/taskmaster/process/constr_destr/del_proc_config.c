@@ -4,7 +4,7 @@ void	del_proc_config(t_proc_config *proc_config)
 {
 	ft_memdel((void**)&proc_config->prog_name);
 	ft_memdel((void**)&proc_config->launch_cmd);
-	ft_memdel((void**)&proc_config->expected_exit_codes);
+	ft_memdel((void**)&proc_config->expected_exit_statuss);
 	ft_memdel((void**)&proc_config->stdout);
 	ft_memdel((void**)&proc_config->stderr);
 	ft_memdel((void**)&proc_config->dir);

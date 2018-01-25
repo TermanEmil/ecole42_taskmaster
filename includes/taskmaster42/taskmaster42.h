@@ -95,6 +95,12 @@ int			execute_tskmast_cmd_stop(t_cmd_env *cmd_env);
 int			execute_tskmast_cmd_restart(t_cmd_env *cmd_env);
 
 /*
+** Cmds helpers
+*/
+
+void		print_general_status(const t_lst_proc *procs);
+
+/*
 ** Constr & Destrs
 */
 
@@ -144,5 +150,6 @@ void		execute_function_from_strcmd(t_rostr cmd, t_lst_proc *procs,
 void		create_processes(t_taskmast *taskmast, t_lst_proccfg *proc_cfgs);
 void		remove_schedule(t_alrm_schedl *schedule);
 void		sigkill_pid(t_taskmast *taskmaster, pid_t pid);
+t_alrm_schedl	*get_min_time_schedule(const t_lst_schedl *schedules);
 
 #endif

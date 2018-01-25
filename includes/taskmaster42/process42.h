@@ -59,7 +59,7 @@ typedef struct		s_proc_config
 	int				nb_of_procs;
 	t_bool			autostart;
 	t_restart_mode	restart_mode;
-	int				*expected_exit_codes;
+	int				*expected_exit_statuss;
 	int				success_time;
 	int				restart_attempts;
 	int				sig_graceful_stop;
@@ -156,6 +156,7 @@ t_bool		proc_has_to_be_restarted(const t_process *proc, int waitpid_status,
 				t_bool consider_restart_attempts);
 void		discard_proc_redirs(t_process *proc);
 int			pipe_process(t_process *proc);
+int			proc_mv_to_dir(t_rostr dir);
 
 /*
 ** Proc config utils.

@@ -1,15 +1,5 @@
 #include "shell42.h"
 #include "taskmaster42.h"
-#include "regex_tools.h"
-#include "ft_colors.h"
-#include "taskmaster42_utils_.h"
-
-#include <sys/types.h>
-#include <sys/stat.h>
-#include <fcntl.h>
-#include <time.h>
-#include <wait.h>
-#include <pthread.h>
 
 t_shdata		g_shdata;
 t_shinput		*g_shinput;

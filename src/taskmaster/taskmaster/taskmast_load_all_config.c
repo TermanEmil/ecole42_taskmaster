@@ -26,7 +26,6 @@ static t_lst_str	*read_config_(t_rostr file_path)
 			"%s: %s: %s\n", g_proj_name, file_path, strerror(errno));
 		return NULL;
 	}
-
 	file_lines = NULL;
 	while ((ret = get_next_line(fd, &line)) > 0)
 		ft_lstadd(&file_lines, ft_lstnew_str_nocpy(line));

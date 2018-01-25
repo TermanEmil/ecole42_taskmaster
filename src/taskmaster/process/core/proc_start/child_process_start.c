@@ -21,17 +21,6 @@ static void	parse_redirs_(t_process *proc)
 	process_std_redir_to_file(proc->config->stderr, STDERR_FILENO);
 }
 
-static int	proc_mv_to_dir(t_rostr dir)
-{
-	if (dir)
-		if (chdir(dir) == -1)
-		{
-			ft_error(FALSE, "%s: %s.\n", dir, strerror(errno));
-			return -1;
-		}
-	return 0;
-}
-
 static t_str	*get_argv_(t_rostr cmd)
 {
 	t_lst_inkey	*cmd_keys;
@@ -91,7 +80,6 @@ void		child_process_start(t_process *proc)
 
 	ignore_ctrl_c_();
 	parse_redirs_(proc);
-
 	if ((argv = get_argv_(proc->config->launch_cmd)) == NULL)
 		return;
 	if (parse_real_path_(proc, argv) != 0)

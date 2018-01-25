@@ -3,26 +3,6 @@
 #include <signal.h>
 #include <time.h>
 
-static int		schedule_get_time_(const t_alrm_schedl *schedule)
-{
-	return schedule->tm;
-}
-
-static t_alrm_schedl	*get_min_time_schedule(const t_lst_schedl *schedules)
-{
-	t_lst_schedl	*lmin;
-	t_alrm_schedl	*result;
-	t_bool			true_bool;
-
-	if (schedules == NULL)
-		return NULL;
-
-	true_bool = TRUE;
-	lmin = ft_lst_min(schedules, (int (*)(void*))&schedule_get_time_);
-	result = (lmin == NULL) ? NULL : LCONT(lmin, t_alrm_schedl*);
-	return result;
-}
-
 void			remove_dead_pid_schedule_(t_alrm_schedl *schedule)
 {
 	t_process	*proc;

@@ -8,6 +8,14 @@
 #define PROC_NAME_LEN_ 64
 #define PID_LEN_ 9
 
+static int		print_help_()
+{
+	ft_putstr(
+		"status [<process_name> | PID<process pid> | <process_state>]\n"
+		"Wildcards included.\n");
+	return 0;
+}
+
 static void		print_proc_status_(const t_process *proc)
 {
 	t_rostr		strstate;
@@ -23,46 +31,6 @@ static void		print_proc_status_(const t_process *proc)
 		PID_LEN_, proc->pid);
 }
 
-void			print_schedule_delta_time(t_alrm_schedl *schedule)
-{
-	ft_printf("delta = %d\n", schedule->tm - time(NULL));
-}
-
-static void		print_general_status_(const t_lst_proc *procs)
-{
-	int				running;
-	int				finished;
-	int				stopped;
-	int				failed;
-	int				total;
-	const t_process	*proc;
-
-	running = 0;
-	finished = 0;
-	stopped = 0;
-	failed = 0;
-	total = ft_lstlen(procs);
-	for (; procs; LTONEXT(procs))
-	{
-		proc = LCONT(procs, t_process*);
-		running += ISSTATE(proc, e_running);
-		finished += ISSTATE(proc, e_completed);
-		failed += ISSTATE(proc, e_critic);
-		stopped += ISSTATE(proc, e_stopped);
-	}
-	ft_printf(
-		"Running: %d, Completed: %d, Critic: %d, Stopped: %d, Total: %d\n",
-		running, finished, failed, stopped, total);
-
-
-	ft_printf("Schedules len: %d\n", ft_lstlen(g_taskmast.schedules));
-	ft_lstiter_mem(g_taskmast.schedules,
-		(void (*)(void*))&print_schedule_delta_time);
-
-	ft_printf("log is on: %d\n", g_taskmast.logger.log_is_on);
-	ft_printf("log to term: %d\n", g_taskmast.logger.log_to_term);
-}
-
 static void		print_status_of_the_argv_(const t_str *argv)
 {
 	argv++;
@@ -73,18 +41,20 @@ static void		print_status_of_the_argv_(const t_str *argv)
 	}
 }
 
-static int		print_help_()
+static void		print_informative_bar_()
 {
-	ft_putstr(
-		"status [<process_name> | PID<process pid> | <process_state>]\n"
-		"Wildcards included.\n");
-	return 0;
+	size_t	color_len;
+
+	color_len = ft_strlen(C_RED) + ft_strlen(C_EOC);
+	ft_printf("%*s %*s %*s %-*s\n",
+		STATE_LEN_ - ft_strlen(C_EOC), C_LMAGENTA "State",
+		DESCRIPT_LEN_ - color_len, "Description",
+		PROC_NAME_LEN_, "Name",
+		PID_LEN_ + ft_strlen(C_LMAGENTA), "PID" C_EOC);
 }
 
 int				execute_tskmast_cmd_status(t_cmd_env *cmd_env)
 {
-	size_t		color_len;
-
 	taskmast_parse_signals();
 	g_taskmast.signal_flags.its_safe = FALSE;
 	if (cmd_env->argv[1] != NULL)
@@ -93,15 +63,9 @@ int				execute_tskmast_cmd_status(t_cmd_env *cmd_env)
 			return print_help_();
 	}
 	else
-		print_general_status_(g_taskmast.procs);
+		print_general_status(g_taskmast.procs);
 
-	color_len = ft_strlen(C_RED) + ft_strlen(C_EOC);
-	ft_printf("%*s %*s %*s %-*s\n",
-		STATE_LEN_ - ft_strlen(C_EOC), C_LMAGENTA "State",
-		DESCRIPT_LEN_ - color_len, "Description",
-		PROC_NAME_LEN_, "Name",
-		PID_LEN_ + ft_strlen(C_LMAGENTA), "PID" C_EOC);
-
+	print_informative_bar_();
 	if (cmd_env->argv[1] != NULL)
 		print_status_of_the_argv_(cmd_env->argv);
 	else

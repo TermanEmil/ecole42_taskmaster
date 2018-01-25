@@ -59,7 +59,7 @@ static int	*read_array_(t_str array_str)
 	return result;
 }
 
-int			*get_expected_exit_codes(t_str val)
+int			*get_expected_exit_statuss(t_str val)
 {
 	if (!regex_mini_match("(\\[([0-9]+, )*[0-9]\\]|\\[\\])", val))
 	{

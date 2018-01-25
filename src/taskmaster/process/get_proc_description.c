@@ -44,10 +44,8 @@ t_rostr		get_proc_description(const t_process *proc)
 	else if (ISSTATE(proc, e_critic) || ISSTATE(proc, e_completed))
 	{
 		ft_sprintf(buf, "ex_stat: %d %s%s, %s",
-			proc->status.waitpid_status,
-			get_sig_on_kill_str_(proc),
-			proc_struptime(proc),
-			get_atempts_str_(proc));
+			proc->status.waitpid_status, get_sig_on_kill_str_(proc),
+			proc_struptime(proc), get_atempts_str_(proc));
 	}
 	else
 	{
@@ -58,8 +56,7 @@ t_rostr		get_proc_description(const t_process *proc)
 		}
 
 		ft_sprintf(buf + ft_strlen(buf), "%s, %s",
-			proc_struptime(proc),
-			get_atempts_str_(proc));
+			proc_struptime(proc), get_atempts_str_(proc));
 	}
 	return buf;
 }
