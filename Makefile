@@ -54,8 +54,8 @@ INCLUDES	=	$(INC_PROJ) $(LIB_INCS)
 # Compile can include flags or other stuff, so it can be useful when I
 # want to compile without flags
 
-# COMPILE		=	$(CC) $(FLAGS) $(INCLUDES)
-COMPILE		=	$(CC) $(INCLUDES) 
+COMPILE		=	$(CC) $(FLAGS) $(INCLUDES)
+# COMPILE		=	$(CC) $(INCLUDES) 
 
 # Finds all '.c' files in 'src'
 

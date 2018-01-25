@@ -18,7 +18,6 @@ void			remove_dead_pid_schedule_(t_alrm_schedl *schedule)
 }
 
 static void		get_proc_and_next_schedl_(
-					const t_lst_proc *procs,
 					t_lst_schedl **schedules,
 					t_process **proc,
 					t_alrm_schedl **schedl_result)
@@ -59,8 +58,7 @@ void			update_alarm()
 	t_alrm_schedl	*next_schedule;
 	t_process		*proc;
 
-	get_proc_and_next_schedl_(
-		g_taskmast.procs, &g_taskmast.schedules, &proc, &next_schedule);
+	get_proc_and_next_schedl_(&g_taskmast.schedules, &proc, &next_schedule);
 
 	if (next_schedule == NULL)
 	{

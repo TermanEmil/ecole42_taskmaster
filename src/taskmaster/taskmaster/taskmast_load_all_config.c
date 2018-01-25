@@ -60,7 +60,6 @@ static void			load_from_lines_(
 {
 	t_rostr			line;
 	int				lines_count;
-	t_proc_config	proc_cfg;
 
 	ft_bzero(taskmast, sizeof(*taskmast));
 	load_defaults_(taskmast);

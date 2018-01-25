@@ -13,7 +13,6 @@ static int	fork_fail_(t_process *proc)
 static int	parse_launch_cmd_(t_process *proc)
 {
 	t_proc_config	*config;
-	char			real_path[PATH_MAX];
 
 	config = proc->config;
 	if (config->launch_cmd == NULL || ft_strequ(config->launch_cmd, ""))

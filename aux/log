@@ -1,4 +1,4 @@
-Started Taskmaster, PID: 20916
+Started Taskmaster, PID: 26165
 Process ls_0 created
 Process ls_not_started_0 created
 Process ls_5_procs_0 created
@@ -20,143 +20,63 @@ Process env_test_fail_0 created
 Process umask_test_default_0 created
 Process umask_test_003_0 created
 Process cat_success_time_0 created
-Started ls_0 PID: 20917
-Started ls_5_procs_0 PID: 20918
-Started ls_5_procs_1 PID: 20919
-Started ls_5_procs_2 PID: 20920
-Started ls_5_procs_3 PID: 20921
-Started ls_5_procs_4 PID: 20922
-Started wait_2/3_at_SIGINT_0 PID: 20923
-Started wait_5/3_at_SIGINT_0 PID: 20924
-Started wait_10/11_at_SIGINT_0 PID: 20925
-Started cat: grace_sig=SIGSTOP_0 PID: 20926
-Started cat unexp, expect: [0, 2]_0 PID: 20927
-Started ls redir test_0 PID: 20928
+Started ls_0 PID: 26166
+Started ls_5_procs_0 PID: 26167
+Started ls_5_procs_1 PID: 26168
+Started ls_5_procs_2 PID: 26169
+Started ls_5_procs_3 PID: 26170
+Started ls_5_procs_4 PID: 26171
+Started wait_2/3_at_SIGINT_0 PID: 26172
+Started wait_5/3_at_SIGINT_0 PID: 26173
+Started wait_10/11_at_SIGINT_0 PID: 26174
+Started cat: grace_sig=SIGSTOP_0 PID: 26175
+Started cat unexp, expect: [0, 2]_0 PID: 26176
+Started ls redir test_0 PID: 26177
 ./<unexisting dir>aux/ls_redir_test1.out: No such file or directory
 ./<unexisting dir>aux/ls_redir_test1.err: Bad file descriptor
-ls_0, pid: 20917 exited. Exitcode: `0', uptime: 00:00:00.
-ls_0 PID: 20917 restarting
-Started ls_0 PID: 20930
-ls_5_procs_0, pid: 20918 exited. Exitcode: `0', uptime: 00:00:00.
-ls_5_procs_1, pid: 20919 exited. Exitcode: `0', uptime: 00:00:00.
-ls_5_procs_2, pid: 20920 exited. Exitcode: `0', uptime: 00:00:00.
-ls_5_procs_3, pid: 20921 exited. Exitcode: `0', uptime: 00:00:00.
-ls_5_procs_4, pid: 20922 exited. Exitcode: `0', uptime: 00:00:00.
-ls redir test_0, pid: 20928 exited. Exitcode: `2', uptime: 00:00:00.
-ls fail redir test_0, pid: 20929 exited. Exitcode: `2', uptime: 00:00:00.
-Started ls fail redir test_0 PID: 20929
-Started dir_test_0 PID: 20931
-Started dir_test_fail_0 PID: 20932
-Started env_test_0 PID: 20933
-Started env_test_fail_0 PID: 20934
-Started umask_test_default_0 PID: 20935
-Started umask_test_003_0 PID: 20936
-Started cat_success_time_0 PID: 20937
-ls_0, pid: 20930 exited. Exitcode: `0', uptime: 00:00:00.
-ls_0 PID: 20930 restarting
-Started ls_0 PID: 20938
-dir_test_0, pid: 20931 exited. Exitcode: `0', uptime: 00:00:00.
-dir_test_fail_0, pid: 20932 exited. Exitcode: `1', uptime: 00:00:00.
-env_test_0, pid: 20933 exited. Exitcode: `0', uptime: 00:00:00.
-env_test_fail_0, pid: 20934 exited. Exitcode: `0', uptime: 00:00:00.
-umask_test_default_0, pid: 20935 exited. Exitcode: `0', uptime: 00:00:00.
-umask_test_003_0, pid: 20936 exited. Exitcode: `0', uptime: 00:00:00.
-ls_0, pid: 20938 exited. Exitcode: `0', uptime: 00:00:00.
-ls_0 PID: 20938 restarting
-Started ls_0 PID: 20939
-ls_0, pid: 20939 exited. Exitcode: `0', uptime: 00:00:00.
-ls_0 PID: 20939 restarting
-Started ls_0 PID: 20940
-ls_0, pid: 20940 exited. Exitcode: `0', uptime: 00:00:00.
-Started ls_not_started_0 PID: 20998
-ls_not_started_0, pid: 20998 exited. Exitcode: `0', uptime: 00:00:00.
-ls_not_started_0 PID: 20998 restarting
-Started ls_not_started_0 PID: 20999
-ls_not_started_0, pid: 20999 exited. Exitcode: `0', uptime: 00:00:00.
-ls_not_started_0 PID: 20999 restarting
-Started ls_not_started_0 PID: 21000
-ls_not_started_0, pid: 21000 exited. Exitcode: `0', uptime: 00:00:00.
-ls_not_started_0 PID: 21000 restarting
-Started ls_not_started_0 PID: 21001
-ls_not_started_0, pid: 21001 exited. Exitcode: `0', uptime: 00:00:00.
-ls_not_started_0 PID: 21001 restarting
-Started ls_not_started_0 PID: 21002
-ls_not_started_0, pid: 21002 exited. Exitcode: `0', uptime: 00:00:00.
-ls_0 must be running to stop it.
-ls_not_started_0 must be running to stop it.
-ls_5_procs_0 must be running to stop it.
-ls_5_procs_1 must be running to stop it.
-ls_5_procs_2 must be running to stop it.
-ls_5_procs_3 must be running to stop it.
-ls_5_procs_4 must be running to stop it.
-Stopping wait_2/3_at_SIGINT_0 PID: 20923.
-Stopped (signal) wait_2/3_at_SIGINT_0, PID: 20923, uptime: 00:00:23
+ls_0, pid: 26166 exited. Exitcode: `0', uptime: 00:00:01.
+ls_0 PID: 26166 restarting
+Started ls_0 PID: 26179
+ls_5_procs_0, pid: 26167 exited. Exitcode: `0', uptime: 00:00:01.
+ls_5_procs_1, pid: 26168 exited. Exitcode: `0', uptime: 00:00:01.
+ls_5_procs_2, pid: 26169 exited. Exitcode: `0', uptime: 00:00:01.
+ls_5_procs_3, pid: 26170 exited. Exitcode: `0', uptime: 00:00:01.
+ls_5_procs_4, pid: 26171 exited. Exitcode: `0', uptime: 00:00:01.
+ls redir test_0, pid: 26177 exited. Exitcode: `2', uptime: 00:00:01.
+ls fail redir test_0, pid: 26178 exited. Exitcode: `2', uptime: 00:00:00.
+Started ls fail redir test_0 PID: 26178
+Started dir_test_0 PID: 26180
+Started dir_test_fail_0 PID: 26181
+Started env_test_0 PID: 26182
+Started env_test_fail_0 PID: 26183
+Started umask_test_default_0 PID: 26184
+Started umask_test_003_0 PID: 26185
+Started cat_success_time_0 PID: 26186
+ls_0, pid: 26179 exited. Exitcode: `0', uptime: 00:00:00.
+ls_0 PID: 26179 restarting
+Started ls_0 PID: 26187
+dir_test_0, pid: 26180 exited. Exitcode: `0', uptime: 00:00:00.
+env_test_fail_0, pid: 26183 exited. Exitcode: `0', uptime: 00:00:00.
+dir_test_fail_0, pid: 26181 exited. Exitcode: `1', uptime: 00:00:00.
+env_test_0, pid: 26182 exited. Exitcode: `0', uptime: 00:00:00.
+umask_test_default_0, pid: 26184 exited. Exitcode: `0', uptime: 00:00:00.
+umask_test_003_0, pid: 26185 exited. Exitcode: `0', uptime: 00:00:00.
+ls_0, pid: 26187 exited. Exitcode: `0', uptime: 00:00:00.
+ls_0 PID: 26187 restarting
+Started ls_0 PID: 26188
+ls_0, pid: 26188 exited. Exitcode: `0', uptime: 00:00:00.
+ls_0 PID: 26188 restarting
+Started ls_0 PID: 26189
+ls_0, pid: 26189 exited. Exitcode: `0', uptime: 00:00:00.
+Killed wait_2/3_at_SIGINT_0, PID: 26172, uptime: 00:00:07
 
-Stopping wait_5/3_at_SIGINT_0 PID: 20924.
-Stopped (signal) wait_5/3_at_SIGINT_0, PID: 20924, uptime: 00:00:23
+Killed wait_5/3_at_SIGINT_0, PID: 26173, uptime: 00:00:07
 
-Stopping wait_10/11_at_SIGINT_0 PID: 20925.
-Stopped (signal) wait_10/11_at_SIGINT_0, PID: 20925, uptime: 00:00:23
+Killed wait_10/11_at_SIGINT_0, PID: 26174, uptime: 00:00:07
 
-Stopping cat: grace_sig=SIGSTOP_0 PID: 20926.
-Stopped (signal) cat: grace_sig=SIGSTOP_0, PID: 20926, uptime: 00:00:23
+Killed cat: grace_sig=SIGSTOP_0, PID: 26175, uptime: 00:00:07
 
-Stopping cat unexp, expect: [0, 2]_0 PID: 20927.
-Stopped (signal) cat unexp, expect: [0, 2]_0, PID: 20927, uptime: 00:00:23
+Killed cat unexp, expect: [0, 2]_0, PID: 26176, uptime: 00:00:07
 
-ls redir test_0 must be running to stop it.
-ls fail redir test_0 must be running to stop it.
-dir_test_0 must be running to stop it.
-dir_test_fail_0 must be running to stop it.
-env_test_0 must be running to stop it.
-env_test_fail_0 must be running to stop it.
-umask_test_default_0 must be running to stop it.
-umask_test_003_0 must be running to stop it.
-Stopping cat_success_time_0 PID: 20937.
-Stopped (signal) cat_success_time_0, PID: 20937, uptime: 00:00:23
-
-Process wait_2/3_at_SIGINT_0, pid: 20923 stopped with the signal 19.
-Process wait_5/3_at_SIGINT_0, pid: 20924 stopped with the signal 19.
-Process wait_10/11_at_SIGINT_0, pid: 20925 stopped with the signal 19.
-Process cat: grace_sig=SIGSTOP_0, pid: 20926 stopped with the signal 19.
-Process cat unexp, expect: [0, 2]_0, pid: 20927 stopped with the signal 19.
-Process cat_success_time_0, pid: 20937 stopped with the signal 19.
-Continuing wait_2/3_at_SIGINT_0 PID: 20923.
-Continued wait_2/3_at_SIGINT_0, PID: 20923, uptime: 00:00:23
-
-Continuing wait_5/3_at_SIGINT_0 PID: 20924.
-Continued wait_5/3_at_SIGINT_0, PID: 20924, uptime: 00:00:23
-
-Continuing wait_10/11_at_SIGINT_0 PID: 20925.
-Continued wait_10/11_at_SIGINT_0, PID: 20925, uptime: 00:00:23
-
-Continuing cat: grace_sig=SIGSTOP_0 PID: 20926.
-Continued cat: grace_sig=SIGSTOP_0, PID: 20926, uptime: 00:00:23
-
-Continuing cat unexp, expect: [0, 2]_0 PID: 20927.
-Continued cat unexp, expect: [0, 2]_0, PID: 20927, uptime: 00:00:23
-
-Continuing cat_success_time_0 PID: 20937.
-Continued cat_success_time_0, PID: 20937, uptime: 00:00:23
-
-Process wait_2/3_at_SIGINT_0, pid: 20923 continued.
-Process wait_5/3_at_SIGINT_0, pid: 20924 continued.
-Process wait_10/11_at_SIGINT_0, pid: 20925 continued.
-Process cat: grace_sig=SIGSTOP_0, pid: 20926 continued.
-Process cat unexp, expect: [0, 2]_0, pid: 20927 continued.
-Process cat_success_time_0, pid: 20937 continued.
-wait_2/3_at_SIGINT_0, pid: 20923 exited. Exitcode: `0', uptime: 00:00:52.
-wait_2/3_at_SIGINT_0 PID: 20923 restarting
-Started wait_2/3_at_SIGINT_0 PID: 21031
-Killed wait_2/3_at_SIGINT_0, PID: 21031, uptime: 00:00:12
-
-Killed wait_5/3_at_SIGINT_0, PID: 20924, uptime: 00:01:04
-
-Killed wait_10/11_at_SIGINT_0, PID: 20925, uptime: 00:01:04
-
-Killed cat: grace_sig=SIGSTOP_0, PID: 20926, uptime: 00:01:04
-
-Killed cat unexp, expect: [0, 2]_0, PID: 20927, uptime: 00:01:04
-
-Killed cat_success_time_0, PID: 20937, uptime: 00:01:04
+Killed cat_success_time_0, PID: 26186, uptime: 00:00:06
 

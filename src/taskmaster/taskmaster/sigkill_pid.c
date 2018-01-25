@@ -4,7 +4,6 @@
 void		sigkill_pid(t_taskmast *taskmaster, pid_t pid)
 {
 	t_process	*proc;
-	t_lst_proc	*match;
 
 	if (pid <= 1)
 		return;

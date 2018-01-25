@@ -2,8 +2,6 @@
 
 static int		pipe_strfd_(t_rostr str_fd, int *pipe_fd)
 {
-	int		fd;
-
 	pipe_fd[0] = -1;
 	pipe_fd[1] = -1;
 	if (str_fd == NULL)

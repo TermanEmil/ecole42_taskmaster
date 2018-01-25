@@ -9,7 +9,6 @@ static void	init_taskmast_events_()
 
 void		init_taskmaster(t_rostr config_file)
 {
-	int		ret;
 	char	buf[16];
 
 	taskmast_load_all_config(&g_shdata.shvars, &g_taskmast, config_file);

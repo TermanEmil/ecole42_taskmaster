@@ -3,8 +3,6 @@
 
 int		proc_uptime(const t_process *proc)
 {
-	int		elapsed_time;
-
 	if (proc->status.state == e_not_started)
 		return 0;
 	else if (

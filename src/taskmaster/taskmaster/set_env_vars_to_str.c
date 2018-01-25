@@ -9,7 +9,6 @@ static int		extract_and_subs_env_val_(
 	t_rostr		env_val;
 	t_str		env_key;
 	int			key_match_len;
-	t_str		tmp;
 
 	key_match_len = pmatch->rm_eo - pmatch->rm_so - 4;
 	env_key = ft_strndup(*str + pmatch->rm_so + 2, key_match_len);
@@ -35,7 +34,6 @@ void			set_env_vars_to_str(
 	regmatch_t	pmatch;
 	int			ret;
 	t_str		str;
-	t_str		tmp;
 	int			delta;
 
 	str = *str_ptr;

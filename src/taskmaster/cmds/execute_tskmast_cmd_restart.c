@@ -30,16 +30,11 @@ static int	parse_execeptions_(t_process *proc)
 
 static void	restart_process_(t_process *proc)
 {
-	t_bool	will_be_auto_restarted;
-
 	if (proc == NULL)
 		return;
 
 	if (parse_execeptions_(proc) != 0)
 		return;
-
-	will_be_auto_restarted =
-		proc_has_to_be_restarted(proc, proc->config->sig_graceful_stop, TRUE);
 
 	ft_printf("Restarting %s.\n", proc->name);
 	if (ISSTATE(proc, e_running) || ISSTATE(proc, e_stopped))
