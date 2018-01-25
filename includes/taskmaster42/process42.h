@@ -143,7 +143,6 @@ void		del_proc(t_process *proc);
 ** Utils
 */
 
-int			run_command(t_rostr cmd, const t_str *env);
 int			get_process_name_id(t_rostr proc_prog_name,
 				const t_lst_proc *proccesses);
 int			new_unique_name_id(t_rostr default_name,

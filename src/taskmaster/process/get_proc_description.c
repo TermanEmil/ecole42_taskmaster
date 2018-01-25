@@ -6,6 +6,11 @@ static t_rostr	get_atempts_str_(const t_process *proc)
 	t_rostr		color;
 
 	ft_bzero(buf, sizeof(buf));
+	if (ISSTATE(proc, e_grace_stopping))
+	{
+		ft_strcpy(buf, C_CYAN "-/-" C_EOC);
+		return buf;
+	}
 	if (ISSTATE(proc, e_critic))
 		color = C_RED;
 	else

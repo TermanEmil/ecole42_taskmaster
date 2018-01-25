@@ -17,7 +17,6 @@ static void			set_defaults_(t_proc_config *proc_config)
 	ft_bzero(proc_config, sizeof(*proc_config));
 	proc_config->nb_of_procs = 1;
 	proc_config->autostart = TRUE;
-	proc_config->autostart = e_never;
 	proc_config->restart_attempts = 0;
 	proc_config->sig_graceful_stop = SIGINT;
 	proc_config->umask = DEFAULT_UMASK;
@@ -77,7 +76,7 @@ static t_bool		parse_mallocable_fields_(
 			free(proc_config->launch_cmd);
 		proc_config->launch_cmd = ft_strdup(val);
 	}
-	else if (ft_str_starts_with(line, "expected_exit_codes="))
+	else if (ft_str_starts_with(line, "expected_exit_status="))
 	{
 		if (proc_config->expected_exit_codes)
 			free(proc_config->expected_exit_codes);

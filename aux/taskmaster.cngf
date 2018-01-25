@@ -4,10 +4,25 @@ log_to_term=true
 
 [program:ls]
 command=/bin/ls
-autostart=true
 nprocs=1
 restart_attempts=5
 restart_mode=always
+
+[program:ls_not_started]
+command=/bin/ls
+autostart=false
+nprocs=1
+restart_attempts=5
+restart_mode=always
+
+[program:ls_5_procs]
+command=/bin/ls
+autostart=true
+nprocs=5
+restart_attempts=5
+expected
+restart_mode=always
+
 
 [program:wait_time_at_interrupt]
 command=./debugging_procs/wait_time_at_interrupt 2
@@ -34,3 +49,10 @@ restart_attempts=10
 restart_mode=never
 stdout=./aux/env_test.out
 environment=PATH=emilqwqweq,EMIL=the best student ever,SumShit==fuuuu
+
+[program:umask_test]
+command=./debugging_procs/umask_test
+autostart=true
+restart_attempts=10
+restart_mode=never
+stdout=./aux/umask_test.out

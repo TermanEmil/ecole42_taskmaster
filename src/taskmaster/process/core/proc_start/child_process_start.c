@@ -58,6 +58,11 @@ static t_str	*get_argv_(t_rostr cmd)
 	return argv;
 }
 
+/*
+** I need the real path of the launch command so that if I change directories
+** and the launch command is a relative path, it will still work.
+*/
+
 static int	parse_real_path_(const t_process *proc, t_str *argv)
 {
 	char	real_path[PATH_MAX];
@@ -86,7 +91,6 @@ void		child_process_start(t_process *proc)
 
 	ignore_ctrl_c_();
 	parse_redirs_(proc);
-	umask(proc->config->umask);
 
 	if ((argv = get_argv_(proc->config->launch_cmd)) == NULL)
 		return;
@@ -95,7 +99,6 @@ void		child_process_start(t_process *proc)
 		ft_free_bidimens(argv);
 		return;
 	}
-
 	if (proc_mv_to_dir(proc->config->dir) == -1)
 		_exit(EXIT_FAILURE);
 
@@ -104,6 +107,7 @@ void		child_process_start(t_process *proc)
 	else
 		env_tab = shvars_form_key_val_tab(g_shdata.shvars.env);
 
+	umask(proc->config->umask);
 	execve(argv[0], argv, env_tab);
 	ft_prerror(FALSE, "%s: %s\n", argv[0], strerror(errno));
 	_exit(EXIT_FAILURE);

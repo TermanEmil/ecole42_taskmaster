@@ -1,40 +1,115 @@
-Started Taskmaster, PID: 10277
+Started Taskmaster, PID: 7742
 Process ls_0 created
+Process ls_not_started_0 created
+Process ls_5_procs_0 created
+Process ls_5_procs_1 created
+Process ls_5_procs_2 created
+Process ls_5_procs_3 created
+Process ls_5_procs_4 created
 Process wait_time_at_interrupt_0 created
 Process wait_time_at_interrupt_1 created
 Process dir_test_0 created
 Process env_test_0 created
-Started ls_0 PID: 10278
-Started wait_time_at_interrupt_0 PID: 10279
-Started wait_time_at_interrupt_1 PID: 10280
-Started dir_test_0 PID: 10281
-Started env_test_0 PID: 10282
-ls_0, pid: 10278 exited. Exitcode: `0', uptime: 00:00:00.
-ls_0 PID: 10278 restarting
-Started ls_0 PID: 10283
-dir_test_0, pid: 10281 exited. Exitcode: `0', uptime: 00:00:00.
-env_test_0, pid: 10282 exited. Exitcode: `0', uptime: 00:00:00.
-ls_0, pid: 10283 exited. Exitcode: `0', uptime: 00:00:00.
-ls_0 PID: 10283 restarting
-Started ls_0 PID: 10287
-ls_0, pid: 10287 exited. Exitcode: `0', uptime: 00:00:00.
-ls_0 PID: 10287 restarting
-Started ls_0 PID: 10288
-ls_0, pid: 10288 exited. Exitcode: `0', uptime: 00:00:00.
-ls_0 PID: 10288 restarting
-Started ls_0 PID: 10289
-ls_0, pid: 10289 exited. Exitcode: `0', uptime: 00:00:00.
+Process umask_test_0 created
+Started ls_0 PID: 7743
+Started ls_5_procs_0 PID: 7744
+Started ls_5_procs_1 PID: 7745
+Started ls_5_procs_2 PID: 7746
+Started ls_5_procs_3 PID: 7747
+Started ls_5_procs_4 PID: 7748
+Started wait_time_at_interrupt_0 PID: 7749
+ls_0, pid: 7743 exited. Exitcode: `0', uptime: 00:00:00.
+ls_0 PID: 7743 restarting
+Started ls_0 PID: 7752
+ls_5_procs_0, pid: 7744 exited. Exitcode: `0', uptime: 00:00:00.
+ls_5_procs_0 PID: 7744 restarting
+Started ls_5_procs_0 PID: 7753
+ls_5_procs_1, pid: 7745 exited. Exitcode: `0', uptime: 00:00:00.
+ls_5_procs_1 PID: 7745 restarting
+Started ls_5_procs_1 PID: 7754
+ls_5_procs_2, pid: 7746 exited. Exitcode: `0', uptime: 00:00:00.
+ls_5_procs_2 PID: 7746 restarting
+Started ls_5_procs_2 PID: 7755
+ls_5_procs_3, pid: 7747 exited. Exitcode: `0', uptime: 00:00:00.
+ls_5_procs_3 PID: 7747 restarting
+Started ls_5_procs_3 PID: 7756
+ls_5_procs_4, pid: 7748 exited. Exitcode: `0', uptime: 00:00:00.
+ls_5_procs_4 PID: 7748 restarting
+Started ls_5_procs_4 PID: 7757
+ls_0, pid: 7752 exited. Exitcode: `0', uptime: 00:00:00.
+ls_0 PID: 7752 restarting
+Started ls_0 PID: 7758
+ls_5_procs_0, pid: 7753 exited. Exitcode: `0', uptime: 00:00:00.
+ls_5_procs_0 PID: 7753 restarting
+Started ls_5_procs_0 PID: 7759
+ls_5_procs_1, pid: 7754 exited. Exitcode: `0', uptime: 00:00:00.
+ls_5_procs_1 PID: 7754 restarting
+Started ls_5_procs_1 PID: 7760
+ls_5_procs_2, pid: 7755 exited. Exitcode: `0', uptime: 00:00:00.
+ls_5_procs_2 PID: 7755 restarting
+Started ls_5_procs_2 PID: 7761
+Started wait_time_at_interrupt_1 PID: 7750
+ls_5_procs_3, pid: 7756 exited. Exitcode: `0', uptime: 00:00:00.
+ls_5_procs_3 PID: 7756 restarting
+Started ls_5_procs_3 PID: 7763
+ls_5_procs_4, pid: 7757 exited. Exitcode: `0', uptime: 00:00:00.
+ls_5_procs_4 PID: 7757 restarting
+Started ls_5_procs_4 PID: 7764
+ls_0, pid: 7758 exited. Exitcode: `0', uptime: 00:00:00.
+ls_0 PID: 7758 restarting
+Started ls_0 PID: 7765
+ls_5_procs_0, pid: 7759 exited. Exitcode: `0', uptime: 00:00:00.
+ls_5_procs_0 PID: 7759 restarting
+Started ls_5_procs_0 PID: 7766
+ls_5_procs_1, pid: 7760 exited. Exitcode: `0', uptime: 00:00:00.
+ls_5_procs_1 PID: 7760 restarting
+Started ls_5_procs_1 PID: 7767
+ls_5_procs_2, pid: 7761 exited. Exitcode: `0', uptime: 00:00:00.
+ls_5_procs_2 PID: 7761 restarting
+Started ls_5_procs_2 PID: 7768
+dir_test_0, pid: 7762 exited. Exitcode: `0', uptime: 00:00:00.
+ls_5_procs_3, pid: 7763 exited. Exitcode: `0', uptime: 00:00:00.
+ls_5_procs_3 PID: 7763 restarting
+Started ls_5_procs_3 PID: 7769
+ls_5_procs_4, pid: 7764 exited. Exitcode: `0', uptime: 00:00:00.
+ls_5_procs_4 PID: 7764 restarting
+Started ls_5_procs_4 PID: 7770
+ls_0, pid: 7765 exited. Exitcode: `0', uptime: 00:00:00.
+ls_0 PID: 7765 restarting
+Started ls_0 PID: 7771
+ls_5_procs_0, pid: 7766 exited. Exitcode: `0', uptime: 00:00:00.
+ls_5_procs_0 PID: 7766 restarting
+Started ls_5_procs_0 PID: 7772
+ls_5_procs_1, pid: 7767 exited. Exitcode: `0', uptime: 00:00:00.
+ls_5_procs_1 PID: 7767 restarting
+Started ls_5_procs_1 PID: 7773
+Started dir_test_0 PID: 7762
+ls_5_procs_3, pid: 7769 exited. Exitcode: `0', uptime: 00:00:00.
+ls_5_procs_3 PID: 7769 restarting
+Started ls_5_procs_3 PID: 7775
+ls_5_procs_2, pid: 7768 exited. Exitcode: `0', uptime: 00:00:01.
+ls_5_procs_2 PID: 7768 restarting
+Started ls_5_procs_2 PID: 7776
+ls_5_procs_4, pid: 7770 exited. Exitcode: `0', uptime: 00:00:01.
+ls_5_procs_4 PID: 7770 restarting
+Started ls_5_procs_4 PID: 7777
+ls_0, pid: 7771 exited. Exitcode: `0', uptime: 00:00:01.
+ls_5_procs_1, pid: 7773 exited. Exitcode: `0', uptime: 00:00:01.
+env_test_0, pid: 7774 exited. Exitcode: `0', uptime: 00:00:01.
+ls_5_procs_0, pid: 7772 exited. Exitcode: `0', uptime: 00:00:01.
+ls_5_procs_3, pid: 7775 exited. Exitcode: `0', uptime: 00:00:00.
+Started env_test_0 PID: 7774
+Started umask_test_0 PID: 7778
+ls_5_procs_2, pid: 7776 exited. Exitcode: `0', uptime: 00:00:00.
+ls_5_procs_4, pid: 7777 exited. Exitcode: `0', uptime: 00:00:00.
+umask_test_0, pid: 7778 exited. Exitcode: `0', uptime: 00:00:00.
 Reloading Config File
-Destroyed env_test_0.
-Process env_test_0 created
-Started env_test_0 PID: 10305
-env_test_0, pid: 10305 exited. Exitcode: `0', uptime: 00:00:00.
-Reloading Config File
-Destroyed env_test_0.
-Process env_test_0 created
-Started env_test_0 PID: 10329
-env_test_0, pid: 10329 exited. Exitcode: `0', uptime: 00:00:00.
-Killed wait_time_at_interrupt_0, PID: 10279, uptime: 00:00:46
+ls_5_procs: expected: Invalid field
+Destroyed umask_test_0.
+Process umask_test_0 created
+Started umask_test_0 PID: 8009
+umask_test_0, pid: 8009 exited. Exitcode: `0', uptime: 00:00:00.
+Killed wait_time_at_interrupt_0, PID: 7749, uptime: 00:03:38
 
-Killed wait_time_at_interrupt_1, PID: 10280, uptime: 00:00:46
+Killed wait_time_at_interrupt_1, PID: 7750, uptime: 00:03:39
 
