@@ -1,4 +1,25 @@
-Example:
+Commands:
+	status [<process name>|PID<process pid>|<state>]
+		Show all processes.
+
+	start [<process name>|PID<process pid>|<state>]
+		Start "not started" or stopped processes
+
+	stop [<process name>|PID<process pid>|<state>]
+		Stop a process (SIGSTOP)
+
+	restart [<process name>|PID<process pid>|<state>]
+		Restart a process. First `sig_graceful_stop` is sent.
+
+	A basic shell's commands.
+
+Note: $MyPid is the taskmaster's current pid. Use it for example:
+	$ kill -1 $MyPid
+	to reload the configurations. (SIGHUB)
+
+At exit, all programs are killed with SIGKILL.
+
+Config Example:
 
 [taskmaster]
 logfile=./aux/log
@@ -13,7 +34,7 @@ restart_attempts=1			; [5 ] 1 (1/1)
 sig_graceful_stop=9			; [6 ] SIGINT (2
 time_before_kill=1s			; [7 ] 1s
 umask=003					; [8 ] 002
-expected_exit_status=[0, 1]	; [9 ] [0]. [] - no exepcted exit statuses
+expected_exit_status=[0, 1]	; [9 ] [0]. [] - no exepcted exit statusses
 environment=Var1=val,Var2=a	; [10] taskmaster's environment
 dir=..						; [11] current dir
 stdout=ls_out				; [12] discarded

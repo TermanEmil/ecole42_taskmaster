@@ -19,10 +19,7 @@ restart_mode=always
 command=/bin/ls
 autostart=true
 nprocs=5
-restart_attempts=5
-expected
-restart_mode=always
-
+restart_mode=unexpected_exit
 
 [program:wait_time_at_interrupt]
 command=./debugging_procs/wait_time_at_interrupt 2
