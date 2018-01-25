@@ -1,82 +1,31 @@
-Started Taskmaster, PID: 26165
+Started Taskmaster, PID: 15975
 Process ls_0 created
 Process ls_not_started_0 created
-Process ls_5_procs_0 created
-Process ls_5_procs_1 created
-Process ls_5_procs_2 created
-Process ls_5_procs_3 created
-Process ls_5_procs_4 created
-Process wait_2/3_at_SIGINT_0 created
-Process wait_5/3_at_SIGINT_0 created
-Process wait_10/11_at_SIGINT_0 created
-Process cat: grace_sig=SIGSTOP_0 created
-Process cat unexp, expect: [0, 2]_0 created
-Process ls redir test_0 created
-Process ls fail redir test_0 created
-Process dir_test_0 created
-Process dir_test_fail_0 created
-Process env_test_0 created
-Process env_test_fail_0 created
-Process umask_test_default_0 created
-Process umask_test_003_0 created
-Process cat_success_time_0 created
-Started ls_0 PID: 26166
-Started ls_5_procs_0 PID: 26167
-Started ls_5_procs_1 PID: 26168
-Started ls_5_procs_2 PID: 26169
-Started ls_5_procs_3 PID: 26170
-Started ls_5_procs_4 PID: 26171
-Started wait_2/3_at_SIGINT_0 PID: 26172
-Started wait_5/3_at_SIGINT_0 PID: 26173
-Started wait_10/11_at_SIGINT_0 PID: 26174
-Started cat: grace_sig=SIGSTOP_0 PID: 26175
-Started cat unexp, expect: [0, 2]_0 PID: 26176
-Started ls redir test_0 PID: 26177
-./<unexisting dir>aux/ls_redir_test1.out: No such file or directory
-./<unexisting dir>aux/ls_redir_test1.err: Bad file descriptor
-ls_0, pid: 26166 exited. Exitcode: `0', uptime: 00:00:01.
-ls_0 PID: 26166 restarting
-Started ls_0 PID: 26179
-ls_5_procs_0, pid: 26167 exited. Exitcode: `0', uptime: 00:00:01.
-ls_5_procs_1, pid: 26168 exited. Exitcode: `0', uptime: 00:00:01.
-ls_5_procs_2, pid: 26169 exited. Exitcode: `0', uptime: 00:00:01.
-ls_5_procs_3, pid: 26170 exited. Exitcode: `0', uptime: 00:00:01.
-ls_5_procs_4, pid: 26171 exited. Exitcode: `0', uptime: 00:00:01.
-ls redir test_0, pid: 26177 exited. Exitcode: `2', uptime: 00:00:01.
-ls fail redir test_0, pid: 26178 exited. Exitcode: `2', uptime: 00:00:00.
-Started ls fail redir test_0 PID: 26178
-Started dir_test_0 PID: 26180
-Started dir_test_fail_0 PID: 26181
-Started env_test_0 PID: 26182
-Started env_test_fail_0 PID: 26183
-Started umask_test_default_0 PID: 26184
-Started umask_test_003_0 PID: 26185
-Started cat_success_time_0 PID: 26186
-ls_0, pid: 26179 exited. Exitcode: `0', uptime: 00:00:00.
-ls_0 PID: 26179 restarting
-Started ls_0 PID: 26187
-dir_test_0, pid: 26180 exited. Exitcode: `0', uptime: 00:00:00.
-env_test_fail_0, pid: 26183 exited. Exitcode: `0', uptime: 00:00:00.
-dir_test_fail_0, pid: 26181 exited. Exitcode: `1', uptime: 00:00:00.
-env_test_0, pid: 26182 exited. Exitcode: `0', uptime: 00:00:00.
-umask_test_default_0, pid: 26184 exited. Exitcode: `0', uptime: 00:00:00.
-umask_test_003_0, pid: 26185 exited. Exitcode: `0', uptime: 00:00:00.
-ls_0, pid: 26187 exited. Exitcode: `0', uptime: 00:00:00.
-ls_0 PID: 26187 restarting
-Started ls_0 PID: 26188
-ls_0, pid: 26188 exited. Exitcode: `0', uptime: 00:00:00.
-ls_0 PID: 26188 restarting
-Started ls_0 PID: 26189
-ls_0, pid: 26189 exited. Exitcode: `0', uptime: 00:00:00.
-Killed wait_2/3_at_SIGINT_0, PID: 26172, uptime: 00:00:07
-
-Killed wait_5/3_at_SIGINT_0, PID: 26173, uptime: 00:00:07
-
-Killed wait_10/11_at_SIGINT_0, PID: 26174, uptime: 00:00:07
-
-Killed cat: grace_sig=SIGSTOP_0, PID: 26175, uptime: 00:00:07
-
-Killed cat unexp, expect: [0, 2]_0, PID: 26176, uptime: 00:00:07
-
-Killed cat_success_time_0, PID: 26186, uptime: 00:00:06
-
+Started ls_0 PID: 15976
+ls_0, pid: 15976 exited. Exitcode: `0', uptime: 00:00:00.
+ls_0 PID: 15976 restarting
+Started ls_0 PID: 15977
+ls_0, pid: 15977 exited. Exitcode: `0', uptime: 00:00:00.
+ls_0 PID: 15977 restarting
+Started ls_0 PID: 15978
+ls_0, pid: 15978 exited. Exitcode: `0', uptime: 00:00:00.
+ls_0 PID: 15978 restarting
+Started ls_0 PID: 15979
+ls_0, pid: 15979 exited. Exitcode: `0', uptime: 00:00:00.
+ls_0 PID: 15979 restarting
+Started ls_0 PID: 15980
+ls_0, pid: 15980 exited. Exitcode: `0', uptime: 00:00:00.
+Started ls_not_started_0 PID: 16000
+ls_not_started_0, pid: 16000 exited. Exitcode: `0', uptime: 00:00:00.
+ls_not_started_0 PID: 16000 restarting
+Started ls_not_started_0 PID: 16001
+ls_not_started_0, pid: 16001 exited. Exitcode: `0', uptime: 00:00:00.
+ls_not_started_0 PID: 16001 restarting
+Started ls_not_started_0 PID: 16002
+ls_not_started_0, pid: 16002 exited. Exitcode: `0', uptime: 00:00:00.
+ls_not_started_0 PID: 16002 restarting
+Started ls_not_started_0 PID: 16003
+ls_not_started_0, pid: 16003 exited. Exitcode: `0', uptime: 00:00:00.
+ls_not_started_0 PID: 16003 restarting
+Started ls_not_started_0 PID: 16004
+ls_not_started_0, pid: 16004 exited. Exitcode: `0', uptime: 00:00:01.

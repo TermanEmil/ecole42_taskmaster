@@ -12,12 +12,18 @@
 
 #include <sys/ioctl.h>
 #include <signal.h>
-#include <wait.h>
+#include <sys/wait.h>
 #include <string.h>
 #include "shell42.h"
 #include "eventlib.h"
 #include "ft_signals.h"
 #include "taskmaster42.h"
+
+static void	ft_signal_(int signum, void (*handler)(int))
+{
+	if (signal(signum, handler) == SIG_ERR)
+		TASKMAST_ERROR(TRUE, "signal(): %s\n", strerror(errno));
+}
 
 static void	handle_sigint(int signum)
 {
@@ -35,7 +41,7 @@ static void	set_tskmast_signal(int signum)
 void		listen_to_signals(void)
 {
 	ft_sigaction(SIGINT, &handle_sigint);
-	signal(SIGCHLD, &set_tskmast_signal);
-	signal(SIGALRM, &set_tskmast_signal);
-	signal(SIGHUP, &set_tskmast_signal);
+	ft_signal_(SIGCHLD, &set_tskmast_signal);
+	ft_signal_(SIGALRM, &set_tskmast_signal);
+	ft_signal_(SIGHUP, &set_tskmast_signal);
 }

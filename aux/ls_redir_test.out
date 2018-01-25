@@ -1,9 +1,10 @@
 .:
+Makefile
+author
 aux
 debugging_procs
 includes
 lib
-Makefile
 man_taskmast
 objs
 setup.sh

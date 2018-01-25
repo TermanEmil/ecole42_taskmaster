@@ -1,6 +1,6 @@
 #include "process42.h"
 #include <signal.h>
-#include <wait.h>
+#include <sys/wait.h>
 
 void		update_proc_state(t_process *proc)
 {

@@ -1,5 +1,5 @@
 #include "taskmaster42.h"
-#include <wait.h>
+#include <sys/wait.h>
 
 t_bool		proc_has_to_be_restarted(
 				const t_process *proc,

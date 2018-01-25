@@ -1,5 +1,5 @@
 #include "taskmaster42.h"
-#include <wait.h>
+#include <sys/wait.h>
 #include <string.h>
 #include <time.h>
 

@@ -1,5 +1,5 @@
 #include "taskmaster42.h"
-#include <wait.h>
+#include <sys/wait.h>
 
 #define SIG_FLGS_ g_taskmast.signal_flags
 
@@ -8,11 +8,11 @@ static void		parse_sigchld_()
 	pid_t	pid;
 	int		status;
 
-	if (!SIG_FLGS_.signals[SIGCLD] || !SIG_FLGS_.its_safe)
+	if (!SIG_FLGS_.signals[SIGCHLD] || !SIG_FLGS_.its_safe)
 		return;
 	
 	SIG_FLGS_.its_safe = FALSE;
-	SIG_FLGS_.signals[SIGCLD] = FALSE;
+	SIG_FLGS_.signals[SIGCHLD] = FALSE;
 
 	while ((pid = waitpid(-1, &status, WNOHANG | WUNTRACED | WCONTINUED)) > 0)
 	{

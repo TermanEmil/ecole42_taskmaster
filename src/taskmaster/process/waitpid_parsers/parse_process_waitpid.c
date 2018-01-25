@@ -1,5 +1,5 @@
 #include "taskmaster42.h"
-#include <wait.h>
+#include <sys/wait.h>
 
 void		parse_process_waitpid(pid_t waited_pid, int wait_status)
 {
