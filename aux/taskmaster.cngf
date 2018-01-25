@@ -34,7 +34,7 @@ restart_mode=always
 [program:wait_10/11_at_SIGINT]
 command=./debugging_procs/wait_time_at_interrupt 10
 time_before_kill=11
-restart_attempts=10
+restart_attempts=11
 restart_mode=always
 
 [program:cat: grace_sig=SIGSTOP]
