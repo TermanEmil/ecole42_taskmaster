@@ -20,6 +20,7 @@ char const		*shell_read_user_input_key(void)
 	static t_str	buf = NULL;
 	static int		buf_size = 0;
 	ssize_t			n;
+	ssize_t			ret;
 	t_str			tmp;
 
 	if (buf == NULL)
@@ -30,14 +31,21 @@ char const		*shell_read_user_input_key(void)
 	}
 
 	n = 0;
-	while ((n += read(STDIN_FILENO, buf + n, buf_size - n - 1)) >= buf_size - 1)
+	do
 	{
+		ret = read(STDIN_FILENO, buf + n, buf_size - n - 1);
+		if (ret == -1)
+			break;
+		n += ret;
+		if (n < buf_size - 1)
+			break;
+
 		buf_size = buf_size * 2;
 		tmp = ft_strnew(buf_size);
 		ft_strncpy(tmp, buf, buf_size / 2);
 		free(buf);
 		buf = tmp;
-	}
+	} while (TRUE);
 	
 	if (errno)
 	{

@@ -9,7 +9,7 @@
 
 static void	load_defaults_(t_taskmast *taskmast)
 {
-	taskmast->logger.log_to_term = TRUE;
+	taskmast->logger.log_to_term = FALSE;
 	taskmast->logger.log_is_on = TRUE;
 }
 

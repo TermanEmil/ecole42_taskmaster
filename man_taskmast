@@ -23,7 +23,6 @@ Config Example:
 							; defaults
 [taskmaster]
 logfile=./aux/log			; none
-log_to_term=true			; false
 
 [program:ls]				; [0 ] program name is required
 command=/bin/ls ..			; [1 ] required

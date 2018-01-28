@@ -14,7 +14,16 @@ void		del_taskmast(t_taskmast *taskmast)
 {
 	if (taskmast->is_exiting)
 		TASKMAST_LOG("Freeing Taskmaster resources\n", "");
-	force_kill_no_restart_all_procs_(taskmast);	
+
+	if (taskmast->is_exiting)
+	{
+		TASKMAST_LOG("Joining the thread\n", 1);
+		if (pthread_join(taskmast->waiter_thread, NULL) != 0)
+			TASKMAST_ERROR(TRUE, "pthread_join(): %s\n", strerror(errno));
+	}
+
+	if (taskmast->is_exiting)
+		force_kill_no_restart_all_procs_(taskmast);
 
 	ft_lstdel(&taskmast->procs, (t_ldel_func*)&del_proc);
 	ft_lstdel(&taskmast->proc_cfgs, (t_ldel_func*)&del_proc_config);

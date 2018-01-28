@@ -10,6 +10,7 @@
 # include "termlib.h"
 
 #include <signal.h>
+#include <pthread.h>
 
 # define TASKMAST_ERROR(EXIT_BOOL, FORMAT, ...)		\
 {													\
@@ -70,6 +71,11 @@ typedef struct		s_tskmst_sgnls
 	t_bool			its_safe;
 }					t_tskmst_sgnls;
 
+typedef struct		s_wait_thread
+{
+	pthread_t		tid;
+}					t_wait_thread;
+
 struct				s_taskmast
 {
 	t_tskmst_logger	logger;
@@ -81,6 +87,7 @@ struct				s_taskmast
 	t_alrm_schedl	*next_schedl;
 	t_rostr			cfg_path;
 	t_tskmst_sgnls	signal_flags;
+	pthread_t		waiter_thread;
 };
 
 void		taskmast_log(const char *format, ...);
