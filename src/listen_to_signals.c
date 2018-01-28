@@ -33,6 +33,7 @@ static void	handle_sigint(int signum)
 
 static void	set_tskmast_signal(int signum)
 {
+	TASKMAST_LOG("Received %d\n", signum);
 	g_taskmast.signal_flags.signals[signum] = TRUE;
 	if (g_taskmast.signal_flags.its_safe)
 		taskmast_parse_signals();

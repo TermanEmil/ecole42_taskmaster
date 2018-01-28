@@ -1,4 +1,6 @@
-Started Taskmaster, PID: 32581
+Started Taskmaster, PID: 16688
+Process cat_0 created
+Process cat_1 created
 Process ls_0 created
 Process ls_not_started_0 created
 Process ls_5_procs_0 created
@@ -20,63 +22,211 @@ Process env_test_fail_0 created
 Process umask_test_default_0 created
 Process umask_test_003_0 created
 Process cat_success_time_0 created
-Started ls_0 PID: 32582
-Started ls_5_procs_0 PID: 32583
-Started ls_5_procs_1 PID: 32584
-Started ls_5_procs_2 PID: 32585
-Started ls_5_procs_3 PID: 32586
-Started ls_5_procs_4 PID: 32587
-Started wait_2/3_at_SIGINT_0 PID: 32588
-Started wait_5/3_at_SIGINT_0 PID: 32589
-ls_0, pid: 32582 exited. Exitcode: `0', uptime: 00:00:00.
-ls_0 PID: 32582 restarting
-Started ls_0 PID: 32590
-ls_5_procs_0, pid: 32583 exited. Exitcode: `0', uptime: 00:00:00.
-ls_5_procs_1, pid: 32584 exited. Exitcode: `0', uptime: 00:00:00.
-ls_5_procs_2, pid: 32585 exited. Exitcode: `0', uptime: 00:00:00.
-ls_5_procs_3, pid: 32586 exited. Exitcode: `0', uptime: 00:00:00.
-ls_5_procs_4, pid: 32587 exited. Exitcode: `0', uptime: 00:00:00.
-Started wait_10/11_at_SIGINT_0 PID: 32591
-Started cat: grace_sig=SIGSTOP_0 PID: 32592
-Started cat unexp, expect: [0, 2]_0 PID: 32593
-Started ls redir test_0 PID: 32594
-Started ls fail redir test_0 PID: 32595
-ls_0, pid: 32590 exited. Exitcode: `0', uptime: 00:00:00.
-ls_0 PID: 32590 restarting
-Started ls_0 PID: 32597
-Started dir_test_0 PID: 32596
+Started cat_0 PID: 16690
+Started cat_1 PID: 16691
+Started ls_0 PID: 16692
+Started ls_5_procs_0 PID: 16693
+Started ls_5_procs_1 PID: 16694
+Started ls_5_procs_2 PID: 16695
+Started ls_5_procs_3 PID: 16696
+Started ls_5_procs_4 PID: 16697
+Started wait_2/3_at_SIGINT_0 PID: 16698
+Received 17
+ls_0, pid: 16692 exited. Exitcode: `0', uptime: 00:00:00.
+ls_0 PID: 16692 restarting
+Started ls_0 PID: 16700
+ls_5_procs_0, pid: 16693 exited. Exitcode: `0', uptime: 00:00:00.
+ls_5_procs_1, pid: 16694 exited. Exitcode: `0', uptime: 00:00:00.
+ls_5_procs_2, pid: 16695 exited. Exitcode: `0', uptime: 00:00:00.
+ls_5_procs_3, pid: 16696 exited. Exitcode: `0', uptime: 00:00:00.
+ls_5_procs_4, pid: 16697 exited. Exitcode: `0', uptime: 00:00:00.
+Received 17
+Started wait_5/3_at_SIGINT_0 PID: 16699
+Started wait_10/11_at_SIGINT_0 PID: 16701
+Started cat: grace_sig=SIGSTOP_0 PID: 16702
+Started cat unexp, expect: [0, 2]_0 PID: 16703
+Started ls redir test_0 PID: 16704
+Received 17
+ls_0, pid: 16700 exited. Exitcode: `0', uptime: 00:00:00.
+ls_0 PID: 16700 restarting
+Started ls_0 PID: 16706
+Started ls fail redir test_0 PID: 16705
+Started dir_test_0 PID: 16707
 ./<unexisting dir>aux/ls_redir_test1.out: No such file or directory
 ./<unexisting dir>aux/ls_redir_test1.err: Bad file descriptor
-Started dir_test_fail_0 PID: 32598
-Started env_test_0 PID: 32599
-Started env_test_fail_0 PID: 32600
-Started umask_test_default_0 PID: 32601
-ls redir test_0, pid: 32594 exited. Exitcode: `2', uptime: 00:00:00.
-ls fail redir test_0, pid: 32595 exited. Exitcode: `2', uptime: 00:00:00.
-dir_test_0, pid: 32596 exited. Exitcode: `0', uptime: 00:00:01.
-Started umask_test_003_0 PID: 32602
-Started cat_success_time_0 PID: 32603
-env_test_fail_0, pid: 32600 exited. Exitcode: `0', uptime: 00:00:01.
-ls_0, pid: 32597 exited. Exitcode: `0', uptime: 00:00:01.
-ls_0 PID: 32597 restarting
-Started ls_0 PID: 32604
-dir_test_fail_0, pid: 32598 exited. Exitcode: `1', uptime: 00:00:01.
-env_test_0, pid: 32599 exited. Exitcode: `0', uptime: 00:00:01.
-umask_test_default_0, pid: 32601 exited. Exitcode: `0', uptime: 00:00:01.
-umask_test_003_0, pid: 32602 exited. Exitcode: `0', uptime: 00:00:01.
-ls_0, pid: 32604 exited. Exitcode: `0', uptime: 00:00:00.
-ls_0 PID: 32604 restarting
-Started ls_0 PID: 32605
-ls_0, pid: 32605 exited. Exitcode: `0', uptime: 00:00:00.
-Killed wait_2/3_at_SIGINT_0, PID: 32588, uptime: 00:00:07
+Started dir_test_fail_0 PID: 16708
+Started env_test_0 PID: 16709
+Started env_test_fail_0 PID: 16710
+Received 17
+ls_0, pid: 16706 exited. Exitcode: `0', uptime: 00:00:00.
+ls_0 PID: 16706 restarting
+Started ls_0 PID: 16711
+ls fail redir test_0, pid: 16705 exited. Exitcode: `2', uptime: 00:00:00.
+ls redir test_0, pid: 16704 exited. Exitcode: `2', uptime: 00:00:00.
+Received 17
+Started umask_test_default_0 PID: 16712
+Started umask_test_003_0 PID: 16713
+Started cat_success_time_0 PID: 16714
+Received 17
+dir_test_0, pid: 16707 exited. Exitcode: `0', uptime: 00:00:00.
+dir_test_fail_0, pid: 16708 exited. Exitcode: `1', uptime: 00:00:00.
+env_test_0, pid: 16709 exited. Exitcode: `0', uptime: 00:00:00.
+env_test_fail_0, pid: 16710 exited. Exitcode: `0', uptime: 00:00:00.
+ls_0, pid: 16711 exited. Exitcode: `0', uptime: 00:00:00.
+ls_0 PID: 16711 restarting
+Started ls_0 PID: 16715
+umask_test_default_0, pid: 16712 exited. Exitcode: `0', uptime: 00:00:00.
+umask_test_003_0, pid: 16713 exited. Exitcode: `0', uptime: 00:00:01.
+ls_0, pid: 16715 exited. Exitcode: `0', uptime: 00:00:01.
+Received 17
+Graceful stop process: cat_0_grace_stop_0 PID 16690 has been set for cat_0, which will get sigkilled in 1s
+Received 17
+Interrupt cat_0, PID: 16690, uptime: 00:00:06
 
-Killed wait_5/3_at_SIGINT_0, PID: 32589, uptime: 00:00:07
+cat_0 PID: -1 restarting
+Started cat_0 PID: 16718
+Graceful stop process: cat_1_grace_stop_0 PID 16691 has been set for cat_1, which will get sigkilled in 1s
+Received 17
+Interrupt cat_1, PID: 16691, uptime: 00:00:06
 
-Killed wait_10/11_at_SIGINT_0, PID: 32591, uptime: 00:00:07
+cat_1 PID: -1 restarting
+Started cat_1 PID: 16719
+ls_0 PID: 16715 restarting
+Started ls_0 PID: 16720
+ls_5_procs_0 PID: 16693 restarting
+Started ls_5_procs_0 PID: 16721
+ls_5_procs_1 PID: 16694 restarting
+Started ls_5_procs_1 PID: 16722
+ls_5_procs_2 PID: 16695 restarting
+Started ls_5_procs_2 PID: 16725
+ls_5_procs_3 PID: 16696 restarting
+Started ls_5_procs_3 PID: 16726
+ls_5_procs_4 PID: 16697 restarting
+Received 17
+Started ls_5_procs_4 PID: 16727
+Graceful stop process: wait_2/3_at_SIGINT_0_grace_stop_0 PID 16698 has been set for wait_2/3_at_SIGINT_0, which will get sigkilled in 3s
+Interrupt wait_2/3_at_SIGINT_0, PID: 16698, uptime: 00:00:07
 
-Killed cat: grace_sig=SIGSTOP_0, PID: 32592, uptime: 00:00:07
+wait_2/3_at_SIGINT_0 PID: -1 restarting
+Started wait_2/3_at_SIGINT_0 PID: 16728
+Received 17
+Graceful stop process: wait_5/3_at_SIGINT_0_grace_stop_0 PID 16699 has been set for wait_5/3_at_SIGINT_0, which will get sigkilled in 3s
+Interrupt wait_5/3_at_SIGINT_0, PID: 16699, uptime: 00:00:07
 
-Killed cat unexp, expect: [0, 2]_0, PID: 32593, uptime: 00:00:07
+wait_5/3_at_SIGINT_0 PID: -1 restarting
+Started wait_5/3_at_SIGINT_0 PID: 16729
+Received 17
+Graceful stop process: wait_10/11_at_SIGINT_0_grace_stop_0 PID 16701 has been set for wait_10/11_at_SIGINT_0, which will get sigkilled in 11s
+Received 17
+Interrupt wait_10/11_at_SIGINT_0, PID: 16701, uptime: 00:00:07
 
-Killed cat_success_time_0, PID: 32603, uptime: 00:00:06
+wait_10/11_at_SIGINT_0 PID: -1 restarting
+Started wait_10/11_at_SIGINT_0 PID: 16730
+Graceful stop process: cat: grace_sig=SIGSTOP_0_grace_stop_0 PID 16702 has been set for cat: grace_sig=SIGSTOP_0, which will get sigkilled in 1s
+Received 17
+Stopped (signal) cat: grace_sig=SIGSTOP_0, PID: 16702, uptime: 00:00:07
 
+cat: grace_sig=SIGSTOP_0 PID: -1 restarting
+Started cat: grace_sig=SIGSTOP_0 PID: 16731
+Graceful stop process: cat unexp, expect: [0, 2]_0_grace_stop_0 PID 16703 has been set for cat unexp, expect: [0, 2]_0, which will get sigkilled in 1s
+Received 17
+Interrupt cat unexp, expect: [0, 2]_0, PID: 16703, uptime: 00:00:07
+
+cat unexp, expect: [0, 2]_0 PID: -1 restarting
+Started cat unexp, expect: [0, 2]_0 PID: 16732
+ls redir test_0 PID: 16704 restarting
+Started ls redir test_0 PID: 16733
+ls fail redir test_0 PID: 16705 restarting
+Started ls fail redir test_0 PID: 16734
+dir_test_0 PID: 16707 restarting
+Started dir_test_0 PID: 16735
+dir_test_fail_0 PID: 16708 restarting
+Started dir_test_fail_0 PID: 16736
+env_test_0 PID: 16709 restarting
+Started env_test_0 PID: 16737
+env_test_fail_0 PID: 16710 restarting
+./<unexisting dir>aux/ls_redir_test1.out: No such file or directory
+Started env_test_fail_0 PID: 16738
+./<unexisting dir>aux/ls_redir_test1.err: Bad file descriptor
+umask_test_default_0 PID: 16712 restarting
+Received 17
+Started umask_test_default_0 PID: 16739
+umask_test_003_0 PID: 16713 restarting
+Started umask_test_003_0 PID: 16740
+Received 17
+Received 17
+Graceful stop process: cat_success_time_0_grace_stop_0 PID 16714 has been set for cat_success_time_0, which will get sigkilled in 1s
+Received 17
+Interrupt cat_success_time_0, PID: 16714, uptime: 00:00:07
+
+cat_success_time_0 PID: -1 restarting
+Started cat_success_time_0 PID: 16741
+Received 17
+cat_0_grace_stop_0, pid: 16690 signaled. Signal `Interrupt', uptime: 00:00:01.
+Received 17
+Received 17
+Destroyed cat_0_grace_stop_0.
+cat_1_grace_stop_0, pid: 16691 signaled. Signal `Interrupt', uptime: 00:00:01.
+Destroyed cat_1_grace_stop_0.
+Received 17
+Process cat: grace_sig=SIGSTOP_0_grace_stop_0, pid: 16702 stopped with the signal 19.
+cat unexp, expect: [0, 2]_0_grace_stop_0, pid: 16703 signaled. Signal `Interrupt', uptime: 00:00:00.
+Destroyed cat unexp, expect: [0, 2]_0_grace_stop_0.
+cat_success_time_0_grace_stop_0, pid: 16714 signaled. Signal `Interrupt', uptime: 00:00:00.
+Destroyed cat_success_time_0_grace_stop_0.
+ls_0, pid: 16720 exited. Exitcode: `0', uptime: 00:00:01.
+ls_5_procs_0, pid: 16721 exited. Exitcode: `0', uptime: 00:00:00.
+ls_5_procs_1, pid: 16722 exited. Exitcode: `0', uptime: 00:00:00.
+ls_5_procs_2, pid: 16725 exited. Exitcode: `0', uptime: 00:00:00.
+ls_5_procs_3, pid: 16726 exited. Exitcode: `0', uptime: 00:00:00.
+ls_5_procs_4, pid: 16727 exited. Exitcode: `0', uptime: 00:00:00.
+ls redir test_0, pid: 16733 exited. Exitcode: `2', uptime: 00:00:00.
+ls fail redir test_0, pid: 16734 exited. Exitcode: `2', uptime: 00:00:00.
+dir_test_0, pid: 16735 exited. Exitcode: `0', uptime: 00:00:00.
+dir_test_fail_0, pid: 16736 exited. Exitcode: `1', uptime: 00:00:00.
+env_test_0, pid: 16737 exited. Exitcode: `0', uptime: 00:00:00.
+env_test_fail_0, pid: 16738 exited. Exitcode: `0', uptime: 00:00:00.
+umask_test_default_0, pid: 16739 exited. Exitcode: `0', uptime: 00:00:00.
+umask_test_003_0, pid: 16740 exited. Exitcode: `0', uptime: 00:00:00.
+Received 14
+Received 17
+Killed cat: grace_sig=SIGSTOP_0_grace_stop_0, PID: 16702, uptime: 00:00:01
+
+cat: grace_sig=SIGSTOP_0_grace_stop_0, pid: 16702 signaled. Signal `Killed', uptime: 00:00:01.
+Destroyed cat: grace_sig=SIGSTOP_0_grace_stop_0.
+Received 17
+wait_2/3_at_SIGINT_0_grace_stop_0, pid: 16698 exited. Exitcode: `0', uptime: 00:00:02.
+Destroyed wait_2/3_at_SIGINT_0_grace_stop_0.
+Received 14
+Received 17
+Killed wait_5/3_at_SIGINT_0_grace_stop_0, PID: 16699, uptime: 00:00:03
+
+wait_5/3_at_SIGINT_0_grace_stop_0, pid: 16699 signaled. Signal `Killed', uptime: 00:00:03.
+Destroyed wait_5/3_at_SIGINT_0_grace_stop_0.
+Received 17
+wait_10/11_at_SIGINT_0_grace_stop_0, pid: 16701 exited. Exitcode: `0', uptime: 00:00:10.
+Destroyed wait_10/11_at_SIGINT_0_grace_stop_0.
+Killed cat_0, PID: 16718, uptime: 00:00:12
+
+Received 17
+Killed cat_1, PID: 16719, uptime: 00:00:12
+
+Received 17
+Killed wait_2/3_at_SIGINT_0, PID: 16728, uptime: 00:00:11
+
+Received 17
+Received 17
+Killed wait_5/3_at_SIGINT_0, PID: 16729, uptime: 00:00:11
+
+Received 17
+Killed wait_10/11_at_SIGINT_0, PID: 16730, uptime: 00:00:11
+
+Killed cat: grace_sig=SIGSTOP_0, PID: 16731, uptime: 00:00:11
+
+Received 17
+Killed cat unexp, expect: [0, 2]_0, PID: 16732, uptime: 00:00:11
+
+Received 17
+Killed cat_success_time_0, PID: 16741, uptime: 00:00:11
+
+Received 17

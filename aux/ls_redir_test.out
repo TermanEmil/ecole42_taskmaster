@@ -6,6 +6,7 @@ includes
 lib
 Makefile
 man_taskmast
+note
 objs
 setup.sh
 src
