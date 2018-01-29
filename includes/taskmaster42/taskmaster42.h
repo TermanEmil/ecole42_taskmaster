@@ -8,6 +8,7 @@
 # include "process42.h"
 # include "shell42.h"
 # include "termlib.h"
+# include "tskmst_events.h"
 
 #include <signal.h>
 #include <pthread.h>
@@ -71,11 +72,6 @@ typedef struct		s_tskmst_sgnls
 	t_bool			its_safe;
 }					t_tskmst_sgnls;
 
-typedef struct		s_wait_thread
-{
-	pthread_t		tid;
-}					t_wait_thread;
-
 struct				s_taskmast
 {
 	t_tskmst_logger	logger;
@@ -87,6 +83,7 @@ struct				s_taskmast
 	t_alrm_schedl	*next_schedl;
 	t_rostr			cfg_path;
 	t_tskmst_sgnls	signal_flags;
+	t_event_ctrl	event_ctrl;
 	pthread_t		waiter_thread;
 };
 

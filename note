@@ -1,3 +1,0 @@
-I wrote the program on Ubuntu.
-Since SIGCHLD is sent on SIGCONT on Linux and not on macOS, the taskmaster
-doesn't work on mac.
