@@ -43,8 +43,7 @@ int			main(int argc, const char **argv, const char **envp)
 	}
 	while (1)
 	{
-		while (!g_taskmast.signal_flags.its_safe)
-			usleep(SIGSAFE_CHECK_INTERVAL);
+		while (!g_taskmast.signal_flags.its_safe);
 
 		shinput_reset_signals(g_shinput);
 		shell_read_user_input();
