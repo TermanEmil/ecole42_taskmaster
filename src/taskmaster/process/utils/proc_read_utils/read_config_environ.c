@@ -15,11 +15,11 @@ t_str	*read_config_environ(t_str val)
 
 	for (i = 0; fields[i]; i++)
 	{
-		ret = regexec(&preg, fields[i], 0, NULL, 0);
+		ret = regexec(&preg, fields[i], 0, NULL, 0);  
 		if (ret == REG_NOMATCH)
 		{
-			TASKMAST_ERROR(FALSE, "environment: Invalid "
-				"format: %s\n", fields[i]);
+			TASKMAST_ERROR(FALSE, "environment: Invalid format: %s\n",
+				fields[i]);
 			ft_free_bidimens(fields);
 			fields = NULL;
 			break;

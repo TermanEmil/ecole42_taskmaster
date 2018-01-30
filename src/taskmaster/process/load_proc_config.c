@@ -75,7 +75,7 @@ static t_bool		parse_line_for_fileds_(
 	char	*semicolon;
 
 	line = LCONT(lines, t_str);
-	if (ft_strequ(line, ""))
+	if (line == NULL || ft_strequ(line, ""))
 		return TRUE;
 	if ((semicolon = ft_strchr(line, ';')) != NULL)
 		*semicolon = '\0';

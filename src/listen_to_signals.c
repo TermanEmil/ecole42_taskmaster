@@ -37,8 +37,6 @@ static void	set_tskmast_signal(int signum)
 
 	saved_errno = errno;
 	g_taskmast.signal_flags.signals[signum] = TRUE;
-	if (g_taskmast.signal_flags.its_safe)
-		taskmast_parse_signals();
 	errno = saved_errno;
 }
 

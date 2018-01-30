@@ -12,10 +12,8 @@ int	process_std_redir_to_file(t_rostr std_fd_val, int default_fd)
 	fd = open(std_fd_val, O_WRONLY | O_CREAT | O_TRUNC);
 	if (fd == -1)
 	{
-		ft_putnewl();
 		TASKMAST_ERROR(FALSE, "%s: %s\n", std_fd_val, strerror(errno));
-		ft_putnewl();
-		TMP_FAIL_RETRY(close(default_fd));
+		TMP_FAIL_RETRY(close (default_fd));
 		errno = 0;
 		return -1;
 	}

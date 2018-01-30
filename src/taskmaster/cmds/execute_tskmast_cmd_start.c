@@ -29,7 +29,9 @@ int			execute_tskmast_cmd_start(t_cmd_env *cmd_env)
 {
 	const t_str		*argv;
 
-	taskmast_parse_signals();
+	while (!g_taskmast.signal_flags.its_safe)
+		usleep(SIGSAFE_CHECK_INTERVAL);
+
 	g_taskmast.signal_flags.its_safe = FALSE;
 	argv = cmd_env->argv;
 	if (argv[1] == NULL || ft_strequ(argv[1], "-h"))

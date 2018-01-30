@@ -55,7 +55,9 @@ static void		print_informative_bar_()
 
 int				execute_tskmast_cmd_status(t_cmd_env *cmd_env)
 {
-	taskmast_parse_signals();
+	while (!g_taskmast.signal_flags.its_safe)
+		usleep(SIGSAFE_CHECK_INTERVAL);
+	
 	g_taskmast.signal_flags.its_safe = FALSE;
 	if (cmd_env->argv[1] != NULL)
 	{

@@ -21,7 +21,9 @@ int			execute_tskmast_cmd_stop(t_cmd_env *cmd_env)
 {
 	int		i;
 
-	taskmast_parse_signals();
+	while (!g_taskmast.signal_flags.its_safe)
+		usleep(SIGSAFE_CHECK_INTERVAL);
+	
 	g_taskmast.signal_flags.its_safe = FALSE;
 	if (cmd_env->argv[1] == NULL || ft_strequ(cmd_env->argv[1], "-h"))
 		return print_help_();

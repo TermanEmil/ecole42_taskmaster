@@ -51,14 +51,16 @@ static void		parse_sighup_()
 	SIG_FLGS_.its_safe = FALSE;
 	SIG_FLGS_.signals[SIGHUP] = FALSE;
 
-	term_restore_to_old_term_data();
-	TASKMAST_LOG("Reloading Config File\n", "");
+	TASKMAST_PRINT(sync_printf(&g_printf_mutex,
+		STDOUT_FILENO, "Reloading Config File\n"));
+	taskmast_log("Reloading Config File\n", "");
+
 	reload_taskmast_config(&g_taskmast, &g_shdata.shvars, g_taskmast.cfg_path);
-	term_enable_raw_mode(term_get_data());
+	TASKMAST_PRINT(sync_printf(&g_printf_mutex,
+		STDOUT_FILENO, "Finished Reloading Config File\n"));
 	update_alarm();
 
 	SIG_FLGS_.its_safe = TRUE;
-	taskmast_parse_signals();
 }
 
 void			taskmast_parse_signals()

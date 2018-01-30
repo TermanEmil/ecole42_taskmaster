@@ -9,6 +9,7 @@ void	taskmast_log(const char *format, ...)
 	if (g_taskmast.logger.log_file_fd <= 0 || !g_taskmast.logger.log_is_on)
 		return;
 
+	pthread_mutex_lock(&g_printf_mutex);
 	data = sprintf_new_data();
 	va_start(ap, format);
 	process_format(format, &ap, data);
@@ -19,4 +20,5 @@ void	taskmast_log(const char *format, ...)
 		free(data->str);
 	}
 	free(data);
+	pthread_mutex_unlock(&g_printf_mutex);
 }

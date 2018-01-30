@@ -73,11 +73,30 @@ static int	parse_real_path_(const t_process *proc, t_str *argv)
 	return 0;
 }
 
+static void	set_dfl_(int signum)
+{
+	if (signal(signum, SIG_DFL) == SIG_ERR)
+	{
+		TASKMAST_ERROR(FALSE, "signal(): %s\n", strerror(errno));
+		errno = 0;
+	}
+}
+
+void	close_child_trash()
+{
+	if (pthread_join(g_taskmast.waiter_thread, NULL) != 0 && errno != 0)
+		TASKMAST_ERROR(TRUE, "pthread_join(): %s\n", strerror(errno));
+	set_dfl_(SIGCHLD);
+	set_dfl_(SIGHUP);
+	set_dfl_(SIGALRM);
+}
+
 void		child_process_start(t_process *proc)
 {
 	t_str	*env_tab;
 	t_str	*argv;
 
+	close_child_trash();
 	ignore_ctrl_c_();
 	parse_redirs_(proc);
 	if ((argv = get_argv_(proc->config->launch_cmd)) == NULL)

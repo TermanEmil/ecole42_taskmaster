@@ -9,40 +9,12 @@
 # include "shell42.h"
 # include "termlib.h"
 # include "tskmst_events.h"
+# include "taskmast_logging_.h"
 
 #include <signal.h>
 #include <pthread.h>
 
-# define TASKMAST_ERROR(EXIT_BOOL, FORMAT, ...)		\
-{													\
-	taskmast_log(FORMAT, __VA_ARGS__);				\
-	if (term_get_data()->is_raw)					\
-	{												\
-		term_move_cursor_to_left_most();			\
-		ft_prerror(EXIT_BOOL, FORMAT, __VA_ARGS__);	\
-		term_putnewl();								\
-		input_reprint(g_current_in);				\
-	}												\
-	else											\
-		ft_prerror(EXIT_BOOL, FORMAT, __VA_ARGS__);	\
-}													\
-
-# define TASKMAST_LOG(FORMAT, ...)					\
-{													\
-	taskmast_log(FORMAT, __VA_ARGS__);				\
-	if (g_taskmast.logger.log_to_term)				\
-	{												\
-		if (term_get_data()->is_raw)				\
-		{											\
-			term_move_cursor_to_left_most();		\
-			ft_printf(FORMAT, __VA_ARGS__);			\
-			term_putnewl();							\
-			input_reprint(g_current_in);			\
-		}											\
-		else										\
-			ft_printf(FORMAT, __VA_ARGS__);			\
-	}												\
-}													\
+# define SIGSAFE_CHECK_INTERVAL 50
 
 typedef struct s_taskmast		t_taskmast;
 typedef struct s_alrm_schedl	t_alrm_schedl;
@@ -50,6 +22,7 @@ typedef struct s_alrm_schedl	t_alrm_schedl;
 typedef t_list					t_lst_schedl;
 
 extern t_taskmast			g_taskmast;
+extern pthread_mutex_t		g_printf_mutex;
 
 struct				s_alrm_schedl
 {
@@ -68,8 +41,8 @@ typedef struct		s_tskmst_logger
 
 typedef struct		s_tskmst_sgnls
 {
-	t_bool			signals[NSIG];
-	t_bool			its_safe;
+	volatile sig_atomic_t	signals[NSIG];
+	volatile sig_atomic_t	its_safe;
 }					t_tskmst_sgnls;
 
 struct				s_taskmast

@@ -120,6 +120,7 @@ int				ft_printf(const char *format, ...);
 int				ft_fprintf(int fd, const char *format, ...);
 int				ft_sprintf(char *buff, const char *format, ...);
 int				ft_sprintf_mlc(char **buff, const char *format, ...);
+int				sync_printf(pthread_mutex_t *mutex, int fd, t_rostr frmat, ...);
 
 /*
 **	Memory function

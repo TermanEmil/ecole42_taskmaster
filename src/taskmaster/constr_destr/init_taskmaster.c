@@ -18,6 +18,7 @@ void		init_taskmaster(t_rostr config_file)
 {
 	char	buf[16];
 
+	ft_bzero(&g_taskmast, sizeof(g_taskmast));
 	taskmast_load_all_config(&g_shdata.shvars, &g_taskmast, config_file);
 	init_taskmast_events_();
 	g_taskmast.logger.log_is_on = TRUE;	

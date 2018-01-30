@@ -1,4 +1,4 @@
-Started Taskmaster, PID: 21507
+Started Taskmaster, PID: 11013
 Process cat_0 created
 Process cat_1 created
 Process ls_0 created
@@ -22,74 +22,84 @@ Process env_test_fail_0 created
 Process umask_test_default_0 created
 Process umask_test_003_0 created
 Process cat_success_time_0 created
-Started cat_0 PID: 21509
-Started cat_1 PID: 21510
-Started ls_0 PID: 21511
-Started ls_5_procs_0 PID: 21512
-Started ls_5_procs_1 PID: 21513
-Started ls_5_procs_2 PID: 21514
-Started ls_5_procs_3 PID: 21515
-Started ls_5_procs_4 PID: 21516
-Started wait_2/3_at_SIGINT_0 PID: 21517
-Started wait_5/3_at_SIGINT_0 PID: 21518
-Started wait_10/11_at_SIGINT_0 PID: 21519
-Started cat: grace_sig=SIGSTOP_0 PID: 21520
-Started cat unexp, expect: [0, 2]_0 PID: 21521
-Started ls redir test_0 PID: 21522
-Started ls fail redir test_0 PID: 21523
-Started dir_test_0 PID: 21524
-Started dir_test_fail_0 PID: 21525
-Started env_test_0 PID: 21526
-Started env_test_fail_0 PID: 21527
-Started umask_test_default_0 PID: 21529
-Started umask_test_003_0 PID: 21530
-Started cat_success_time_0 PID: 21531
+Started cat_0 PID: 11016
+Started cat_1 PID: 11017
+Started ls_0 PID: 11018
+Started ls_5_procs_0 PID: 11019
+Started ls_5_procs_1 PID: 11020
+Started ls_5_procs_2 PID: 11021
+Started ls_5_procs_3 PID: 11022
+Started ls_5_procs_4 PID: 11023
+Started wait_2/3_at_SIGINT_0 PID: 11024
+Started wait_5/3_at_SIGINT_0 PID: 11025
+Started wait_10/11_at_SIGINT_0 PID: 11026
+Started cat: grace_sig=SIGSTOP_0 PID: 11027
+Started cat unexp, expect: [0, 2]_0 PID: 11028
+Started ls redir test_0 PID: 11029
+Started ls fail redir test_0 PID: 11030
+Started dir_test_0 PID: 11031
+Started dir_test_fail_0 PID: 11032
+Started env_test_0 PID: 11033
+Started env_test_fail_0 PID: 11034
+Started umask_test_default_0 PID: 11035
+Started umask_test_003_0 PID: 11036
 ./<unexisting dir>aux/ls_redir_test1.out: No such file or directory
-./<unexisting dir>aux/ls_redir_test1.err: Bad file descriptor
+./<unexisting dir>aux/ls_redir_test1.err: No such file or directory
+Started cat_success_time_0 PID: 11037
+ls_0, pid: 11018 exited. Exitcode: `0', uptime: 00:00:00.
+ls_0 PID: 11018 restarting
+Started ls_0 PID: 11039
+ls_5_procs_0, pid: 11019 exited. Exitcode: `0', uptime: 00:00:00.
+ls_5_procs_1, pid: 11020 exited. Exitcode: `0', uptime: 00:00:00.
+ls_5_procs_2, pid: 11021 exited. Exitcode: `0', uptime: 00:00:00.
+ls_5_procs_3, pid: 11022 exited. Exitcode: `0', uptime: 00:00:00.
+ls_5_procs_4, pid: 11023 exited. Exitcode: `0', uptime: 00:00:00.
+ls redir test_0, pid: 11029 exited. Exitcode: `2', uptime: 00:00:00.
+ls fail redir test_0, pid: 11030 exited. Exitcode: `2', uptime: 00:00:00.
+dir_test_0, pid: 11031 exited. Exitcode: `0', uptime: 00:00:00.
+dir_test_fail_0, pid: 11032 exited. Exitcode: `1', uptime: 00:00:00.
+env_test_0, pid: 11033 exited. Exitcode: `0', uptime: 00:00:00.
+env_test_fail_0, pid: 11034 exited. Exitcode: `0', uptime: 00:00:00.
+umask_test_default_0, pid: 11035 exited. Exitcode: `0', uptime: 00:00:00.
+umask_test_003_0, pid: 11036 exited. Exitcode: `0', uptime: 00:00:00.
+ls_0, pid: 11039 exited. Exitcode: `0', uptime: 00:00:00.
+ls_0 PID: 11039 restarting
+Started ls_0 PID: 11040
+ls_0, pid: 11040 exited. Exitcode: `0', uptime: 00:00:00.
+ls_0 PID: 11040 restarting
+Started ls_0 PID: 11041
+ls_0, pid: 11041 exited. Exitcode: `0', uptime: 00:00:00.
+ls_0 PID: 11041 restarting
+Started ls_0 PID: 11042
+ls_0, pid: 11042 exited. Exitcode: `0', uptime: 00:00:00.
+Reloading Config File
+started while
+ended while
+environment: Invalid format: P<invalid char>ATH=emilqwqweq
+Reloading Config File
+started while
+ended while
+environment: Invalid format: P<invalid char>ATH=emilqwqweq
+Reloading Config File
+started while
+ended while
+environment: Invalid format: P<invalid char>ATH=emilqwqweq
 Freeing Taskmaster resources
 Joining the thread
 Killing all childprocesses
-Killed cat_0, PID: 21509, uptime: 00:00:00
+Killed cat_0, PID: 11016, uptime: 00:00:34
 
-Killed cat_1, PID: 21510, uptime: 00:00:00
+Killed cat_1, PID: 11017, uptime: 00:00:34
 
-Killed ls_0, PID: 21511, uptime: 00:00:00
+Killed wait_2/3_at_SIGINT_0, PID: 11024, uptime: 00:00:34
 
-Killed ls_5_procs_0, PID: 21512, uptime: 00:00:00
+Killed wait_5/3_at_SIGINT_0, PID: 11025, uptime: 00:00:34
 
-Killed ls_5_procs_1, PID: 21513, uptime: 00:00:00
+Killed wait_10/11_at_SIGINT_0, PID: 11026, uptime: 00:00:34
 
-Killed ls_5_procs_2, PID: 21514, uptime: 00:00:00
+Killed cat: grace_sig=SIGSTOP_0, PID: 11027, uptime: 00:00:34
 
-Killed ls_5_procs_3, PID: 21515, uptime: 00:00:00
+Killed cat unexp, expect: [0, 2]_0, PID: 11028, uptime: 00:00:34
 
-Killed ls_5_procs_4, PID: 21516, uptime: 00:00:00
-
-Killed wait_2/3_at_SIGINT_0, PID: 21517, uptime: 00:00:00
-
-Killed wait_5/3_at_SIGINT_0, PID: 21518, uptime: 00:00:00
-
-Killed wait_10/11_at_SIGINT_0, PID: 21519, uptime: 00:00:00
-
-Killed cat: grace_sig=SIGSTOP_0, PID: 21520, uptime: 00:00:00
-
-Killed cat unexp, expect: [0, 2]_0, PID: 21521, uptime: 00:00:00
-
-Killed ls redir test_0, PID: 21522, uptime: 00:00:00
-
-Killed ls fail redir test_0, PID: 21523, uptime: 00:00:00
-
-Killed dir_test_0, PID: 21524, uptime: 00:00:00
-
-Killed dir_test_fail_0, PID: 21525, uptime: 00:00:00
-
-Killed env_test_0, PID: 21526, uptime: 00:00:00
-
-Killed env_test_fail_0, PID: 21527, uptime: 00:00:00
-
-Killed umask_test_default_0, PID: 21529, uptime: 00:00:00
-
-Killed umask_test_003_0, PID: 21530, uptime: 00:00:00
-
-Killed cat_success_time_0, PID: 21531, uptime: 00:00:00
+Killed cat_success_time_0, PID: 11037, uptime: 00:00:34
 

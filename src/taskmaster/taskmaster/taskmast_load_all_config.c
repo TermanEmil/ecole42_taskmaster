@@ -27,8 +27,10 @@ static t_lst_str	*read_config_(t_rostr file_path)
 		return NULL;
 	}
 	file_lines = NULL;
+	taskmast_log("started while\n");
 	while ((ret = get_next_line(fd, &line)) > 0)
 		ft_lstadd(&file_lines, ft_lstnew_str_nocpy(line));
+	taskmast_log("ended while\n");
 
 	if (ret < 0)
 	{
@@ -91,5 +93,6 @@ int		taskmast_load_all_config(
 	set_env_vars_to_cfg_file(shvars, file_lines);
 	load_from_lines_(taskmast, file_lines);
 	ft_lstdel(&file_lines, &std_mem_del);
+
 	return 0;
 }

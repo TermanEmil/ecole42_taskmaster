@@ -15,7 +15,7 @@ void		del_taskmast(t_taskmast *taskmast)
 	if (taskmast->is_exiting)
 		TASKMAST_LOG("Freeing Taskmaster resources\n", "");
 
-	if (taskmast->is_exiting)
+	if (taskmast->is_exiting && taskmast->waiter_thread != 0)
 	{
 		TASKMAST_LOG("Joining the thread\n", 1);
 		if (pthread_join(taskmast->waiter_thread, NULL) != 0)

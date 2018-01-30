@@ -30,6 +30,5 @@ void	init_shell(const char **envp)
 	shell_init_key_cmds_htab();
 
 	init_sh_events();
-	listen_to_signals();
 	ft_strcpy(g_shdata.prompt, DEFAULT_PROMPT);
 }
