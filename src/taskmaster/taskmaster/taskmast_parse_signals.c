@@ -54,10 +54,7 @@ static void		parse_sighup_()
 	TASKMAST_PRINT(sync_printf(&g_printf_mutex,
 		STDOUT_FILENO, "Reloading Config File\n"));
 	taskmast_log("Reloading Config File\n", "");
-
 	reload_taskmast_config(&g_taskmast, &g_shdata.shvars, g_taskmast.cfg_path);
-	TASKMAST_PRINT(sync_printf(&g_printf_mutex,
-		STDOUT_FILENO, "Finished Reloading Config File\n"));
 	update_alarm();
 
 	SIG_FLGS_.its_safe = TRUE;

@@ -8,7 +8,6 @@
 		term_move_cursor_to_left_most();									\
 		PRINT_STATEMENT;													\
 		term_move_cursor_to_left_most();									\
-		input_reprint(g_current_in);										\
 	}																		\
 	else																	\
 		PRINT_STATEMENT;													\

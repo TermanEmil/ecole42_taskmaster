@@ -8,7 +8,6 @@
 # include "process42.h"
 # include "shell42.h"
 # include "termlib.h"
-# include "tskmst_events.h"
 # include "taskmast_logging_.h"
 
 #include <signal.h>
@@ -56,7 +55,6 @@ struct				s_taskmast
 	t_alrm_schedl	*next_schedl;
 	t_rostr			cfg_path;
 	t_tskmst_sgnls	signal_flags;
-	t_event_ctrl	event_ctrl;
 	pthread_t		waiter_thread;
 };
 

@@ -43,8 +43,10 @@ int			main(int argc, const char **argv, const char **envp)
 	}
 	while (1)
 	{
-		while (!g_taskmast.signal_flags.its_safe);
-
+		while (!g_taskmast.signal_flags.its_safe)
+			usleep(1);
+		input_reprint_here(g_current_in);
+		
 		shinput_reset_signals(g_shinput);
 		shell_read_user_input();
 		shinput_process_signals(g_shinput);
