@@ -9,7 +9,7 @@ int	process_std_redir_to_file(t_rostr std_fd_val, int default_fd)
 	if (std_fd_val == NULL)
 		return 0;
 
-	fd = open(std_fd_val, O_WRONLY | O_CREAT | O_TRUNC);
+	fd = open(std_fd_val, O_WRONLY | O_CREAT | O_TRUNC, 0666);
 	if (fd == -1)
 	{
 		TASKMAST_ERROR(FALSE, "%s: %s\n", std_fd_val, strerror(errno));

@@ -10,6 +10,7 @@ static void	config_process_(t_process *proc)
 
 static void	*waiter_thread_func_(void *varg)
 {
+	(void)varg;
 	while (!g_taskmast.is_exiting)
 	{
 		taskmast_parse_signals();

@@ -1,4 +1,4 @@
-Started Taskmaster, PID: 31247
+Started Taskmaster, PID: 5693
 Process cat_0 created
 Process cat_1 created
 Process ls_0 created
@@ -20,114 +20,251 @@ Process dir_test_fail_0 created
 Process env_test_0 created
 Process env_test_fail_0 created
 Process umask_test_default_0 created
-Process umask_test_003_0 created
+Process umask_test_111_0 created
 Process cat_success_time_0 created
 Process core_dump_0 created
 Process invalid_command_0 created
-Started cat_0 PID: 31248
-Started cat_1 PID: 31249
-Started ls_0 PID: 31250
-Started ls_5_procs_0 PID: 31251
-Started ls_5_procs_1 PID: 31252
-Started ls_5_procs_2 PID: 31253
-Started ls_5_procs_3 PID: 31254
-Started ls_5_procs_4 PID: 31255
-Started wait_2/3_at_SIGINT_0 PID: 31256
-Started wait_5/3_at_SIGINT_0 PID: 31257
-Started wait_10/11_at_SIGINT_0 PID: 31258
-Started cat: grace_sig=SIGSTOP_0 PID: 31259
-Started cat unexp, expect: [0, 2]_0 PID: 31260
-Started ls redir test_0 PID: 31261
-Started ls fail redir test_0 PID: 31262
-Started dir_test_0 PID: 31263
-Started dir_test_fail_0 PID: 31264
-Started env_test_0 PID: 31265
-Started env_test_fail_0 PID: 31266
-Started umask_test_default_0 PID: 31267
+Started cat_0 PID: 5694
+Started cat_1 PID: 5695
+Started ls_0 PID: 5696
+Started ls_5_procs_0 PID: 5697
+Started ls_5_procs_1 PID: 5698
+Started ls_5_procs_2 PID: 5699
+Started ls_5_procs_3 PID: 5700
+Started ls_5_procs_4 PID: 5701
+Started wait_2/3_at_SIGINT_0 PID: 5702
+Started wait_5/3_at_SIGINT_0 PID: 5703
+Started wait_10/11_at_SIGINT_0 PID: 5704
+Started cat: grace_sig=SIGSTOP_0 PID: 5705
+Started cat unexp, expect: [0, 2]_0 PID: 5706
+Started ls redir test_0 PID: 5707
+Started ls fail redir test_0 PID: 5708
+Started dir_test_0 PID: 5709
 ./<unexisting dir>aux/ls_redir_test1.out: No such file or directory
+Started dir_test_fail_0 PID: 5710
+Started env_test_0 PID: 5711
+Started env_test_fail_0 PID: 5712
+Started umask_test_default_0 PID: 5713
+Started umask_test_111_0 PID: 5714
+Started cat_success_time_0 PID: 5715
+Started core_dump_0 PID: 5716
+Started invalid_command_0 PID: 5717
+ls_5_procs_4, pid: 5701 exited. Exitcode: `0', uptime: 00:00:00.
+ls_5_procs_3, pid: 5700 exited. Exitcode: `0', uptime: 00:00:00.
+ls_5_procs_2, pid: 5699 exited. Exitcode: `0', uptime: 00:00:00.
+ls_5_procs_1, pid: 5698 exited. Exitcode: `0', uptime: 00:00:00.
+ls_5_procs_0, pid: 5697 exited. Exitcode: `0', uptime: 00:00:00.
+ls_0, pid: 5696 exited. Exitcode: `0', uptime: 00:00:00.
+ls_0 PID: 5696 restarting
+Started ls_0 PID: 5718
 ./<unexisting dir>aux/ls_redir_test1.err: No such file or directory
-Started umask_test_003_0 PID: 31268
-Started cat_success_time_0 PID: 31269
-Started core_dump_0 PID: 31270
-Started invalid_command_0 PID: 31271
-.qweq: No such file or directory.
 realpath(): invalid_command_0: ./invalid_command_foo: No such file or directory
-ls_0, pid: 31250 exited. Exitcode: `0', uptime: 00:00:00.
-ls_0 PID: 31250 restarting
-Started ls_0 PID: 31274
-ls_5_procs_0, pid: 31251 exited. Exitcode: `0', uptime: 00:00:00.
-ls_5_procs_1, pid: 31252 exited. Exitcode: `0', uptime: 00:00:00.
-ls_5_procs_2, pid: 31253 exited. Exitcode: `0', uptime: 00:00:00.
-ls_5_procs_3, pid: 31254 exited. Exitcode: `0', uptime: 00:00:00.
-ls_5_procs_4, pid: 31255 exited. Exitcode: `0', uptime: 00:00:00.
-ls redir test_0, pid: 31261 exited. Exitcode: `2', uptime: 00:00:00.
-ls fail redir test_0, pid: 31262 exited. Exitcode: `2', uptime: 00:00:00.
-dir_test_0, pid: 31263 exited. Exitcode: `0', uptime: 00:00:00.
-dir_test_fail_0, pid: 31264 exited. Exitcode: `1', uptime: 00:00:00.
-env_test_0, pid: 31265 exited. Exitcode: `0', uptime: 00:00:00.
-env_test_fail_0, pid: 31266 exited. Exitcode: `0', uptime: 00:00:00.
-umask_test_default_0, pid: 31267 exited. Exitcode: `0', uptime: 00:00:00.
-umask_test_003_0, pid: 31268 exited. Exitcode: `0', uptime: 00:00:00.
-invalid_command_0, pid: 31271 exited. Exitcode: `1', uptime: 00:00:00.
-ls_0, pid: 31274 exited. Exitcode: `0', uptime: 00:00:00.
-ls_0 PID: 31274 restarting
-Started ls_0 PID: 31275
-ls_0, pid: 31275 exited. Exitcode: `0', uptime: 00:00:00.
-ls_0 PID: 31275 restarting
-Started ls_0 PID: 31276
-ls_0, pid: 31276 exited. Exitcode: `0', uptime: 00:00:00.
-ls_0 PID: 31276 restarting
-Started ls_0 PID: 31277
-ls_0, pid: 31277 exited. Exitcode: `0', uptime: 00:00:00.
-core_dump_0, pid: 31270 signaled. Signal `Aborted', uptime: 00:00:00.
+.qweqq: No such file or directory.
+ls_0, pid: 5718 exited. Exitcode: `0', uptime: 00:00:00.
+ls_0 PID: 5718 restarting
+Started ls_0 PID: 5719
+invalid_command_0, pid: 5717 exited. Exitcode: `1', uptime: 00:00:00.
+core_dump_0, pid: 5716 signaled. Signal `Abort trap: 6', uptime: 00:00:00.
+umask_test_111_0, pid: 5714 exited. Exitcode: `1', uptime: 00:00:00.
+umask_test_default_0, pid: 5713 exited. Exitcode: `0', uptime: 00:00:00.
+env_test_fail_0, pid: 5712 exited. Exitcode: `0', uptime: 00:00:00.
+env_test_0, pid: 5711 exited. Exitcode: `0', uptime: 00:00:00.
+dir_test_fail_0, pid: 5710 exited. Exitcode: `1', uptime: 00:00:00.
+dir_test_0, pid: 5709 exited. Exitcode: `0', uptime: 00:00:00.
+ls fail redir test_0, pid: 5708 exited. Exitcode: `1', uptime: 00:00:00.
+ls redir test_0, pid: 5707 exited. Exitcode: `1', uptime: 00:00:00.
+ls_0, pid: 5719 exited. Exitcode: `0', uptime: 00:00:01.
+ls_0 PID: 5719 restarting
+Started ls_0 PID: 5720
+ls_0, pid: 5720 exited. Exitcode: `0', uptime: 00:00:00.
+ls_0 PID: 5720 restarting
+Started ls_0 PID: 5721
+ls_0, pid: 5721 exited. Exitcode: `0', uptime: 00:00:00.
+Graceful stop process: cat_0_grace_stop_0 PID 5694 has been set for cat_0, which will get sigkilled in 1s
+Interrupt: 2 cat_0, PID: 5694, uptime: 00:00:06
+
+cat_0 PID: -1 restarting
+Started cat_0 PID: 5730
+Graceful stop process: cat_1_grace_stop_0 PID 5695 has been set for cat_1, which will get sigkilled in 1s
+Interrupt: 2 cat_1, PID: 5695, uptime: 00:00:06
+
+cat_1 PID: -1 restarting
+Started cat_1 PID: 5731
+ls_0 PID: 5721 restarting
+Started ls_0 PID: 5732
+ls_5_procs_0 PID: 5697 restarting
+Started ls_5_procs_0 PID: 5733
+ls_5_procs_1 PID: 5698 restarting
+Started ls_5_procs_1 PID: 5734
+ls_5_procs_2 PID: 5699 restarting
+Started ls_5_procs_2 PID: 5735
+ls_5_procs_3 PID: 5700 restarting
+Started ls_5_procs_3 PID: 5736
+ls_5_procs_4 PID: 5701 restarting
+Started ls_5_procs_4 PID: 5737
+Graceful stop process: wait_2/3_at_SIGINT_0_grace_stop_0 PID 5702 has been set for wait_2/3_at_SIGINT_0, which will get sigkilled in 3s
+Interrupt: 2 wait_2/3_at_SIGINT_0, PID: 5702, uptime: 00:00:06
+
+wait_2/3_at_SIGINT_0 PID: -1 restarting
+Started wait_2/3_at_SIGINT_0 PID: 5738
+Graceful stop process: wait_5/3_at_SIGINT_0_grace_stop_0 PID 5703 has been set for wait_5/3_at_SIGINT_0, which will get sigkilled in 3s
+Interrupt: 2 wait_5/3_at_SIGINT_0, PID: 5703, uptime: 00:00:06
+
+wait_5/3_at_SIGINT_0 PID: -1 restarting
+Started wait_5/3_at_SIGINT_0 PID: 5739
+Graceful stop process: wait_10/11_at_SIGINT_0_grace_stop_0 PID 5704 has been set for wait_10/11_at_SIGINT_0, which will get sigkilled in 11s
+Interrupt: 2 wait_10/11_at_SIGINT_0, PID: 5704, uptime: 00:00:06
+
+wait_10/11_at_SIGINT_0 PID: -1 restarting
+Started wait_10/11_at_SIGINT_0 PID: 5740
+Graceful stop process: cat: grace_sig=SIGSTOP_0_grace_stop_0 PID 5705 has been set for cat: grace_sig=SIGSTOP_0, which will get sigkilled in 1s
+Continued: 19 cat: grace_sig=SIGSTOP_0, PID: 5705, uptime: 00:00:06
+
+cat: grace_sig=SIGSTOP_0 PID: -1 restarting
+Started cat: grace_sig=SIGSTOP_0 PID: 5741
+Graceful stop process: cat unexp, expect: [0, 2]_0_grace_stop_0 PID 5706 has been set for cat unexp, expect: [0, 2]_0, which will get sigkilled in 1s
+Interrupt: 2 cat unexp, expect: [0, 2]_0, PID: 5706, uptime: 00:00:06
+
+cat unexp, expect: [0, 2]_0 PID: -1 restarting
+Started cat unexp, expect: [0, 2]_0 PID: 5742
+ls redir test_0 PID: 5707 restarting
+Started ls redir test_0 PID: 5743
+ls fail redir test_0 PID: 5708 restarting
+Started ls fail redir test_0 PID: 5744
+dir_test_0 PID: 5709 restarting
+./<unexisting dir>aux/ls_redir_test1.out: No such file or directory
+Started dir_test_0 PID: 5745
+dir_test_fail_0 PID: 5710 restarting
+./<unexisting dir>aux/ls_redir_test1.err: No such file or directory
+Started dir_test_fail_0 PID: 5746
+env_test_0 PID: 5711 restarting
+Started env_test_0 PID: 5747
+env_test_fail_0 PID: 5712 restarting
+Started env_test_fail_0 PID: 5748
+umask_test_default_0 PID: 5713 restarting
+Started umask_test_default_0 PID: 5749
+umask_test_111_0 PID: 5714 restarting
+Started umask_test_111_0 PID: 5750
+Graceful stop process: cat_success_time_0_grace_stop_0 PID 5715 has been set for cat_success_time_0, which will get sigkilled in 1s
+Interrupt: 2 cat_success_time_0, PID: 5715, uptime: 00:00:06
+
+cat_success_time_0 PID: -1 restarting
+Started cat_success_time_0 PID: 5751
+core_dump_0 PID: 5716 restarting
+Started core_dump_0 PID: 5752
+invalid_command_0 PID: 5717 restarting
+Started invalid_command_0 PID: 5753
+ls_5_procs_4, pid: 5737 exited. Exitcode: `0', uptime: 00:00:00.
+ls_5_procs_3, pid: 5736 exited. Exitcode: `0', uptime: 00:00:00.
+ls_5_procs_2, pid: 5735 exited. Exitcode: `0', uptime: 00:00:00.
+ls_5_procs_1, pid: 5734 exited. Exitcode: `0', uptime: 00:00:00.
+ls_5_procs_0, pid: 5733 exited. Exitcode: `0', uptime: 00:00:00.
+ls_0, pid: 5732 exited. Exitcode: `0', uptime: 00:00:00.
+cat_success_time_0_grace_stop_0, pid: 5715 signaled. Signal `Interrupt: 2', uptime: 00:00:00.
+Destroyed cat_success_time_0_grace_stop_0.
+cat unexp, expect: [0, 2]_0_grace_stop_0, pid: 5706 signaled. Signal `Interrupt: 2', uptime: 00:00:00.
+Destroyed cat unexp, expect: [0, 2]_0_grace_stop_0.
+Process cat: grace_sig=SIGSTOP_0_grace_stop_0, pid: 5705 continued.
+cat_1_grace_stop_0, pid: 5695 signaled. Signal `Interrupt: 2', uptime: 00:00:00.
+Destroyed cat_1_grace_stop_0.
+cat_0_grace_stop_0, pid: 5694 signaled. Signal `Interrupt: 2', uptime: 00:00:00.
+Destroyed cat_0_grace_stop_0.
+realpath(): invalid_command_0: ./invalid_command_foo: No such file or directory
+.qweqq: No such file or directory.
+invalid_command_0, pid: 5753 exited. Exitcode: `1', uptime: 00:00:00.
+umask_test_111_0, pid: 5750 exited. Exitcode: `1', uptime: 00:00:00.
+env_test_fail_0, pid: 5748 exited. Exitcode: `0', uptime: 00:00:00.
+ls fail redir test_0, pid: 5744 exited. Exitcode: `1', uptime: 00:00:00.
+core_dump_0, pid: 5752 signaled. Signal `Abort trap: 6', uptime: 00:00:00.
+umask_test_default_0, pid: 5749 exited. Exitcode: `0', uptime: 00:00:00.
+env_test_0, pid: 5747 exited. Exitcode: `0', uptime: 00:00:00.
+dir_test_fail_0, pid: 5746 exited. Exitcode: `1', uptime: 00:00:00.
+dir_test_0, pid: 5745 exited. Exitcode: `0', uptime: 00:00:00.
+ls redir test_0, pid: 5743 exited. Exitcode: `1', uptime: 00:00:00.
+Killed: 9 cat: grace_sig=SIGSTOP_0_grace_stop_0, PID: 5705, uptime: 00:00:01
+
+cat: grace_sig=SIGSTOP_0_grace_stop_0, pid: 5705 signaled. Signal `Killed: 9', uptime: 00:00:01.
+Destroyed cat: grace_sig=SIGSTOP_0_grace_stop_0.
+wait_2/3_at_SIGINT_0_grace_stop_0, pid: 5702 exited. Exitcode: `0', uptime: 00:00:02.
+Destroyed wait_2/3_at_SIGINT_0_grace_stop_0.
+Killed: 9 wait_5/3_at_SIGINT_0_grace_stop_0, PID: 5703, uptime: 00:00:03
+
+wait_5/3_at_SIGINT_0_grace_stop_0, pid: 5703 signaled. Signal `Killed: 9', uptime: 00:00:03.
+Destroyed wait_5/3_at_SIGINT_0_grace_stop_0.
+wait_10/11_at_SIGINT_0_grace_stop_0, pid: 5704 exited. Exitcode: `0', uptime: 00:00:10.
+Destroyed wait_10/11_at_SIGINT_0_grace_stop_0.
+Started ls_not_started_0 PID: 5763
+ls_not_started_0, pid: 5763 exited. Exitcode: `0', uptime: 00:00:00.
+ls_not_started_0 PID: 5763 restarting
+Started ls_not_started_0 PID: 5764
+ls_not_started_0, pid: 5764 exited. Exitcode: `0', uptime: 00:00:01.
+ls_not_started_0 PID: 5764 restarting
+Started ls_not_started_0 PID: 5766
+ls_not_started_0, pid: 5766 exited. Exitcode: `0', uptime: 00:00:00.
+ls_not_started_0 PID: 5766 restarting
+Started ls_not_started_0 PID: 5767
+ls_not_started_0, pid: 5767 exited. Exitcode: `0', uptime: 00:00:00.
+ls_not_started_0 PID: 5767 restarting
+Started ls_not_started_0 PID: 5768
+ls_not_started_0, pid: 5768 exited. Exitcode: `0', uptime: 00:00:00.
+Reloading Config File
+environment: Invalid format: P<invalid char>ATH=emilqwqweq
+Reloading Config File
+environment: Invalid format: P<invalid char>ATH=emilqwqweq
+Graceful stop process: cat_success_time_0_grace_stop_0 PID 5751 has been set for cat_success_time_0, which will get sigkilled in 1s
+Interrupt: 2 cat_success_time_0, PID: 5751, uptime: 00:00:40
+
+Destroyed cat_success_time_0.
+Process cat_success_time_1 created
+Started cat_success_time_1 PID: 5799
+cat_success_time_0_grace_stop_0, pid: 5751 signaled. Signal `Interrupt: 2', uptime: 00:00:00.
+Destroyed cat_success_time_0_grace_stop_0.
 Freeing Taskmaster resources
 Joining the thread
 Gracefult stopping all child processes
-Graceful stop process: cat_0_grace_stop_0 PID 31248 has been set for cat_0, which will get sigkilled in 1s
-Interrupt cat_0, PID: 31248, uptime: 00:00:02
+Graceful stop process: cat_0_grace_stop_0 PID 5730 has been set for cat_0, which will get sigkilled in 1s
+Interrupt: 2 cat_0, PID: 5730, uptime: 00:01:04
 
-Graceful stop process: cat_1_grace_stop_0 PID 31249 has been set for cat_1, which will get sigkilled in 1s
-Interrupt cat_1, PID: 31249, uptime: 00:00:02
+Graceful stop process: cat_1_grace_stop_0 PID 5731 has been set for cat_1, which will get sigkilled in 1s
+Interrupt: 2 cat_1, PID: 5731, uptime: 00:01:04
 
-Graceful stop process: wait_2/3_at_SIGINT_0_grace_stop_0 PID 31256 has been set for wait_2/3_at_SIGINT_0, which will get sigkilled in 3s
-Interrupt wait_2/3_at_SIGINT_0, PID: 31256, uptime: 00:00:02
+Graceful stop process: wait_2/3_at_SIGINT_0_grace_stop_0 PID 5738 has been set for wait_2/3_at_SIGINT_0, which will get sigkilled in 3s
+Interrupt: 2 wait_2/3_at_SIGINT_0, PID: 5738, uptime: 00:01:04
 
-Graceful stop process: wait_5/3_at_SIGINT_0_grace_stop_0 PID 31257 has been set for wait_5/3_at_SIGINT_0, which will get sigkilled in 3s
-Interrupt wait_5/3_at_SIGINT_0, PID: 31257, uptime: 00:00:02
+Graceful stop process: wait_5/3_at_SIGINT_0_grace_stop_0 PID 5739 has been set for wait_5/3_at_SIGINT_0, which will get sigkilled in 3s
+Interrupt: 2 wait_5/3_at_SIGINT_0, PID: 5739, uptime: 00:01:04
 
-Graceful stop process: wait_10/11_at_SIGINT_0_grace_stop_0 PID 31258 has been set for wait_10/11_at_SIGINT_0, which will get sigkilled in 11s
-Interrupt wait_10/11_at_SIGINT_0, PID: 31258, uptime: 00:00:02
+Graceful stop process: wait_10/11_at_SIGINT_0_grace_stop_0 PID 5740 has been set for wait_10/11_at_SIGINT_0, which will get sigkilled in 11s
+Interrupt: 2 wait_10/11_at_SIGINT_0, PID: 5740, uptime: 00:01:04
 
-Graceful stop process: cat: grace_sig=SIGSTOP_0_grace_stop_0 PID 31259 has been set for cat: grace_sig=SIGSTOP_0, which will get sigkilled in 1s
-Stopped (signal) cat: grace_sig=SIGSTOP_0, PID: 31259, uptime: 00:00:02
+Graceful stop process: cat: grace_sig=SIGSTOP_0_grace_stop_0 PID 5741 has been set for cat: grace_sig=SIGSTOP_0, which will get sigkilled in 1s
+Continued: 19 cat: grace_sig=SIGSTOP_0, PID: 5741, uptime: 00:01:04
 
-Graceful stop process: cat unexp, expect: [0, 2]_0_grace_stop_0 PID 31260 has been set for cat unexp, expect: [0, 2]_0, which will get sigkilled in 1s
-Interrupt cat unexp, expect: [0, 2]_0, PID: 31260, uptime: 00:00:02
+Graceful stop process: cat unexp, expect: [0, 2]_0_grace_stop_0 PID 5742 has been set for cat unexp, expect: [0, 2]_0, which will get sigkilled in 1s
+Interrupt: 2 cat unexp, expect: [0, 2]_0, PID: 5742, uptime: 00:01:04
 
-Graceful stop process: cat_success_time_0_grace_stop_0 PID 31269 has been set for cat_success_time_0, which will get sigkilled in 1s
-Interrupt cat_success_time_0, PID: 31269, uptime: 00:00:02
+Graceful stop process: cat_success_time_1_grace_stop_0 PID 5799 has been set for cat_success_time_1, which will get sigkilled in 1s
+Interrupt: 2 cat_success_time_1, PID: 5799, uptime: 00:00:24
 
-cat_0_grace_stop_0, pid: 31248 signaled. Signal `Interrupt', uptime: 00:00:00.
-Destroyed cat_0_grace_stop_0.
-cat_1_grace_stop_0, pid: 31249 signaled. Signal `Interrupt', uptime: 00:00:00.
-Destroyed cat_1_grace_stop_0.
-Process cat: grace_sig=SIGSTOP_0_grace_stop_0, pid: 31259 stopped with the signal 19.
-cat unexp, expect: [0, 2]_0_grace_stop_0, pid: 31260 signaled. Signal `Interrupt', uptime: 00:00:00.
+Process cat: grace_sig=SIGSTOP_0_grace_stop_0, pid: 5741 continued.
+cat unexp, expect: [0, 2]_0_grace_stop_0, pid: 5742 signaled. Signal `Interrupt: 2', uptime: 00:00:00.
 Destroyed cat unexp, expect: [0, 2]_0_grace_stop_0.
-cat_success_time_0_grace_stop_0, pid: 31269 signaled. Signal `Interrupt', uptime: 00:00:00.
-Destroyed cat_success_time_0_grace_stop_0.
-Killed cat: grace_sig=SIGSTOP_0_grace_stop_0, PID: 31259, uptime: 00:00:01
+cat_success_time_1_grace_stop_0, pid: 5799 signaled. Signal `Interrupt: 2', uptime: 00:00:00.
+Destroyed cat_success_time_1_grace_stop_0.
+cat_1_grace_stop_0, pid: 5731 signaled. Signal `Interrupt: 2', uptime: 00:00:00.
+Destroyed cat_1_grace_stop_0.
+cat_0_grace_stop_0, pid: 5730 signaled. Signal `Interrupt: 2', uptime: 00:00:00.
+Destroyed cat_0_grace_stop_0.
+Killed: 9 cat: grace_sig=SIGSTOP_0_grace_stop_0, PID: 5741, uptime: 00:00:01
 
-cat: grace_sig=SIGSTOP_0_grace_stop_0, pid: 31259 signaled. Signal `Killed', uptime: 00:00:01.
+cat: grace_sig=SIGSTOP_0_grace_stop_0, pid: 5741 signaled. Signal `Killed: 9', uptime: 00:00:01.
 Destroyed cat: grace_sig=SIGSTOP_0_grace_stop_0.
-wait_2/3_at_SIGINT_0_grace_stop_0, pid: 31256 exited. Exitcode: `0', uptime: 00:00:02.
+wait_2/3_at_SIGINT_0_grace_stop_0, pid: 5738 exited. Exitcode: `0', uptime: 00:00:02.
 Destroyed wait_2/3_at_SIGINT_0_grace_stop_0.
-Killed wait_5/3_at_SIGINT_0_grace_stop_0, PID: 31257, uptime: 00:00:02
+Killed: 9 wait_5/3_at_SIGINT_0_grace_stop_0, PID: 5739, uptime: 00:00:03
 
-Killed wait_10/11_at_SIGINT_0_grace_stop_0, PID: 31258, uptime: 00:00:02
-
-wait_5/3_at_SIGINT_0_grace_stop_0, pid: 31257 signaled. Signal `Killed', uptime: 00:00:02.
+wait_5/3_at_SIGINT_0_grace_stop_0, pid: 5739 signaled. Signal `Killed: 9', uptime: 00:00:03.
 Destroyed wait_5/3_at_SIGINT_0_grace_stop_0.
-wait_10/11_at_SIGINT_0_grace_stop_0, pid: 31258 signaled. Signal `Killed', uptime: 00:00:02.
+wait_10/11_at_SIGINT_0_grace_stop_0, pid: 5740 exited. Exitcode: `0', uptime: 00:00:10.
 Destroyed wait_10/11_at_SIGINT_0_grace_stop_0.
 Quit

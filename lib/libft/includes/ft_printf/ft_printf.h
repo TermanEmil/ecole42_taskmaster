@@ -22,6 +22,7 @@
 # include "extractlib.h"
 # include <inttypes.h>
 # include <limits.h>
+# include <sys/types.h>
 
 # define SPECIFIERS	"\x25sScCbBoOuUidDxXpnfF"
 # define NUM_SPEC	"bBoOuUidDxXpfF"

@@ -27,10 +27,8 @@ static t_lst_str	*read_config_(t_rostr file_path)
 		return NULL;
 	}
 	file_lines = NULL;
-	taskmast_log("started while\n");
 	while ((ret = get_next_line(fd, &line)) > 0)
 		ft_lstadd(&file_lines, ft_lstnew_str_nocpy(line));
-	taskmast_log("ended while\n");
 
 	if (ret < 0)
 	{

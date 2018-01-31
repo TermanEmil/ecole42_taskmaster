@@ -20,6 +20,7 @@
 # include <limits.h>
 # include "short_named_types.h"
 # include "errno.h"
+# include <sys/types.h>
 
 /*
 ** The makefile is possible hidden (.Makefile)

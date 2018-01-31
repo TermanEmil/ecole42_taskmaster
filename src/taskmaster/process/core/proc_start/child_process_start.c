@@ -85,7 +85,7 @@ static void	set_dfl_(int signum)
 void	close_child_trash()
 {
 	if (pthread_join(g_taskmast.waiter_thread, NULL) != 0 && errno != 0)
-		TASKMAST_ERROR(TRUE, "pthread_join(): %s\n", strerror(errno));
+		errno = 0;
 	set_dfl_(SIGCHLD);
 	set_dfl_(SIGHUP);
 	set_dfl_(SIGALRM);
