@@ -59,7 +59,7 @@ int				execute_tskmast_cmd_status(t_cmd_env *cmd_env)
 		usleep(SIGSAFE_CHECK_INTERVAL);
 	
 	g_taskmast.signal_flags.its_safe = FALSE;
-	if (cmd_env->argv[1] != NULL)
+	if (cmd_env && cmd_env->argv[1] != NULL)
 	{
 		if (ft_strequ(cmd_env->argv[1], "-h"))
 			return print_help_();
@@ -68,7 +68,7 @@ int				execute_tskmast_cmd_status(t_cmd_env *cmd_env)
 		print_general_status(g_taskmast.procs);
 
 	print_informative_bar_();
-	if (cmd_env->argv[1] != NULL)
+	if (cmd_env && cmd_env->argv[1] != NULL)
 		print_status_of_the_argv_(cmd_env->argv);
 	else
 		ft_lstiter_mem(g_taskmast.procs, (void (*)(void*))&print_proc_status_);

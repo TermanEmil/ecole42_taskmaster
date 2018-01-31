@@ -127,5 +127,6 @@ void		create_processes(t_taskmast *taskmast, t_lst_proccfg *proc_cfgs);
 void		remove_schedule(t_alrm_schedl *schedule);
 void		sigkill_pid(t_taskmast *taskmaster, pid_t pid);
 t_alrm_schedl	*get_min_time_schedule(const t_lst_schedl *schedules);
+void		grace_stop_children(t_taskmast *taskmast);
 
 #endif

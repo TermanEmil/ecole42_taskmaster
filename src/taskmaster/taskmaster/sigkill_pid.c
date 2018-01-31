@@ -11,6 +11,6 @@ void		sigkill_pid(t_taskmast *taskmaster, pid_t pid)
 	proc = lst_process_pidof(taskmaster->procs, pid);
 	if (proc)
 	{
-		kill_proc(SIGKILL, proc);		
+		kill_proc(SIGKILL, proc);
 	}
 }

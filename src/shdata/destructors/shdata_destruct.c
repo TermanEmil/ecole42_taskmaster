@@ -12,11 +12,5 @@ void		shdata_destruct(t_shdata * const target)
 		del_hashtab(&g_shinput->key_cmds);
 		
 		ft_lstdel(&target->started_procs, &std_mem_del);
-		if (g_shdata.is_term)
-		{
-			TMP_FAIL_RETRY(close(STDIN_FILENO));
-			TMP_FAIL_RETRY(close(STDOUT_FILENO));
-			TMP_FAIL_RETRY(close(STDERR_FILENO));
-		}
 	}
 }

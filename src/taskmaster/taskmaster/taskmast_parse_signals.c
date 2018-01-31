@@ -15,10 +15,7 @@ static void		parse_sigchld_()
 	SIG_FLGS_.signals[SIGCHLD] = FALSE;
 
 	while ((pid = waitpid(-1, &status, WNOHANG | WUNTRACED | WCONTINUED)) > 0)
-	{
-		if (!g_taskmast.is_exiting)
-			parse_process_waitpid(pid, status);
-	}
+		parse_process_waitpid(pid, status);
 	if (pid == -1 && errno != 0 && errno != ECHILD)
 		TASKMAST_ERROR(FALSE, "waitpid(): %s\n", strerror(errno));
 	errno = 0;
