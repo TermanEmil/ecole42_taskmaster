@@ -44,7 +44,10 @@ static void	update_exit_status_(const t_taskmast *taskmast)
 	result = (total - running) / (float)total * 100;
 
 	if (running == 0)
-		ft_printf("[Finished]\n");
+	{
+		ft_printf("[%s]\n",
+			(g_shinput->signaled_sigint) ? "Killed" : "Finished");
+	}
 	else
 	{
 		ft_printf("[Finishing[%c]: %.2f%%]>",
@@ -53,12 +56,25 @@ static void	update_exit_status_(const t_taskmast *taskmast)
 	loading_char++;
 }
 
-void	grace_stop_children(t_taskmast *taskmast)
+static void	sigkill_proc_(t_process *proc)
 {
+	kill_proc(SIGKILL, proc);
+}
+
+void		grace_stop_children(t_taskmast *taskmast)
+{
+	t_bool	kill_them;
+
+	kill_them = FALSE;
 	TASKMAST_LOG("Gracefult stopping all child processes\n", "");
 	ft_lstiter_mem(taskmast->procs, (void (*)())&grace_stop_not_terminated_);
 	while (running_count_(taskmast->procs) > 0)
 	{
+		if (!kill_them && g_shinput->signaled_sigint)
+		{
+			ft_lstiter_mem(taskmast->procs, (void (*)())&sigkill_proc_);
+			kill_them = TRUE;
+		}
 		taskmast_parse_signals();
 		update_exit_status_(taskmast);
 		usleep(CHECK_SIG_FLAGS_INTERVAL / 2);
