@@ -1,4 +1,5 @@
 #include "taskmaster42.h"
+#include <sys/wait.h>
 
 static t_rostr	get_atempts_str_(const t_process *proc)
 {
@@ -36,14 +37,18 @@ static t_rostr	get_sig_on_kill_str_(const t_process *proc)
 
 t_rostr		get_proc_description(const t_process *proc)
 {
-	static char		buf[124];
+	static char		buf[248];
 
 	ft_bzero(buf, sizeof(buf));
+
+	if (proc->status.sig_on_kill == SIGABRT)
+		ft_strcpy(buf, "[Abort] ");
+
 	if (proc->status.state == e_not_started)
 		ft_strcpy(buf, C_GRAY "-------" C_EOC);
 	else if (ISSTATE(proc, e_critic) || ISSTATE(proc, e_completed))
 	{
-		ft_sprintf(buf, "ex_stat: %d %s%s, %s",
+		ft_sprintf(buf + ft_strlen(buf), "ex_stat: %d %s%s, %s",
 			proc->status.waitpid_status, get_sig_on_kill_str_(proc),
 			proc_struptime(proc), get_atempts_str_(proc));
 	}
@@ -52,7 +57,7 @@ t_rostr		get_proc_description(const t_process *proc)
 		if (proc->config->success_time >= 0 &&
 			proc_uptime(proc) >= proc->config->success_time)
 		{
-			ft_sprintf(buf, "Success start, ");
+			ft_sprintf(buf + ft_strlen(buf), "Success start, ");
 		}
 
 		ft_sprintf(buf + ft_strlen(buf), "%s, %s",

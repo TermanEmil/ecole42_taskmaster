@@ -1,5 +1,6 @@
 #include "shell42.h"
 #include "taskmaster42.h"
+#include <sys/wait.h>
 
 t_shdata			g_shdata;
 t_shinput			*g_shinput;
@@ -22,10 +23,10 @@ static void	start_listening_to_signals_()
 
 int			main(int argc, const char **argv, const char **envp)
 {
-	ft_printf("Pid: %d\n", getpid());
 	if (argc < 2 || ft_strequ(argv[1], "-h"))
 		return print_help_();
 
+	ft_printf("Pid: %d\n", getpid());
 	pthread_mutex_init(&g_printf_mutex, NULL);
 	init_shell(envp);
 
@@ -41,12 +42,13 @@ int			main(int argc, const char **argv, const char **envp)
 		term_putnewl();
 		input_reprint_here(g_current_in);
 	}
+
 	while (1)
 	{
 		while (!g_taskmast.signal_flags.its_safe)
-			usleep(1);
+			usleep(1000);
 		input_reprint_here(g_current_in);
-		
+
 		shinput_reset_signals(g_shinput);
 		shell_read_user_input();
 		shinput_process_signals(g_shinput);

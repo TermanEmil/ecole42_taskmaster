@@ -1,93 +1,11 @@
-Started Taskmaster, PID: 17628
-Process cat_0 created
-Process cat_1 created
-Process ls_0 created
-Process ls_not_started_0 created
-Process ls_5_procs_0 created
-Process ls_5_procs_1 created
-Process ls_5_procs_2 created
-Process ls_5_procs_3 created
-Process ls_5_procs_4 created
-Process wait_2/3_at_SIGINT_0 created
-Process wait_5/3_at_SIGINT_0 created
-Process wait_10/11_at_SIGINT_0 created
-Process cat: grace_sig=SIGSTOP_0 created
-Process cat unexp, expect: [0, 2]_0 created
-Process ls redir test_0 created
-Process ls fail redir test_0 created
-Process dir_test_0 created
-Process dir_test_fail_0 created
-Process env_test_0 created
-Process env_test_fail_0 created
-Process umask_test_default_0 created
-Process umask_test_003_0 created
-Process cat_success_time_0 created
-Started cat_0 PID: 17630
-Started cat_1 PID: 17631
-Started ls_0 PID: 17632
-Started ls_5_procs_0 PID: 17633
-Started ls_5_procs_1 PID: 17634
-Started ls_5_procs_2 PID: 17635
-Started ls_5_procs_3 PID: 17636
-Started ls_5_procs_4 PID: 17637
-Started wait_2/3_at_SIGINT_0 PID: 17638
-Started wait_5/3_at_SIGINT_0 PID: 17639
-Started wait_10/11_at_SIGINT_0 PID: 17640
-Started cat: grace_sig=SIGSTOP_0 PID: 17641
-Started cat unexp, expect: [0, 2]_0 PID: 17642
-Started ls redir test_0 PID: 17643
-Started ls fail redir test_0 PID: 17644
-Started dir_test_0 PID: 17645
-Started dir_test_fail_0 PID: 17646
-Started env_test_0 PID: 17647
-Started env_test_fail_0 PID: 17648
-Started umask_test_default_0 PID: 17649
-Started umask_test_003_0 PID: 17650
-Started cat_success_time_0 PID: 17651
-./<unexisting dir>aux/ls_redir_test1.out: No such file or directory
-./<unexisting dir>aux/ls_redir_test1.err: No such file or directory
-ls_0, pid: 17632 exited. Exitcode: `0', uptime: 00:00:01.
-ls_0 PID: 17632 restarting
-Started ls_0 PID: 17653
-ls_5_procs_0, pid: 17633 exited. Exitcode: `0', uptime: 00:00:01.
-ls_5_procs_1, pid: 17634 exited. Exitcode: `0', uptime: 00:00:01.
-ls_5_procs_2, pid: 17635 exited. Exitcode: `0', uptime: 00:00:01.
-ls_5_procs_3, pid: 17636 exited. Exitcode: `0', uptime: 00:00:01.
-ls_5_procs_4, pid: 17637 exited. Exitcode: `0', uptime: 00:00:01.
-ls redir test_0, pid: 17643 exited. Exitcode: `2', uptime: 00:00:01.
-ls fail redir test_0, pid: 17644 exited. Exitcode: `2', uptime: 00:00:01.
-dir_test_0, pid: 17645 exited. Exitcode: `0', uptime: 00:00:01.
-dir_test_fail_0, pid: 17646 exited. Exitcode: `1', uptime: 00:00:01.
-env_test_0, pid: 17647 exited. Exitcode: `0', uptime: 00:00:01.
-env_test_fail_0, pid: 17648 exited. Exitcode: `0', uptime: 00:00:01.
-umask_test_default_0, pid: 17649 exited. Exitcode: `0', uptime: 00:00:01.
-umask_test_003_0, pid: 17650 exited. Exitcode: `0', uptime: 00:00:01.
-ls_0, pid: 17653 exited. Exitcode: `0', uptime: 00:00:00.
-ls_0 PID: 17653 restarting
-Started ls_0 PID: 17654
-ls_0, pid: 17654 exited. Exitcode: `0', uptime: 00:00:00.
-ls_0 PID: 17654 restarting
-Started ls_0 PID: 17655
-ls_0, pid: 17655 exited. Exitcode: `0', uptime: 00:00:00.
-ls_0 PID: 17655 restarting
-Started ls_0 PID: 17656
-ls_0, pid: 17656 exited. Exitcode: `0', uptime: 00:00:00.
+Started Taskmaster, PID: 17289
+Process core_dump_0 created
+Process invalid_command_0 created
+Started core_dump_0 PID: 17291
+Started invalid_command_0 PID: 17292
+realpath(): invalid_command_0: ./invalid_command_foo: No such file or directory
+invalid_command_0, pid: 17292 exited. Exitcode: `1', uptime: 00:00:00.
+core_dump_0, pid: 17291 signaled. Signal `Aborted', uptime: 00:00:01.
 Freeing Taskmaster resources
 Joining the thread
 Killing all childprocesses
-Killed cat_0, PID: 17630, uptime: 00:00:18
-
-Killed cat_1, PID: 17631, uptime: 00:00:18
-
-Killed wait_2/3_at_SIGINT_0, PID: 17638, uptime: 00:00:18
-
-Killed wait_5/3_at_SIGINT_0, PID: 17639, uptime: 00:00:18
-
-Killed wait_10/11_at_SIGINT_0, PID: 17640, uptime: 00:00:18
-
-Killed cat: grace_sig=SIGSTOP_0, PID: 17641, uptime: 00:00:19
-
-Killed cat unexp, expect: [0, 2]_0, PID: 17642, uptime: 00:00:19
-
-Killed cat_success_time_0, PID: 17651, uptime: 00:00:19
-

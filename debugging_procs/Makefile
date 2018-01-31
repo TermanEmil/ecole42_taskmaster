@@ -10,3 +10,5 @@ make: $(BINS)
 	
 fclean:
 	rm -rf $(BINS)
+
+re: fclean make

@@ -13,7 +13,7 @@ static void	*waiter_thread_func_(void *varg)
 	while (!g_taskmast.is_exiting)
 	{
 		taskmast_parse_signals();
-		usleep(200);
+		usleep(CHECK_SIG_FLAGS_INTERVAL);
 		errno = 0;
 	}
 	return NULL;

@@ -58,7 +58,7 @@ static int	parse_real_path_(const t_process *proc, t_str *argv)
 
 	if (realpath(argv[0], real_path) == NULL)
 	{
-		ft_error(FALSE, "realpath(): %s: %s: %s\n",
+		TASKMAST_ERROR(FALSE, "realpath(): %s: %s: %s\n",
 			proc->name, argv[0], strerror(errno));
 		errno = 0;
 		return -1;
@@ -100,11 +100,15 @@ void		child_process_start(t_process *proc)
 	ignore_ctrl_c_();
 	parse_redirs_(proc);
 	if ((argv = get_argv_(proc->config->launch_cmd)) == NULL)
-		return;
+	{
+		TASKMAST_LOG(FALSE, "Null argv\n", 1);
+		_exit(EXIT_FAILURE);
+	}
+
 	if (parse_real_path_(proc, argv) != 0)
 	{
 		ft_free_bidimens(argv);
-		return;
+		_exit(EXIT_FAILURE);
 	}
 	if (proc_mv_to_dir(proc->config->dir) == -1)
 		_exit(EXIT_FAILURE);
@@ -116,6 +120,6 @@ void		child_process_start(t_process *proc)
 
 	umask(proc->config->umask);
 	execve(argv[0], argv, env_tab);
-	ft_prerror(FALSE, "%s: %s\n", argv[0], strerror(errno));
+	TASKMAST_LOG(FALSE, "%s: %s\n", argv[0], strerror(errno));
 	_exit(EXIT_FAILURE);
 }

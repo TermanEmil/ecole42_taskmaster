@@ -1,5 +1,6 @@
 #include "taskmaster42.h"
 #include <limits.h>
+#include <sys/wait.h>
 
 static int	fork_fail_(t_process *proc)
 {
@@ -35,7 +36,10 @@ int		process_start(t_process *process)
 	if (process->pid == -1)
 		return fork_fail_(process);
 	else if (process->pid == 0)
+	{
 		child_process_start(process);
+		TASKMAST_ERROR(TRUE, "This shouldn't be happening after fork()\n", 1);
+	}
 	else
 		father_process_start(process);
 	return 0;

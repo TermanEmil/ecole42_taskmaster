@@ -13,7 +13,8 @@
 #include <signal.h>
 #include <pthread.h>
 
-# define SIGSAFE_CHECK_INTERVAL 50
+# define SIGSAFE_CHECK_INTERVAL 500
+# define CHECK_SIG_FLAGS_INTERVAL (1000000 / 5)
 
 typedef struct s_taskmast		t_taskmast;
 typedef struct s_alrm_schedl	t_alrm_schedl;
