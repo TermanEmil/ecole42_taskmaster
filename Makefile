@@ -139,7 +139,8 @@ fclean: clean
 	rm -f $(NAME)
 
 re: fclean all
-
+	@make re -C debugging_procs/
+	
 recomp_lib:
 	make re -C lib
 

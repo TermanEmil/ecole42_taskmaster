@@ -59,7 +59,6 @@ int			main(int argc, const char **argv, const char **envp)
 	{
 		while (!g_taskmast.signal_flags.its_safe)
 			usleep(1000);
-		input_reprint_here(g_current_in);
 
 		shinput_reset_signals(g_shinput);
 		shell_read_user_input();
