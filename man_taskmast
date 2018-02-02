@@ -23,29 +23,30 @@ Note: $MyPid is the taskmaster's current pid. Use it for example:
 	$ kill -1 $MyPid
 	to reload the configurations. (SIGHUB)
 
-At exit, all programs are killed with SIGKILL.
+On exit, all processes are Gracefully stopped. To forcefull exit, CTRL-C
+can be used.
 
 Config Example:
-							; defaults
+														; defaults
 [taskmaster]
-logfile=./aux/log			; none
-log_to_term=true			; false
+logfile=./aux/log						; none
+log_to_term=true						; false
 
-[program:ls]				; [0 ] program name is required
-command=/bin/ls ..			; [1 ] required
-nprocs=1					; [2 ] 1
-autostart=false				; [3 ] true
-restart_mode=always			; [4 ] never
-restart_attempts=1			; [5 ] 1 (1/1)
-sig_graceful_stop=9			; [6 ] SIGINT (2
-time_before_kill=1s			; [7 ] 1s
-umask=003					; [8 ] 002
+[program:ls]								; [0 ] program name is required
+command=/bin/ls ..					; [1 ] required
+nprocs=1										; [2 ] 1
+autostart=false							; [3 ] true
+restart_mode=always					; [4 ] never
+restart_attempts=1					; [5 ] 1 (1/1)
+sig_graceful_stop=9					; [6 ] SIGINT (2
+time_before_kill=1s					; [7 ] 1s
+umask=003										; [8 ] 002
 expected_exit_status=[0, 1]	; [9 ] [0]. [] - no exepcted exit statusses
 environment=Var1=val,Var2=a	; [10] taskmaster's environment
-dir=..						; [11] current dir
-stdout=ls_out				; [12] discarded
-stderr=../ls_err			; [13] discarded
-success_time=2				; [14] undefined
+dir=..											; [11] current dir
+stdout=ls_out								; [12] discarded
+stderr=../ls_err						; [13] discarded
+success_time=2							; [14] undefined
 
 [program:cat]
 command=/bin/cat
