@@ -1,6 +1,7 @@
 # Taskmaster42
 
 A [Supervisor](http://supervisord.org/) like process control program for Unix, written in C language. A full presentation is available on Youtube: [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/FnOSvYY0vNU/0.jpg)](https://www.youtube.com/watch?v=FnOSvYY0vNU)
+
 This is an Ecole42 project.
 
 ## Documentation
