@@ -1,3 +1,9 @@
+	A Unix process control program. It takes only one argument: a process
+configuration file. It displays the running time of a process, the state
+and other useful information about each given process. The program comes with
+an ordinary shell, with some extra commands that allow to start, restart or stop
+a process.
+
 Commands:
 	status [<process name>|PID<process pid>|<state>]
 		Show all processes.
@@ -53,7 +59,7 @@ command=/bin/cat
 [1]: command=<string>
 	(required)
 	Command to use to launch the process. A real path is expected. Only
-	arguments are parsed (no pipes or anything else). 
+	arguments are parsed (no pipes or anything else).
 
 [2]: nprocs=<number>
 	Def: 1
@@ -78,7 +84,7 @@ command=/bin/cat
 	Signal used to quit the program. When a process has to be shut down, first
 	this signal is sent to it, the process entry gets "grace_stop" status
 	and "_grace_stop" string is added to the name, then, if it doesn't die by
-	itself in `time_before_kill` seconds, SIGKILL is sent to it. The 
+	itself in `time_before_kill` seconds, SIGKILL is sent to it. The
 	schedueling is implemented using SIGALARM.
 
 [7]: time_before_kill=<number of seconds>

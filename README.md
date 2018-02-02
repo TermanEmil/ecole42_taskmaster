@@ -1,0 +1,131 @@
+# Taskmaster42
+
+A [Supervisor](http://supervisord.org/) like process control program for Unix, written in C language. A full presentation is available on Youtube: [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/FnOSvYY0vNU/0.jpg)](https://www.youtube.com/watch?v=FnOSvYY0vNU)
+This is an Ecole42 project.
+
+## Documentation
+~~~
+A Unix process control program. It takes only one argument: a process
+configuration file. It displays the running time of a process, the state
+and other useful information about each given process. The program comes with
+an ordinary shell, with some extra commands that allow to start, restart or stop
+a process.
+
+Commands:
+status [<process name>|PID<process pid>|<state>]
+  Show all processes.
+
+start [<process name>|PID<process pid>|<state>]
+  Start "not started" or stopped processes
+
+stop [<process name>|PID<process pid>|<state>]
+  Stop a process (SIGSTOP)
+
+restart [<process name>|PID<process pid>|<state>]
+  Restart a process. First `sig_graceful_stop` is sent.
+
+A basic shell's commands.
+
+Note: $MyPid is the taskmaster's current pid. Use it for example:
+$ kill -1 $MyPid
+to reload the configurations. (SIGHUB)
+
+At exit, all programs are killed with SIGKILL.
+
+Config Example:
+            ; defaults
+[taskmaster]
+logfile=./aux/log			; none
+log_to_term=true			; false
+
+[program:ls]				; [0 ] program name is required
+command=/bin/ls ..			; [1 ] required
+nprocs=1					; [2 ] 1
+autostart=false				; [3 ] true
+restart_mode=always			; [4 ] never
+restart_attempts=1			; [5 ] 1 (1/1)
+sig_graceful_stop=9			; [6 ] SIGINT (2
+time_before_kill=1s			; [7 ] 1s
+umask=003					; [8 ] 002
+expected_exit_status=[0, 1]	; [9 ] [0]. [] - no exepcted exit statusses
+environment=Var1=val,Var2=a	; [10] taskmaster's environment
+dir=..						; [11] current dir
+stdout=ls_out				; [12] discarded
+stderr=../ls_err			; [13] discarded
+success_time=2				; [14] undefined
+
+[program:cat]
+command=/bin/cat
+
+
+-----
+[0]: program name
+If another process with the same name already exists, then <prog_name>_<n>
+is used.
+
+[1]: command=<string>
+(required)
+Command to use to launch the process. A real path is expected. Only
+arguments are parsed (no pipes or anything else).
+
+[2]: nprocs=<number>
+Def: 1
+Number of instances to run.
+
+[3]: autostart=[true|false]
+Def: true
+Start the program automatically.
+
+[4]: restart_mode=[always|never|unexpected_exit]
+Def: never
+When to restart the program. If the maximum number of retries is reached,
+the process isn't restarted anymore, unless the user asks so.
+
+[5]: restart_attempts=<number>
+Def: 1
+By default it doesn't restart if it fails. restart_attempts=1 means that
+the process starts only once.
+
+[6]: sig_graceful_stop=<number> (between 0 and maximum signal code)
+Def: 2 (SIGINT)
+Signal used to quit the program. When a process has to be shut down, first
+this signal is sent to it, the process entry gets "grace_stop" status
+and "_grace_stop" string is added to the name, then, if it doesn't die by
+itself in `time_before_kill` seconds, SIGKILL is sent to it. The
+schedueling is implemented using SIGALARM.
+
+[7]: time_before_kill=<number of seconds>
+Def: 1s
+How long to wait after a `sig_graceful_stop` before killing the process.
+
+[8]: umask=<octal number>
+Def: 002
+The umask used for this process.
+
+[9]: expected_exit_status=[<number>, <number>, ...] (array of exit statuses)
+Def: [0]
+Tell if the exit status was expected or not. If it wasn't, perhaps it will
+be restarted.
+Note: The exit status and exit codes are different.
+
+[10]: environment=<key>=<val>,<key>=<val>,...
+Def: taskamster's environment
+The environment to pass to the process.
+
+[11]: dir=<a valid dir>
+Def: .
+The directory in which the process will start.
+
+[12]: stdout=[<file name>|discard]
+Def: discarded
+The file to which the stdout will be redirected.
+
+[13]: stderr=<file name>
+Def: discarded
+The file to which the stderr will be redirected.
+
+[14]: success_time=<number of seconds>
+Def: undefined
+How much time it should run to be considered successfully started.
+
+~~~
