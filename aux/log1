@@ -1,71 +1,51 @@
-==16853== Memcheck, a memory error detector
-==16853== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
-==16853== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
-==16853== Command: ./taskmaster ./aux/taskmaster.cfg
-==16853== Parent PID: 16173
-==16853== 
-==16853== Invalid read of size 1
-==16853==    at 0x41AC94: ft_hash (ft_hash.c:14)
-==16853==    by 0x4082C4: get_proc_cfg_hash (get_proc_cfg_hash.c:24)
-==16853==    by 0x4098DD: load_proc_config (load_proc_config.c:126)
-==16853==    by 0x40B9E4: load_program_cfg_ (taskmast_load_all_config.c:64)
-==16853==    by 0x40BB64: load_from_lines_ (taskmast_load_all_config.c:85)
-==16853==    by 0x40BC97: taskmast_load_all_config (taskmast_load_all_config.c:104)
-==16853==    by 0x4070E5: init_taskmaster (init_taskmaster.c:34)
-==16853==    by 0x412691: main (main.c:46)
-==16853==  Address 0x568b82c is 0 bytes after a block of size 60 alloc'd
-==16853==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==16853==    by 0x417F9B: ft_strmegajoin (ft_strmegajoin.c:39)
-==16853==    by 0x41828C: ft_str_mlc_sub (ft_str_mlc_sub.c:17)
-==16853==    by 0x40CB14: extract_and_subs_env_val_ (set_env_vars_to_str.c:37)
-==16853==    by 0x40CBA6: set_env_vars_to_str (set_env_vars_to_str.c:57)
-==16853==    by 0x40C8C4: set_env_vars_to_cfg_file (set_env_vars_to_cfg_file.c:37)
-==16853==    by 0x40BC84: taskmast_load_all_config (taskmast_load_all_config.c:103)
-==16853==    by 0x4070E5: init_taskmaster (init_taskmaster.c:34)
-==16853==    by 0x412691: main (main.c:46)
-==16853== 
-==16870== 
-==16870== HEAP SUMMARY:
-==16870==     in use at exit: 37,333 bytes in 601 blocks
-==16870==   total heap usage: 6,282 allocs, 5,681 frees, 947,882 bytes allocated
-==16870== 
-==16870== LEAK SUMMARY:
-==16870==    definitely lost: 0 bytes in 0 blocks
-==16870==    indirectly lost: 0 bytes in 0 blocks
-==16870==      possibly lost: 0 bytes in 0 blocks
-==16870==    still reachable: 37,333 bytes in 601 blocks
-==16870==         suppressed: 0 bytes in 0 blocks
-==16870== Rerun with --leak-check=full to see details of leaked memory
-==16870== 
-==16870== For counts of detected and suppressed errors, rerun with: -v
-==16870== ERROR SUMMARY: 11 errors from 1 contexts (suppressed: 0 from 0)
-==16878== 
-==16878== HEAP SUMMARY:
-==16878==     in use at exit: 37,243 bytes in 599 blocks
-==16878==   total heap usage: 6,365 allocs, 5,766 frees, 950,198 bytes allocated
-==16878== 
-==16878== LEAK SUMMARY:
-==16878==    definitely lost: 0 bytes in 0 blocks
-==16878==    indirectly lost: 0 bytes in 0 blocks
-==16878==      possibly lost: 0 bytes in 0 blocks
-==16878==    still reachable: 37,243 bytes in 599 blocks
-==16878==         suppressed: 0 bytes in 0 blocks
-==16878== Rerun with --leak-check=full to see details of leaked memory
-==16878== 
-==16878== For counts of detected and suppressed errors, rerun with: -v
-==16878== ERROR SUMMARY: 11 errors from 1 contexts (suppressed: 0 from 0)
-==16853== 
-==16853== HEAP SUMMARY:
-==16853==     in use at exit: 15,244 bytes in 17 blocks
-==16853==   total heap usage: 10,402 allocs, 10,385 frees, 1,028,950 bytes allocated
-==16853== 
-==16853== LEAK SUMMARY:
-==16853==    definitely lost: 0 bytes in 0 blocks
-==16853==    indirectly lost: 0 bytes in 0 blocks
-==16853==      possibly lost: 0 bytes in 0 blocks
-==16853==    still reachable: 15,244 bytes in 17 blocks
-==16853==         suppressed: 0 bytes in 0 blocks
-==16853== Rerun with --leak-check=full to see details of leaked memory
-==16853== 
-==16853== For counts of detected and suppressed errors, rerun with: -v
-==16853== ERROR SUMMARY: 11 errors from 1 contexts (suppressed: 0 from 0)
+==7901== Memcheck, a memory error detector
+==7901== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
+==7901== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
+==7901== Command: ./taskmaster ./aux/taskmaster.cfg
+==7901== Parent PID: 2032
+==7901== 
+==7935== 
+==7935== HEAP SUMMARY:
+==7935==     in use at exit: 37,977 bytes in 614 blocks
+==7935==   total heap usage: 6,460 allocs, 5,846 frees, 952,310 bytes allocated
+==7935== 
+==7935== LEAK SUMMARY:
+==7935==    definitely lost: 0 bytes in 0 blocks
+==7935==    indirectly lost: 0 bytes in 0 blocks
+==7935==      possibly lost: 0 bytes in 0 blocks
+==7935==    still reachable: 37,977 bytes in 614 blocks
+==7935==         suppressed: 0 bytes in 0 blocks
+==7935== Rerun with --leak-check=full to see details of leaked memory
+==7935== 
+==7935== For counts of detected and suppressed errors, rerun with: -v
+==7935== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+==7927== 
+==7927== HEAP SUMMARY:
+==7927==     in use at exit: 38,067 bytes in 616 blocks
+==7927==   total heap usage: 6,377 allocs, 5,761 frees, 950,018 bytes allocated
+==7927== 
+==7927== LEAK SUMMARY:
+==7927==    definitely lost: 0 bytes in 0 blocks
+==7927==    indirectly lost: 0 bytes in 0 blocks
+==7927==      possibly lost: 0 bytes in 0 blocks
+==7927==    still reachable: 38,067 bytes in 616 blocks
+==7927==         suppressed: 0 bytes in 0 blocks
+==7927== Rerun with --leak-check=full to see details of leaked memory
+==7927== 
+==7927== For counts of detected and suppressed errors, rerun with: -v
+==7927== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+==7901== 
+==7901== HEAP SUMMARY:
+==7901==     in use at exit: 15,178 bytes in 17 blocks
+==7901==   total heap usage: 21,851 allocs, 21,834 frees, 1,408,465 bytes allocated
+==7901== 
+==7901== LEAK SUMMARY:
+==7901==    definitely lost: 0 bytes in 0 blocks
+==7901==    indirectly lost: 0 bytes in 0 blocks
+==7901==      possibly lost: 0 bytes in 0 blocks
+==7901==    still reachable: 15,178 bytes in 17 blocks
+==7901==         suppressed: 0 bytes in 0 blocks
+==7901== Rerun with --leak-check=full to see details of leaked memory
+==7901== 
+==7901== For counts of detected and suppressed errors, rerun with: -v
+==7901== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)

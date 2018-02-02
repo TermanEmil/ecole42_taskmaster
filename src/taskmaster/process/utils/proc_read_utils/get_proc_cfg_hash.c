@@ -21,7 +21,8 @@ size_t		get_proc_cfg_hash(t_lst_str *lines, int lines_count)
 	{
 		if (ft_strequ(LSTR(lines), ""))
 			continue;
-		hash ^= ft_hash(lines->content, lines->content_size);
+		if (lines->content)
+			hash ^= ft_hash(lines->content, ft_strlen(lines->content));
 	}
 	return hash;
 }
